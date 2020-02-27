@@ -167,8 +167,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="favicon-20191203112118963.ico" />
-    <Content Include="folder_128px_1229458_easyicon.net.ico" />
     <None Include="Resources\close_32px_1175741_easyicon.net.png" />
     <None Include="Resources\timg.jpg" />
     <None Include="Resources\timg %281%29.jpg" />

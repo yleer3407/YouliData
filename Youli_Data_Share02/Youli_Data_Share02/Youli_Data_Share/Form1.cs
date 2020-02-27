@@ -13,6 +13,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Net;
+using System.Drawing.Drawing2D;
 namespace Youli_Data_Share
 {
     public partial class Form1 : Form
@@ -122,7 +123,7 @@ namespace Youli_Data_Share
 
         }
 
-        private void button9_Click(object sender, EventArgs e)//帮主说明文件
+        private void button9_Click(object sender, EventArgs e)//帮助说明文件
         {
             //Form3 form3 = new Form3();
             //form3.ShowDialog();
@@ -265,7 +266,7 @@ namespace Youli_Data_Share
             {
 
 
-                openFileDialog.InitialDirectory = @"\\YL-01010101\Users\生产基础资料";
+                openFileDialog.InitialDirectory = @"\\192.168.1.104\Youli_Server\基础资料文件夹";
                 openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
@@ -407,7 +408,9 @@ namespace Youli_Data_Share
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)//升级日志
         {
 
-            MessageBox.Show("\r\n版本1.0.0.23 data 2020.02.19 >>update：\r\n\t\t1.修改订单排程选定模式造成的BUG\r\n\t\t2.更新图标" + 
+            MessageBox.Show(
+                "\r\n版本1.0.0.24 data 2020.02.27 >>update：\r\n\t\t1.基础资料路径改到工程部服务器端" + 
+                "\r\n版本1.0.0.23 data 2020.02.19 >>update：\r\n\t\t1.修改订单排程选定模式造成的BUG\r\n\t\t2.更新图标" + 
                                 "\r\n版本1.0.0.22 data 2020.01.15 >>update：\r\n\t\t1.添加更新检测" + 
                                "\r\n版本1.0.0.21 data 2020.01.15 >>update：\r\n\t\t1.解决托盘下标不释放" +
                               "\r\n版本1.0.0.20 data 2020.01.15 >>update：\r\n\t\t1.更改订单排程数据库地址\r\n\t\t2.更改订单排程edit单击\r\n\t\t3.更改订单排程权限" +
@@ -446,6 +449,55 @@ namespace Youli_Data_Share
         {
             MessageBox.Show("QQ：312220399");
         }
+
+        #region 窗体圆角的实现
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                SetWindowRegion();
+            }
+            else
+            {
+                this.Region = null;
+            }
+        }
+
+        public void SetWindowRegion()
+        {
+            System.Drawing.Drawing2D.GraphicsPath FormPath;
+            FormPath = new System.Drawing.Drawing2D.GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
+            FormPath = GetRoundedRectPath(rect, 20);
+            this.Region = new Region(FormPath);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rect">窗体大小</param>
+        /// <param name="radius">圆角大小</param>
+        /// <returns></returns>
+        private GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
+        {
+            int diameter = radius;
+            Rectangle arcRect = new Rectangle(rect.Location, new Size(diameter, diameter));
+            GraphicsPath path = new GraphicsPath();
+
+            path.AddArc(arcRect, 180, 90);//左上角
+
+            arcRect.X = rect.Right - diameter;//右上角
+            path.AddArc(arcRect, 270, 90);
+
+            arcRect.Y = rect.Bottom - diameter;// 右下角
+            path.AddArc(arcRect, 0, 90);
+
+            arcRect.X = rect.Left;// 左下角
+            path.AddArc(arcRect, 90, 90);
+            path.CloseFigure();
+            return path;
+        }
+        #endregion
         
     }
 }
