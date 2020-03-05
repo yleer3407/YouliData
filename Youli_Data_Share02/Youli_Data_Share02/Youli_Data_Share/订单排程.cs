@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Net;
 using System.IO;
+using System.Runtime.InteropServices;
 namespace Youli_Data_Share
 {
     public partial class Form4 : Form
@@ -351,5 +352,53 @@ namespace Youli_Data_Share
         {
             this.notifyIcon1.Visible = false;
         }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            //自动编号，与数据无关
+            Rectangle rectangle = new Rectangle(e.RowBounds.Location.X,
+               e.RowBounds.Location.Y,
+               dataGridView1.RowHeadersWidth - 4,
+               e.RowBounds.Height);
+            TextRenderer.DrawText(e.Graphics,
+                  (e.RowIndex + 1).ToString(),
+                   dataGridView1.RowHeadersDefaultCellStyle.Font,
+                   rectangle,
+                   dataGridView1.RowHeadersDefaultCellStyle.ForeColor,
+                   TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
+        }
+        #region  鼠标滚轮
+        [DllImport("user32.dll", EntryPoint = "WindowFromPoint")]
+        static extern IntPtr WindowFromPoint(Point pt);
+
+        private void orderGrid_MouseEnter(object sender, EventArgs e)
+  {
+       this.MouseWheel += orderGrid_MouseWheel;
+  }
+
+
+  public void orderGrid_MouseWheel(object sender, MouseEventArgs e)
+   {     
+         Point p = PointToScreen(e.Location);
+         if ((WindowFromPoint(p)) ==  dataGridView1.Handle)//鼠标指针在框内
+         {
+                if (e.Delta > 0)
+                {
+                    if (dataGridView1.FirstDisplayedScrollingRowIndex - 5 < 0)
+                    {
+                        dataGridView1.FirstDisplayedScrollingRowIndex = 0;
+                    }
+                    else
+                    {
+                        dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.FirstDisplayedScrollingRowIndex - 5;
+                    }
+                }
+                else
+                {
+                    dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.FirstDisplayedScrollingRowIndex + 5;
+                }
+            }
+     }
+        #endregion
     }
 }
