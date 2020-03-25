@@ -21,6 +21,7 @@ namespace Youli_Data_Share
         public Form1()
         {
             InitializeComponent();
+
         }
 
 
@@ -38,7 +39,6 @@ namespace Youli_Data_Share
         private void Form1_Load(object sender, EventArgs e)
         {
             string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
-
             #region 创建INI文件
             // File.Create(filePath);
             #endregion
@@ -141,6 +141,12 @@ namespace Youli_Data_Share
         private void button1_Click(object sender, EventArgs e)//窗口1：配发计划
         {
             notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
+            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
+            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
             #region 测试ping
             string ipStr = "Youli-pc";
             Ping pingSender = new Ping();
@@ -169,7 +175,7 @@ namespace Youli_Data_Share
             {
                 
 
-                openFileDialog.InitialDirectory = @"\\Youli-pc\生产指令单";
+                openFileDialog.InitialDirectory = @win1;
                 openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
@@ -210,7 +216,12 @@ namespace Youli_Data_Share
                 return;
             }
             #endregion
-
+            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
+            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
@@ -218,7 +229,7 @@ namespace Youli_Data_Share
             {
 
 
-                openFileDialog.InitialDirectory = @"\\Ms-20171213flwd\客户包装文件夹";
+                openFileDialog.InitialDirectory = @win2;
                 openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
@@ -259,6 +270,12 @@ namespace Youli_Data_Share
                 return;
             }
             #endregion
+            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
+            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
@@ -266,7 +283,7 @@ namespace Youli_Data_Share
             {
 
 
-                openFileDialog.InitialDirectory = @"\\192.168.1.104\Youli_Server\基础资料文件夹";
+                openFileDialog.InitialDirectory = @win3;
                 openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
@@ -308,6 +325,12 @@ namespace Youli_Data_Share
                 return;
             }
             #endregion
+            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
+            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
@@ -315,7 +338,7 @@ namespace Youli_Data_Share
             {
 
 
-                openFileDialog.InitialDirectory = @"\\Pc-201910071521\qc质检报告汇总";
+                openFileDialog.InitialDirectory = @win4;
                 openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
@@ -356,6 +379,12 @@ namespace Youli_Data_Share
                 return;
             }
             #endregion
+            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
+            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
@@ -363,7 +392,7 @@ namespace Youli_Data_Share
             {
 
 
-                openFileDialog.InitialDirectory = @"\\Pc-20180115gjbq\盘点反馈";
+                openFileDialog.InitialDirectory = @win5;
                 openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
@@ -408,7 +437,9 @@ namespace Youli_Data_Share
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)//升级日志
         {
 
-            MessageBox.Show("\r\n版本1.0.0.25 data 2020.03.05 >>update：\r\n\t\t1.订单排程添加序号列\r\n\t\t2.订单排程添加滚动功能" + 
+            MessageBox.Show(
+                "\r\n版本1.0.0.26 data 2020.03.05 >>update：\r\n\t\t1.整理窗口路径&变量赋值方式" + 
+                "\r\n版本1.0.0.25 data 2020.03.05 >>update：\r\n\t\t1.订单排程添加序号列\r\n\t\t2.订单排程添加滚动功能" + 
                 "\r\n版本1.0.0.24 data 2020.02.27 >>update：\r\n\t\t1.基础资料路径改到工程部服务器端\r\n\t\t2.添加窗口圆角" + 
                 "\r\n版本1.0.0.23 data 2020.02.19 >>update：\r\n\t\t1.修改订单排程选定模式造成的BUG\r\n\t\t2.更新图标" + 
                                 "\r\n版本1.0.0.22 data 2020.01.15 >>update：\r\n\t\t1.添加更新检测" + 
