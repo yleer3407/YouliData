@@ -37,5 +37,6 @@
 [version]
 
 1=软件版本号：YL-1.0.0.26  （为当前软件版本号 需要手动更新到当前发布版本进行同步）
+
 ![](https://github.com/yleer3407/YouliDate/raw/master/01.png)  
 
