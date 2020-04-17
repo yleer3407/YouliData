@@ -36,6 +36,11 @@ namespace Youli_Data_Share
         bool beginMove = false;//初始化鼠标位置
         int currentXPosition;
         int currentYPosition;
+        /// <summary>
+        /// 首界面读取
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
@@ -56,7 +61,11 @@ namespace Youli_Data_Share
         }
 
 
-
+        /// <summary>
+        /// 首界面拖拽
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -66,7 +75,11 @@ namespace Youli_Data_Share
                 currentYPosition = MousePosition.Y;//鼠标的y坐标为当前窗体左上角y坐标
             }
         }
-
+        /// <summary>
+        /// 首界面鼠标滚动
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
             if (beginMove)
@@ -87,18 +100,30 @@ namespace Youli_Data_Share
                 beginMove = false;
             }
         }
-
+        /// <summary>
+        /// 首界面 关闭按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button7_Click(object sender, EventArgs e)
         {
             Application.ExitThread();
 
         }
-
+        /// <summary>
+        /// 首界面 最小化
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        /// <summary>
+        /// 程序员调试窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button8_Click(object sender, EventArgs e)//程序员调试按钮
         {
             String PM = Interaction.InputBox("输入密码", "开发者调试", "", -1, -1);
@@ -122,7 +147,11 @@ namespace Youli_Data_Share
             }
 
         }
-
+        /// <summary>
+        /// 首界面帮助说明
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button9_Click(object sender, EventArgs e)//帮助说明文件
         {
             //Form3 form3 = new Form3();
@@ -137,7 +166,11 @@ namespace Youli_Data_Share
         {
             MessageBox.Show("版本1.0.0.16升级记录：update：1.添加订单排程窗口");
         }
-
+        /// <summary>
+        /// 严经理 生产配发计划
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)//窗口1：配发计划
         {
             notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
@@ -191,7 +224,11 @@ namespace Youli_Data_Share
                 }
             }
         }
-
+        /// <summary>
+        /// 王庆青 包装材料
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)//窗口2：包装材料
         {
             notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
@@ -245,7 +282,11 @@ namespace Youli_Data_Share
                 }
             }
         }
-
+        /// <summary>
+        /// 叶磊 ERP基础资料
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)//窗口3：材料资料
         {
             notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
@@ -299,7 +340,11 @@ namespace Youli_Data_Share
                 }
             }
         }
-
+        /// <summary>
+        /// QC 质检
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)//窗口4：QC质检
         {
 
@@ -354,7 +399,11 @@ namespace Youli_Data_Share
                 }
             }
         }
-
+        /// <summary>
+        /// 查会计 内部检查情况
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)//窗口5：内部检查
         {
             notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
@@ -408,7 +457,11 @@ namespace Youli_Data_Share
                 }
             }
         }
-
+        /// <summary>
+        /// 订单排程
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button10_Click(object sender, EventArgs e)//窗口6：订单排程
         {
             //String PM = Interaction.InputBox("输入密码", "订单排程权限", "", -1, -1);
@@ -433,7 +486,11 @@ namespace Youli_Data_Share
             Form4 form4 = new Form4();
             form4.ShowDialog();
         }
-
+        /// <summary>
+        /// 升级描述
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)//升级日志
         {
 
@@ -451,36 +508,26 @@ namespace Youli_Data_Share
                                "\r\n版本1.0.0.17 data 2020.01.13 >>update：\r\n\t\t1.订单排程-->订单BOM确认\r\n\t\t2.增加未结单、已结单按钮" + 
                                "\r\n版本1.0.0.16 data 2020.01.12 >>update：\r\n\t\t1.添加订单排程窗口\r\n\t\t2.增加Ping检测");
         }
-
+        /// <summary>
+        /// 工程问题记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button11_Click(object sender, EventArgs e)
-        {  //设置服务器地址（主机名称或IP）
-            string ipStr = "2016-20161129XI";
-            Ping pingSender = new Ping();
-            string data = "ping test data";
-            byte[] buf = Encoding.ASCII.GetBytes(data);
-            int timeout = 1000;
-
-            try
-            {
-                PingReply reply = pingSender.Send(ipStr, timeout, buf);
-                if (reply.Status == IPStatus.Success)
-                {
-
-                }
-            }
-            catch 
-            {
-                MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
-                return;
-            }
-
+        {
+            Engineeringcharcs form5 = new Engineeringcharcs();
+            form5.ShowDialog();
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
             MessageBox.Show("QQ：312220399");
         }
-
+        /// <summary>
+        /// 首界面圆角
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         #region 窗体圆角的实现
         private void Form1_Resize(object sender, EventArgs e)
         {

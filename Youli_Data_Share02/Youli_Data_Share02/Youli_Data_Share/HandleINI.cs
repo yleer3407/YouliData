@@ -100,5 +100,10 @@ namespace Youli_Data_Share
                 throw new ArgumentNullException("filePath");
             }
         }
+
+        internal static void Write(string p, int p_2, string p_3, string inipath)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

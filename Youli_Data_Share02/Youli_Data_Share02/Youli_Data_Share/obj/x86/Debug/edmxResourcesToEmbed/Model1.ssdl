@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Youli_dateModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Youli_dateModelStoreContainer" />
+  <!--生成过程中发现错误:
+      警告 6013: 表/视图“Youli_date.dbo.problems”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+      
+      <EntityType Name="problems">
+        <Property Name="时间" Type="datetime" />
+        <Property Name="状态" Type="nvarchar" MaxLength="255" />
+        <Property Name="产品名称" Type="nvarchar" MaxLength="255" />
+        <Property Name="问题归类" Type="nvarchar" MaxLength="255" />
+        <Property Name="问题简述" Type="nvarchar" MaxLength="255" />
+      </EntityType>-->
+</Schema>

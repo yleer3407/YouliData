@@ -201,7 +201,7 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(126, 152);
             this.button11.TabIndex = 8;
-            this.button11.Text = "未开放";
+            this.button11.Text = "工程问题记录";
             this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
@@ -339,7 +339,7 @@
             this.linkLabel1.Size = new System.Drawing.Size(143, 12);
             this.linkLabel1.TabIndex = 11;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "软件版本号：YL-1.0.0.26";
+            this.linkLabel1.Text = "软件版本号：YL-1.0.0.27";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // toolTip2
@@ -390,7 +390,7 @@
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(882, 559);
+            this.ClientSize = new System.Drawing.Size(950, 559);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel1);
