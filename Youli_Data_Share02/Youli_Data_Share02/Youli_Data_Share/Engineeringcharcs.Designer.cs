@@ -36,16 +36,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Engineeringcharcs));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.youli_dateDataSet = new Youli_Data_Share.Youli_dateDataSet();
             this.problemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.problemsTableAdapter = new Youli_Data_Share.Youli_dateDataSetTableAdapters.problemsTableAdapter();
-            this.时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.状态 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.产品名称 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.状态 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.问题归类 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.问题简述 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.详细 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -67,33 +67,59 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(1041, 534);
+            this.splitContainer1.Size = new System.Drawing.Size(1051, 534);
             this.splitContainer1.SplitterDistance = 48;
             this.splitContainer1.TabIndex = 0;
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(51, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 21);
-            this.textBox1.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Yellow;
+            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(389, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(649, 24);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "各流程负责人 如若在产品的【研发设计】、【首样组装测试】、【批量生产】、【售后维修】等环节发现问题；\r\n请及时与工程部联系,以便及时跟踪解决。\r\n";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.ForeColor = System.Drawing.Color.Red;
+            this.button2.Location = new System.Drawing.Point(308, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "提交";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(246, 12);
+            this.button1.Location = new System.Drawing.Point(206, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "查询";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(11, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(173, 21);
+            this.textBox1.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -104,9 +130,8 @@
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.时间,
-            this.状态,
             this.产品名称,
+            this.状态,
             this.问题归类,
             this.问题简述,
             this.详细});
@@ -117,21 +142,9 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1041, 482);
+            this.dataGridView1.Size = new System.Drawing.Size(1051, 482);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(348, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "提交";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // youli_dateDataSet
             // 
@@ -147,12 +160,12 @@
             // 
             this.problemsTableAdapter.ClearBeforeFill = true;
             // 
-            // 时间
+            // 产品名称
             // 
-            this.时间.DataPropertyName = "时间";
-            this.时间.HeaderText = "时间";
-            this.时间.Name = "时间";
-            this.时间.Width = 150;
+            this.产品名称.DataPropertyName = "产品名称";
+            this.产品名称.HeaderText = "产品名称";
+            this.产品名称.Name = "产品名称";
+            this.产品名称.Width = 150;
             // 
             // 状态
             // 
@@ -165,13 +178,6 @@
             "正在解决",
             "结束问题"});
             this.状态.Name = "状态";
-            // 
-            // 产品名称
-            // 
-            this.产品名称.DataPropertyName = "产品名称";
-            this.产品名称.HeaderText = "产品名称";
-            this.产品名称.Name = "产品名称";
-            this.产品名称.Width = 150;
             // 
             // 问题归类
             // 
@@ -208,7 +214,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 534);
+            this.ClientSize = new System.Drawing.Size(1051, 534);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Engineeringcharcs";
@@ -237,9 +243,9 @@
         private Youli_dateDataSet youli_dateDataSet;
         private System.Windows.Forms.BindingSource problemsBindingSource;
         private Youli_dateDataSetTableAdapters.problemsTableAdapter problemsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 时间;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 状态;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 产品名称;
+        private System.Windows.Forms.DataGridViewComboBoxColumn 状态;
         private System.Windows.Forms.DataGridViewComboBoxColumn 问题归类;
         private System.Windows.Forms.DataGridViewTextBoxColumn 问题简述;
         private System.Windows.Forms.DataGridViewButtonColumn 详细;

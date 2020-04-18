@@ -54,13 +54,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.flowLayoutPanel1.Controls.Add(this.button1);
@@ -73,10 +73,11 @@
             this.flowLayoutPanel1.Controls.Add(this.button12);
             this.flowLayoutPanel1.Controls.Add(this.button13);
             this.flowLayoutPanel1.Controls.Add(this.button14);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 328);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 226);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(8);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(3);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(912, 176);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(8);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(942, 373);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.TabStop = true;
             // 
@@ -88,7 +89,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::Youli_Data_Share.Properties.Resources.production_139_13043478261px_1215962_easyicon_net;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(43, 6);
+            this.button1.Location = new System.Drawing.Point(48, 11);
             this.button1.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 152);
@@ -106,7 +107,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = global::Youli_Data_Share.Properties.Resources.folders_144_66546112116px_1214078_easyicon_net;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(212, 6);
+            this.button2.Location = new System.Drawing.Point(217, 11);
             this.button2.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(126, 152);
@@ -124,7 +125,7 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = global::Youli_Data_Share.Properties.Resources.folder_128px_1229425_easyicon_net;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(381, 6);
+            this.button5.Location = new System.Drawing.Point(386, 11);
             this.button5.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(126, 152);
@@ -142,7 +143,7 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = global::Youli_Data_Share.Properties.Resources.magnifying_glass_tilted_left_123_15457413249px_1215124_easyicon_net;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(550, 6);
+            this.button3.Location = new System.Drawing.Point(555, 11);
             this.button3.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(126, 152);
@@ -160,7 +161,7 @@
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(719, 6);
+            this.button10.Location = new System.Drawing.Point(724, 11);
             this.button10.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(126, 152);
@@ -178,7 +179,7 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = global::Youli_Data_Share.Properties.Resources.checklist_108_5466155811px_1234207_easyicon_net;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(43, 201);
+            this.button4.Location = new System.Drawing.Point(48, 206);
             this.button4.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(126, 152);
@@ -196,12 +197,12 @@
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
             this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(212, 201);
+            this.button11.Location = new System.Drawing.Point(217, 206);
             this.button11.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(126, 152);
             this.button11.TabIndex = 8;
-            this.button11.Text = "工程问题记录";
+            this.button11.Text = "产品问题";
             this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
@@ -214,7 +215,7 @@
             this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button12.Location = new System.Drawing.Point(381, 201);
+            this.button12.Location = new System.Drawing.Point(386, 206);
             this.button12.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(126, 152);
@@ -231,7 +232,7 @@
             this.button13.ForeColor = System.Drawing.Color.White;
             this.button13.Image = ((System.Drawing.Image)(resources.GetObject("button13.Image")));
             this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button13.Location = new System.Drawing.Point(550, 201);
+            this.button13.Location = new System.Drawing.Point(555, 206);
             this.button13.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(126, 152);
@@ -248,7 +249,7 @@
             this.button14.ForeColor = System.Drawing.Color.White;
             this.button14.Image = ((System.Drawing.Image)(resources.GetObject("button14.Image")));
             this.button14.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button14.Location = new System.Drawing.Point(719, 201);
+            this.button14.Location = new System.Drawing.Point(724, 206);
             this.button14.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(126, 152);
@@ -264,7 +265,7 @@
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Image = global::Youli_Data_Share.Properties.Resources.viral_16px_1147362_easyicon_net;
-            this.button8.Location = new System.Drawing.Point(758, 12);
+            this.button8.Location = new System.Drawing.Point(815, 12);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(21, 21);
             this.button8.TabIndex = 6;
@@ -279,7 +280,7 @@
             this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Image = global::Youli_Data_Share.Properties.Resources.cancel_close_delete_reject_remove_16px_1225515_easyicon_net;
-            this.button7.Location = new System.Drawing.Point(839, 12);
+            this.button7.Location = new System.Drawing.Point(896, 12);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(21, 21);
             this.button7.TabIndex = 5;
@@ -292,7 +293,7 @@
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Image = global::Youli_Data_Share.Properties.Resources.close_delete_minus_negative_remove_16px_1225442_easyicon_net;
-            this.button6.Location = new System.Drawing.Point(785, 12);
+            this.button6.Location = new System.Drawing.Point(842, 12);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(21, 21);
             this.button6.TabIndex = 4;
@@ -314,7 +315,7 @@
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Image = global::Youli_Data_Share.Properties.Resources.why_help_16px_1191646_easyicon_net;
-            this.button9.Location = new System.Drawing.Point(812, 12);
+            this.button9.Location = new System.Drawing.Point(869, 12);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(21, 21);
             this.button9.TabIndex = 8;
@@ -325,7 +326,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(699, 514);
+            this.label3.Location = new System.Drawing.Point(779, 629);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 12);
             this.label3.TabIndex = 10;
@@ -334,12 +335,12 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(699, 538);
+            this.linkLabel1.Location = new System.Drawing.Point(779, 607);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(143, 12);
             this.linkLabel1.TabIndex = 11;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "软件版本号：YL-1.0.0.27";
+            this.linkLabel1.Text = "软件版本号：YL-1.0.0.30";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // toolTip2
@@ -366,31 +367,45 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(428, 510);
+            this.pictureBox1.Location = new System.Drawing.Point(1089, 226);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(458, 519);
+            this.label4.Location = new System.Drawing.Point(1119, 226);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 12);
             this.label4.TabIndex = 14;
             this.label4.Text = "滚动鼠标进行翻页";
+            this.label4.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(329, 167);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 16);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "label5";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(950, 559);
+            this.BackgroundImage = global::Youli_Data_Share.Properties.Resources.data_background1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(934, 645);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel1);
@@ -449,6 +464,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
 
 
 

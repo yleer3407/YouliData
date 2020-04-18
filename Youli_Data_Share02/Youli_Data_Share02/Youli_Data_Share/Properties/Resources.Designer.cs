@@ -63,6 +63,16 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _96_01 {
+            get {
+                object obj = ResourceManager.GetObject("96_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_folder_133_45406125166px_1232041_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("add_folder_133.45406125166px_1232041_easyicon.net", resourceCulture);
@@ -166,6 +176,26 @@ namespace Youli_Data_Share.Properties {
         internal static System.Drawing.Bitmap close_delete_minus_negative_remove_24px_1225442_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("close_delete_minus_negative_remove_24px_1225442_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap data_background {
+            get {
+                object obj = ResourceManager.GetObject("data_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap data_background1 {
+            get {
+                object obj = ResourceManager.GetObject("data_background1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

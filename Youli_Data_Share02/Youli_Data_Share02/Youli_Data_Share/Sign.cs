@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace Youli_Data_Share
 {
@@ -77,13 +78,34 @@ namespace Youli_Data_Share
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string inipath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\data\Problems.ini";
-            string text2 = textBox2.Text.Replace("\r\n"," ");
-            string text3 = textBox3.Text.Replace("\r\n", " ");
-            string text4 = textBox4.Text.Replace("\r\n", " ");
-            INIHelper.Write(this.textBox1.Text, "1", text2, inipath);
-            INIHelper.Write(this.textBox1.Text, "2", text3, inipath);
-            INIHelper.Write(this.textBox1.Text, "3", text4, inipath);
+            String keyword02 = Interaction.InputBox("输入密码", "权限检查", "", -1, -1);
+            if (keyword02 != "")//yl111111 
+            {
+                if (keyword02 == "yl111111")
+                {
+                    #region 保存权限02
+                    string inipath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\data\Problems.ini";
+                    string text2 = textBox2.Text.Replace("\r\n", " ");
+                    string text3 = textBox3.Text.Replace("\r\n", " ");
+                    string text4 = textBox4.Text.Replace("\r\n", " ");
+                    INIHelper.Write(this.textBox1.Text, "1", text2, inipath);
+                    INIHelper.Write(this.textBox1.Text, "2", text3, inipath);
+                    INIHelper.Write(this.textBox1.Text, "3", text4, inipath);
+                    #endregion
+                    MessageBox.Show("保存成功！");
+                }
+                else
+                {
+                    MessageBox.Show("请输入正确的密码！");
+                    return;
+                }
+            }
+            else
+            {
+                return;
+            }
+
+
 
         }
 

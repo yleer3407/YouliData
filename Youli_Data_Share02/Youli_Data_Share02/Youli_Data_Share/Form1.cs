@@ -43,19 +43,23 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
+
             string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
             #region 创建INI文件
             // File.Create(filePath);
             #endregion
             string vss = INIHelper.Read("version", "1", "0", filePath);
             string vss_from1 = linkLabel1.Text;
+            label5.Text = "当前版本号：" + vss_from1 + "\r\n重新打开更新至："+vss;
             if (vss == vss_from1)
-            { 
+            {
+                label5.Visible = false;
             }
             else
             {
-                MessageBox.Show("当前为" + vss_from1 + "\r\n请重新打开软件更新至"+vss,"更新提醒：");
-                Application.ExitThread();
+                label5.Visible = true;
+                //MessageBox.Show("当前为" + vss_from1 + "\r\n请重新打开软件更新至"+vss,"更新提醒：");
+               // Application.ExitThread();
             }
                 
         }
@@ -408,7 +412,7 @@ namespace Youli_Data_Share
         {
             notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
             #region 测试ping
-            string ipStr = "Pc-20180115gjbq";
+            string ipStr = "LENOVO-PC";
             Ping pingSender = new Ping();
             string data = "ping test data";
             byte[] buf = Encoding.ASCII.GetBytes(data);
@@ -494,7 +498,9 @@ namespace Youli_Data_Share
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)//升级日志
         {
 
-            MessageBox.Show(
+            MessageBox.Show("\r\n版本1.0.0.30 data 2020.04.18 >>update：\r\n\t\t1.修改产品问题数据库对应" + 
+                "\r\n版本1.0.0.29 data 2020.04.18 >>update：\r\n\t\t1.添加产品问题注释" + 
+                "\r\n版本1.0.0.28 data 2020.04.18 >>update：\r\n\t\t1.修改主窗体界面\r\n\t\t2.添加产品问题窗口" + 
                 "\r\n版本1.0.0.26 data 2020.03.05 >>update：\r\n\t\t1.整理窗口路径&变量赋值方式" + 
                 "\r\n版本1.0.0.25 data 2020.03.05 >>update：\r\n\t\t1.订单排程添加序号列\r\n\t\t2.订单排程添加滚动功能" + 
                 "\r\n版本1.0.0.24 data 2020.02.27 >>update：\r\n\t\t1.基础资料路径改到工程部服务器端\r\n\t\t2.添加窗口圆角" + 

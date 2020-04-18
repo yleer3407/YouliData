@@ -27,7 +27,7 @@
     <InstallUrl>\\192.168.1.104\Youli_Server\</InstallUrl>
     <UpdateUrl>\\192.168.1.104\Youli_Server\</UpdateUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>27</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -244,6 +244,9 @@
     <None Include="Resources\add_folder_66.727030625832px_1232041_easyicon.net1.png" />
     <None Include="Resources\add_folder_66.727030625832px_1232041_easyicon.net2.png" />
     <None Include="Resources\add_folder_133.45406125166px_1232041_easyicon.net.png" />
+    <None Include="Resources\96_01.png" />
+    <None Include="Resources\data_background.png" />
+    <None Include="Resources\data_background1.png" />
     <Content Include="unweight.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
