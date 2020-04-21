@@ -247,6 +247,13 @@
     <None Include="Resources\96_01.png" />
     <None Include="Resources\data_background.png" />
     <None Include="Resources\data_background1.png" />
+    <None Include="Resources\查找.png" />
+    <None Include="Resources\暂停.png" />
+    <None Include="Resources\停止.png" />
+    <None Include="Resources\提交成功.png" />
+    <None Include="Resources\筛选.png" />
+    <None Include="Resources\iconfont-10.png" />
+    <None Include="Resources\iconfont-101.png" />
     <Content Include="unweight.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

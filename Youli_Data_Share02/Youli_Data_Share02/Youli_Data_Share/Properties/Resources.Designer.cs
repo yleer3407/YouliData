@@ -243,6 +243,26 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfont_10 {
+            get {
+                object obj = ResourceManager.GetObject("iconfont-10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfont_101 {
+            get {
+                object obj = ResourceManager.GetObject("iconfont-101", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap magnifying_glass_tilted_left_123_15457413249px_1215124_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("magnifying_glass_tilted_left_123.15457413249px_1215124_easyicon.net", resourceCulture);
@@ -376,6 +396,56 @@ namespace Youli_Data_Share.Properties {
         internal static System.Drawing.Bitmap 优力113 {
             get {
                 object obj = ResourceManager.GetObject("优力113", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap 停止 {
+            get {
+                object obj = ResourceManager.GetObject("停止", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap 提交成功 {
+            get {
+                object obj = ResourceManager.GetObject("提交成功", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap 暂停 {
+            get {
+                object obj = ResourceManager.GetObject("暂停", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap 查找 {
+            get {
+                object obj = ResourceManager.GetObject("查找", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap 筛选 {
+            get {
+                object obj = ResourceManager.GetObject("筛选", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
