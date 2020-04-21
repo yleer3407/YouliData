@@ -31,8 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -43,6 +45,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,11 +58,11 @@
             this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -78,7 +83,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1097, 72);
+            this.groupBox1.Size = new System.Drawing.Size(1097, 74);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "设置窗口";
@@ -112,7 +117,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(33, 20);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 24);
+            this.pictureBox1.Size = new System.Drawing.Size(23, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -193,154 +198,30 @@
             this.Column8,
             this.Column9,
             this.Column10,
+            this.Column13,
             this.Column11,
+            this.Column15,
+            this.Column14,
             this.Column12});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dataGridView1.Location = new System.Drawing.Point(3, 17);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1091, 442);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "制令单号";
-            this.Column1.FillWeight = 72.8745F;
-            this.Column1.HeaderText = "制令单号";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 90;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "产品编码";
-            this.Column2.FillWeight = 74.6861F;
-            this.Column2.HeaderText = "产品编码";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 92;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "产品名称";
-            this.Column3.FillWeight = 254.6256F;
-            this.Column3.HeaderText = "产品名称";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 315;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "数量";
-            this.Column4.FillWeight = 44.77451F;
-            this.Column4.HeaderText = "数量";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 55;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "缺料";
-            this.Column5.FalseValue = "0";
-            this.Column5.FillWeight = 19.63329F;
-            this.Column5.HeaderText = "缺料";
-            this.Column5.IndeterminateValue = "2";
-            this.Column5.Name = "Column5";
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column5.TrueValue = "1";
-            this.Column5.Width = 25;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "需求";
-            this.Column6.FalseValue = "0";
-            this.Column6.FillWeight = 21.03465F;
-            this.Column6.HeaderText = "需求";
-            this.Column6.IndeterminateValue = "2";
-            this.Column6.Name = "Column6";
-            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column6.TrueValue = "1";
-            this.Column6.Width = 25;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "已截屏";
-            this.Column7.FalseValue = "0";
-            this.Column7.FillWeight = 22.41236F;
-            this.Column7.HeaderText = "截屏";
-            this.Column7.IndeterminateValue = "2";
-            this.Column7.Name = "Column7";
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column7.TrueValue = "1";
-            this.Column7.Width = 25;
-            // 
-            // Column8
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.NullValue = "打开图片";
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column8.FillWeight = 57.04039F;
-            this.Column8.HeaderText = "打开截屏";
-            this.Column8.Name = "Column8";
-            this.Column8.Text = "打开图片";
-            this.Column8.ToolTipText = "打开图片";
-            this.Column8.UseColumnTextForButtonValue = true;
-            this.Column8.Width = 70;
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column9.DataPropertyName = "Bom需要更改记录";
-            this.Column9.FillWeight = 579.077F;
-            this.Column9.HeaderText = "Bom问题记录";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "BOM更改操作";
-            this.Column10.FalseValue = "0";
-            this.Column10.FillWeight = 16.50121F;
-            this.Column10.HeaderText = "改BOM";
-            this.Column10.IndeterminateValue = "2";
-            this.Column10.Name = "Column10";
-            this.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column10.TrueValue = "1";
-            this.Column10.Width = 25;
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "重算操作";
-            this.Column11.FalseValue = "0";
-            this.Column11.FillWeight = 17.95539F;
-            this.Column11.HeaderText = "重算";
-            this.Column11.IndeterminateValue = "2";
-            this.Column11.Name = "Column11";
-            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column11.TrueValue = "1";
-            this.Column11.Width = 25;
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "完成操作";
-            this.Column12.FalseValue = "0";
-            this.Column12.FillWeight = 10F;
-            this.Column12.HeaderText = "结束";
-            this.Column12.IndeterminateValue = "2";
-            this.Column12.Name = "Column12";
-            this.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column12.TrueValue = "1";
-            this.Column12.Width = 25;
             // 
             // tableLayoutPanel1
             // 
@@ -361,6 +242,170 @@
             // 
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Visible = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "制令单号";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column1.FillWeight = 72.8745F;
+            this.Column1.HeaderText = "制令单号";
+            this.Column1.Name = "Column1";
+            this.Column1.ToolTipText = "胡连年操作";
+            this.Column1.Width = 90;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "产品编码";
+            this.Column2.FillWeight = 74.6861F;
+            this.Column2.HeaderText = "产品编码";
+            this.Column2.Name = "Column2";
+            this.Column2.ToolTipText = "胡连年操作";
+            this.Column2.Width = 92;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "产品名称";
+            this.Column3.FillWeight = 254.6256F;
+            this.Column3.HeaderText = "产品名称";
+            this.Column3.Name = "Column3";
+            this.Column3.ToolTipText = "胡连年操作";
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "数量";
+            this.Column4.FillWeight = 44.77451F;
+            this.Column4.HeaderText = "数量";
+            this.Column4.Name = "Column4";
+            this.Column4.ToolTipText = "胡连年操作";
+            this.Column4.Width = 55;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "缺料";
+            this.Column5.FalseValue = "0";
+            this.Column5.FillWeight = 19.63329F;
+            this.Column5.HeaderText = "缺料";
+            this.Column5.IndeterminateValue = "2";
+            this.Column5.Name = "Column5";
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column5.TrueValue = "1";
+            this.Column5.Visible = false;
+            this.Column5.Width = 25;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "需求";
+            this.Column6.FalseValue = "0";
+            this.Column6.FillWeight = 21.03465F;
+            this.Column6.HeaderText = "需求";
+            this.Column6.IndeterminateValue = "2";
+            this.Column6.Name = "Column6";
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column6.TrueValue = "1";
+            this.Column6.Visible = false;
+            this.Column6.Width = 25;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "已截屏";
+            this.Column7.FalseValue = "0";
+            this.Column7.FillWeight = 22.41236F;
+            this.Column7.HeaderText = "截屏";
+            this.Column7.IndeterminateValue = "2";
+            this.Column7.Name = "Column7";
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column7.ToolTipText = "叶磊操作";
+            this.Column7.TrueValue = "1";
+            this.Column7.Width = 25;
+            // 
+            // Column8
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.NullValue = "打开图片";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column8.FillWeight = 57.04039F;
+            this.Column8.HeaderText = "打开截屏";
+            this.Column8.Name = "Column8";
+            this.Column8.Text = "打开图片";
+            this.Column8.ToolTipText = "打开截屏查看BOM";
+            this.Column8.UseColumnTextForButtonValue = true;
+            this.Column8.Width = 70;
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column9.DataPropertyName = "Bom需要更改记录";
+            this.Column9.FillWeight = 30F;
+            this.Column9.HeaderText = "Bom(组装材料问题)";
+            this.Column9.Name = "Column9";
+            this.Column9.ToolTipText = "高超填写组装材料问题，没问题记录[无]方便后续流程";
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "BOM更改操作";
+            this.Column10.FalseValue = "0";
+            this.Column10.FillWeight = 16.50121F;
+            this.Column10.HeaderText = "修改记录";
+            this.Column10.IndeterminateValue = "2";
+            this.Column10.Name = "Column10";
+            this.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column10.ToolTipText = "叶磊操作【组装材料更改记录】";
+            this.Column10.TrueValue = "1";
+            this.Column10.Width = 25;
+            // 
+            // Column13
+            // 
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column13.FillWeight = 30F;
+            this.Column13.HeaderText = "Bom(包装材料确认)";
+            this.Column13.Name = "Column13";
+            this.Column13.ToolTipText = "王庆青操作【包装材料确认、记录、修改】";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "重算操作";
+            this.Column11.FalseValue = "0";
+            this.Column11.FillWeight = 17.95539F;
+            this.Column11.HeaderText = "重算";
+            this.Column11.IndeterminateValue = "2";
+            this.Column11.Name = "Column11";
+            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column11.TrueValue = "1";
+            this.Column11.Visible = false;
+            this.Column11.Width = 25;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "需求提交";
+            this.Column15.Name = "Column15";
+            this.Column15.ToolTipText = "王庆青操作";
+            this.Column15.Width = 25;
+            // 
+            // Column14
+            // 
+            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column14.FillWeight = 30F;
+            this.Column14.HeaderText = "客户需求";
+            this.Column14.Name = "Column14";
+            this.Column14.ToolTipText = "严经理操作";
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "完成操作";
+            this.Column12.FalseValue = "0";
+            this.Column12.FillWeight = 10F;
+            this.Column12.HeaderText = "结束";
+            this.Column12.IndeterminateValue = "2";
+            this.Column12.Name = "Column12";
+            this.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column12.TrueValue = "1";
+            this.Column12.Width = 25;
             // 
             // Form4
             // 
@@ -398,6 +443,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -408,8 +454,10 @@
         private System.Windows.Forms.DataGridViewButtonColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column12;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
