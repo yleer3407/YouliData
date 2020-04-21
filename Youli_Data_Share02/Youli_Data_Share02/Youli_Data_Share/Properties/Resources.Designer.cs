@@ -423,6 +423,16 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap 提交成功1 {
+            get {
+                object obj = ResourceManager.GetObject("提交成功1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap 暂停 {
             get {
                 object obj = ResourceManager.GetObject("暂停", resourceCulture);

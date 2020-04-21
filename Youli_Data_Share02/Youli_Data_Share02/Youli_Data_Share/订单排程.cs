@@ -675,20 +675,6 @@ namespace Youli_Data_Share
      }
         #endregion
 
-  private void groupBox2_Enter(object sender, EventArgs e)
-  {
-
-  }
-
-  private void textBox1_TextChanged(object sender, EventArgs e)
-  {
-
-  }
-
-  private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-  {
-
-  }
         /// <summary>
         /// 查询
         /// </summary>
@@ -767,101 +753,6 @@ namespace Youli_Data_Share
       dt = ds.Tables["wlxq02"];
       dataGridView1.DataSource = dt.DefaultView;
   }
-        /// <summary>
-        /// 提交
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-  private void toolStripButton4_Click(object sender, EventArgs e)
-  {
-      try
-      {
-          DataTable changeDt = dt.GetChanges();
-          foreach (DataRow dr in changeDt.Rows)
-          {
-              string strSQL = string.Empty;
-              if (dr.RowState == System.Data.DataRowState.Added)//添加
-              {
-                  strSQL = @"INSERT INTO [dbo].[wlxq02]
-                                           ([制令单号]
-                                           ,[产品编码]
-                                           ,[产品名称]
-                                           ,[数量]
-                                           ,[厂制发料]
-                                           ,[需求提交]
-                                           ,[Bom需要更改记录]
-                                           ,[包装材料确认]
-                                           ,[客户需求变更]
-                                           ,[厂制发料变更]
-                                           ,[BOM更改操作]
-                                           ,[已截屏])
-                                     VALUES
-                                           ('" + dr["制令单号"].ToString() + @"'
-                                           ,'" + dr["产品编码"].ToString() + @"'
-                                           ,'" + dr["产品名称"].ToString() + @"'
-                                           ,'" + dr["数量"].ToString() + @"'
-                                           ,'" + dr["厂制发料"].ToString() + @"'
-                                           ,'" + dr["需求提交"].ToString() + @"'
-                                           ,'" + dr["Bom需要更改记录"].ToString() + @"'
-                                           ,'" + dr["包装材料确认"].ToString() + @"'
-                                           ,'" + dr["客户需求变更"].ToString() + @"'
-                                           ,'" + dr["厂制发料变更"].ToString() + @"'
-                                           ,'" + dr["BOM更改操作"].ToString() + @"'
-                                           ,'" + dr["已截屏"].ToString() + @"') ";
-                 
-              }
-              else if (dr.RowState == System.Data.DataRowState.Deleted)//删除
-              {
-                  strSQL = @"DELETE FROM [dbo].[wlxq02]
-                                     WHERE 制令单号 = '" + dr["制令单号", DataRowVersion.Original].ToString() + @"' 
-                                       AND 产品编码 ='" + dr["产品编码", DataRowVersion.Original].ToString() + "'";
-              }
-              else if (dr.RowState == System.Data.DataRowState.Modified)//修改
-              {
-                  strSQL = @"UPDATE [dbo].[wlxq02]
-                                   SET [产品名称] = '" + dr["产品名称"].ToString() + @"'
-                                   ,[数量] = '" + dr["数量"].ToString() + @"'
-                                   ,[厂制发料] = '" + dr["厂制发料"].ToString() + @"'
-                                   ,[需求提交] = '" + dr["需求提交"].ToString() + @"'
-                                   ,[Bom需要更改记录] = '" + dr["Bom需要更改记录"].ToString() + @"'
-                                   ,[包装材料确认] = '" + dr["包装材料确认"].ToString() + @"'
-                                   ,[客户需求变更] = '" + dr["客户需求变更"].ToString() + @"'
-                                   ,[BOM更改操作] = '" + dr["BOM更改操作"].ToString() + @"'
-                                   ,[重算操作] = '" + dr["重算操作"].ToString() + @"'
-                                   ,[已截屏] = '" + dr["已截屏"].ToString() + @"'
-                               WHERE 制令单号 = '" + dr["制令单号"].ToString() + @"' 
-                                    AND 产品编码= '" + dr["产品编码"].ToString() + "'";
-              }
-              SqlCommand comm = new SqlCommand(strSQL, conn);
-              comm.ExecuteNonQuery();
-          }
-          MessageBox.Show("已提交成功");
-          #region  提交后进行未完成表单刷新
-          SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-          scsb.DataSource = "192.168.1.104";
-          scsb.UserID = "sa";
-          scsb.Password = "yelei193";
-          scsb.InitialCatalog = "Youli_date";
-
-          conn = new SqlConnection(scsb.ToString());
-          if (conn.State == System.Data.ConnectionState.Closed)
-              conn.Open();
-          string strSQL01 = "select * from wlxq02 WHERE 完成操作 LIKE '%0%'";
-          SqlDataAdapter da = new SqlDataAdapter(strSQL01, conn);
-          DataSet ds = new DataSet();
-          da.Fill(ds, "wlxq02");
-
-          //dataGridView1.DataSource = ds;
-          //dataGridView1.DataMember = "wlxq";
-          dt = ds.Tables["wlxq02"];
-          dataGridView1.DataSource = dt.DefaultView;
-          #endregion
-      }
-      catch
-      {
-          MessageBox.Show("提示：没有发生修改操作 ");
-      }
-  }
 
   private void toolStripLabel1_Click(object sender, EventArgs e)
   {
@@ -916,5 +807,182 @@ namespace Youli_Data_Share
       dt = ds.Tables["wlxq02"];
       dataGridView1.DataSource = dt.DefaultView;
   }
+        /// <summary>
+        /// 提交
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+  private void button1_Click(object sender, EventArgs e)
+  {
+      try
+       {
+      DataTable changeDt = dt.GetChanges();
+      foreach (DataRow dr in changeDt.Rows)
+      {
+          string strSQL = string.Empty;
+          if (dr.RowState == System.Data.DataRowState.Added)//添加
+          {
+              strSQL = @"INSERT INTO [dbo].[wlxq02]
+                                           ([制令单号]
+                                           ,[产品编码]
+                                           ,[产品名称]
+                                           ,[数量]
+                                           ,[Bom需要更改记录]
+                                           ,[BOM更改操作]
+                                           ,[已截屏]
+                                           ,[厂制发料]
+                                           ,[包装材料确认]
+                                           ,[需求提交]
+                                           ,[客户需求变更]
+                                           ,[厂制发料变更])
+                                     VALUES
+                                           ('" + dr["制令单号"].ToString() + @"'
+                                           ,'" + dr["产品编码"].ToString() + @"'
+                                           ,'" + dr["产品名称"].ToString() + @"'
+                                           ,'" + dr["数量"].ToString() + @"'
+                                           ,'" + dr["Bom需要更改记录"].ToString() + @"'
+                                           ,'" + dr["BOM更改操作"].ToString() + @"'
+                                           ,'" + dr["已截屏"].ToString() + @"'
+                                           ,'" + dr["厂制发料"].ToString() + @"'
+                                           ,'" + dr["包装材料确认"].ToString() + @"'
+                                           ,'" + dr["需求提交"].ToString() + @"'
+                                           ,'" + dr["客户需求变更"].ToString() + @"'
+                                           ,'" + dr["厂制发料变更"].ToString() + @"') ";
+
+          }
+          else if (dr.RowState == System.Data.DataRowState.Deleted)//删除
+          {
+              strSQL = @"DELETE FROM [dbo].[wlxq02]
+                                     WHERE 制令单号 = '" + dr["制令单号", DataRowVersion.Original].ToString() + @"' 
+                                       AND 产品编码 ='" + dr["产品编码", DataRowVersion.Original].ToString() + "'";
+          }
+          else if (dr.RowState == System.Data.DataRowState.Modified)//修改
+          {
+              #region 高超 王庆青 严经理 陈蓉更改 时间记录
+              string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+              string user1 = INIHelper.Read("account", "1", "0", filePath);
+              string user2 = INIHelper.Read("account", "2", "0", filePath);
+              string user3 = INIHelper.Read("account", "3", "0", filePath);
+              string user4 = INIHelper.Read("account", "4", "0", filePath);
+              string user5 = INIHelper.Read("account", "5", "0", filePath);
+              string user6 = INIHelper.Read("account", "6", "0", filePath);
+              string user7 = INIHelper.Read("account", "7", "0", filePath);
+
+              string b = Dns.GetHostName();
+
+              if (b == user4) //高超 user4
+              {
+                  strSQL = @"UPDATE [dbo].[wlxq02]
+                                   SET [产品名称] = '" + dr["产品名称"].ToString() + @"'
+                                   ,[数量] = '" + dr["数量"].ToString() + @"'
+                                   ,[Bom需要更改记录] = '" + dr["Bom需要更改记录"].ToString() + "[" + DateTime.Now.ToString() + "]" + @"'
+                                   ,[BOM更改操作] = '" + dr["BOM更改操作"].ToString() + @"'
+                                   ,[已截屏] = '" + dr["已截屏"].ToString() + @"'
+                                   ,[厂制发料] = '" + dr["厂制发料"].ToString() + @"'
+                                   ,[包装材料确认] = '" + dr["包装材料确认"].ToString() + @"'
+                                   ,[需求提交] = '" + dr["需求提交"].ToString() + @"'
+                                   ,[客户需求变更] = '" + dr["客户需求变更"].ToString() + @"'
+                                   ,[厂制发料变更] = '" + dr["厂制发料变更"].ToString() + @"'
+                               WHERE 制令单号 = '" + dr["制令单号"].ToString() + @"' 
+                                    AND 产品编码= '" + dr["产品编码"].ToString() + "'";
+              }
+              else if (b == user2) //王庆青 user2
+              {
+                  strSQL = @"UPDATE [dbo].[wlxq02]
+                                   SET [产品名称] = '" + dr["产品名称"].ToString() + @"'
+                                   ,[数量] = '" + dr["数量"].ToString() + @"'
+                                   ,[Bom需要更改记录] = '" + dr["Bom需要更改记录"].ToString() + @"'
+                                   ,[BOM更改操作] = '" + dr["BOM更改操作"].ToString() + @"'
+                                   ,[已截屏] = '" + dr["已截屏"].ToString() + @"'
+                                   ,[厂制发料] = '" + dr["厂制发料"].ToString() + @"'
+                                   ,[包装材料确认] = '" + dr["包装材料确认"].ToString() + "[" + DateTime.Now.ToString() + "]" + @"'
+                                   ,[需求提交] = '" + dr["需求提交"].ToString() + @"'
+                                   ,[客户需求变更] = '" + dr["客户需求变更"].ToString()  + @"'
+                                   ,[厂制发料变更] = '" + dr["厂制发料变更"].ToString() + @"'
+                               WHERE 制令单号 = '" + dr["制令单号"].ToString() + @"' 
+                                    AND 产品编码= '" + dr["产品编码"].ToString() + "'";
+              }
+              else if (b == user5)//严经理 user5
+              {
+                  strSQL = @"UPDATE [dbo].[wlxq02]
+                                   SET [产品名称] = '" + dr["产品名称"].ToString() + @"'
+                                   ,[数量] = '" + dr["数量"].ToString() + @"'
+                                   ,[Bom需要更改记录] = '" + dr["Bom需要更改记录"].ToString() + @"'
+                                   ,[BOM更改操作] = '" + dr["BOM更改操作"].ToString() + @"'
+                                   ,[已截屏] = '" + dr["已截屏"].ToString() + @"'
+                                   ,[厂制发料] = '" + dr["厂制发料"].ToString() + @"'
+                                   ,[包装材料确认] = '" + dr["包装材料确认"].ToString() + @"'
+                                   ,[需求提交] = '" + dr["需求提交"].ToString() + @"'
+                                   ,[客户需求变更] = '" + dr["客户需求变更"].ToString() + "[" + DateTime.Now.ToString() + "]" + @"'
+                                   ,[厂制发料变更] = '" + dr["厂制发料变更"].ToString() + @"'
+                               WHERE 制令单号 = '" + dr["制令单号"].ToString() + @"' 
+                                    AND 产品编码= '" + dr["产品编码"].ToString() + "'";
+              }
+              else if (b == user6)//陈蓉 user6
+              {
+                  strSQL = @"UPDATE [dbo].[wlxq02]
+                                   SET [产品名称] = '" + dr["产品名称"].ToString() + @"'
+                                   ,[数量] = '" + dr["数量"].ToString() + @"'
+                                   ,[Bom需要更改记录] = '" + dr["Bom需要更改记录"].ToString() + @"'
+                                   ,[BOM更改操作] = '" + dr["BOM更改操作"].ToString() + @"'
+                                   ,[已截屏] = '" + dr["已截屏"].ToString() + @"'
+                                   ,[厂制发料] = '" + dr["厂制发料"].ToString() + @"'
+                                   ,[包装材料确认] = '" + dr["包装材料确认"].ToString() + @"'
+                                   ,[需求提交] = '" + dr["需求提交"].ToString() + @"'
+                                   ,[客户需求变更] = '" + dr["客户需求变更"].ToString() + @"'
+                                   ,[厂制发料变更] = '" + dr["厂制发料变更"].ToString() + "[" + DateTime.Now.ToString() + "]" + @"'
+                               WHERE 制令单号 = '" + dr["制令单号"].ToString() + @"' 
+                                    AND 产品编码= '" + dr["产品编码"].ToString() + "'";
+              }
+              else
+              {
+                  strSQL = @"UPDATE [dbo].[wlxq02]
+                                   SET [产品名称] = '" + dr["产品名称"].ToString() + @"'
+                                   ,[数量] = '" + dr["数量"].ToString() + @"'
+                                   ,[Bom需要更改记录] = '" + dr["Bom需要更改记录"].ToString() + @"'
+                                   ,[BOM更改操作] = '" + dr["BOM更改操作"].ToString() + @"'
+                                   ,[已截屏] = '" + dr["已截屏"].ToString() + @"'
+                                   ,[厂制发料] = '" + dr["厂制发料"].ToString() + @"'
+                                   ,[包装材料确认] = '" + dr["包装材料确认"].ToString() + @"'
+                                   ,[需求提交] = '" + dr["需求提交"].ToString() + @"'
+                                   ,[客户需求变更] = '" + dr["客户需求变更"].ToString() + @"'
+                                   ,[厂制发料变更] = '" + dr["厂制发料变更"].ToString() + @"'
+                               WHERE 制令单号 = '" + dr["制令单号"].ToString() + @"' 
+                                    AND 产品编码= '" + dr["产品编码"].ToString() + "'";
+              }
+              #endregion
+
+          }
+          SqlCommand comm = new SqlCommand(strSQL, conn);
+          comm.ExecuteNonQuery();
+      }
+      MessageBox.Show("已提交成功");
+      #region  提交后进行未完成表单刷新
+      SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
+      scsb.DataSource = "192.168.1.104";
+      scsb.UserID = "sa";
+      scsb.Password = "yelei193";
+      scsb.InitialCatalog = "Youli_date";
+
+      conn = new SqlConnection(scsb.ToString());
+      if (conn.State == System.Data.ConnectionState.Closed)
+          conn.Open();
+      string strSQL01 = "select * from wlxq02 WHERE 厂制发料 LIKE '%0%'";
+      SqlDataAdapter da = new SqlDataAdapter(strSQL01, conn);
+      DataSet ds = new DataSet();
+      da.Fill(ds, "wlxq02");
+
+      //dataGridView1.DataSource = ds;
+      //dataGridView1.DataMember = "wlxq";
+      dt = ds.Tables["wlxq02"];
+      dataGridView1.DataSource = dt.DefaultView;
+      #endregion
+      }
+      catch
+      {
+          MessageBox.Show("提示：没有发生修改操作 ");
+      }
+  }
+
     }
 }

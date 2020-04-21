@@ -254,6 +254,7 @@
     <None Include="Resources\筛选.png" />
     <None Include="Resources\iconfont-10.png" />
     <None Include="Resources\iconfont-101.png" />
+    <None Include="Resources\提交成功1.png" />
     <Content Include="unweight.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
