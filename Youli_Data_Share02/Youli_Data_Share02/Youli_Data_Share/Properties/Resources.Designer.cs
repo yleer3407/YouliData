@@ -413,6 +413,16 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap 删除_1_ {
+            get {
+                object obj = ResourceManager.GetObject("删除(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap 提交成功 {
             get {
                 object obj = ResourceManager.GetObject("提交成功", resourceCulture);
@@ -446,6 +456,16 @@ namespace Youli_Data_Share.Properties {
         internal static System.Drawing.Bitmap 查找 {
             get {
                 object obj = ResourceManager.GetObject("查找", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap 添加图片_1_ {
+            get {
+                object obj = ResourceManager.GetObject("添加图片(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

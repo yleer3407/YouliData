@@ -957,26 +957,26 @@ namespace Youli_Data_Share
           comm.ExecuteNonQuery();
       }
       MessageBox.Show("已提交成功");
-      #region  提交后进行未完成表单刷新
-      SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-      scsb.DataSource = "192.168.1.104";
-      scsb.UserID = "sa";
-      scsb.Password = "yelei193";
-      scsb.InitialCatalog = "Youli_date";
+      //#region  提交后进行未完成表单刷新
+      //SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
+      //scsb.DataSource = "192.168.1.104";
+      //scsb.UserID = "sa";
+      //scsb.Password = "yelei193";
+      //scsb.InitialCatalog = "Youli_date";
 
-      conn = new SqlConnection(scsb.ToString());
-      if (conn.State == System.Data.ConnectionState.Closed)
-          conn.Open();
-      string strSQL01 = "select * from wlxq02 WHERE 厂制发料 LIKE '%0%'";
-      SqlDataAdapter da = new SqlDataAdapter(strSQL01, conn);
-      DataSet ds = new DataSet();
-      da.Fill(ds, "wlxq02");
+      //conn = new SqlConnection(scsb.ToString());
+      //if (conn.State == System.Data.ConnectionState.Closed)
+      //    conn.Open();
+      //string strSQL01 = "select * from wlxq02 WHERE 厂制发料 LIKE '%0%'";
+      //SqlDataAdapter da = new SqlDataAdapter(strSQL01, conn);
+      //DataSet ds = new DataSet();
+      //da.Fill(ds, "wlxq02");
 
-      //dataGridView1.DataSource = ds;
-      //dataGridView1.DataMember = "wlxq";
-      dt = ds.Tables["wlxq02"];
-      dataGridView1.DataSource = dt.DefaultView;
-      #endregion
+      ////dataGridView1.DataSource = ds;
+      ////dataGridView1.DataMember = "wlxq";
+      //dt = ds.Tables["wlxq02"];
+      //dataGridView1.DataSource = dt.DefaultView;
+      //#endregion
       }
       catch
       {

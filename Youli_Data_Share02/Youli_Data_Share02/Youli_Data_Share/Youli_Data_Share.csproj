@@ -27,7 +27,7 @@
     <InstallUrl>\\192.168.1.104\Youli_Server\</InstallUrl>
     <UpdateUrl>\\192.168.1.104\Youli_Server\</UpdateUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>33</ApplicationRevision>
+    <ApplicationRevision>34</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -255,6 +255,8 @@
     <None Include="Resources\iconfont-10.png" />
     <None Include="Resources\iconfont-101.png" />
     <None Include="Resources\提交成功1.png" />
+    <None Include="Resources\添加图片%281%29.png" />
+    <None Include="Resources\删除%281%29.png" />
     <Content Include="unweight.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
