@@ -41,7 +41,7 @@ namespace Youli_Data_Share
                     if (column is DataGridViewButtonColumn)//判断是否为按键列
                     {
                        // filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + "AC-0109-04"+ ".png";
-                        filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\"+ dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()+".png";
+                        filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\"+ dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()+".png";
                         Process m_Process = null;
                         m_Process = new Process();
                         m_Process.StartInfo.FileName = @filePath;
@@ -119,6 +119,7 @@ namespace Youli_Data_Share
                 string lim_user11 = INIHelper.Read("user1", "11", "0", filePath);
                 string lim_user12 = INIHelper.Read("user1", "12", "0", filePath);
                 string lim_user13 = INIHelper.Read("user1", "13", "0", filePath);
+                string lim_user14 = INIHelper.Read("user1", "14", "0", filePath);
                 notifyIcon1.ShowBalloonTip(1000, "权限提示：", "您好<"+ name1 + ">:\r\n已为您开通权限", ToolTipIcon.Info);
                 #region user1权限判断
                 if (lim_user1 == "1")
@@ -191,6 +192,7 @@ namespace Youli_Data_Share
                 string lim_user11 = INIHelper.Read("user2", "11", "0", filePath);
                 string lim_user12 = INIHelper.Read("user2", "12", "0", filePath);
                 string lim_user13 = INIHelper.Read("user2", "13", "0", filePath);
+                string lim_user14 = INIHelper.Read("user2", "14", "0", filePath);
                 notifyIcon1.ShowBalloonTip(1000, "权限提示：", "您好<" + name1 + ">:\r\n已为您开通权限", ToolTipIcon.Info);
                 #region user1权限判断
                 if (lim_user1 == "1")
@@ -263,6 +265,7 @@ namespace Youli_Data_Share
                 string lim_user11 = INIHelper.Read("user3", "11", "0", filePath);
                 string lim_user12 = INIHelper.Read("user3", "12", "0", filePath);
                 string lim_user13 = INIHelper.Read("user3", "13", "0", filePath);
+                string lim_user14 = INIHelper.Read("user3", "14", "0", filePath);
                 notifyIcon1.ShowBalloonTip(1000, "权限提示：", "您好<" + name1 + ">:\r\n已为您开通权限", ToolTipIcon.Info);
                 #region user1权限判断
                 if (lim_user1 == "1")
@@ -336,6 +339,7 @@ namespace Youli_Data_Share
                 string lim_user11 = INIHelper.Read("user4", "11", "0", filePath);
                 string lim_user12 = INIHelper.Read("user4", "12", "0", filePath);
                 string lim_user13 = INIHelper.Read("user4", "13", "0", filePath);
+                string lim_user14 = INIHelper.Read("user4", "14", "0", filePath);
                 notifyIcon1.ShowBalloonTip(1000, "权限提示：", "您好<" + name1 + ">:\r\n已为您开通权限", ToolTipIcon.Info);
                 #region user1权限判断
                 if (lim_user1 == "1")
@@ -408,6 +412,7 @@ namespace Youli_Data_Share
                 string lim_user11 = INIHelper.Read("user5", "11", "0", filePath);
                 string lim_user12 = INIHelper.Read("user5", "12", "0", filePath);
                 string lim_user13 = INIHelper.Read("user5", "13", "0", filePath);
+                string lim_user14 = INIHelper.Read("user5", "14", "0", filePath);
                 notifyIcon1.ShowBalloonTip(1000, "权限提示：", "您好<" + name1 + ">:\r\n已为您开通权限", ToolTipIcon.Info);
                 #region user1权限判断
                 if (lim_user1 == "1")
@@ -480,6 +485,7 @@ namespace Youli_Data_Share
                 string lim_user11 = INIHelper.Read("user6", "11", "0", filePath);
                 string lim_user12 = INIHelper.Read("user6", "12", "0", filePath);
                 string lim_user13 = INIHelper.Read("user6", "13", "0", filePath);
+                string lim_user14 = INIHelper.Read("user6", "14", "0", filePath);
                 notifyIcon1.ShowBalloonTip(1000, "权限提示：", "您好<" + name1 + ">:\r\n已为您开通权限", ToolTipIcon.Info);
                 #region user1权限判断
                 if (lim_user1 == "1")
@@ -552,6 +558,7 @@ namespace Youli_Data_Share
                 string lim_user11 = INIHelper.Read("user7", "11", "0", filePath);
                 string lim_user12 = INIHelper.Read("user7", "12", "0", filePath);
                 string lim_user13 = INIHelper.Read("user7", "13", "0", filePath);
+                string lim_user14 = INIHelper.Read("user7", "14", "0", filePath);
                 notifyIcon1.ShowBalloonTip(1000, "权限提示：", "您好<" + name1 + ">:\r\n已为您开通权限", ToolTipIcon.Info);
                 #region user1权限判断
                 if (lim_user1 == "1")
@@ -814,15 +821,59 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
   private void button1_Click(object sender, EventArgs e)
   {
+
       try
        {
+           string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+           string user1 = INIHelper.Read("account", "1", "0", filePath);
+           string user2 = INIHelper.Read("account", "2", "0", filePath);
+           string user3 = INIHelper.Read("account", "3", "0", filePath);
+           string user4 = INIHelper.Read("account", "4", "0", filePath);
+           string user5 = INIHelper.Read("account", "5", "0", filePath);
+           string user6 = INIHelper.Read("account", "6", "0", filePath);
+           string user7 = INIHelper.Read("account", "7", "0", filePath);
+
+           string b = Dns.GetHostName();
       DataTable changeDt = dt.GetChanges();
       foreach (DataRow dr in changeDt.Rows)
       {
           string strSQL = string.Empty;
           if (dr.RowState == System.Data.DataRowState.Added)//添加
           {
-              strSQL = @"INSERT INTO [dbo].[wlxq02]
+              if (b == user1) //胡连年 user1
+              {
+                  strSQL = @"INSERT INTO [dbo].[wlxq02]
+                                           ([时序]
+                                           ,[制令单号]
+                                           ,[产品编码]
+                                           ,[产品名称]
+                                           ,[数量]
+                                           ,[Bom需要更改记录]
+                                           ,[BOM更改操作]
+                                           ,[已截屏]
+                                           ,[厂制发料]
+                                           ,[包装材料确认]
+                                           ,[需求提交]
+                                           ,[客户需求变更]
+                                           ,[厂制发料变更])
+                                     VALUES
+                                           ('" + "[" + DateTime.Now.ToString() + "]" + @"'
+                                           ,'" + dr["制令单号"].ToString() + @"'
+                                           ,'" + dr["产品编码"].ToString() + @"'
+                                           ,'" + dr["产品名称"].ToString() + @"'
+                                           ,'" + dr["数量"].ToString() + @"'
+                                           ,'" + dr["Bom需要更改记录"].ToString() + @"'
+                                           ,'" + dr["BOM更改操作"].ToString() + @"'
+                                           ,'" + dr["已截屏"].ToString() + @"'
+                                           ,'" + dr["厂制发料"].ToString() + @"'
+                                           ,'" + dr["包装材料确认"].ToString() + @"'
+                                           ,'" + dr["需求提交"].ToString() + @"'
+                                           ,'" + dr["客户需求变更"].ToString() + @"'
+                                           ,'" + dr["厂制发料变更"].ToString() + @"') ";
+              }
+              else
+              {
+                                strSQL = @"INSERT INTO [dbo].[wlxq02]
                                            ([制令单号]
                                            ,[产品编码]
                                            ,[产品名称]
@@ -848,6 +899,9 @@ namespace Youli_Data_Share
                                            ,'" + dr["需求提交"].ToString() + @"'
                                            ,'" + dr["客户需求变更"].ToString() + @"'
                                            ,'" + dr["厂制发料变更"].ToString() + @"') ";
+                
+          }
+
 
           }
           else if (dr.RowState == System.Data.DataRowState.Deleted)//删除
@@ -859,17 +913,6 @@ namespace Youli_Data_Share
           else if (dr.RowState == System.Data.DataRowState.Modified)//修改
           {
               #region 高超 王庆青 严经理 陈蓉更改 时间记录
-              string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
-              string user1 = INIHelper.Read("account", "1", "0", filePath);
-              string user2 = INIHelper.Read("account", "2", "0", filePath);
-              string user3 = INIHelper.Read("account", "3", "0", filePath);
-              string user4 = INIHelper.Read("account", "4", "0", filePath);
-              string user5 = INIHelper.Read("account", "5", "0", filePath);
-              string user6 = INIHelper.Read("account", "6", "0", filePath);
-              string user7 = INIHelper.Read("account", "7", "0", filePath);
-
-              string b = Dns.GetHostName();
-
               if (b == user4) //高超 user4
               {
                   strSQL = @"UPDATE [dbo].[wlxq02]

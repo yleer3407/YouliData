@@ -498,7 +498,8 @@ namespace Youli_Data_Share
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)//升级日志
         {
 
-            MessageBox.Show("\r\n版本1.0.0.33 data 2020.04.22 >>update：\r\n\t\t1.产品问题栏-实现图片添加功能" + 
+            MessageBox.Show("\r\n版本1.0.0.34 data 2020.04.23 >>update：\r\n\t\t1.订单bom表格添加时序" + 
+                "\r\n版本1.0.0.33 data 2020.04.22 >>update：\r\n\t\t1.产品问题栏-实现图片添加功能" + 
                 "\r\n版本1.0.0.32 data 2020.04.21 >>update：\r\n\t\t1.订单bom表格推出2.0" + 
                 "\r\n版本1.0.0.30 data 2020.04.18 >>update：\r\n\t\t1.修改产品问题数据库对应" + 
                 "\r\n版本1.0.0.29 data 2020.04.18 >>update：\r\n\t\t1.添加产品问题注释" + 
