@@ -53,6 +53,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -113,7 +114,8 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(457, 25);
@@ -231,6 +233,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -240,6 +243,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox3
             // 
@@ -249,6 +253,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox4
             // 
@@ -258,6 +263,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox5
             // 
@@ -267,6 +273,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox6
             // 
@@ -276,6 +283,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // toolStripButton1
             // 
@@ -296,6 +304,16 @@
             this.toolStripButton2.Text = "删除图片";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::Youli_Data_Share.Properties.Resources.add_folder_66_727030625832px_1232041_easyicon3;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButton3.Text = "添加附件";
+            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click_1);
             // 
             // Sign
             // 
@@ -351,6 +369,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
 
 
     }

@@ -113,6 +113,16 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_folder_66_727030625832px_1232041_easyicon3 {
+            get {
+                object obj = ResourceManager.GetObject("add_folder_66.727030625832px_1232041_easyicon3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backgound {
             get {
                 object obj = ResourceManager.GetObject("backgound", resourceCulture);
