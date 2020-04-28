@@ -174,6 +174,10 @@ namespace Youli_Data_Share
                 {
                     dataGridView1.Columns[12].ReadOnly = true;
                 }
+                if (lim_user14 == "1")
+                {
+                    dataGridView1.Columns[13].ReadOnly = true;
+                }
                 #endregion
             }
             else if (b == user2) // 王庆青 5、6、12
@@ -247,6 +251,10 @@ namespace Youli_Data_Share
                 {
                     dataGridView1.Columns[12].ReadOnly = true;
                 }
+                if (lim_user14 == "1")
+                {
+                    dataGridView1.Columns[13].ReadOnly = true;
+                }
                 #endregion
             }
             else if (b == user3) // 叶磊 7 10 11
@@ -319,6 +327,10 @@ namespace Youli_Data_Share
                 if (lim_user13 == "1")
                 {
                     dataGridView1.Columns[12].ReadOnly = true;
+                }
+                if (lim_user14 == "1")
+                {
+                    dataGridView1.Columns[13].ReadOnly = true;
                 }
                 #endregion
 
@@ -394,6 +406,10 @@ namespace Youli_Data_Share
                 {
                     dataGridView1.Columns[12].ReadOnly = true;
                 }
+                if (lim_user14 == "1")
+                {
+                    dataGridView1.Columns[13].ReadOnly = true;
+                }
                 #endregion
             }
             else if (b == user5) // 
@@ -466,6 +482,10 @@ namespace Youli_Data_Share
                 if (lim_user13 == "1")
                 {
                     dataGridView1.Columns[12].ReadOnly = true;
+                }
+                if (lim_user14 == "1")
+                {
+                    dataGridView1.Columns[13].ReadOnly = true;
                 }
                 #endregion
             }
@@ -540,6 +560,10 @@ namespace Youli_Data_Share
                 {
                     dataGridView1.Columns[12].ReadOnly = true;
                 }
+                if (lim_user14 == "1")
+                {
+                    dataGridView1.Columns[13].ReadOnly = true;
+                }
                 #endregion
             }
             else if (b == user7) 
@@ -612,6 +636,10 @@ namespace Youli_Data_Share
                 if (lim_user13 == "1")
                 {
                     dataGridView1.Columns[12].ReadOnly = true;
+                }
+                if (lim_user14 == "1")
+                {
+                    dataGridView1.Columns[13].ReadOnly = true;
                 }
                 #endregion
             }
