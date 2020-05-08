@@ -295,7 +295,7 @@ namespace Youli_Data_Share
         {
             notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
             #region 测试ping
-            string ipStr = "YL-01010101";
+            string ipStr = "NQSRSUXS2GWHMON";
             Ping pingSender = new Ping();
             string data = "ping test data";
             byte[] buf = Encoding.ASCII.GetBytes(data);
@@ -497,28 +497,29 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)//升级日志
         {
-
-            MessageBox.Show("\r\n版本1.0.0.37 data 2020.04.27 >>update：\r\n\t\t1.订单bom bug修复 厂制发料备注框权限修复" + 
-                "\r\n版本1.0.0.36 data 2020.04.23 >>update：\r\n\t\t1.产品问题添加附件" + 
-                "\r\n版本1.0.0.35 data 2020.04.23 >>update：\r\n\t\t1.产品问题栏-实现图片添加功能02\r\n\t\t2.实现图片点击外部打开" + 
-                "\r\n版本1.0.0.34 data 2020.04.23 >>update：\r\n\t\t1.订单bom表格添加时序" + 
-                "\r\n版本1.0.0.33 data 2020.04.22 >>update：\r\n\t\t1.产品问题栏-实现图片添加功能" + 
-                "\r\n版本1.0.0.32 data 2020.04.21 >>update：\r\n\t\t1.订单bom表格推出2.0" + 
-                "\r\n版本1.0.0.30 data 2020.04.18 >>update：\r\n\t\t1.修改产品问题数据库对应" + 
-                "\r\n版本1.0.0.29 data 2020.04.18 >>update：\r\n\t\t1.添加产品问题注释" + 
-                "\r\n版本1.0.0.28 data 2020.04.18 >>update：\r\n\t\t1.修改主窗体界面\r\n\t\t2.添加产品问题窗口" + 
-                "\r\n版本1.0.0.26 data 2020.03.05 >>update：\r\n\t\t1.整理窗口路径&变量赋值方式" + 
-                "\r\n版本1.0.0.25 data 2020.03.05 >>update：\r\n\t\t1.订单排程添加序号列\r\n\t\t2.订单排程添加滚动功能" + 
-                "\r\n版本1.0.0.24 data 2020.02.27 >>update：\r\n\t\t1.基础资料路径改到工程部服务器端\r\n\t\t2.添加窗口圆角" + 
-                "\r\n版本1.0.0.23 data 2020.02.19 >>update：\r\n\t\t1.修改订单排程选定模式造成的BUG\r\n\t\t2.更新图标" + 
-                                "\r\n版本1.0.0.22 data 2020.01.15 >>update：\r\n\t\t1.添加更新检测" + 
-                               "\r\n版本1.0.0.21 data 2020.01.15 >>update：\r\n\t\t1.解决托盘下标不释放" +
-                              "\r\n版本1.0.0.20 data 2020.01.15 >>update：\r\n\t\t1.更改订单排程数据库地址\r\n\t\t2.更改订单排程edit单击\r\n\t\t3.更改订单排程权限" +
-                               "\r\n版本1.0.0.19 data 2020.01.13 >>update：\r\n\t\t1.订单BOM确认解决多次操作多次弹窗提示" + 
-                               "\r\n版本1.0.0.18 data 2020.01.13 >>update：\r\n\t\t1.订单BOM确认更改窗口自适应" + 
-                               "\r\n版本1.0.0.17 data 2020.01.13 >>update：\r\n\t\t1.订单排程-->订单BOM确认\r\n\t\t2.增加未结单、已结单按钮" + 
-                               "\r\n版本1.0.0.17 data 2020.01.13 >>update：\r\n\t\t1.订单排程-->订单BOM确认\r\n\t\t2.增加未结单、已结单按钮" + 
-                               "\r\n版本1.0.0.16 data 2020.01.12 >>update：\r\n\t\t1.添加订单排程窗口\r\n\t\t2.增加Ping检测");
+            update update1 = new update();
+            update1.ShowDialog();
+            //MessageBox.Show("\r\n版本1.0.0.37 data 2020.04.27 >>update：\r\n\t\t1.订单bom bug修复 厂制发料备注框权限修复" + 
+            //    "\r\n版本1.0.0.36 data 2020.04.23 >>update：\r\n\t\t1.产品问题添加附件" + 
+            //    "\r\n版本1.0.0.35 data 2020.04.23 >>update：\r\n\t\t1.产品问题栏-实现图片添加功能02\r\n\t\t2.实现图片点击外部打开" + 
+            //    "\r\n版本1.0.0.34 data 2020.04.23 >>update：\r\n\t\t1.订单bom表格添加时序" + 
+            //    "\r\n版本1.0.0.33 data 2020.04.22 >>update：\r\n\t\t1.产品问题栏-实现图片添加功能" + 
+            //    "\r\n版本1.0.0.32 data 2020.04.21 >>update：\r\n\t\t1.订单bom表格推出2.0" + 
+            //    "\r\n版本1.0.0.30 data 2020.04.18 >>update：\r\n\t\t1.修改产品问题数据库对应" + 
+            //    "\r\n版本1.0.0.29 data 2020.04.18 >>update：\r\n\t\t1.添加产品问题注释" + 
+            //    "\r\n版本1.0.0.28 data 2020.04.18 >>update：\r\n\t\t1.修改主窗体界面\r\n\t\t2.添加产品问题窗口" + 
+            //    "\r\n版本1.0.0.26 data 2020.03.05 >>update：\r\n\t\t1.整理窗口路径&变量赋值方式" + 
+            //    "\r\n版本1.0.0.25 data 2020.03.05 >>update：\r\n\t\t1.订单排程添加序号列\r\n\t\t2.订单排程添加滚动功能" + 
+            //    "\r\n版本1.0.0.24 data 2020.02.27 >>update：\r\n\t\t1.基础资料路径改到工程部服务器端\r\n\t\t2.添加窗口圆角" + 
+            //    "\r\n版本1.0.0.23 data 2020.02.19 >>update：\r\n\t\t1.修改订单排程选定模式造成的BUG\r\n\t\t2.更新图标" + 
+            //                    "\r\n版本1.0.0.22 data 2020.01.15 >>update：\r\n\t\t1.添加更新检测" + 
+            //                   "\r\n版本1.0.0.21 data 2020.01.15 >>update：\r\n\t\t1.解决托盘下标不释放" +
+            //                  "\r\n版本1.0.0.20 data 2020.01.15 >>update：\r\n\t\t1.更改订单排程数据库地址\r\n\t\t2.更改订单排程edit单击\r\n\t\t3.更改订单排程权限" +
+            //                   "\r\n版本1.0.0.19 data 2020.01.13 >>update：\r\n\t\t1.订单BOM确认解决多次操作多次弹窗提示" + 
+            //                   "\r\n版本1.0.0.18 data 2020.01.13 >>update：\r\n\t\t1.订单BOM确认更改窗口自适应" + 
+            //                   "\r\n版本1.0.0.17 data 2020.01.13 >>update：\r\n\t\t1.订单排程-->订单BOM确认\r\n\t\t2.增加未结单、已结单按钮" + 
+            //                   "\r\n版本1.0.0.17 data 2020.01.13 >>update：\r\n\t\t1.订单排程-->订单BOM确认\r\n\t\t2.增加未结单、已结单按钮" + 
+            //                   "\r\n版本1.0.0.16 data 2020.01.12 >>update：\r\n\t\t1.添加订单排程窗口\r\n\t\t2.增加Ping检测");
         }
         /// <summary>
         /// 工程问题记录

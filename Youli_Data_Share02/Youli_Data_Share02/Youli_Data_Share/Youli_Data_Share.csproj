@@ -27,7 +27,7 @@
     <InstallUrl>\\192.168.1.104\Youli_Server\</InstallUrl>
     <UpdateUrl>\\192.168.1.104\Youli_Server\</UpdateUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>38</ApplicationRevision>
+    <ApplicationRevision>39</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -130,6 +130,12 @@
     <Compile Include="Sign.Designer.cs">
       <DependentUpon>Sign.cs</DependentUpon>
     </Compile>
+    <Compile Include="update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update.Designer.cs">
+      <DependentUpon>update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Youli_dateDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sign.resx">
       <DependentUpon>Sign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update.resx">
+      <DependentUpon>update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="订单排程.resx">
       <DependentUpon>订单排程.cs</DependentUpon>

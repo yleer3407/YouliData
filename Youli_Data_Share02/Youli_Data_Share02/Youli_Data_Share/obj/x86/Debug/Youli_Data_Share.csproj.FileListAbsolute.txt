@@ -90,3 +90,4 @@ C:\Users\Administrator\Desktop\VSProject\YouliData\Youli_Data_Share02\Youli_Data
 C:\Users\Administrator\Desktop\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.Engineeringcharcs.resources
 C:\Users\Administrator\Desktop\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.Sign.resources
 C:\Users\Administrator\Desktop\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\bin\Debug\Youli_Data_Share.exe.config
+C:\Users\Administrator\Desktop\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.update.resources
