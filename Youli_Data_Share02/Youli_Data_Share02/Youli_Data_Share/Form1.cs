@@ -589,6 +589,11 @@ namespace Youli_Data_Share
             return path;
         }
         #endregion
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
         
     }
 }

@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.38 data 2020.5.08&gt;&gt;update:
+    <value>版本1.0.0.39 data 2020.5.1&gt;&gt;update:
+    1.订单排程表格选定颜色完善
+---------------------------------------------------------
+版本1.0.0.38 data 2020.5.08&gt;&gt;update:
     1.ERP基础资料窗口检测连接移至服务器端BUG修复
 ---------------------------------------------------------
 版本1.0.0.37 data 2020.4.27&gt;&gt;update:

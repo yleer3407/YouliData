@@ -73,6 +73,8 @@ namespace Youli_Data_Share
         private void Form4_Load(object sender, EventArgs e)
         {
             dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
             string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
 
             #region 创建INI文件
