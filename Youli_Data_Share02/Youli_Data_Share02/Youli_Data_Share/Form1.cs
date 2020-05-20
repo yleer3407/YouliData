@@ -208,25 +208,33 @@ namespace Youli_Data_Share
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            try
             {
-                
-
-                openFileDialog.InitialDirectory = @win1;
-                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-                openFileDialog.FilterIndex = 2;
-                openFileDialog.RestoreDirectory = true;
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    //Get the path of specified file
-                    filePath = openFileDialog.FileName;
-                   // MessageBox.Show(filePath, filename);
-                     Process m_Process = null;
-                     m_Process = new Process();
-                     m_Process.StartInfo.FileName = @filePath;
-                     m_Process.Start();
-                }
+                System.Diagnostics.Process.Start(win1);
             }
+            catch
+            {
+                MessageBox.Show("路径错误");
+            }
+            //using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            //{
+
+
+            //    openFileDialog.InitialDirectory = @win1;
+            //    openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            //    openFileDialog.FilterIndex = 2;
+            //    openFileDialog.RestoreDirectory = true;
+            //    if (openFileDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        //Get the path of specified file
+            //        filePath = openFileDialog.FileName;
+            //       // MessageBox.Show(filePath, filename);
+            //         Process m_Process = null;
+            //         m_Process = new Process();
+            //         m_Process.StartInfo.FileName = @filePath;
+            //         m_Process.Start();
+            //    }
+            //}
         }
         /// <summary>
         /// 王庆青 包装材料
@@ -266,25 +274,33 @@ namespace Youli_Data_Share
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            try
             {
-
-
-                openFileDialog.InitialDirectory = @win2;
-                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-                openFileDialog.FilterIndex = 2;
-                openFileDialog.RestoreDirectory = true;
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    //Get the path of specified file
-                    filePath = openFileDialog.FileName;
-                    // MessageBox.Show(filePath, filename);
-                    Process m_Process = null;
-                    m_Process = new Process();
-                    m_Process.StartInfo.FileName = @filePath;
-                    m_Process.Start();
-                }
+                System.Diagnostics.Process.Start(win2);
             }
+            catch
+            {
+                MessageBox.Show("路径错误");
+            }
+            //using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            //{
+
+
+            //    openFileDialog.InitialDirectory = @win2;
+            //    openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            //    openFileDialog.FilterIndex = 2;
+            //    openFileDialog.RestoreDirectory = true;
+            //    if (openFileDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        //Get the path of specified file
+            //        filePath = openFileDialog.FileName;
+            //        // MessageBox.Show(filePath, filename);
+            //        Process m_Process = null;
+            //        m_Process = new Process();
+            //        m_Process.StartInfo.FileName = @filePath;
+            //        m_Process.Start();
+            //    }
+            //}
         }
         /// <summary>
         /// 叶磊 ERP基础资料
@@ -324,25 +340,33 @@ namespace Youli_Data_Share
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            try
             {
-
-
-                openFileDialog.InitialDirectory = @win3;
-                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-                openFileDialog.FilterIndex = 2;
-                openFileDialog.RestoreDirectory = true;
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    //Get the path of specified file
-                    filePath = openFileDialog.FileName;
-                    // MessageBox.Show(filePath, filename);
-                    Process m_Process = null;
-                    m_Process = new Process();
-                    m_Process.StartInfo.FileName = @filePath;
-                    m_Process.Start();
-                }
+                System.Diagnostics.Process.Start(win3);
             }
+            catch
+            {
+                MessageBox.Show("路径错误");
+            }
+            //using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            //{
+
+
+            //    openFileDialog.InitialDirectory = @win3;
+            //    openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            //    openFileDialog.FilterIndex = 2;
+            //    openFileDialog.RestoreDirectory = true;
+            //    if (openFileDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        //Get the path of specified file
+            //        filePath = openFileDialog.FileName;
+            //        // MessageBox.Show(filePath, filename);
+            //        Process m_Process = null;
+            //        m_Process = new Process();
+            //        m_Process.StartInfo.FileName = @filePath;
+            //        m_Process.Start();
+            //    }
+            //}
         }
         /// <summary>
         /// QC 质检
@@ -383,25 +407,33 @@ namespace Youli_Data_Share
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            try
             {
-
-
-                openFileDialog.InitialDirectory = @win4;
-                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-                openFileDialog.FilterIndex = 2;
-                openFileDialog.RestoreDirectory = true;
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    //Get the path of specified file
-                    filePath = openFileDialog.FileName;
-                    // MessageBox.Show(filePath, filename);
-                    Process m_Process = null;
-                    m_Process = new Process();
-                    m_Process.StartInfo.FileName = @filePath;
-                    m_Process.Start();
-                }
+                System.Diagnostics.Process.Start(win4);
             }
+            catch
+            {
+                MessageBox.Show("路径错误");
+            }
+            //using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            //{
+
+
+            //    openFileDialog.InitialDirectory = @win4;
+            //    openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            //    openFileDialog.FilterIndex = 2;
+            //    openFileDialog.RestoreDirectory = true;
+            //    if (openFileDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        //Get the path of specified file
+            //        filePath = openFileDialog.FileName;
+            //        // MessageBox.Show(filePath, filename);
+            //        Process m_Process = null;
+            //        m_Process = new Process();
+            //        m_Process.StartInfo.FileName = @filePath;
+            //        m_Process.Start();
+            //    }
+            //}
         }
         /// <summary>
         /// 查会计 内部检查情况
@@ -441,25 +473,33 @@ namespace Youli_Data_Share
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            try
             {
-
-
-                openFileDialog.InitialDirectory = @win5;
-                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-                openFileDialog.FilterIndex = 2;
-                openFileDialog.RestoreDirectory = true;
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    //Get the path of specified file
-                    filePath = openFileDialog.FileName;
-                    // MessageBox.Show(filePath, filename);
-                    Process m_Process = null;
-                    m_Process = new Process();
-                    m_Process.StartInfo.FileName = @filePath;
-                    m_Process.Start();
-                }
+                System.Diagnostics.Process.Start(win5);
             }
+            catch
+            {
+                MessageBox.Show("路径错误");
+            }
+            //using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            //{
+
+
+            //    openFileDialog.InitialDirectory = @win5;
+            //    openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            //    openFileDialog.FilterIndex = 2;
+            //    openFileDialog.RestoreDirectory = true;
+            //    if (openFileDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        //Get the path of specified file
+            //        filePath = openFileDialog.FileName;
+            //        // MessageBox.Show(filePath, filename);
+            //        Process m_Process = null;
+            //        m_Process = new Process();
+            //        m_Process.StartInfo.FileName = @filePath;
+            //        m_Process.Start();
+            //    }
+            //}
         }
         /// <summary>
         /// 订单排程

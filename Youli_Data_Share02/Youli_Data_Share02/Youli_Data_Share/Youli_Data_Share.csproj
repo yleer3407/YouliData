@@ -27,7 +27,7 @@
     <InstallUrl>\\192.168.1.104\Youli_Server\</InstallUrl>
     <UpdateUrl>\\192.168.1.104\Youli_Server\</UpdateUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>40</ApplicationRevision>
+    <ApplicationRevision>44</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -267,6 +267,7 @@
     <None Include="Resources\添加图片%281%29.png" />
     <None Include="Resources\删除%281%29.png" />
     <None Include="Resources\add_folder_66.727030625832px_1232041_easyicon.net3.png" />
+    <None Include="Resources\add_30px.png" />
     <Content Include="unweight.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

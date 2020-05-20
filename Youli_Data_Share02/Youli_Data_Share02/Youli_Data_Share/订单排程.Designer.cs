@@ -45,6 +45,7 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.未厂发ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.已厂发ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -121,6 +122,7 @@
             this.toolStripTextBox1,
             this.toolStripButton1,
             this.toolStripDropDownButton1,
+            this.toolStripButton2,
             this.toolStripSeparator3,
             this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(3, 17);
@@ -172,6 +174,15 @@
             this.已厂发ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.已厂发ToolStripMenuItem.Text = "已厂发";
             this.已厂发ToolStripMenuItem.Click += new System.EventHandler(this.已厂发ToolStripMenuItem_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::Youli_Data_Share.Properties.Resources.add_30px;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(76, 26);
+            this.toolStripButton2.Text = "添加数据";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click_1);
             // 
             // toolStripSeparator3
             // 
@@ -250,7 +261,7 @@
             this.Column14.Name = "Column14";
             this.Column14.ReadOnly = true;
             this.Column14.ToolTipText = "指令单号下单时间";
-            this.Column14.Width = 25;
+            this.Column14.Width = 80;
             // 
             // Column1
             // 
@@ -475,5 +486,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

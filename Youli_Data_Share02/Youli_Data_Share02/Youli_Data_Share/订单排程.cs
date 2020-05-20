@@ -73,10 +73,9 @@ namespace Youli_Data_Share
         private void Form4_Load(object sender, EventArgs e)
         {
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;
             string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
-
             #region 创建INI文件
            // File.Create(filePath);
             #endregion
@@ -737,6 +736,7 @@ namespace Youli_Data_Share
       //dataGridView1.DataMember = "wlxq";
       dt = ds.Tables["wlxq02"];
       dataGridView1.DataSource = dt.DefaultView;
+            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
   }
         /// <summary>
         /// 未厂发
@@ -887,7 +887,7 @@ namespace Youli_Data_Share
                                            ,[客户需求变更]
                                            ,[厂制发料变更])
                                      VALUES
-                                           ('" + "[" + DateTime.Now.ToString() + "]" + @"'
+                                           ('" + "[" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "]" + @"'
                                            ,'" + dr["制令单号"].ToString() + @"'
                                            ,'" + dr["产品编码"].ToString() + @"'
                                            ,'" + dr["产品名称"].ToString() + @"'
@@ -948,7 +948,7 @@ namespace Youli_Data_Share
                   strSQL = @"UPDATE [dbo].[wlxq02]
                                    SET [产品名称] = '" + dr["产品名称"].ToString() + @"'
                                    ,[数量] = '" + dr["数量"].ToString() + @"'
-                                   ,[Bom需要更改记录] = '" + dr["Bom需要更改记录"].ToString() + "[" + DateTime.Now.ToString() + "]" + @"'
+                                   ,[Bom需要更改记录] = '" + "[" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "]" + dr["Bom需要更改记录"].ToString() + @"'
                                    ,[BOM更改操作] = '" + dr["BOM更改操作"].ToString() + @"'
                                    ,[已截屏] = '" + dr["已截屏"].ToString() + @"'
                                    ,[厂制发料] = '" + dr["厂制发料"].ToString() + @"'
@@ -968,7 +968,7 @@ namespace Youli_Data_Share
                                    ,[BOM更改操作] = '" + dr["BOM更改操作"].ToString() + @"'
                                    ,[已截屏] = '" + dr["已截屏"].ToString() + @"'
                                    ,[厂制发料] = '" + dr["厂制发料"].ToString() + @"'
-                                   ,[包装材料确认] = '" + dr["包装材料确认"].ToString() + "[" + DateTime.Now.ToString() + "]" + @"'
+                                   ,[包装材料确认] = '" + "[" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "]"+dr["包装材料确认"].ToString() + @"'
                                    ,[需求提交] = '" + dr["需求提交"].ToString() + @"'
                                    ,[客户需求变更] = '" + dr["客户需求变更"].ToString()  + @"'
                                    ,[厂制发料变更] = '" + dr["厂制发料变更"].ToString() + @"'
@@ -986,7 +986,7 @@ namespace Youli_Data_Share
                                    ,[厂制发料] = '" + dr["厂制发料"].ToString() + @"'
                                    ,[包装材料确认] = '" + dr["包装材料确认"].ToString() + @"'
                                    ,[需求提交] = '" + dr["需求提交"].ToString() + @"'
-                                   ,[客户需求变更] = '" + dr["客户需求变更"].ToString() + "[" + DateTime.Now.ToString() + "]" + @"'
+                                   ,[客户需求变更] = '" + "[" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "]" + dr["客户需求变更"].ToString() + @"'
                                    ,[厂制发料变更] = '" + dr["厂制发料变更"].ToString() + @"'
                                WHERE 制令单号 = '" + dr["制令单号"].ToString() + @"' 
                                     AND 产品编码= '" + dr["产品编码"].ToString() + "'";
@@ -1003,7 +1003,7 @@ namespace Youli_Data_Share
                                    ,[包装材料确认] = '" + dr["包装材料确认"].ToString() + @"'
                                    ,[需求提交] = '" + dr["需求提交"].ToString() + @"'
                                    ,[客户需求变更] = '" + dr["客户需求变更"].ToString() + @"'
-                                   ,[厂制发料变更] = '" + dr["厂制发料变更"].ToString() + "[" + DateTime.Now.ToString() + "]" + @"'
+                                   ,[厂制发料变更] = '" + "[" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "]" + dr["厂制发料变更"].ToString() +  @"'
                                WHERE 制令单号 = '" + dr["制令单号"].ToString() + @"' 
                                     AND 产品编码= '" + dr["产品编码"].ToString() + "'";
               }
@@ -1019,7 +1019,7 @@ namespace Youli_Data_Share
                                    ,[包装材料确认] = '" + dr["包装材料确认"].ToString() + @"'
                                    ,[需求提交] = '" + dr["需求提交"].ToString() + @"'
                                    ,[客户需求变更] = '" + dr["客户需求变更"].ToString() + @"'
-                                   ,[厂制发料变更] = '" + dr["厂制发料变更"].ToString() + @"'
+                                  ,[厂制发料变更] = '"+ dr["厂制发料变更"].ToString() + @"'
                                WHERE 制令单号 = '" + dr["制令单号"].ToString() + @"' 
                                     AND 产品编码= '" + dr["产品编码"].ToString() + "'";
               }
@@ -1056,6 +1056,20 @@ namespace Youli_Data_Share
           MessageBox.Show("提示：没有发生修改操作 ");
       }
   }
+        /// <summary>
+        /// 添加行
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton2_Click_1(object sender, EventArgs e)
+        {
+            //DataRow dr = dt.NewRow();
+            //int index = dataGridView1.RowCount == 0?0 : dataGridView1.CurrentRow.Index + 1;
+            ////dt.Rows.InsertAt(dr, index);
+            //dataGridView1.Rows.Insert(0, new DataGridViewRow());
+            ////dataGridView1.Rows[index].HeaderCell.Value = "NewRow";
+            MessageBox.Show("测试功能中 暂不开放");
+        }
 
     }
 }
