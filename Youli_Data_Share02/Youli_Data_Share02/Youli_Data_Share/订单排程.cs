@@ -864,7 +864,8 @@ namespace Youli_Data_Share
            string user7 = INIHelper.Read("account", "7", "0", filePath);
 
            string b = Dns.GetHostName();
-      DataTable changeDt = dt.GetChanges();
+            DataTable changeDt = dt.GetChanges();
+        
       foreach (DataRow dr in changeDt.Rows)
       {
           string strSQL = string.Empty;
@@ -1029,29 +1030,29 @@ namespace Youli_Data_Share
           SqlCommand comm = new SqlCommand(strSQL, conn);
           comm.ExecuteNonQuery();
       }
-      MessageBox.Show("已提交成功");
-      //#region  提交后进行未完成表单刷新
-      //SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-      //scsb.DataSource = "192.168.1.104";
-      //scsb.UserID = "sa";
-      //scsb.Password = "yelei193";
-      //scsb.InitialCatalog = "Youli_date";
+                MessageBox.Show("已提交成功");
+                #region  提交后进行未完成表单刷新
+                //SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
+                //scsb.DataSource = "192.168.1.104";
+                //scsb.UserID = "sa";
+                //scsb.Password = "yelei193";
+                //scsb.InitialCatalog = "Youli_date";
 
-      //conn = new SqlConnection(scsb.ToString());
-      //if (conn.State == System.Data.ConnectionState.Closed)
-      //    conn.Open();
-      //string strSQL01 = "select * from wlxq02 WHERE 厂制发料 LIKE '%0%'";
-      //SqlDataAdapter da = new SqlDataAdapter(strSQL01, conn);
-      //DataSet ds = new DataSet();
-      //da.Fill(ds, "wlxq02");
+                //conn = new SqlConnection(scsb.ToString());
+                if (conn.State == System.Data.ConnectionState.Closed)
+                    conn.Open();
+                string strSQL1 = "select * from wlxq02";
+                SqlDataAdapter da = new SqlDataAdapter(strSQL1, conn);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "wlxq02");
 
-      ////dataGridView1.DataSource = ds;
-      ////dataGridView1.DataMember = "wlxq";
-      //dt = ds.Tables["wlxq02"];
-      //dataGridView1.DataSource = dt.DefaultView;
-      //#endregion
-      }
-      catch
+                //dataGridView1.DataSource = ds;
+                //dataGridView1.DataMember = "wlxq";
+                dt = ds.Tables["wlxq02"];
+                dataGridView1.DataSource = dt.DefaultView;
+                #endregion
+            }
+            catch
       {
           MessageBox.Show("提示：没有发生修改操作 ");
       }
