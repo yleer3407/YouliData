@@ -50,7 +50,7 @@ namespace Youli_Data_Share
             #endregion
             string vss = INIHelper.Read("version", "1", "0", filePath);
             string vss_from1 = linkLabel1.Text;
-            label5.Text = "当前版本号：" + vss_from1 + "\r\n重新打开更新至："+vss;
+            label5.Text = "检查到新版本："+vss+"\r\n为了更好的体验，请重新打开进行自动更新。";
             if (vss == vss_from1)
             {
                 label5.Visible = false;
@@ -135,8 +135,9 @@ namespace Youli_Data_Share
             {
                 if (PM == "yl123456")
                 {
-                    Form2 form2 = new Form2();
-                    form2.ShowDialog();
+                    System.Diagnostics.Process.Start(@"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini");
+                    //Form2 form2 = new Form2();
+                    //form2.ShowDialog();
                 }
                 else
                 {
@@ -181,11 +182,14 @@ namespace Youli_Data_Share
             string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
             string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
             string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
-            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
+            string win3 = INIHelper.Read("window", "3", "0", filePath1);//服务器窗口
             string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
             string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
             #region 测试ping
-            string ipStr = "Youli-pc";
+            int index = win1.IndexOf("\\",3);
+            string ipStr = win1.Substring(2, index - 2);
+            //MessageBox.Show(ipStr);
+            //string ipStr = "Youli-pc";
             Ping pingSender = new Ping();
             string data = "ping test data";
             byte[] buf = Encoding.ASCII.GetBytes(data);
@@ -204,7 +208,7 @@ namespace Youli_Data_Share
                 MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
                 return;
             }
-            #endregion
+#endregion
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
@@ -243,9 +247,18 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)//窗口2：包装材料
         {
+            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+            string win3 = INIHelper.Read("window", "3", "0", filePath1);//服务器窗口
+            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
             notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
             #region 测试ping
-            string ipStr = "Ms-20171213flwd";
+            int index = win2.IndexOf("\\", 3);
+            string ipStr = win2.Substring(2, index - 2);
+           // MessageBox.Show(ipStr);
+           // string ipStr = "Ms-20171213flwd";
             Ping pingSender = new Ping();
             string data = "ping test data";
             byte[] buf = Encoding.ASCII.GetBytes(data);
@@ -264,13 +277,8 @@ namespace Youli_Data_Share
                 MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
                 return;
             }
-            #endregion
-            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
-            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
-            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
-            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
-            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
-            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
+#endregion
+
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
@@ -309,9 +317,17 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)//窗口3：材料资料
         {
+            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+            string win3 = INIHelper.Read("window", "3", "0", filePath1);//服务器窗口
+            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
             notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
             #region 测试ping
-            string ipStr = "NQSRSUXS2GWHMON";
+            int index = win3.IndexOf("\\", 3);
+            string ipStr = win3.Substring(2, index - 2);
+            //string ipStr = "NQSRSUXS2GWHMON";
             Ping pingSender = new Ping();
             string data = "ping test data";
             byte[] buf = Encoding.ASCII.GetBytes(data);
@@ -330,13 +346,8 @@ namespace Youli_Data_Share
                 MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
                 return;
             }
-            #endregion
-            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
-            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
-            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
-            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
-            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
-            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
+#endregion
+
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
@@ -375,10 +386,17 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)//窗口4：QC质检
         {
-
+            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
+            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
             notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
             #region 测试ping
-            string ipStr = "Pc-201910071521";
+            int index = win4.IndexOf("\\", 3);
+            string ipStr = win4.Substring(2, index - 2);
+            //string ipStr = "Pc-201910071521";
             Ping pingSender = new Ping();
             string data = "ping test data";
             byte[] buf = Encoding.ASCII.GetBytes(data);
@@ -397,13 +415,8 @@ namespace Youli_Data_Share
                 MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
                 return;
             }
-            #endregion
-            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
-            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
-            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
-            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
-            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
-            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
+#endregion
+
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
@@ -442,9 +455,17 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)//窗口5：内部检查
         {
+            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
+            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
             notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
             #region 测试ping
-            string ipStr = "LENOVO-PC";
+            int index = win5.IndexOf("\\", 3);
+            string ipStr = win5.Substring(2, index - 2);
+            //string ipStr = "LENOVO-PC";
             Ping pingSender = new Ping();
             string data = "ping test data";
             byte[] buf = Encoding.ASCII.GetBytes(data);
@@ -463,13 +484,8 @@ namespace Youli_Data_Share
                 MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
                 return;
             }
-            #endregion
-            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
-            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
-            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
-            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
-            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
-            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
+#endregion
+
             var fileContent = string.Empty;
             var filePath = string.Empty;
             var filename = string.Empty;
@@ -581,7 +597,7 @@ namespace Youli_Data_Share
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        #region 窗体圆角的实现
+#region 窗体圆角的实现
         private void Form1_Resize(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
@@ -628,7 +644,7 @@ namespace Youli_Data_Share
             path.CloseFigure();
             return path;
         }
-        #endregion
+#endregion
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {

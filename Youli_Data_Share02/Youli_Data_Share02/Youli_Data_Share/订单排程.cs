@@ -650,6 +650,27 @@ namespace Youli_Data_Share
                 dataGridView1.ReadOnly = true;
             }
             #endregion
+            #region 主动查询
+            SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
+            scsb.DataSource = "192.168.1.104";
+            scsb.UserID = "sa";
+            scsb.Password = "yelei193";
+            scsb.InitialCatalog = "Youli_date";
+
+            conn = new SqlConnection(scsb.ToString());
+            if (conn.State == System.Data.ConnectionState.Closed)
+                conn.Open();
+            string strSQL = "select * from wlxq02 WHERE 制令单号 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 产品编码 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 产品名称 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or Bom需要更改记录 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
+            SqlDataAdapter da = new SqlDataAdapter(strSQL, conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "wlxq02");
+
+            //dataGridView1.DataSource = ds;
+            //dataGridView1.DataMember = "wlxq";
+            dt = ds.Tables["wlxq02"];
+            dataGridView1.DataSource = dt.DefaultView;
+            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
+            #endregion
         }
 
 

@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.44 data 2020.5.20&gt;&gt;update:
+    <value>版本1.0.0.45 data 2020.5.22&gt;&gt;update:
+    1.窗体路径、ping全部整理关联至sys.ini配件文件。
+---------------------------------------------------------
+版本1.0.0.44 data 2020.5.20&gt;&gt;update:
     1.订单排程提交后从新读取数据
 ---------------------------------------------------------
 版本1.0.0.43 data 2020.5.20&gt;&gt;update:
