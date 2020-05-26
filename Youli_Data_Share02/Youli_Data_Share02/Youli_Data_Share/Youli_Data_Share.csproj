@@ -141,6 +141,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Youli_dateDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Youli_dateDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Youli_dateDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="订单排程.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +203,17 @@
     </None>
     <None Include="Youli_dateDataSet.xss">
       <DependentUpon>Youli_dateDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Youli_dateDataSet1.xsc">
+      <DependentUpon>Youli_dateDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Youli_dateDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Youli_dateDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Youli_dateDataSet1.xss">
+      <DependentUpon>Youli_dateDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -268,6 +284,8 @@
     <None Include="Resources\删除%281%29.png" />
     <None Include="Resources\add_folder_66.727030625832px_1232041_easyicon.net3.png" />
     <None Include="Resources\add_30px.png" />
+    <None Include="Resources\查找1.png" />
+    <None Include="Resources\提交成功2.png" />
     <Content Include="unweight.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

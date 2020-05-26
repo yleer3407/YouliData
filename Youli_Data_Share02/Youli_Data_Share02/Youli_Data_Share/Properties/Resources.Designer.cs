@@ -463,6 +463,16 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 提交成功2 {
+            get {
+                object obj = ResourceManager.GetObject("提交成功2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 暂停 {
             get {
                 object obj = ResourceManager.GetObject("暂停", resourceCulture);
@@ -476,6 +486,16 @@ namespace Youli_Data_Share.Properties {
         internal static System.Drawing.Bitmap 查找 {
             get {
                 object obj = ResourceManager.GetObject("查找", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 查找1 {
+            get {
+                object obj = ResourceManager.GetObject("查找1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

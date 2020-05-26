@@ -241,8 +241,8 @@
             this.textBox4.Size = new System.Drawing.Size(719, 183);
             this.textBox4.TabIndex = 7;
             this.toolTip1.SetToolTip(this.textBox4, "填写格式提示：（时间1）01.xxxxxxxxxxxxxxxxxxx\r\n                                  02.xxxxxxxx" +
-                    "xxxxxxxxxxxxxxx\r\n                              (时间2)  03.xxxxxxxxxxxxxxxxxxxxxxx" +
-                    "");
+        "xxxxxxxxxxxxxxx\r\n                              (时间2)  03.xxxxxxxxxxxxxxxxxxxxxxx" +
+        "");
             // 
             // label4
             // 
@@ -262,8 +262,8 @@
             this.textBox3.Size = new System.Drawing.Size(719, 183);
             this.textBox3.TabIndex = 5;
             this.toolTip1.SetToolTip(this.textBox3, "填写格式提示：（时间1）01.xxxxxxxxxxxxxxxxxxx\r\n                                  02.xxxxxxxx" +
-                    "xxxxxxxxxxxxxxx\r\n                              (时间2)  03.xxxxxxxxxxxxxxxxxxxxxxx" +
-                    "");
+        "xxxxxxxxxxxxxxx\r\n                              (时间2)  03.xxxxxxxxxxxxxxxxxxxxxxx" +
+        "");
             // 
             // label3
             // 
@@ -284,8 +284,9 @@
             this.textBox2.Size = new System.Drawing.Size(719, 146);
             this.textBox2.TabIndex = 3;
             this.toolTip1.SetToolTip(this.textBox2, "填写格式提示：（时间1）01.xxxxxxxxxxxxxxxxxxx\r\n                                  02.xxxxxxxx" +
-                    "xxxxxxxxxxxxxxx\r\n                              (时间2)  03.xxxxxxxxxxxxxxxxxxxxxxx" +
-                    "");
+        "xxxxxxxxxxxxxxx\r\n                              (时间2)  03.xxxxxxxxxxxxxxxxxxxxxxx" +
+        "");
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2
             // 

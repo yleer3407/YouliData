@@ -182,9 +182,9 @@ namespace Youli_Data_Share
                 string text2 = textBox2.Text.Replace("\r\n", " ");
                 string text3 = textBox3.Text.Replace("\r\n", " ");
                 string text4 = textBox4.Text.Replace("\r\n", " ");
-                INIHelper.Write(this.textBox1.Text, "1", text2, inipath);
-                INIHelper.Write(this.textBox1.Text, "2", text3, inipath);
-                INIHelper.Write(this.textBox1.Text, "3", text4, inipath);
+                INIHelper.Write(this.textBox1.Text, "1", text2+ " " +"["+ DateTime.Now.ToString()+"]", inipath);
+                INIHelper.Write(this.textBox1.Text, "2", text3+ " " +"[" + DateTime.Now.ToString() + "]", inipath);
+                INIHelper.Write(this.textBox1.Text, "3", text4+ " " +"[" + DateTime.Now.ToString() + "]", inipath);
                 #endregion
                 MessageBox.Show("权限检测：【工程部】\r\n操作已提交成功");
             }
@@ -390,8 +390,9 @@ namespace Youli_Data_Share
                         string b = Dns.GetHostName();
                         if (b == "2016-20161129XI" || b == "YL-01010101")
                         {
-                            #region 添加图片
-                            OpenFileDialog Imagedialog = new OpenFileDialog();
+                       string[] sArray = textBox1.Text.Split(new char[4] { '[', '/', ':', ']' });
+                #region 添加图片
+                OpenFileDialog Imagedialog = new OpenFileDialog();
                             DialogResult result = Imagedialog.ShowDialog();
                             if (result == DialogResult.OK)
                             {
@@ -453,6 +454,7 @@ namespace Youli_Data_Share
             string b = Dns.GetHostName();
             if (b == "2016-20161129XI" || b == "YL-01010101")
             {
+
                 #region 删除图片
                 if (this.pictureBox6.Image != null)
                 {
@@ -539,6 +541,7 @@ namespace Youli_Data_Share
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
             var filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp";
             Process m_Process = null;
             m_Process = new Process();
@@ -556,6 +559,7 @@ namespace Youli_Data_Share
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+
             var filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp";
             Process m_Process = null;
             m_Process = new Process();
@@ -573,6 +577,7 @@ namespace Youli_Data_Share
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+
             var filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp";
             Process m_Process = null;
             m_Process = new Process();
@@ -590,6 +595,7 @@ namespace Youli_Data_Share
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+
             var filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp";
             Process m_Process = null;
             m_Process = new Process();
@@ -607,6 +613,7 @@ namespace Youli_Data_Share
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+  
             var filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp";
             Process m_Process = null;
             m_Process = new Process();
@@ -624,6 +631,7 @@ namespace Youli_Data_Share
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
+
             var filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp";
             Process m_Process = null;
             m_Process = new Process();
@@ -648,7 +656,10 @@ namespace Youli_Data_Share
             string b = Dns.GetHostName();
             if (b == "2016-20161129XI" || b == "YL-01010101")
             {
-                String filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "\\";
+                //string ReplaceVar = textBox1.Text.Replace("/", ":","[","]");
+
+
+                string filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "\\";
                 string subPath = filePath + "/pic/";
                 if (false == System.IO.Directory.Exists(subPath))
                 {
@@ -683,8 +694,9 @@ namespace Youli_Data_Share
             }
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }
