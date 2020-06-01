@@ -173,8 +173,9 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            string b = Dns.GetHostName();
-            if (b == "2016-20161129XI" || b == "YL-01010101")
+            string login_host = Dns.GetHostName();
+            if(true)
+            //if (b == "2016-20161129XI" || b == "YL-01010101")
             //String keyword02 = Interaction.InputBox("输入密码", "权限检查", "", -1, -1);
             {
                 #region 保存权限02
@@ -182,11 +183,11 @@ namespace Youli_Data_Share
                 string text2 = textBox2.Text.Replace("\r\n", " ");
                 string text3 = textBox3.Text.Replace("\r\n", " ");
                 string text4 = textBox4.Text.Replace("\r\n", " ");
-                INIHelper.Write(this.textBox1.Text, "1", text2+ " " +"["+ DateTime.Now.ToString()+"]", inipath);
-                INIHelper.Write(this.textBox1.Text, "2", text3+ " " +"[" + DateTime.Now.ToString() + "]", inipath);
-                INIHelper.Write(this.textBox1.Text, "3", text4+ " " +"[" + DateTime.Now.ToString() + "]", inipath);
+                INIHelper.Write(this.textBox1.Text, "1", text2+ " " +"[用户："+ login_host + "]["+ DateTime.Now.ToString("yyyy/MM/dd-hh:mm")+"]", inipath);
+                INIHelper.Write(this.textBox1.Text, "2", text3+ " " + "[用户：" + login_host + "][" + DateTime.Now.ToString("yyyy/MM/dd-hh:mm") + "]", inipath);
+                INIHelper.Write(this.textBox1.Text, "3", text4+ " " + "[用户：" + login_host + "][" + DateTime.Now.ToString("yyyy/MM/dd-hh:mm") + "]", inipath);
                 #endregion
-                MessageBox.Show("权限检测：【工程部】\r\n操作已提交成功");
+                MessageBox.Show("提交提示：" + "用户" + login_host + "\r\n您的修改已提交成功");
             }
             else
             {
@@ -388,7 +389,8 @@ namespace Youli_Data_Share
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
                         string b = Dns.GetHostName();
-                        if (b == "2016-20161129XI" || b == "YL-01010101")
+                       // if (b == "2016-20161129XI" || b == "YL-01010101")
+                       if(true)
                         {
                        string[] sArray = textBox1.Text.Split(new char[4] { '[', '/', ':', ']' });
                 #region 添加图片
@@ -452,7 +454,8 @@ namespace Youli_Data_Share
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             string b = Dns.GetHostName();
-            if (b == "2016-20161129XI" || b == "YL-01010101")
+            if (true)
+            //if (b == "2016-20161129XI" || b == "YL-01010101")
             {
 
                 #region 删除图片
@@ -654,7 +657,8 @@ namespace Youli_Data_Share
         private void toolStripButton3_Click_1(object sender, EventArgs e)
         {
             string b = Dns.GetHostName();
-            if (b == "2016-20161129XI" || b == "YL-01010101")
+            if(true)
+           // if (b == "2016-20161129XI" || b == "YL-01010101")
             {
                 //string ReplaceVar = textBox1.Text.Replace("/", ":","[","]");
 

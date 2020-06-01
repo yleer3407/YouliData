@@ -29,7 +29,8 @@ namespace Youli_Data_Share
                 if (column is DataGridViewButtonColumn)
                 {
 
-                    Sign form6 = new Sign(this.dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
+                    Sign form6 = new Sign(this.dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString()+"_"+dataGridView1.Rows[e.RowIndex].Index);
+                    //MessageBox.Show(this.dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString() + dataGridView1.Rows[e.RowIndex].Index);
                    // MessageBox.Show(this.dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
                     form6.ShowDialog();
                 }
@@ -83,7 +84,7 @@ namespace Youli_Data_Share
             dt = ds.Tables["problems02"];
             dataGridView1.DataSource = dt.DefaultView;
             #endregion
-
+            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
 
         }
         /// <summary>
@@ -180,7 +181,28 @@ namespace Youli_Data_Share
 
             }
             //String keyword01 = Interaction.InputBox("输入密码", "权限检查", "", -1, -1);
-           
+
+            #region 刷新查找
+            //SqlConnectionStringBuilder Pro = new SqlConnectionStringBuilder();
+            //Pro.DataSource = "192.168.1.104";
+           // Pro.UserID = "sa";
+            //Pro.Password = "yelei193";
+           // Pro.InitialCatalog = "Youli_date";
+
+            //conn = new SqlConnection(Pro.ToString());
+           // if (conn.State == System.Data.ConnectionState.Closed)
+            //    conn.Open();
+            string strSQL1 = "select * from problems02 WHERE 时间 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 状态 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 客户 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 产品名称 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题归类 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题描述 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 解决方案 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 问题发起人 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
+            SqlDataAdapter da = new SqlDataAdapter(strSQL1, conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "problems02");
+
+            dataGridView1.DataSource = ds;
+            dataGridView1.DataMember = "problems02";
+            dt = ds.Tables["problems02"];
+            dataGridView1.DataSource = dt.DefaultView;
+            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
+            #endregion
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -208,6 +230,7 @@ namespace Youli_Data_Share
             //dataGridView1.DataMember = "wlxq";
             dt = ds.Tables["problems02"];
             dataGridView1.DataSource = dt.DefaultView;
+            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -300,6 +323,21 @@ namespace Youli_Data_Share
             }
             //String keyword01 = Interaction.InputBox("输入密码", "权限检查", "", -1, -1);
 
+        }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            //自动编号，与数据无关
+            Rectangle rectangle = new Rectangle(e.RowBounds.Location.X,
+               e.RowBounds.Location.Y,
+               dataGridView1.RowHeadersWidth - 4,
+               e.RowBounds.Height);
+            TextRenderer.DrawText(e.Graphics,
+                  (e.RowIndex + 1).ToString(),
+                   dataGridView1.RowHeadersDefaultCellStyle.Font,
+                   rectangle,
+                   dataGridView1.RowHeadersDefaultCellStyle.ForeColor,
+                   TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
         }
     }
 }

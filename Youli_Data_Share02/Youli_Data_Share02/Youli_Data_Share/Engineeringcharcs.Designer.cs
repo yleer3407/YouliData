@@ -37,15 +37,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Engineeringcharcs));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button2 = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.youli_dateDataSet = new Youli_Data_Share.Youli_dateDataSet();
-            this.problemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.problemsTableAdapter = new Youli_Data_Share.Youli_dateDataSetTableAdapters.problemsTableAdapter();
-            this.youli_dateDataSet1 = new Youli_Data_Share.Youli_dateDataSet1();
-            this.problems02BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.problems02TableAdapter = new Youli_Data_Share.Youli_dateDataSet1TableAdapters.problems02TableAdapter();
             this.时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.状态 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.客户 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,9 +52,12 @@
             this.解决方案 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.提交端 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.详细 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.youli_dateDataSet = new Youli_Data_Share.Youli_dateDataSet();
+            this.problemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.problemsTableAdapter = new Youli_Data_Share.Youli_dateDataSetTableAdapters.problemsTableAdapter();
+            this.youli_dateDataSet1 = new Youli_Data_Share.Youli_dateDataSet1();
+            this.problems02BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.problems02TableAdapter = new Youli_Data_Share.Youli_dateDataSet1TableAdapters.problems02TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -90,6 +90,22 @@
             this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.ForeColor = System.Drawing.Color.Red;
+            this.button2.Image = global::Youli_Data_Share.Properties.Resources.提交成功;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(769, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(78, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "提交";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -106,6 +122,23 @@
             // 
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::Youli_Data_Share.Properties.Resources.查找;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton2.Text = "查找";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::Youli_Data_Share.Properties.Resources.筛选;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(64, 22);
+            this.toolStripButton3.Text = "未解决";
             // 
             // dataGridView1
             // 
@@ -134,34 +167,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1160, 505);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // youli_dateDataSet
-            // 
-            this.youli_dateDataSet.DataSetName = "Youli_dateDataSet";
-            this.youli_dateDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // problemsBindingSource
-            // 
-            this.problemsBindingSource.DataMember = "problems";
-            this.problemsBindingSource.DataSource = this.youli_dateDataSet;
-            // 
-            // problemsTableAdapter
-            // 
-            this.problemsTableAdapter.ClearBeforeFill = true;
-            // 
-            // youli_dateDataSet1
-            // 
-            this.youli_dateDataSet1.DataSetName = "Youli_dateDataSet1";
-            this.youli_dateDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // problems02BindingSource
-            // 
-            this.problems02BindingSource.DataMember = "problems02";
-            this.problems02BindingSource.DataSource = this.youli_dateDataSet1;
-            // 
-            // problems02TableAdapter
-            // 
-            this.problems02TableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // 时间
             // 
@@ -255,38 +261,33 @@
             this.详细.Name = "详细";
             this.详细.Width = 50;
             // 
-            // button2
+            // youli_dateDataSet
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Image = global::Youli_Data_Share.Properties.Resources.提交成功;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(769, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "提交";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.youli_dateDataSet.DataSetName = "Youli_dateDataSet";
+            this.youli_dateDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // toolStripButton2
+            // problemsBindingSource
             // 
-            this.toolStripButton2.Image = global::Youli_Data_Share.Properties.Resources.查找;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton2.Text = "查找";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.problemsBindingSource.DataMember = "problems";
+            this.problemsBindingSource.DataSource = this.youli_dateDataSet;
             // 
-            // toolStripButton3
+            // problemsTableAdapter
             // 
-            this.toolStripButton3.Image = global::Youli_Data_Share.Properties.Resources.筛选;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(64, 22);
-            this.toolStripButton3.Text = "未解决";
+            this.problemsTableAdapter.ClearBeforeFill = true;
+            // 
+            // youli_dateDataSet1
+            // 
+            this.youli_dateDataSet1.DataSetName = "Youli_dateDataSet1";
+            this.youli_dateDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // problems02BindingSource
+            // 
+            this.problems02BindingSource.DataMember = "problems02";
+            this.problems02BindingSource.DataSource = this.youli_dateDataSet1;
+            // 
+            // problems02TableAdapter
+            // 
+            this.problems02TableAdapter.ClearBeforeFill = true;
             // 
             // Engineeringcharcs
             // 
