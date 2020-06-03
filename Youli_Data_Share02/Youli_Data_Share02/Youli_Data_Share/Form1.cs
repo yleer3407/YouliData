@@ -14,6 +14,8 @@ using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Net;
 using System.Drawing.Drawing2D;
+using System.Data.SqlClient;
+
 namespace Youli_Data_Share
 {
     public partial class Form1 : Form
@@ -650,7 +652,18 @@ namespace Youli_Data_Share
         {
 
         }
-        
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+            // orderProcess frm_ord = new orderProcess();
+            // frm_ord.ShowDialog();
+
+            #region login
+            Login login = new Login();
+            login.ShowDialog();
+            #endregion
+        }
     }
 }
 

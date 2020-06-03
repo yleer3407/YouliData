@@ -191,7 +191,7 @@ namespace Youli_Data_Share
             }
             else
             {
-                MessageBox.Show("当前用户无权限 请与工程部沟通！");
+               // MessageBox.Show("当前用户无权限 请与工程部沟通！");
             }
                     //#region 图片修改保存
                     //try
@@ -442,7 +442,7 @@ namespace Youli_Data_Share
 
                         else
                         {
-                            MessageBox.Show("小伙子你没权限 这样做很危险呐！");
+                            //MessageBox.Show("小伙子你没权限 这样做很危险呐！");
                         }
 
         }
@@ -526,7 +526,7 @@ namespace Youli_Data_Share
 
             else
             {
-                MessageBox.Show("小伙子你没权限 这样做很危险呐！");
+               // MessageBox.Show("小伙子你没权限 这样做很危险呐！");
             }
            
             
@@ -694,7 +694,7 @@ namespace Youli_Data_Share
 
             else
             {
-                MessageBox.Show("小伙子你没权限 这样做很危险呐！");
+              //  MessageBox.Show("小伙子你没权限 这样做很危险呐！");
             }
         }
 

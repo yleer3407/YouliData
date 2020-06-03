@@ -93,11 +93,13 @@ namespace Youli_Data_Share
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns></returns>
-        private static void CheckPath(string filePath)
+         public static void CheckPath(string filePath)
         {
-            if (string.IsNullOrWhiteSpace(filePath) || !File.Exists(filePath))
+            if (!File.Exists(filePath))
             {
-                throw new ArgumentNullException("filePath");
+                FileStream FS = new FileStream(filePath, FileMode.CreateNew);
+                FS.Close();
+               // throw new ArgumentNullException("filePath");
             }
         }
 

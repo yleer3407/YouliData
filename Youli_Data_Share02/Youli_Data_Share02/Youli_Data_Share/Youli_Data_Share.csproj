@@ -86,6 +86,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="data_Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>data_Login.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Engineeringcharcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,12 +115,23 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="HandleINI.cs" />
-    <Compile Include="ID_level.cs" />
+    <Compile Include="Class\HandleINI.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="orderProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="orderProcess.Designer.cs">
+      <DependentUpon>orderProcess.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,6 +162,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Youli_dateDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Youli_dateDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Youli_dateDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Youli_dateDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Youli_dateDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Youli_dateDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Youli_dateDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Youli_dateDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Youli_dateDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="权限分配.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="权限分配.Designer.cs">
+      <DependentUpon>权限分配.cs</DependentUpon>
+    </Compile>
     <Compile Include="订单排程.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +206,12 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="orderProcess.resx">
+      <DependentUpon>orderProcess.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -175,6 +223,9 @@
     <EmbeddedResource Include="update.resx">
       <DependentUpon>update.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="权限分配.resx">
+      <DependentUpon>权限分配.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="订单排程.resx">
       <DependentUpon>订单排程.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +234,17 @@
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="App.Config" />
+    <None Include="data_Login.xsc">
+      <DependentUpon>data_Login.xsd</DependentUpon>
+    </None>
+    <None Include="data_Login.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>data_Login.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="data_Login.xss">
+      <DependentUpon>data_Login.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -214,6 +276,50 @@
     </None>
     <None Include="Youli_dateDataSet1.xss">
       <DependentUpon>Youli_dateDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Youli_dateDataSet2.xsc">
+      <DependentUpon>Youli_dateDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Youli_dateDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Youli_dateDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Youli_dateDataSet2.xss">
+      <DependentUpon>Youli_dateDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Youli_dateDataSet3.xsc">
+      <DependentUpon>Youli_dateDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Youli_dateDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Youli_dateDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Youli_dateDataSet3.xss">
+      <DependentUpon>Youli_dateDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Youli_dateDataSet4.xsc">
+      <DependentUpon>Youli_dateDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Youli_dateDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Youli_dateDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Youli_dateDataSet4.xss">
+      <DependentUpon>Youli_dateDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Youli_dateDataSet5.xsc">
+      <DependentUpon>Youli_dateDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Youli_dateDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Youli_dateDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Youli_dateDataSet5.xss">
+      <DependentUpon>Youli_dateDataSet5.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -286,6 +392,24 @@
     <None Include="Resources\add_30px.png" />
     <None Include="Resources\查找1.png" />
     <None Include="Resources\提交成功2.png" />
+    <None Include="Resources\teamwork_128px_1208219_easyicon.net.png" />
+    <None Include="Resources\folder_18.272373540856px_1257298_easyicon.net.png" />
+    <None Include="Resources\folder_18.859437751004px_1257266_easyicon.net.png" />
+    <None Include="Resources\brand_brands_excel_logo_16px_1212964_easyicon.net.png" />
+    <None Include="Resources\设置.png" />
+    <None Include="Resources\best_terraria_48px.png" />
+    <None Include="Resources\search_100px.png" />
+    <None Include="Resources\hand_cursor_100px.png" />
+    <None Include="Resources\icons8_hand_cursor_32.png" />
+    <None Include="Resources\icons8_search_32.png" />
+    <None Include="Resources\icons8_remove_32.png" />
+    <None Include="Resources\icons8_ok_32.png" />
+    <None Include="Resources\icons8_folder_32.png" />
+    <None Include="Resources\icons8_job_32.png" />
+    <None Include="Resources\icons8_management_32.png" />
+    <None Include="Resources\icons8_management_16.png" />
+    <None Include="Resources\best_terraria_48px1.png" />
+    <None Include="Resources\LAGO.ico" />
     <Content Include="unweight.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -72,9 +72,14 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void Form4_Load(object sender, EventArgs e)
         {
+            #region dataGridView表格初始化
             dataGridView1.AutoGenerateColumns = false;   //表格自动排列
+            //DataGridViewColumn dataGridViewColumn = dataGridView1.Columns[0];
+            //dataGridViewColumn.HeaderCell.Style.BackColor = Color.Blue;
+            //dataGridViewColumn.HeaderCell.Style.ForeColor = Color.White;
             //dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;//表格选定颜色
+            #endregion
             string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
             #region 创建INI文件
            // File.Create(filePath);

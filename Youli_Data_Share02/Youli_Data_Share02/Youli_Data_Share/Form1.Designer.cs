@@ -67,10 +67,10 @@
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.button5);
             this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button10);
+            this.flowLayoutPanel1.Controls.Add(this.button12);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Controls.Add(this.button11);
-            this.flowLayoutPanel1.Controls.Add(this.button12);
+            this.flowLayoutPanel1.Controls.Add(this.button10);
             this.flowLayoutPanel1.Controls.Add(this.button13);
             this.flowLayoutPanel1.Controls.Add(this.button14);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 226);
@@ -161,7 +161,7 @@
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(724, 11);
+            this.button10.Location = new System.Drawing.Point(386, 206);
             this.button10.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(126, 152);
@@ -213,16 +213,17 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
+            this.button12.Image = global::Youli_Data_Share.Properties.Resources.teamwork_128px_1208219_easyicon_net;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button12.Location = new System.Drawing.Point(386, 206);
+            this.button12.Location = new System.Drawing.Point(724, 11);
             this.button12.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(126, 152);
             this.button12.TabIndex = 9;
-            this.button12.Text = "未开放";
+            this.button12.Text = "订单流程";
             this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 

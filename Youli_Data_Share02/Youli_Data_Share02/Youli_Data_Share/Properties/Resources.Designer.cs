@@ -143,6 +143,36 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap best_terraria_48px {
+            get {
+                object obj = ResourceManager.GetObject("best_terraria_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap best_terraria_48px1 {
+            get {
+                object obj = ResourceManager.GetObject("best_terraria_48px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap brand_brands_excel_logo_16px_1212964_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("brand_brands_excel_logo_16px_1212964_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_close_delete_reject_remove_16px_1225515_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("cancel_close_delete_reject_remove_16px_1225515_easyicon.net", resourceCulture);
@@ -233,6 +263,26 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap folder_18_272373540856px_1257298_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("folder_18.272373540856px_1257298_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap folder_18_859437751004px_1257266_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("folder_18.859437751004px_1257266_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap folder_783px_1229425_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("folder_783px_1229425_easyicon.net", resourceCulture);
@@ -263,6 +313,16 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap hand_cursor_100px {
+            get {
+                object obj = ResourceManager.GetObject("hand_cursor_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap iconfont_10 {
             get {
                 object obj = ResourceManager.GetObject("iconfont-10", resourceCulture);
@@ -283,6 +343,96 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_folder_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_folder_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_hand_cursor_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_hand_cursor_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_job_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_job_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_management_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_management_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_management_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_management_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ok_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_ok_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_remove_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_remove_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_search_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap LAGO {
+            get {
+                object obj = ResourceManager.GetObject("LAGO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap magnifying_glass_tilted_left_123_15457413249px_1215124_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("magnifying_glass_tilted_left_123.15457413249px_1215124_easyicon.net", resourceCulture);
@@ -296,6 +446,26 @@ namespace Youli_Data_Share.Properties {
         internal static System.Drawing.Bitmap production_139_13043478261px_1215962_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("production_139.13043478261px_1215962_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap search_100px {
+            get {
+                object obj = ResourceManager.GetObject("search_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap teamwork_128px_1208219_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("teamwork_128px_1208219_easyicon.net", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,6 +686,16 @@ namespace Youli_Data_Share.Properties {
         internal static System.Drawing.Bitmap 筛选 {
             get {
                 object obj = ResourceManager.GetObject("筛选", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 设置 {
+            get {
+                object obj = ResourceManager.GetObject("设置", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
