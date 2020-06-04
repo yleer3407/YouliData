@@ -86,6 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\SQLHelper.cs" />
     <Compile Include="data_Login.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -410,6 +411,17 @@
     <None Include="Resources\icons8_management_16.png" />
     <None Include="Resources\best_terraria_48px1.png" />
     <None Include="Resources\LAGO.ico" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\5.png" />
+    <None Include="Resources\6.png" />
+    <None Include="Resources\7.png" />
+    <None Include="Resources\qc.png" />
+    <None Include="Resources\严.png" />
+    <None Include="Resources\8.png" />
+    <None Include="Resources\31.png" />
+    <None Include="Resources\icons8_save_32.png" />
     <Content Include="unweight.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

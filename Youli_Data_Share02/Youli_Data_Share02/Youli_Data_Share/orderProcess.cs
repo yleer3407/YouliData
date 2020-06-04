@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -383,15 +384,479 @@ namespace Youli_Data_Share
             #endregion
             MessageBox.Show("格式保存成功！");
         }
-
+        /// <summary>
+        /// 提交
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsbbtn_submit_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+                String strSql = string.Empty;
+                DataTable changeDT = dt_flow.GetChanges();
+                foreach (DataRow dr in changeDT.Rows)
+                {
+                    if (dr.RowState == System.Data.DataRowState.Added)//添加
+                    {
+
+                        strSql = @"INSERT INTO [Youli_date].[dbo].[flow]
+           ([flo_time]
+           ,[flo_state]
+           ,[flo_client]
+           ,[flo_factory]
+           ,[flo_line]
+           ,[flo_num]
+           ,[flo_record]
+           ,[flo_coding]
+           ,[flo_cilentID]
+           ,[flo_model]
+           ,[flo_logo]
+           ,[flo_proname]
+           ,[flo_range]
+           ,[flo_unit]
+           ,[flo_reunit]
+           ,[flo_memunit]
+           ,[flo_frames]
+           ,[flo_backcolor]
+           ,[flo_closetime]
+           ,[flo_backtime]
+           ,[flo_revise]
+           ,[flo_cleRange]
+           ,[flo_cleShutdown]
+           ,[flo_gravity]
+           ,[flo_levFacSet]
+           ,[flo_cell]
+           ,[flo_plastic]
+           ,[flo_quantity]
+           ,[flo_delivery]
+           ,[flo_encase]
+           ,[flo_box]
+           ,[flo_ask]
+           ,[flo_pic]
+           ,[flo_modibom1]
+           ,[flo_modibom2]
+           ,[flo_bomVerify]
+           ,[flo_starv]
+           ,[flo_online]
+           ,[flo_comMater]
+           ,[flo_comqusSolve]
+           ,[flo_oliquan]
+           ,[flo_elequan]
+           ,[flo_elsequan]
+           ,[flo_facAlter]
+           ,[flo_fristMake]
+           ,[flo_fristChk]
+           ,[flo_ProSum]
+           ,[flo_spotChk]
+           ,[flo_out]
+           ,[flo_finish])
+     VALUES
+            ('" + dr["flo_time"].ToString() + @"'
+            ,'" + dr["flo_state"].ToString() + @"'
+            ,'" + dr["flo_client"].ToString() + @"'
+            ,'" + dr["flo_factory"].ToString() + @"'
+            ,'" + dr["flo_line"].ToString() + @"'
+            ,'" + dr["flo_num"].ToString() + @"'
+            ,'" + dr["flo_record"].ToString() + @"'
+            ,'" + dr["flo_coding"].ToString() + @"'
+            ,'" + dr["flo_cilentID"].ToString() + @"'
+            ,'" + dr["flo_model"].ToString() + @"'
+            ,'" + dr["flo_logo"].ToString() + @"'
+            ,'" + dr["flo_proname"].ToString() + @"'
+            ,'" + dr["flo_range"].ToString() + @"'
+            ,'" + dr["flo_unit"].ToString() + @"'
+            ,'" + dr["flo_reunit"].ToString() + @"'
+            ,'" + dr["flo_memunit"].ToString() + @"'
+            ,'" + dr["flo_frames"].ToString() + @"'
+            ,'" + dr["flo_backcolor"].ToString() + @"'
+            ,'" + dr["flo_closetime"].ToString() + @"'
+            ,'" + dr["flo_backtime"].ToString() + @"'
+            ,'" + dr["flo_revise"].ToString() + @"'
+            ,'" + dr["flo_cleRange"].ToString() + @"'
+            ,'" + dr["flo_cleShutdown"].ToString() + @"'
+            ,'" + dr["flo_gravity"].ToString() + @"'
+            ,'" + dr["flo_levFacSet"].ToString() + @"'
+            ,'" + dr["flo_cell"].ToString() + @"'
+            ,'" + dr["flo_plastic"].ToString() + @"'
+            ,'" + dr["flo_quantity"].ToString() + @"'
+            ,'" + dr["flo_delivery"].ToString() + @"'
+            ,'" + dr["flo_encase"].ToString() + @"'
+            ,'" + dr["flo_box"].ToString() + @"'
+            ,'" + dr["flo_ask"].ToString() + @"'
+            ,'" + dr["flo_pic"].ToString() + @"'
+            ,'" + dr["flo_modibom1"].ToString() + @"'
+            ,'" + dr["flo_modibom2"].ToString() + @"'
+            ,'" + dr["flo_bomVerify"].ToString() + @"'
+            ,'" + dr["flo_starv"].ToString() + @"'
+            ,'" + dr["flo_online"].ToString() + @"'
+            ,'" + dr["flo_comMater"].ToString() + @"'
+            ,'" + dr["flo_comqusSolve"].ToString() + @"'
+            ,'" + dr["flo_oliquan"].ToString() + @"'
+            ,'" + dr["flo_elequan"].ToString() + @"'
+            ,'" + dr["flo_elsequan"].ToString() + @"'
+            ,'" + dr["flo_facAlter"].ToString() + @"'
+            ,'" + dr["flo_fristMake"].ToString() + @"'
+            ,'" + dr["flo_fristChk"].ToString() + @"'
+            ,'" + dr["flo_ProSum"].ToString() + @"'
+            ,'" + dr["flo_spotChk"].ToString() + @"'
+            ,'" + dr["flo_out"].ToString() + @"'
+            ,'" + dr["flo_finish"].ToString() + @"')";
+                    }
+                    else if (dr.RowState == System.Data.DataRowState.Deleted)//删除
+                    {
+                        strSql = @"DELETE FROM [dbo].[flow]
+                                        WHERE flo_time = '" + dr["flo_time", DataRowVersion.Original].ToString() + @"
+                                            AND flo_num = '" + dr["flo_num", DataRowVersion.Original].ToString() + "'";
+                    }
+                    else if (dr.RowState == System.Data.DataRowState.Modified)//修改
+                    {
+                        strSql = @"UPDATE [dbo].[flow]
+                                    SET [flo_state]='" + dr["flo_state"].ToString() + @"
+                                    ,[flo_client]='" + dr["flo_client"].ToString() + @"
+                                    ,[flo_factory]='" + dr["flo_factory"].ToString() + @"
+                                    ,[flo_line]='" + dr["flo_line"].ToString() + @"
+                                    ,[flo_num]='" + dr["flo_num"].ToString() + @"
+                                    ,[flo_record]='" + dr["flo_record"].ToString() + @"
+                                    ,[flo_coding]='" + dr["flo_cilentID"].ToString() + @"
+                                    ,[flo_model]='" + dr["flo_model"].ToString() + @"
+                                    ,[flo_logo]='" + dr["flo_logo"].ToString() + @"
+                                    ,[flo_proname]='" + dr["flo_proname"].ToString() + @"
+                                    ,[flo_unit]='" + dr["flo_unit"].ToString() + @"
+                                    ,[flo_reunit]='" + dr["flo_reunit"].ToString() + @"
+                                    ,[flo_memunit]='" + dr["flo_memunit"].ToString() + @"
+                                    ,[flo_frames]='" + dr["flo_frames"].ToString() + @"
+                                    ,[flo_backcolor]='" + dr["flo_backcolor"].ToString() + @"
+                                    ,[flo_closetime]='" + dr["flo_closetime"].ToString() + @"
+                                    ,[flo_backtime]='" + dr["flo_backtime"].ToString() + @"
+                                    ,[flo_revise]='" + dr["flo_revise"].ToString() + @"
+                                    ,[flo_cleRange]='" + dr["flo_cleRange"].ToString() + @"
+                                    ,[flo_cleShutdown]='" + dr["flo_cleShutdown"].ToString() + @"
+                                    ,[flo_gravity]='" + dr["flo_gravity"].ToString() + @"
+                                    ,[flo_levFacSet]='" + dr["flo_levFacSet"].ToString() + @"
+                                    ,[flo_cell]='" + dr["flo_cell"].ToString() + @"
+                                    ,[flo_plastic]='" + dr["flo_plastic"].ToString() + @"
+                                    ,[flo_quantity]='" + dr["flo_quantity"].ToString() + @"
+                                    ,[flo_delivery]='" + dr["flo_delivery"].ToString() + @"
+                                    ,[flo_encase]='" + dr["flo_encase"].ToString() + @"
+                                    ,[flo_box]='" + dr["flo_box"].ToString() + @"
+                                    ,[flo_ask]='" + dr["flo_ask"].ToString() + @"
+                                    ,[flo_pic]='" + dr["flo_pic"].ToString() + @"
+                                    ,[flo_modibom1]='" + dr["flo_modibom1"].ToString() + @"
+                                    ,[flo_modibom2]='" + dr["flo_modibom2"].ToString() + @"
+                                    ,[flo_bomVerify]='" + dr["flo_bomVerify"].ToString() + @"
+                                    ,[flo_online]='" + dr["flo_online"].ToString() + @"
+                                    ,[flo_comMater]='" + dr["flo_comMater"].ToString() + @"
+                                    ,[flo_comqusSolve]='" + dr["flo_comqusSolve"].ToString() + @"
+                                    ,[flo_oliquan]='" + dr["flo_oliquan"].ToString() + @"
+                                    ,[flo_elequan]='" + dr["flo_elequan"].ToString() + @"
+                                    ,[flo_elsequan]='" + dr["flo_elsequan"].ToString() + @"
+                                    ,[flo_facAlter]='" + dr["flo_facAlter"].ToString() + @"
+                                    ,[flo_fristMake]='" + dr["flo_fristMake"].ToString() + @"
+                                    ,[flo_fristChk]='" + dr["flo_fristChk"].ToString() + @"
+                                    ,[flo_ProSum]='" + dr["flo_ProSum"].ToString() + @"
+                                    ,[flo_spotChk]='" + dr["flo_spotChk"].ToString() + @"
+                                    ,[flo_out]='" + dr["flo_out"].ToString() + @"
+                                    ,[flo_finish]='" + dr["flo_finish"].ToString() + @"
+                                WHERE flo_time = '" + dr["flo_time"].ToString() + @"'
+                                      AND flo_num='" + dr["flo_num"].ToString() + "'";
+                    }
+
+                }
+                SqlCommand comm = new SqlCommand(strSql, conn_flow);
+                comm.ExecuteNonQuery();
+                MessageBox.Show("已提交成功");
+                #region 提交刷新
+                if (conn_flow.State == System.Data.ConnectionState.Closed)
+                {
+                    conn_flow.Open();
+                    string strSql1 = "SELECT * FROM flow";
+                    SqlDataAdapter da = new SqlDataAdapter(strSql1, conn_flow);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "flow");
+                    dt_flow = ds.Tables["flow"];
+                    dataGridView1.DataSource = dt_flow.DefaultView;
+                }
+                #endregion
+            //}
+            //catch
+            //{ 
+            
+            //}
+           
+        }
+            
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewCell cell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                if (cell.FormattedValue.ToString() == "工艺文件")
+                {
+                    //string currPath = Application.StartupPath;//获取当前文件夹路径
+                    string subPath = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString() + "/";
+                    // MessageBox.Show(subPath);
+                    try
+                    {
+                        if (false == System.IO.Directory.Exists(subPath))
+                        {
+                            System.IO.Directory.CreateDirectory(subPath);
+                        }
+                        else
+                        {
+                            System.Diagnostics.Process.Start(subPath);
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("创建/打开文件夹失败，请联系管理员");
+                    }
+
+                }
+                else if (cell.FormattedValue.ToString() == "截屏")
+                {
+                    var fileContent = string.Empty;
+                    var filePath = string.Empty;
+                    var filename = string.Empty;
+                    try
+                    {
+                        // filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + "AC-0109-04"+ ".png";
+                        filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString() + ".png";
+                        Process m_Process = null;
+                        m_Process = new Process();
+                        m_Process.StartInfo.FileName = @filePath;
+                        bool exist = System.IO.File.Exists(@filePath);
+                        if (exist == true)  //如果存在则显示
+                        {
+                            m_Process.Start();
+                        }
+                        else
+                        {
+                            MessageBox.Show("未找到图片，请检查是否上传截图");
+                        }
+                        //MessageBox.Show( dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());//获取选中行指定列的值
+                    }
+                    catch
+                    {
+                        MessageBox.Show("操作错误：1.还未查询数据就点击图片。");
+                        return;
+                    }
+
+                }
+                else if (cell.FormattedValue.ToString() == "来料问题夹")
+                {
+                    //string currPath = Application.StartupPath;//获取当前文件夹路径
+                    string subPath1 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString() + "/";
+                    // MessageBox.Show(subPath);
+                    try
+                    {
+                        if (false == System.IO.Directory.Exists(subPath1))
+                        {
+                            System.IO.Directory.CreateDirectory(subPath1);
+                        }
+                        else
+                        {
+                            System.Diagnostics.Process.Start(subPath1);
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("创建/打开文件夹失败，请联系管理员");
+                    }
+                }
+            }
+            catch {
+                return;
+            }
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void toolStripButton10_Click(object sender, EventArgs e)
         {
+            SendKeys.Send("{ENTER}");
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String strSql = string.Empty;
+            DataTable changeDT = dt_flow.GetChanges();
+            foreach (DataRow dr in changeDT.Rows)
+            {
+                if (dr.RowState == System.Data.DataRowState.Added)//添加
+                {
+
+                    strSql = @"INSERT INTO [Youli_date].[dbo].[flow]
+           ([flo_time]
+           ,[flo_state]
+           ,[flo_client]
+           ,[flo_factory]
+           ,[flo_line]
+           ,[flo_num]
+           ,[flo_record]
+           ,[flo_coding]
+           ,[flo_cilentID]
+           ,[flo_model]
+           ,[flo_logo]
+           ,[flo_proname]
+           ,[flo_range]
+           ,[flo_unit]
+           ,[flo_reunit]
+           ,[flo_memunit]
+           ,[flo_frames]
+           ,[flo_backcolor]
+           ,[flo_closetime]
+           ,[flo_backtime]
+           ,[flo_revise]
+           ,[flo_cleRange]
+           ,[flo_cleShutdown]
+           ,[flo_gravity]
+           ,[flo_levFacSet]
+           ,[flo_cell]
+           ,[flo_plastic]
+           ,[flo_quantity]
+           ,[flo_delivery]
+           ,[flo_encase]
+           ,[flo_box]
+           ,[flo_ask]
+           ,[flo_pic]
+           ,[flo_modibom1]
+           ,[flo_modibom2]
+           ,[flo_bomVerify]
+           ,[flo_starv]
+           ,[flo_online]
+           ,[flo_comMater]
+           ,[flo_comqusSolve]
+           ,[flo_oliquan]
+           ,[flo_elequan]
+           ,[flo_elsequan]
+           ,[flo_facAlter]
+           ,[flo_fristMake]
+           ,[flo_fristChk]
+           ,[flo_ProSum]
+           ,[flo_spotChk]
+           ,[flo_out]
+           ,[flo_finish])
+     VALUES
+            ('" + dr["flo_time"].ToString() + @"'
+            ,'" + dr["flo_state"].ToString() + @"'
+            ,'" + dr["flo_client"].ToString() + @"'
+            ,'" + dr["flo_factory"].ToString() + @"'
+            ,'" + dr["flo_line"].ToString() + @"'
+            ,'" + dr["flo_num"].ToString() + @"'
+            ,'" + dr["flo_record"].ToString() + @"'
+            ,'" + dr["flo_coding"].ToString() + @"'
+            ,'" + dr["flo_cilentID"].ToString() + @"'
+            ,'" + dr["flo_model"].ToString() + @"'
+            ,'" + dr["flo_logo"].ToString() + @"'
+            ,'" + dr["flo_proname"].ToString() + @"'
+            ,'" + dr["flo_range"].ToString() + @"'
+            ,'" + dr["flo_unit"].ToString() + @"'
+            ,'" + dr["flo_reunit"].ToString() + @"'
+            ,'" + dr["flo_memunit"].ToString() + @"'
+            ,'" + dr["flo_frames"].ToString() + @"'
+            ,'" + dr["flo_backcolor"].ToString() + @"'
+            ,'" + dr["flo_closetime"].ToString() + @"'
+            ,'" + dr["flo_backtime"].ToString() + @"'
+            ,'" + dr["flo_revise"].ToString() + @"'
+            ,'" + dr["flo_cleRange"].ToString() + @"'
+            ,'" + dr["flo_cleShutdown"].ToString() + @"'
+            ,'" + dr["flo_gravity"].ToString() + @"'
+            ,'" + dr["flo_levFacSet"].ToString() + @"'
+            ,'" + dr["flo_cell"].ToString() + @"'
+            ,'" + dr["flo_plastic"].ToString() + @"'
+            ,'" + dr["flo_quantity"].ToString() + @"'
+            ,'" + dr["flo_delivery"].ToString() + @"'
+            ,'" + dr["flo_encase"].ToString() + @"'
+            ,'" + dr["flo_box"].ToString() + @"'
+            ,'" + dr["flo_ask"].ToString() + @"'
+            ,'" + dr["flo_pic"].ToString() + @"'
+            ,'" + dr["flo_modibom1"].ToString() + @"'
+            ,'" + dr["flo_modibom2"].ToString() + @"'
+            ,'" + dr["flo_bomVerify"].ToString() + @"'
+            ,'" + dr["flo_starv"].ToString() + @"'
+            ,'" + dr["flo_online"].ToString() + @"'
+            ,'" + dr["flo_comMater"].ToString() + @"'
+            ,'" + dr["flo_comqusSolve"].ToString() + @"'
+            ,'" + dr["flo_oliquan"].ToString() + @"'
+            ,'" + dr["flo_elequan"].ToString() + @"'
+            ,'" + dr["flo_elsequan"].ToString() + @"'
+            ,'" + dr["flo_facAlter"].ToString() + @"'
+            ,'" + dr["flo_fristMake"].ToString() + @"'
+            ,'" + dr["flo_fristChk"].ToString() + @"'
+            ,'" + dr["flo_ProSum"].ToString() + @"'
+            ,'" + dr["flo_spotChk"].ToString() + @"'
+            ,'" + dr["flo_out"].ToString() + @"'
+            ,'" + dr["flo_finish"].ToString() + @"')";
+                }
+                else if (dr.RowState == System.Data.DataRowState.Deleted)//删除
+                {
+                    strSql = @"DELETE FROM [dbo].[flow]
+                                        WHERE flo_time = '" + dr["flo_time", DataRowVersion.Original].ToString() + @"
+                                            AND flo_num = '" + dr["flo_num", DataRowVersion.Original].ToString() + "'";
+                }
+                else if (dr.RowState == System.Data.DataRowState.Modified)//修改
+                {
+                    strSql = @"UPDATE [dbo].[flow]
+                                    SET [flo_state]='" + dr["flo_state"].ToString() + @"
+                                    ,[flo_client]='" + dr["flo_client"].ToString() + @"
+                                    ,[flo_factory]='" + dr["flo_factory"].ToString() + @"
+                                    ,[flo_line]='" + dr["flo_line"].ToString() + @"
+                                    ,[flo_num]='" + dr["flo_num"].ToString() + @"
+                                    ,[flo_record]='" + dr["flo_record"].ToString() + @"
+                                    ,[flo_coding]='" + dr["flo_cilentID"].ToString() + @"
+                                    ,[flo_model]='" + dr["flo_model"].ToString() + @"
+                                    ,[flo_logo]='" + dr["flo_logo"].ToString() + @"
+                                    ,[flo_proname]='" + dr["flo_proname"].ToString() + @"
+                                    ,[flo_unit]='" + dr["flo_unit"].ToString() + @"
+                                    ,[flo_reunit]='" + dr["flo_reunit"].ToString() + @"
+                                    ,[flo_memunit]='" + dr["flo_memunit"].ToString() + @"
+                                    ,[flo_frames]='" + dr["flo_frames"].ToString() + @"
+                                    ,[flo_backcolor]='" + dr["flo_backcolor"].ToString() + @"
+                                    ,[flo_closetime]='" + dr["flo_closetime"].ToString() + @"
+                                    ,[flo_backtime]='" + dr["flo_backtime"].ToString() + @"
+                                    ,[flo_revise]='" + dr["flo_revise"].ToString() + @"
+                                    ,[flo_cleRange]='" + dr["flo_cleRange"].ToString() + @"
+                                    ,[flo_cleShutdown]='" + dr["flo_cleShutdown"].ToString() + @"
+                                    ,[flo_gravity]='" + dr["flo_gravity"].ToString() + @"
+                                    ,[flo_levFacSet]='" + dr["flo_levFacSet"].ToString() + @"
+                                    ,[flo_cell]='" + dr["flo_cell"].ToString() + @"
+                                    ,[flo_plastic]='" + dr["flo_plastic"].ToString() + @"
+                                    ,[flo_quantity]='" + dr["flo_quantity"].ToString() + @"
+                                    ,[flo_delivery]='" + dr["flo_delivery"].ToString() + @"
+                                    ,[flo_encase]='" + dr["flo_encase"].ToString() + @"
+                                    ,[flo_box]='" + dr["flo_box"].ToString() + @"
+                                    ,[flo_ask]='" + dr["flo_ask"].ToString() + @"
+                                    ,[flo_pic]='" + dr["flo_pic"].ToString() + @"
+                                    ,[flo_modibom1]='" + dr["flo_modibom1"].ToString() + @"
+                                    ,[flo_modibom2]='" + dr["flo_modibom2"].ToString() + @"
+                                    ,[flo_bomVerify]='" + dr["flo_bomVerify"].ToString() + @"
+                                    ,[flo_online]='" + dr["flo_online"].ToString() + @"
+                                    ,[flo_comMater]='" + dr["flo_comMater"].ToString() + @"
+                                    ,[flo_comqusSolve]='" + dr["flo_comqusSolve"].ToString() + @"
+                                    ,[flo_oliquan]='" + dr["flo_oliquan"].ToString() + @"
+                                    ,[flo_elequan]='" + dr["flo_elequan"].ToString() + @"
+                                    ,[flo_elsequan]='" + dr["flo_elsequan"].ToString() + @"
+                                    ,[flo_facAlter]='" + dr["flo_facAlter"].ToString() + @"
+                                    ,[flo_fristMake]='" + dr["flo_fristMake"].ToString() + @"
+                                    ,[flo_fristChk]='" + dr["flo_fristChk"].ToString() + @"
+                                    ,[flo_ProSum]='" + dr["flo_ProSum"].ToString() + @"
+                                    ,[flo_spotChk]='" + dr["flo_spotChk"].ToString() + @"
+                                    ,[flo_out]='" + dr["flo_out"].ToString() + @"
+                                    ,[flo_finish]='" + dr["flo_finish"].ToString() + @"
+                                WHERE flo_time = '" + dr["flo_time"].ToString() + @"'
+                                      AND flo_num ='" + dr["flo_num"].ToString() + "'";
+                }
+
+            }
+            SqlCommand comm = new SqlCommand(strSql, conn_flow);
+            comm.ExecuteNonQuery();
+            MessageBox.Show("已提交成功");
         }
     }
 }

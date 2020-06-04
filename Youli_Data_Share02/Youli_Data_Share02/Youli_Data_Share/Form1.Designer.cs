@@ -35,10 +35,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -63,11 +63,11 @@
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.flowLayoutPanel1.Controls.Add(this.button12);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.button5);
             this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button12);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Controls.Add(this.button11);
             this.flowLayoutPanel1.Controls.Add(this.button10);
@@ -89,7 +89,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::Youli_Data_Share.Properties.Resources.production_139_13043478261px_1215962_easyicon_net;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(48, 11);
+            this.button1.Location = new System.Drawing.Point(217, 11);
             this.button1.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 152);
@@ -107,7 +107,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = global::Youli_Data_Share.Properties.Resources.folders_144_66546112116px_1214078_easyicon_net;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(217, 11);
+            this.button2.Location = new System.Drawing.Point(386, 11);
             this.button2.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(126, 152);
@@ -125,7 +125,7 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = global::Youli_Data_Share.Properties.Resources.folder_128px_1229425_easyicon_net;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(386, 11);
+            this.button5.Location = new System.Drawing.Point(555, 11);
             this.button5.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(126, 152);
@@ -143,7 +143,7 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = global::Youli_Data_Share.Properties.Resources.magnifying_glass_tilted_left_123_15457413249px_1215124_easyicon_net;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(555, 11);
+            this.button3.Location = new System.Drawing.Point(724, 11);
             this.button3.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(126, 152);
@@ -153,23 +153,23 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button10
+            // button12
             // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(386, 206);
-            this.button10.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(126, 152);
-            this.button10.TabIndex = 7;
-            this.button10.Text = "订单BOM确认";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Image = global::Youli_Data_Share.Properties.Resources.teamwork_128px_1208219_easyicon_net;
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button12.Location = new System.Drawing.Point(48, 11);
+            this.button12.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(126, 152);
+            this.button12.TabIndex = 9;
+            this.button12.Text = "订单流程";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button4
             // 
@@ -207,23 +207,23 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
-            // button12
+            // button10
             // 
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Image = global::Youli_Data_Share.Properties.Resources.teamwork_128px_1208219_easyicon_net;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button12.Location = new System.Drawing.Point(724, 11);
-            this.button12.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(126, 152);
-            this.button12.TabIndex = 9;
-            this.button12.Text = "订单流程";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button10.Location = new System.Drawing.Point(386, 206);
+            this.button10.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(126, 152);
+            this.button10.TabIndex = 7;
+            this.button10.Text = "订单BOM确认";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button13
             // 
