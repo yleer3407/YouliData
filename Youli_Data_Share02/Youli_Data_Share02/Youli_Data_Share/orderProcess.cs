@@ -157,6 +157,7 @@ namespace Youli_Data_Share
             string width50 = INIHelper.Read("width", "Columns50", "100", Laypath);
             string width51 = INIHelper.Read("width", "Columns51", "100", Laypath);
             string width52 = INIHelper.Read("width", "Columns52", "100", Laypath);
+           // string width53 = INIHelper.Read("width", "Columns53", "100", Laypath);
 
             dataGridView1.Columns[0].Width = int.Parse(width0);//0-9
             dataGridView1.Columns[1].Width = int.Parse(width1);
@@ -216,6 +217,7 @@ namespace Youli_Data_Share
             dataGridView1.Columns[50].Width = int.Parse(width50);//50-52
             dataGridView1.Columns[51].Width = int.Parse(width51);
             dataGridView1.Columns[52].Width = int.Parse(width52);
+            //dataGridView1.Columns[53].Width = int.Parse(width53);
 
 
             #endregion
@@ -240,36 +242,37 @@ namespace Youli_Data_Share
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
             #endregion
 
-            #region 背景色筛选
-            for (int i = 0; i < dataGridView1.RowCount; i++)
-            {
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                {
-                    this.dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.LightGreen;
-                    if (dataGridView1.Rows[i].Cells[j].Value == "")
-                    {
-                        this.dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.LightGreen;
-                    }
-                    else
-                    {
-                        this.dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.White;
-                    }
-                }
-            }
-            #endregion
+            //#region 背景色筛选
+            //for (int i = 0; i < dataGridView1.RowCount; i++)
+            //{
+            //    for (int j = 0; j < dataGridView1.ColumnCount; j++)
+            //    {
+            //        this.dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.LightGreen;
+            //        if (dataGridView1.Rows[i].Cells[j].Value == "")
+            //        {
+            //            this.dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.LightGreen;
+            //        }
+            //        else
+            //        {
+            //            this.dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.White;
+            //        }
+            //    }
+            //}
+            //#endregion
         }
 
         private void tsbbtn_set_Click(object sender, EventArgs e)
         {
+            //有些顺序错乱 需要注意
             #region 记录表格格式
             string Laypath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sys.ini");
             string width0 = dataGridView1.Columns[0].Width.ToString();//0-9
             string width1 = dataGridView1.Columns[1].Width.ToString();
             string width2 = dataGridView1.Columns[2].Width.ToString();
-            string width3 = dataGridView1.Columns[3].Width.ToString();
+            string width3 = dataGridView1.Columns[3].Width.ToString();//c0
             string width4 = dataGridView1.Columns[4].Width.ToString();
             string width5 = dataGridView1.Columns[5].Width.ToString();
-            string width6 = dataGridView1.Columns[6].Width.ToString();
+            string width6 = dataGridView1.Columns[6].Width.ToString();//
             string width7 = dataGridView1.Columns[7].Width.ToString();
             string width8 = dataGridView1.Columns[8].Width.ToString();
             string width9 = dataGridView1.Columns[9].Width.ToString();
@@ -294,7 +297,7 @@ namespace Youli_Data_Share
             string width26 = dataGridView1.Columns[26].Width.ToString();
             string width27 = dataGridView1.Columns[27].Width.ToString();
             string width28 = dataGridView1.Columns[28].Width.ToString();
-            string width29 = dataGridView1.Columns[29].Width.ToString();
+            string width29 = dataGridView1.Columns[9].Width.ToString();
 
             string width30 = dataGridView1.Columns[30].Width.ToString();//30-39
             string width31 = dataGridView1.Columns[31].Width.ToString();
@@ -321,53 +324,54 @@ namespace Youli_Data_Share
             string width50 = dataGridView1.Columns[50].Width.ToString();//50-52
             string width51 = dataGridView1.Columns[51].Width.ToString();
             string width52 = dataGridView1.Columns[52].Width.ToString();
+            //string width53 = dataGridView1.Columns[53].Width.ToString();
 
-            INIHelper.Write("width", "Columns0", width0, Laypath);//0-9
-            INIHelper.Write("width", "Columns1", width1, Laypath);
-            INIHelper.Write("width", "Columns2", width2, Laypath);
-            INIHelper.Write("width", "Columns3", width3, Laypath);
-            INIHelper.Write("width", "Columns4", width4, Laypath);
-            INIHelper.Write("width", "Columns5", width5, Laypath);
-            INIHelper.Write("width", "Columns6", width6, Laypath);
-            INIHelper.Write("width", "Columns7", width7, Laypath);
-            INIHelper.Write("width", "Columns8", width8, Laypath);
-            INIHelper.Write("width", "Columns9", width9, Laypath);
+            INIHelper.Write("width", "Columns0", width3, Laypath);//0-9
+            INIHelper.Write("width", "Columns1", width4, Laypath);
+            INIHelper.Write("width", "Columns2", width5, Laypath);
+            INIHelper.Write("width", "Columns3", width6, Laypath);
+            INIHelper.Write("width", "Columns4", width7, Laypath);
+            INIHelper.Write("width", "Columns5", width8, Laypath);
+            INIHelper.Write("width", "Columns6", width9, Laypath);
+            INIHelper.Write("width", "Columns7", width10, Laypath);
+            INIHelper.Write("width", "Columns8", width11, Laypath);
+            INIHelper.Write("width", "Columns9", width12, Laypath);
 
-            INIHelper.Write("width", "Columns10", width10, Laypath);//10-19
-            INIHelper.Write("width", "Columns11", width11, Laypath);
-            INIHelper.Write("width", "Columns12", width12, Laypath);
-            INIHelper.Write("width", "Columns13", width13, Laypath);
-            INIHelper.Write("width", "Columns14", width14, Laypath);
-            INIHelper.Write("width", "Columns15", width15, Laypath);
-            INIHelper.Write("width", "Columns16", width16, Laypath);
-            INIHelper.Write("width", "Columns17", width17, Laypath);
-            INIHelper.Write("width", "Columns18", width18, Laypath);
-            INIHelper.Write("width", "Columns19", width19, Laypath);
+            INIHelper.Write("width", "Columns10", width13, Laypath);//10-19
+            INIHelper.Write("width", "Columns11", width14, Laypath);
+            INIHelper.Write("width", "Columns12", width15, Laypath);
+            INIHelper.Write("width", "Columns13", width16, Laypath);
+            INIHelper.Write("width", "Columns14", width17, Laypath);
+            INIHelper.Write("width", "Columns15", width18, Laypath);
+            INIHelper.Write("width", "Columns16", width19, Laypath);
+            INIHelper.Write("width", "Columns17", width20, Laypath);
+            INIHelper.Write("width", "Columns18", width21, Laypath);
+            INIHelper.Write("width", "Columns19", width22, Laypath);
 
-            INIHelper.Write("width", "Columns20", width20, Laypath);//20-29
-            INIHelper.Write("width", "Columns21", width21, Laypath);
-            INIHelper.Write("width", "Columns22", width22, Laypath);
-            INIHelper.Write("width", "Columns23", width23, Laypath);
-            INIHelper.Write("width", "Columns24", width24, Laypath);
-            INIHelper.Write("width", "Columns25", width25, Laypath);
-            INIHelper.Write("width", "Columns26", width26, Laypath);
-            INIHelper.Write("width", "Columns27", width27, Laypath);
-            INIHelper.Write("width", "Columns28", width28, Laypath);
-            INIHelper.Write("width", "Columns29", width29, Laypath);
+            INIHelper.Write("width", "Columns20", width23, Laypath);//20-29
+            INIHelper.Write("width", "Columns21", width24, Laypath);
+            INIHelper.Write("width", "Columns22", width25, Laypath);
+            INIHelper.Write("width", "Columns23", width26, Laypath);
+            INIHelper.Write("width", "Columns24", width27, Laypath);
+            INIHelper.Write("width", "Columns25", width28, Laypath);
+            INIHelper.Write("width", "Columns26", width29, Laypath);
+            INIHelper.Write("width", "Columns27", width30, Laypath);
+            INIHelper.Write("width", "Columns28", width31, Laypath);
+            INIHelper.Write("width", "Columns29", width32, Laypath);
 
-            INIHelper.Write("width", "Columns30", width30, Laypath);//30-39
-            INIHelper.Write("width", "Columns31", width31, Laypath);
-            INIHelper.Write("width", "Columns32", width32, Laypath);
-            INIHelper.Write("width", "Columns33", width33, Laypath);
-            INIHelper.Write("width", "Columns34", width34, Laypath);
-            INIHelper.Write("width", "Columns35", width35, Laypath);
-            INIHelper.Write("width", "Columns36", width36, Laypath);
-            INIHelper.Write("width", "Columns37", width37, Laypath);
-            INIHelper.Write("width", "Columns38", width38, Laypath);
-            INIHelper.Write("width", "Columns39", width39, Laypath);
+            INIHelper.Write("width", "Columns30", width33, Laypath);//30-39
+            INIHelper.Write("width", "Columns31", width34, Laypath);
+            INIHelper.Write("width", "Columns32", width0, Laypath);
+            INIHelper.Write("width", "Columns33", width35, Laypath);
+            INIHelper.Write("width", "Columns34", width1, Laypath);
+            INIHelper.Write("width", "Columns35", width36, Laypath);
+            INIHelper.Write("width", "Columns36", width37, Laypath);
+            INIHelper.Write("width", "Columns37", width38, Laypath);
+            INIHelper.Write("width", "Columns38", width39, Laypath);
+            INIHelper.Write("width", "Columns39", width40, Laypath);
 
-            INIHelper.Write("width", "Columns40", width40, Laypath);//40-49
-            INIHelper.Write("width", "Columns41", width41, Laypath);
+            INIHelper.Write("width", "Columns40", width41, Laypath);//40-49
+            INIHelper.Write("width", "Columns41", width2, Laypath);
             INIHelper.Write("width", "Columns42", width42, Laypath);
             INIHelper.Write("width", "Columns43", width43, Laypath);
             INIHelper.Write("width", "Columns44", width44, Laypath);
@@ -380,6 +384,7 @@ namespace Youli_Data_Share
             INIHelper.Write("width", "Columns50", width50, Laypath);//50-52
             INIHelper.Write("width", "Columns51", width51, Laypath);
             INIHelper.Write("width", "Columns52", width52, Laypath);
+            //INIHelper.Write("width", "Columns53", width53, Laypath);
 
             #endregion
             MessageBox.Show("格式保存成功！");
@@ -391,12 +396,14 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void tsbbtn_submit_Click(object sender, EventArgs e)
         {
+
             //try
             //{
                 String strSql = string.Empty;
                 DataTable changeDT = dt_flow.GetChanges();
                 foreach (DataRow dr in changeDT.Rows)
                 {
+              //  MessageBox.Show(dr["flo_time"].ToString()); 
                     if (dr.RowState == System.Data.DataRowState.Added)//添加
                     {
 
@@ -453,55 +460,55 @@ namespace Youli_Data_Share
            ,[flo_finish])
      VALUES
             ('" + dr["flo_time"].ToString() + @"'
-            ,'" + dr["flo_state"].ToString() + @"'
-            ,'" + dr["flo_client"].ToString() + @"'
-            ,'" + dr["flo_factory"].ToString() + @"'
-            ,'" + dr["flo_line"].ToString() + @"'
-            ,'" + dr["flo_num"].ToString() + @"'
-            ,'" + dr["flo_record"].ToString() + @"'
-            ,'" + dr["flo_coding"].ToString() + @"'
-            ,'" + dr["flo_cilentID"].ToString() + @"'
-            ,'" + dr["flo_model"].ToString() + @"'
-            ,'" + dr["flo_logo"].ToString() + @"'
-            ,'" + dr["flo_proname"].ToString() + @"'
-            ,'" + dr["flo_range"].ToString() + @"'
-            ,'" + dr["flo_unit"].ToString() + @"'
-            ,'" + dr["flo_reunit"].ToString() + @"'
-            ,'" + dr["flo_memunit"].ToString() + @"'
-            ,'" + dr["flo_frames"].ToString() + @"'
-            ,'" + dr["flo_backcolor"].ToString() + @"'
-            ,'" + dr["flo_closetime"].ToString() + @"'
-            ,'" + dr["flo_backtime"].ToString() + @"'
-            ,'" + dr["flo_revise"].ToString() + @"'
-            ,'" + dr["flo_cleRange"].ToString() + @"'
-            ,'" + dr["flo_cleShutdown"].ToString() + @"'
-            ,'" + dr["flo_gravity"].ToString() + @"'
-            ,'" + dr["flo_levFacSet"].ToString() + @"'
-            ,'" + dr["flo_cell"].ToString() + @"'
-            ,'" + dr["flo_plastic"].ToString() + @"'
-            ,'" + dr["flo_quantity"].ToString() + @"'
-            ,'" + dr["flo_delivery"].ToString() + @"'
-            ,'" + dr["flo_encase"].ToString() + @"'
-            ,'" + dr["flo_box"].ToString() + @"'
-            ,'" + dr["flo_ask"].ToString() + @"'
-            ,'" + dr["flo_pic"].ToString() + @"'
-            ,'" + dr["flo_modibom1"].ToString() + @"'
-            ,'" + dr["flo_modibom2"].ToString() + @"'
-            ,'" + dr["flo_bomVerify"].ToString() + @"'
-            ,'" + dr["flo_starv"].ToString() + @"'
-            ,'" + dr["flo_online"].ToString() + @"'
-            ,'" + dr["flo_comMater"].ToString() + @"'
-            ,'" + dr["flo_comqusSolve"].ToString() + @"'
-            ,'" + dr["flo_oliquan"].ToString() + @"'
-            ,'" + dr["flo_elequan"].ToString() + @"'
-            ,'" + dr["flo_elsequan"].ToString() + @"'
-            ,'" + dr["flo_facAlter"].ToString() + @"'
-            ,'" + dr["flo_fristMake"].ToString() + @"'
-            ,'" + dr["flo_fristChk"].ToString() + @"'
-            ,'" + dr["flo_ProSum"].ToString() + @"'
-            ,'" + dr["flo_spotChk"].ToString() + @"'
-            ,'" + dr["flo_out"].ToString() + @"'
-            ,'" + dr["flo_finish"].ToString() + @"')";
+                                        ,'" + dr["flo_state"].ToString() + @"'
+                                        ,'" + dr["flo_client"].ToString() + @"'
+                                        ,'" + dr["flo_factory"].ToString() + @"'
+                                        ,'" + dr["flo_line"].ToString() + @"'
+                                        ,'" + dr["flo_num"].ToString() + @"'
+                                        ,'" + dr["flo_record"].ToString() + @"'
+                                        ,'" + dr["flo_coding"].ToString() + @"'
+                                        ,'" + dr["flo_cilentID"].ToString() + @"'
+                                        ,'" + dr["flo_model"].ToString() + @"'
+                                        ,'" + dr["flo_logo"].ToString() + @"'
+                                        ,'" + dr["flo_proname"].ToString() + @"'
+                                        ,'" + dr["flo_range"].ToString() + @"'
+                                        ,'" + dr["flo_unit"].ToString() + @"'
+                                        ,'" + dr["flo_reunit"].ToString() + @"'
+                                        ,'" + dr["flo_memunit"].ToString() + @"'
+                                        ,'" + dr["flo_frames"].ToString() + @"'
+                                        ,'" + dr["flo_backcolor"].ToString() + @"'
+                                        ,'" + dr["flo_closetime"].ToString() + @"'
+                                        ,'" + dr["flo_backtime"].ToString() + @"'
+                                        ,'" + dr["flo_revise"].ToString() + @"'
+                                        ,'" + dr["flo_cleRange"].ToString() + @"'
+                                        ,'" + dr["flo_cleShutdown"].ToString() + @"'
+                                        ,'" + dr["flo_gravity"].ToString() + @"'
+                                        ,'" + dr["flo_levFacSet"].ToString() + @"'
+                                        ,'" + dr["flo_cell"].ToString() + @"'
+                                        ,'" + dr["flo_plastic"].ToString() + @"'
+                                        ,'" + dr["flo_quantity"].ToString() + @"'
+                                        ,'" + dr["flo_delivery"].ToString() + @"'
+                                        ,'" + dr["flo_encase"].ToString() + @"'
+                                        ,'" + dr["flo_box"].ToString() + @"'
+                                        ,'" + dr["flo_ask"].ToString() + @"'
+                                        ,'" + dr["flo_pic"].ToString() + @"'
+                                        ,'" + dr["flo_modibom1"].ToString() + @"'
+                                        ,'" + dr["flo_modibom2"].ToString() + @"'
+                                        ,'" + dr["flo_bomVerify"].ToString() + @"'
+                                        ,'" + dr["flo_starv"].ToString() + @"'
+                                        ,'" + dr["flo_online"].ToString() + @"'
+                                        ,'" + dr["flo_comMater"].ToString() + @"'
+                                        ,'" + dr["flo_comqusSolve"].ToString() + @"'
+                                        ,'" + dr["flo_oliquan"].ToString() + @"'
+                                        ,'" + dr["flo_elequan"].ToString() + @"'
+                                        ,'" + dr["flo_elsequan"].ToString() + @"'
+                                        ,'" + dr["flo_facAlter"].ToString() + @"'
+                                        ,'" + dr["flo_fristMake"].ToString() + @"'
+                                        ,'" + dr["flo_fristChk"].ToString() + @"'
+                                        ,'" + dr["flo_ProSum"].ToString() + @"'
+                                        ,'" + dr["flo_spotChk"].ToString() + @"'
+                                        ,'" + dr["flo_out"].ToString() + @"'
+                                        ,'" + dr["flo_finish"].ToString() + @"')";
                     }
                     else if (dr.RowState == System.Data.DataRowState.Deleted)//删除
                     {
@@ -511,54 +518,54 @@ namespace Youli_Data_Share
                     }
                     else if (dr.RowState == System.Data.DataRowState.Modified)//修改
                     {
-                        strSql = @"UPDATE [dbo].[flow]
-                                    SET [flo_state]='" + dr["flo_state"].ToString() + @"
-                                    ,[flo_client]='" + dr["flo_client"].ToString() + @"
-                                    ,[flo_factory]='" + dr["flo_factory"].ToString() + @"
-                                    ,[flo_line]='" + dr["flo_line"].ToString() + @"
-                                    ,[flo_num]='" + dr["flo_num"].ToString() + @"
-                                    ,[flo_record]='" + dr["flo_record"].ToString() + @"
-                                    ,[flo_coding]='" + dr["flo_cilentID"].ToString() + @"
-                                    ,[flo_model]='" + dr["flo_model"].ToString() + @"
-                                    ,[flo_logo]='" + dr["flo_logo"].ToString() + @"
-                                    ,[flo_proname]='" + dr["flo_proname"].ToString() + @"
-                                    ,[flo_unit]='" + dr["flo_unit"].ToString() + @"
-                                    ,[flo_reunit]='" + dr["flo_reunit"].ToString() + @"
-                                    ,[flo_memunit]='" + dr["flo_memunit"].ToString() + @"
-                                    ,[flo_frames]='" + dr["flo_frames"].ToString() + @"
-                                    ,[flo_backcolor]='" + dr["flo_backcolor"].ToString() + @"
-                                    ,[flo_closetime]='" + dr["flo_closetime"].ToString() + @"
-                                    ,[flo_backtime]='" + dr["flo_backtime"].ToString() + @"
-                                    ,[flo_revise]='" + dr["flo_revise"].ToString() + @"
-                                    ,[flo_cleRange]='" + dr["flo_cleRange"].ToString() + @"
-                                    ,[flo_cleShutdown]='" + dr["flo_cleShutdown"].ToString() + @"
-                                    ,[flo_gravity]='" + dr["flo_gravity"].ToString() + @"
-                                    ,[flo_levFacSet]='" + dr["flo_levFacSet"].ToString() + @"
-                                    ,[flo_cell]='" + dr["flo_cell"].ToString() + @"
-                                    ,[flo_plastic]='" + dr["flo_plastic"].ToString() + @"
-                                    ,[flo_quantity]='" + dr["flo_quantity"].ToString() + @"
-                                    ,[flo_delivery]='" + dr["flo_delivery"].ToString() + @"
-                                    ,[flo_encase]='" + dr["flo_encase"].ToString() + @"
-                                    ,[flo_box]='" + dr["flo_box"].ToString() + @"
-                                    ,[flo_ask]='" + dr["flo_ask"].ToString() + @"
-                                    ,[flo_pic]='" + dr["flo_pic"].ToString() + @"
-                                    ,[flo_modibom1]='" + dr["flo_modibom1"].ToString() + @"
-                                    ,[flo_modibom2]='" + dr["flo_modibom2"].ToString() + @"
-                                    ,[flo_bomVerify]='" + dr["flo_bomVerify"].ToString() + @"
-                                    ,[flo_online]='" + dr["flo_online"].ToString() + @"
-                                    ,[flo_comMater]='" + dr["flo_comMater"].ToString() + @"
-                                    ,[flo_comqusSolve]='" + dr["flo_comqusSolve"].ToString() + @"
-                                    ,[flo_oliquan]='" + dr["flo_oliquan"].ToString() + @"
-                                    ,[flo_elequan]='" + dr["flo_elequan"].ToString() + @"
-                                    ,[flo_elsequan]='" + dr["flo_elsequan"].ToString() + @"
-                                    ,[flo_facAlter]='" + dr["flo_facAlter"].ToString() + @"
-                                    ,[flo_fristMake]='" + dr["flo_fristMake"].ToString() + @"
-                                    ,[flo_fristChk]='" + dr["flo_fristChk"].ToString() + @"
-                                    ,[flo_ProSum]='" + dr["flo_ProSum"].ToString() + @"
-                                    ,[flo_spotChk]='" + dr["flo_spotChk"].ToString() + @"
-                                    ,[flo_out]='" + dr["flo_out"].ToString() + @"
-                                    ,[flo_finish]='" + dr["flo_finish"].ToString() + @"
-                                WHERE flo_time = '" + dr["flo_time"].ToString() + @"'
+                        strSql = @"UPDATE [Youli_date].[dbo].[flow]
+                                    SET [flo_state]='" + dr["flo_state"].ToString() + @"'
+                                    ,[flo_client]='" + dr["flo_client"].ToString() + @"'
+                                    ,[flo_factory]='" + dr["flo_factory"].ToString() + @"'
+                                    ,[flo_line]='" + dr["flo_line"].ToString() + @"'
+                                    ,[flo_num]='" + dr["flo_num"].ToString() + @"'
+                                    ,[flo_record]='" + dr["flo_record"].ToString() + @"'
+                                    ,[flo_coding]='" + dr["flo_cilentID"].ToString() + @"'
+                                    ,[flo_model]='" + dr["flo_model"].ToString() + @"'
+                                    ,[flo_logo]='" + dr["flo_logo"].ToString() + @"'
+                                    ,[flo_proname]='" + dr["flo_proname"].ToString() + @"'
+                                    ,[flo_unit]='" + dr["flo_unit"].ToString() + @"'
+                                    ,[flo_reunit]='" + dr["flo_reunit"].ToString() + @"'
+                                    ,[flo_memunit]='" + dr["flo_memunit"].ToString() + @"'
+                                    ,[flo_frames]='" + dr["flo_frames"].ToString() + @"'
+                                    ,[flo_backcolor]='" + dr["flo_backcolor"].ToString() + @"'
+                                    ,[flo_closetime]='" + dr["flo_closetime"].ToString() + @"'
+                                    ,[flo_backtime]='" + dr["flo_backtime"].ToString() + @"'
+                                    ,[flo_revise]='" + dr["flo_revise"].ToString() + @"'
+                                    ,[flo_cleRange]='" + dr["flo_cleRange"].ToString() + @"'
+                                    ,[flo_cleShutdown]='" + dr["flo_cleShutdown"].ToString() + @"'
+                                    ,[flo_gravity]='" + dr["flo_gravity"].ToString() + @"'
+                                    ,[flo_levFacSet]='" + dr["flo_levFacSet"].ToString() + @"'
+                                    ,[flo_cell]='" + dr["flo_cell"].ToString() + @"'
+                                    ,[flo_plastic]='" + dr["flo_plastic"].ToString() + @"'
+                                    ,[flo_quantity]='" + dr["flo_quantity"].ToString() + @"'
+                                    ,[flo_delivery]='" + dr["flo_delivery"].ToString() + @"'
+                                    ,[flo_encase]='" + dr["flo_encase"].ToString() + @"'
+                                    ,[flo_box]='" + dr["flo_box"].ToString() + @"'
+                                    ,[flo_ask]='" + dr["flo_ask"].ToString() + @"'
+                                    ,[flo_pic]='" + dr["flo_pic"].ToString() + @"'
+                                    ,[flo_modibom1]='" + dr["flo_modibom1"].ToString() + @"'
+                                    ,[flo_modibom2]='" + dr["flo_modibom2"].ToString() + @"'
+                                    ,[flo_bomVerify]='" + dr["flo_bomVerify"].ToString() + @"'
+                                    ,[flo_online]='" + dr["flo_online"].ToString() + @"'
+                                    ,[flo_comMater]='" + dr["flo_comMater"].ToString() + @"'
+                                    ,[flo_comqusSolve]='" + dr["flo_comqusSolve"].ToString() + @"'
+                                    ,[flo_oliquan]='" + dr["flo_oliquan"].ToString() + @"'
+                                    ,[flo_elequan]='" + dr["flo_elequan"].ToString() + @"'
+                                    ,[flo_elsequan]='" + dr["flo_elsequan"].ToString() + @"'
+                                    ,[flo_facAlter]='" + dr["flo_facAlter"].ToString() + @"'
+                                    ,[flo_fristMake]='" + dr["flo_fristMake"].ToString() + @"'
+                                    ,[flo_fristChk]='" + dr["flo_fristChk"].ToString() + @"'
+                                    ,[flo_ProSum]='" + dr["flo_ProSum"].ToString() + @"'
+                                    ,[flo_spotChk]='" + dr["flo_spotChk"].ToString() + @"'
+                                    ,[flo_out]='" + dr["flo_out"].ToString() + @"'
+                                    ,[flo_finish]='" + dr["flo_finish"].ToString() + @"'
+                                  WHERE flo_time = '" + dr["flo_time"].ToString() + @"'
                                       AND flo_num='" + dr["flo_num"].ToString() + "'";
                     }
 
