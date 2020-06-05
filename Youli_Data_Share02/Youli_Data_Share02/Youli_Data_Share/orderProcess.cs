@@ -49,11 +49,11 @@ namespace Youli_Data_Share
 
                             if (drLgoin["count0" + i].ToString() == "1")
                             {
-                                dataGridView1.Columns[i].ReadOnly = false;
+                                dgvWorkFlow.Columns[i].ReadOnly = false;
                             }
                             else
                             {
-                                dataGridView1.Columns[i].ReadOnly = true;
+                                dgvWorkFlow.Columns[i].ReadOnly = true;
                             }
                         }
                     }
@@ -96,6 +96,131 @@ namespace Youli_Data_Share
 
         private void orderProcess_Load(object sender, EventArgs e)
         {
+            #region 标题栏改色
+            dgvWorkFlow.EnableHeadersVisualStyles = false;
+            DataGridViewColumn dataGridViewColumn0 = dgvWorkFlow.Columns[0];
+            DataGridViewColumn dataGridViewColumn1 = dgvWorkFlow.Columns[1];
+            DataGridViewColumn dataGridViewColumn2 = dgvWorkFlow.Columns[2];
+            DataGridViewColumn dataGridViewColumn3 = dgvWorkFlow.Columns[3];
+            DataGridViewColumn dataGridViewColumn4 = dgvWorkFlow.Columns[4];
+            DataGridViewColumn dataGridViewColumn5 = dgvWorkFlow.Columns[5];
+            DataGridViewColumn dataGridViewColumn6 = dgvWorkFlow.Columns[6];
+            DataGridViewColumn dataGridViewColumn7 = dgvWorkFlow.Columns[7];
+            DataGridViewColumn dataGridViewColumn8 = dgvWorkFlow.Columns[8];
+            DataGridViewColumn dataGridViewColumn9 = dgvWorkFlow.Columns[9];
+
+            DataGridViewColumn dataGridViewColumn10 = dgvWorkFlow.Columns[10];
+            DataGridViewColumn dataGridViewColumn11 = dgvWorkFlow.Columns[11];
+            DataGridViewColumn dataGridViewColumn12 = dgvWorkFlow.Columns[12];
+            DataGridViewColumn dataGridViewColumn13 = dgvWorkFlow.Columns[13];
+            DataGridViewColumn dataGridViewColumn14 = dgvWorkFlow.Columns[14];
+            DataGridViewColumn dataGridViewColumn15 = dgvWorkFlow.Columns[15];
+            DataGridViewColumn dataGridViewColumn16 = dgvWorkFlow.Columns[16];
+            DataGridViewColumn dataGridViewColumn17 = dgvWorkFlow.Columns[17];
+            DataGridViewColumn dataGridViewColumn18 = dgvWorkFlow.Columns[18];
+            DataGridViewColumn dataGridViewColumn19 = dgvWorkFlow.Columns[19];
+
+            DataGridViewColumn dataGridViewColumn20 = dgvWorkFlow.Columns[20];
+            DataGridViewColumn dataGridViewColumn21 = dgvWorkFlow.Columns[21];
+            DataGridViewColumn dataGridViewColumn22 = dgvWorkFlow.Columns[22];
+            DataGridViewColumn dataGridViewColumn23 = dgvWorkFlow.Columns[23];
+            DataGridViewColumn dataGridViewColumn24 = dgvWorkFlow.Columns[24];
+            DataGridViewColumn dataGridViewColumn25 = dgvWorkFlow.Columns[25];
+            DataGridViewColumn dataGridViewColumn26 = dgvWorkFlow.Columns[26];
+            DataGridViewColumn dataGridViewColumn27 = dgvWorkFlow.Columns[27];
+            DataGridViewColumn dataGridViewColumn28 = dgvWorkFlow.Columns[28];
+            DataGridViewColumn dataGridViewColumn29 = dgvWorkFlow.Columns[29];
+
+            DataGridViewColumn dataGridViewColumn30 = dgvWorkFlow.Columns[30];
+            DataGridViewColumn dataGridViewColumn31 = dgvWorkFlow.Columns[31];
+            DataGridViewColumn dataGridViewColumn32 = dgvWorkFlow.Columns[32];
+            DataGridViewColumn dataGridViewColumn33 = dgvWorkFlow.Columns[33];
+            DataGridViewColumn dataGridViewColumn34 = dgvWorkFlow.Columns[34];
+            DataGridViewColumn dataGridViewColumn35 = dgvWorkFlow.Columns[35];
+            DataGridViewColumn dataGridViewColumn36 = dgvWorkFlow.Columns[36];
+            DataGridViewColumn dataGridViewColumn37 = dgvWorkFlow.Columns[37];
+            DataGridViewColumn dataGridViewColumn38 = dgvWorkFlow.Columns[38];
+            DataGridViewColumn dataGridViewColumn39 = dgvWorkFlow.Columns[39];
+
+            DataGridViewColumn dataGridViewColumn40 = dgvWorkFlow.Columns[40];
+            DataGridViewColumn dataGridViewColumn41 = dgvWorkFlow.Columns[41];
+            DataGridViewColumn dataGridViewColumn42 = dgvWorkFlow.Columns[42];
+            DataGridViewColumn dataGridViewColumn43 = dgvWorkFlow.Columns[43];
+            DataGridViewColumn dataGridViewColumn44 = dgvWorkFlow.Columns[44];
+            DataGridViewColumn dataGridViewColumn45 = dgvWorkFlow.Columns[45];
+            DataGridViewColumn dataGridViewColumn46 = dgvWorkFlow.Columns[46];
+            DataGridViewColumn dataGridViewColumn47 = dgvWorkFlow.Columns[47];
+            DataGridViewColumn dataGridViewColumn48 = dgvWorkFlow.Columns[48];
+            DataGridViewColumn dataGridViewColumn49 = dgvWorkFlow.Columns[49];
+
+            DataGridViewColumn dataGridViewColumn50 = dgvWorkFlow.Columns[50];
+            DataGridViewColumn dataGridViewColumn51 = dgvWorkFlow.Columns[51];
+            DataGridViewColumn dataGridViewColumn52 = dgvWorkFlow.Columns[52];
+
+           //dataGridViewColumn0.HeaderCell.Style.BackColor = Color.YellowGreen;
+            //dataGridViewColumn1.HeaderCell.Style.BackColor = Color.YellowGreen;
+            dataGridViewColumn2.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn3.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn4.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn5.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn6.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn7.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn8.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn9.HeaderCell.Style.BackColor = Color.Yellow;
+
+
+            dataGridViewColumn10.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn11.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn12.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn13.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn14.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn15.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn16.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn17.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn18.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn19.HeaderCell.Style.BackColor = Color.Yellow;
+
+
+            dataGridViewColumn20.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn21.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn22.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn23.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn24.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn25.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn26.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn27.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn28.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn29.HeaderCell.Style.BackColor = Color.Yellow;
+
+
+            dataGridViewColumn30.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn31.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn32.HeaderCell.Style.BackColor = Color.LightCoral;
+            //dataGridViewColumn33.HeaderCell.Style.BackColor = Color.YellowGreen;
+            //dataGridViewColumn34.HeaderCell.Style.BackColor = Color.YellowGreen;
+            dataGridViewColumn35.HeaderCell.Style.BackColor = Color.Orange;
+            dataGridViewColumn36.HeaderCell.Style.BackColor = Color.Turquoise;
+            dataGridViewColumn37.HeaderCell.Style.BackColor = Color.Turquoise;
+            dataGridViewColumn38.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn39.HeaderCell.Style.BackColor = Color.Yellow;
+
+
+            dataGridViewColumn40.HeaderCell.Style.BackColor = Color.LightGreen;
+            dataGridViewColumn41.HeaderCell.Style.BackColor = Color.LightGreen;
+            dataGridViewColumn42.HeaderCell.Style.BackColor = Color.LightGreen;
+            dataGridViewColumn43.HeaderCell.Style.BackColor = Color.Pink;
+            dataGridViewColumn44.HeaderCell.Style.BackColor = Color.SkyBlue;
+            dataGridViewColumn45.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn46.HeaderCell.Style.BackColor = Color.LightSteelBlue;
+            dataGridViewColumn47.HeaderCell.Style.BackColor = Color.Orange;
+            dataGridViewColumn48.HeaderCell.Style.BackColor = Color.LightGreen;
+            dataGridViewColumn49.HeaderCell.Style.BackColor = Color.LightCoral;
+
+            dataGridViewColumn50.HeaderCell.Style.BackColor = Color.LightGreen;
+            dataGridViewColumn51.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn52.HeaderCell.Style.BackColor = Color.Yellow;
+
+            #endregion
             string Laypath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sys.ini");
             INIHelper.CheckPath(Laypath);
             #region 读取datagridview格式
@@ -159,87 +284,71 @@ namespace Youli_Data_Share
             string width52 = INIHelper.Read("width", "Columns52", "100", Laypath);
            // string width53 = INIHelper.Read("width", "Columns53", "100", Laypath);
 
-            dataGridView1.Columns[0].Width = int.Parse(width0);//0-9
-            dataGridView1.Columns[1].Width = int.Parse(width1);
-            dataGridView1.Columns[2].Width = int.Parse(width2);
-            dataGridView1.Columns[3].Width = int.Parse(width3);
-            dataGridView1.Columns[4].Width = int.Parse(width4);
-            dataGridView1.Columns[5].Width = int.Parse(width5);
-            dataGridView1.Columns[6].Width = int.Parse(width6);
-            dataGridView1.Columns[7].Width = int.Parse(width7);
-            dataGridView1.Columns[8].Width = int.Parse(width8);
-            dataGridView1.Columns[9].Width = int.Parse(width9);
+            dgvWorkFlow.Columns[0].Width = int.Parse(width0);//0-9
+            dgvWorkFlow.Columns[1].Width = int.Parse(width1);
+            dgvWorkFlow.Columns[2].Width = int.Parse(width2);
+            dgvWorkFlow.Columns[3].Width = int.Parse(width3);
+            dgvWorkFlow.Columns[4].Width = int.Parse(width4);
+            dgvWorkFlow.Columns[5].Width = int.Parse(width5);
+            dgvWorkFlow.Columns[6].Width = int.Parse(width6);
+            dgvWorkFlow.Columns[7].Width = int.Parse(width7);
+            dgvWorkFlow.Columns[8].Width = int.Parse(width8);
+            dgvWorkFlow.Columns[9].Width = int.Parse(width9);
 
-            dataGridView1.Columns[10].Width = int.Parse(width10);//10-19
-            dataGridView1.Columns[11].Width = int.Parse(width11);
-            dataGridView1.Columns[12].Width = int.Parse(width12);
-            dataGridView1.Columns[13].Width = int.Parse(width13);
-            dataGridView1.Columns[14].Width = int.Parse(width14);
-            dataGridView1.Columns[15].Width = int.Parse(width15);
-            dataGridView1.Columns[16].Width = int.Parse(width16);
-            dataGridView1.Columns[17].Width = int.Parse(width17);
-            dataGridView1.Columns[18].Width = int.Parse(width18);
-            dataGridView1.Columns[19].Width = int.Parse(width19);
+            dgvWorkFlow.Columns[10].Width = int.Parse(width10);//10-19
+            dgvWorkFlow.Columns[11].Width = int.Parse(width11);
+            dgvWorkFlow.Columns[12].Width = int.Parse(width12);
+            dgvWorkFlow.Columns[13].Width = int.Parse(width13);
+            dgvWorkFlow.Columns[14].Width = int.Parse(width14);
+            dgvWorkFlow.Columns[15].Width = int.Parse(width15);
+            dgvWorkFlow.Columns[16].Width = int.Parse(width16);
+            dgvWorkFlow.Columns[17].Width = int.Parse(width17);
+            dgvWorkFlow.Columns[18].Width = int.Parse(width18);
+            dgvWorkFlow.Columns[19].Width = int.Parse(width19);
 
-            dataGridView1.Columns[20].Width = int.Parse(width20);//20-29
-            dataGridView1.Columns[21].Width = int.Parse(width21);
-            dataGridView1.Columns[22].Width = int.Parse(width22);
-            dataGridView1.Columns[23].Width = int.Parse(width23);
-            dataGridView1.Columns[24].Width = int.Parse(width24);
-            dataGridView1.Columns[25].Width = int.Parse(width25);
-            dataGridView1.Columns[26].Width = int.Parse(width26);
-            dataGridView1.Columns[27].Width = int.Parse(width27);
-            dataGridView1.Columns[28].Width = int.Parse(width28);
-            dataGridView1.Columns[29].Width = int.Parse(width29);
+            dgvWorkFlow.Columns[20].Width = int.Parse(width20);//20-29
+            dgvWorkFlow.Columns[21].Width = int.Parse(width21);
+            dgvWorkFlow.Columns[22].Width = int.Parse(width22);
+            dgvWorkFlow.Columns[23].Width = int.Parse(width23);
+            dgvWorkFlow.Columns[24].Width = int.Parse(width24);
+            dgvWorkFlow.Columns[25].Width = int.Parse(width25);
+            dgvWorkFlow.Columns[26].Width = int.Parse(width26);
+            dgvWorkFlow.Columns[27].Width = int.Parse(width27);
+            dgvWorkFlow.Columns[28].Width = int.Parse(width28);
+            dgvWorkFlow.Columns[29].Width = int.Parse(width29);
 
-            dataGridView1.Columns[30].Width = int.Parse(width30);//30-39
-            dataGridView1.Columns[31].Width = int.Parse(width31);
-            dataGridView1.Columns[32].Width = int.Parse(width32);
-            dataGridView1.Columns[33].Width = int.Parse(width33);
-            dataGridView1.Columns[34].Width = int.Parse(width34);
-            dataGridView1.Columns[35].Width = int.Parse(width35);
-            dataGridView1.Columns[36].Width = int.Parse(width36);
-            dataGridView1.Columns[37].Width = int.Parse(width37);
-            dataGridView1.Columns[38].Width = int.Parse(width38);
-            dataGridView1.Columns[39].Width = int.Parse(width39);
+            dgvWorkFlow.Columns[30].Width = int.Parse(width30);//30-39
+            dgvWorkFlow.Columns[31].Width = int.Parse(width31);
+            dgvWorkFlow.Columns[32].Width = int.Parse(width32);
+            dgvWorkFlow.Columns[33].Width = int.Parse(width33);
+            dgvWorkFlow.Columns[34].Width = int.Parse(width34);
+            dgvWorkFlow.Columns[35].Width = int.Parse(width35);
+            dgvWorkFlow.Columns[36].Width = int.Parse(width36);
+            dgvWorkFlow.Columns[37].Width = int.Parse(width37);
+            dgvWorkFlow.Columns[38].Width = int.Parse(width38);
+            dgvWorkFlow.Columns[39].Width = int.Parse(width39);
 
-            dataGridView1.Columns[40].Width = int.Parse(width40);//40-49
-            dataGridView1.Columns[41].Width = int.Parse(width41);
-            dataGridView1.Columns[42].Width = int.Parse(width42);
-            dataGridView1.Columns[43].Width = int.Parse(width43);
-            dataGridView1.Columns[44].Width = int.Parse(width44);
-            dataGridView1.Columns[45].Width = int.Parse(width45);
-            dataGridView1.Columns[46].Width = int.Parse(width46);
-            dataGridView1.Columns[47].Width = int.Parse(width47);
-            dataGridView1.Columns[48].Width = int.Parse(width48);
-            dataGridView1.Columns[49].Width = int.Parse(width49);
+            dgvWorkFlow.Columns[40].Width = int.Parse(width40);//40-49
+            dgvWorkFlow.Columns[41].Width = int.Parse(width41);
+            dgvWorkFlow.Columns[42].Width = int.Parse(width42);
+            dgvWorkFlow.Columns[43].Width = int.Parse(width43);
+            dgvWorkFlow.Columns[44].Width = int.Parse(width44);
+            dgvWorkFlow.Columns[45].Width = int.Parse(width45);
+            dgvWorkFlow.Columns[46].Width = int.Parse(width46);
+            dgvWorkFlow.Columns[47].Width = int.Parse(width47);
+            dgvWorkFlow.Columns[48].Width = int.Parse(width48);
+            dgvWorkFlow.Columns[49].Width = int.Parse(width49);
 
-            dataGridView1.Columns[50].Width = int.Parse(width50);//50-52
-            dataGridView1.Columns[51].Width = int.Parse(width51);
-            dataGridView1.Columns[52].Width = int.Parse(width52);
+            dgvWorkFlow.Columns[50].Width = int.Parse(width50);//50-52
+            dgvWorkFlow.Columns[51].Width = int.Parse(width51);
+            dgvWorkFlow.Columns[52].Width = int.Parse(width52);
             //dataGridView1.Columns[53].Width = int.Parse(width53);
 
 
             #endregion
 
             #region 读取流程数据库内容
-            SqlConnectionStringBuilder scsbFlow = new SqlConnectionStringBuilder();
-            scsbFlow.DataSource = "192.168.1.104";
-            scsbFlow.UserID = "sa";
-            scsbFlow.Password = "yelei193";
-            scsbFlow.InitialCatalog = "Youli_date";
-
-            conn_flow = new SqlConnection(scsbFlow.ToString());
-            if (conn_flow.State == System.Data.ConnectionState.Closed)
-                conn_flow.Open();
-            string strSqlFlow = "SELECT * FROM flow";
-            SqlDataAdapter daFlow = new SqlDataAdapter(strSqlFlow, conn_flow);
-            DataSet dsFlow = new DataSet();
-            daFlow.Fill(dsFlow, "flow");
-
-            dt_flow = dsFlow.Tables["flow"];
-            dataGridView1.DataSource = dt_flow.DefaultView;
-            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
+            searchDate();
             #endregion
 
             //#region 背景色筛选
@@ -259,6 +368,7 @@ namespace Youli_Data_Share
             //    }
             //}
             //#endregion
+
         }
 
         private void tsbbtn_set_Click(object sender, EventArgs e)
@@ -266,64 +376,64 @@ namespace Youli_Data_Share
             //有些顺序错乱 需要注意
             #region 记录表格格式
             string Laypath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sys.ini");
-            string width0 = dataGridView1.Columns[0].Width.ToString();//0-9
-            string width1 = dataGridView1.Columns[1].Width.ToString();
-            string width2 = dataGridView1.Columns[2].Width.ToString();
-            string width3 = dataGridView1.Columns[3].Width.ToString();//c0
-            string width4 = dataGridView1.Columns[4].Width.ToString();
-            string width5 = dataGridView1.Columns[5].Width.ToString();
-            string width6 = dataGridView1.Columns[6].Width.ToString();//
-            string width7 = dataGridView1.Columns[7].Width.ToString();
-            string width8 = dataGridView1.Columns[8].Width.ToString();
-            string width9 = dataGridView1.Columns[9].Width.ToString();
+            string width0 = dgvWorkFlow.Columns[0].Width.ToString();//0-9
+            string width1 = dgvWorkFlow.Columns[1].Width.ToString();
+            string width2 = dgvWorkFlow.Columns[2].Width.ToString();
+            string width3 = dgvWorkFlow.Columns[3].Width.ToString();//c0
+            string width4 = dgvWorkFlow.Columns[4].Width.ToString();
+            string width5 = dgvWorkFlow.Columns[5].Width.ToString();
+            string width6 = dgvWorkFlow.Columns[6].Width.ToString();//
+            string width7 = dgvWorkFlow.Columns[7].Width.ToString();
+            string width8 = dgvWorkFlow.Columns[8].Width.ToString();
+            string width9 = dgvWorkFlow.Columns[9].Width.ToString();
 
-            string width10 = dataGridView1.Columns[10].Width.ToString();//10-19
-            string width11 = dataGridView1.Columns[11].Width.ToString();
-            string width12 = dataGridView1.Columns[12].Width.ToString();
-            string width13 = dataGridView1.Columns[13].Width.ToString();
-            string width14 = dataGridView1.Columns[14].Width.ToString();
-            string width15 = dataGridView1.Columns[15].Width.ToString();
-            string width16 = dataGridView1.Columns[16].Width.ToString();
-            string width17 = dataGridView1.Columns[17].Width.ToString();
-            string width18 = dataGridView1.Columns[18].Width.ToString();
-            string width19 = dataGridView1.Columns[19].Width.ToString();
+            string width10 = dgvWorkFlow.Columns[10].Width.ToString();//10-19
+            string width11 = dgvWorkFlow.Columns[11].Width.ToString();
+            string width12 = dgvWorkFlow.Columns[12].Width.ToString();
+            string width13 = dgvWorkFlow.Columns[13].Width.ToString();
+            string width14 = dgvWorkFlow.Columns[14].Width.ToString();
+            string width15 = dgvWorkFlow.Columns[15].Width.ToString();
+            string width16 = dgvWorkFlow.Columns[16].Width.ToString();
+            string width17 = dgvWorkFlow.Columns[17].Width.ToString();
+            string width18 = dgvWorkFlow.Columns[18].Width.ToString();
+            string width19 = dgvWorkFlow.Columns[19].Width.ToString();
 
-            string width20 = dataGridView1.Columns[20].Width.ToString();//20-29
-            string width21 = dataGridView1.Columns[21].Width.ToString();
-            string width22 = dataGridView1.Columns[22].Width.ToString();
-            string width23 = dataGridView1.Columns[23].Width.ToString();
-            string width24 = dataGridView1.Columns[24].Width.ToString();
-            string width25 = dataGridView1.Columns[25].Width.ToString();
-            string width26 = dataGridView1.Columns[26].Width.ToString();
-            string width27 = dataGridView1.Columns[27].Width.ToString();
-            string width28 = dataGridView1.Columns[28].Width.ToString();
-            string width29 = dataGridView1.Columns[9].Width.ToString();
+            string width20 = dgvWorkFlow.Columns[20].Width.ToString();//20-29
+            string width21 = dgvWorkFlow.Columns[21].Width.ToString();
+            string width22 = dgvWorkFlow.Columns[22].Width.ToString();
+            string width23 = dgvWorkFlow.Columns[23].Width.ToString();
+            string width24 = dgvWorkFlow.Columns[24].Width.ToString();
+            string width25 = dgvWorkFlow.Columns[25].Width.ToString();
+            string width26 = dgvWorkFlow.Columns[26].Width.ToString();
+            string width27 = dgvWorkFlow.Columns[27].Width.ToString();
+            string width28 = dgvWorkFlow.Columns[28].Width.ToString();
+            string width29 = dgvWorkFlow.Columns[9].Width.ToString();
 
-            string width30 = dataGridView1.Columns[30].Width.ToString();//30-39
-            string width31 = dataGridView1.Columns[31].Width.ToString();
-            string width32 = dataGridView1.Columns[32].Width.ToString();
-            string width33 = dataGridView1.Columns[33].Width.ToString();
-            string width34 = dataGridView1.Columns[34].Width.ToString();
-            string width35 = dataGridView1.Columns[35].Width.ToString();
-            string width36 = dataGridView1.Columns[36].Width.ToString();
-            string width37 = dataGridView1.Columns[37].Width.ToString();
-            string width38 = dataGridView1.Columns[38].Width.ToString();
-            string width39 = dataGridView1.Columns[39].Width.ToString();
+            string width30 = dgvWorkFlow.Columns[30].Width.ToString();//30-39
+            string width31 = dgvWorkFlow.Columns[31].Width.ToString();
+            string width32 = dgvWorkFlow.Columns[32].Width.ToString();
+            string width33 = dgvWorkFlow.Columns[33].Width.ToString();
+            string width34 = dgvWorkFlow.Columns[34].Width.ToString();
+            string width35 = dgvWorkFlow.Columns[35].Width.ToString();
+            string width36 = dgvWorkFlow.Columns[36].Width.ToString();
+            string width37 = dgvWorkFlow.Columns[37].Width.ToString();
+            string width38 = dgvWorkFlow.Columns[38].Width.ToString();
+            string width39 = dgvWorkFlow.Columns[39].Width.ToString();
 
-            string width40 = dataGridView1.Columns[40].Width.ToString();//40-49
-            string width41 = dataGridView1.Columns[41].Width.ToString();
-            string width42 = dataGridView1.Columns[42].Width.ToString();
-            string width43 = dataGridView1.Columns[43].Width.ToString();
-            string width44 = dataGridView1.Columns[44].Width.ToString();
-            string width45 = dataGridView1.Columns[45].Width.ToString();
-            string width46 = dataGridView1.Columns[46].Width.ToString();
-            string width47 = dataGridView1.Columns[47].Width.ToString();
-            string width48 = dataGridView1.Columns[48].Width.ToString();
-            string width49 = dataGridView1.Columns[49].Width.ToString();
+            string width40 = dgvWorkFlow.Columns[40].Width.ToString();//40-49
+            string width41 = dgvWorkFlow.Columns[41].Width.ToString();
+            string width42 = dgvWorkFlow.Columns[42].Width.ToString();
+            string width43 = dgvWorkFlow.Columns[43].Width.ToString();
+            string width44 = dgvWorkFlow.Columns[44].Width.ToString();
+            string width45 = dgvWorkFlow.Columns[45].Width.ToString();
+            string width46 = dgvWorkFlow.Columns[46].Width.ToString();
+            string width47 = dgvWorkFlow.Columns[47].Width.ToString();
+            string width48 = dgvWorkFlow.Columns[48].Width.ToString();
+            string width49 = dgvWorkFlow.Columns[49].Width.ToString();
 
-            string width50 = dataGridView1.Columns[50].Width.ToString();//50-52
-            string width51 = dataGridView1.Columns[51].Width.ToString();
-            string width52 = dataGridView1.Columns[52].Width.ToString();
+            string width50 = dgvWorkFlow.Columns[50].Width.ToString();//50-52
+            string width51 = dgvWorkFlow.Columns[51].Width.ToString();
+            string width52 = dgvWorkFlow.Columns[52].Width.ToString();
             //string width53 = dataGridView1.Columns[53].Width.ToString();
 
             INIHelper.Write("width", "Columns0", width3, Laypath);//0-9
@@ -396,288 +506,196 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void tsbbtn_submit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataTable changeDt = dt_flow.GetChanges();
 
-            //try
-            //{
-                String strSql = string.Empty;
-                DataTable changeDT = dt_flow.GetChanges();
-                foreach (DataRow dr in changeDT.Rows)
+                foreach (DataRow dr in changeDt.Rows)
                 {
-              //  MessageBox.Show(dr["flo_time"].ToString()); 
+                    string strSQL = string.Empty;
                     if (dr.RowState == System.Data.DataRowState.Added)//添加
                     {
+                        strSQL = @"INSERT INTO [dbo].[flow]
+                                           ([flo_time]
+                                           ,[flo_state]
+                                           ,[flo_client]
+                                           ,[flo_factory]
+                                           ,[flo_line]
+                                           ,[flo_num]
+                                           ,[flo_record]
+                                           ,[flo_coding]
+                                           ,[flo_cilentID]
+                                           ,[flo_model]
+                                           ,[flo_logo]
+                                           ,[flo_proname]
+                                           ,[flo_range]
+                                           ,[flo_unit]
+                                           ,[flo_reunit]
+                                           ,[flo_memunit]
+                                           ,[flo_frames]
+                                           ,[flo_backcolor]
+                                           ,[flo_closetime]
+                                           ,[flo_backtime]
+                                           ,[flo_revise]
+                                           ,[flo_cleRange]
+                                           ,[flo_cleShutdown]
+                                           ,[flo_gravity]
+                                           ,[flo_levFacSet]
+                                           ,[flo_cell]
+                                           ,[flo_plastic]
+                                           ,[flo_quantity]
+                                           ,[flo_delivery]
+                                           ,[flo_encase]
+                                           ,[flo_box]
+                                           ,[flo_ask]
+                                           ,[flo_pic]
+                                           ,[flo_modibom1]
+                                           ,[flo_modibom2]
+                                           ,[flo_bomVerify]
+                                           ,[flo_starv]
+                                           ,[flo_online]
+                                           ,[flo_comMater]
+                                           ,[flo_comqusSolve]
+                                           ,[flo_oliquan]
+                                           ,[flo_elequan]
+                                           ,[flo_elsequan]
+                                           ,[flo_facAlter]
+                                           ,[flo_fristMake]
+                                           ,[flo_fristChk]
+                                           ,[flo_ProSum]
+                                           ,[flo_spotChk]
+                                           ,[flo_out]
+                                           ,[flo_finish])
+                                     VALUES
+                                           ('" + "[" + DateTime.Now.ToString("yy/MM/dd hh") + "]" + @"'
+                                           ,'" + dr["flo_state"].ToString() + @"'
+                                           ,'" + dr["flo_client"].ToString() + @"'
+                                           ,'" + dr["flo_factory"].ToString() + @"'
+                                           ,'" + dr["flo_line"].ToString() + @"'
+                                           ,'" + dr["flo_num"].ToString() + @"'
+                                           ,'" + dr["flo_record"].ToString() + @"'
+                                           ,'" + dr["flo_coding"].ToString() + @"'
+                                           ,'" + dr["flo_cilentID"].ToString() + @"'
+                                           ,'" + dr["flo_model"].ToString() + @"'
+                                           ,'" + dr["flo_logo"].ToString() + @"'
+                                           ,'" + dr["flo_proname"].ToString() + @"'
+                                           ,'" + dr["flo_range"].ToString() + @"'
+                                           ,'" + dr["flo_unit"].ToString() + @"'
+                                           ,'" + dr["flo_reunit"].ToString() + @"'
+                                           ,'" + dr["flo_memunit"].ToString() + @"'
+                                           ,'" + dr["flo_frames"].ToString() + @"'
+                                           ,'" + dr["flo_backcolor"].ToString() + @"'
+                                           ,'" + dr["flo_closetime"].ToString() + @"'
+                                           ,'" + dr["flo_backtime"].ToString() + @"'
+                                           ,'" + dr["flo_revise"].ToString() + @"'
+                                           ,'" + dr["flo_cleRange"].ToString() + @"'
+                                           ,'" + dr["flo_cleShutdown"].ToString() + @"'
+                                           ,'" + dr["flo_gravity"].ToString() + @"'
+                                           ,'" + dr["flo_levFacSet"].ToString() + @"'
+                                           ,'" + dr["flo_cell"].ToString() + @"'
+                                           ,'" + dr["flo_plastic"].ToString() + @"'
+                                           ,'" + dr["flo_quantity"].ToString() + @"'
+                                           ,'" + dr["flo_delivery"].ToString() + @"'
+                                           ,'" + dr["flo_encase"].ToString() + @"'
+                                           ,'" + dr["flo_box"].ToString() + @"'
+                                           ,'" + dr["flo_ask"].ToString() + @"'
+                                           ,'" + dr["flo_pic"].ToString() + @"'
+                                           ,'" + dr["flo_modibom1"].ToString() + @"'
+                                           ,'" + dr["flo_modibom2"].ToString() + @"'
+                                           ,'" + dr["flo_bomVerify"].ToString() + @"'
+                                           ,'" + dr["flo_starv"].ToString() + @"'
+                                           ,'" + dr["flo_online"].ToString() + @"'
+                                           ,'" + dr["flo_comMater"].ToString() + @"'
+                                           ,'" + dr["flo_comqusSolve"].ToString() + @"'
+                                           ,'" + dr["flo_oliquan"].ToString() + @"'
+                                           ,'" + dr["flo_elequan"].ToString() + @"'
+                                           ,'" + dr["flo_elsequan"].ToString() + @"'
+                                           ,'" + dr["flo_facAlter"].ToString() + @"'
+                                           ,'" + dr["flo_fristMake"].ToString() + @"'
+                                           ,'" + dr["flo_fristChk"].ToString() + @"'
+                                           ,'" + dr["flo_ProSum"].ToString() + @"'
+                                           ,'" + dr["flo_spotChk"].ToString() + @"'
+                                           ,'" + dr["flo_out"].ToString() + @"'
+                                           ,'" + dr["flo_finish"].ToString() + @"') ";
 
-                        strSql = @"INSERT INTO [Youli_date].[dbo].[flow]
-           ([flo_time]
-           ,[flo_state]
-           ,[flo_client]
-           ,[flo_factory]
-           ,[flo_line]
-           ,[flo_num]
-           ,[flo_record]
-           ,[flo_coding]
-           ,[flo_cilentID]
-           ,[flo_model]
-           ,[flo_logo]
-           ,[flo_proname]
-           ,[flo_range]
-           ,[flo_unit]
-           ,[flo_reunit]
-           ,[flo_memunit]
-           ,[flo_frames]
-           ,[flo_backcolor]
-           ,[flo_closetime]
-           ,[flo_backtime]
-           ,[flo_revise]
-           ,[flo_cleRange]
-           ,[flo_cleShutdown]
-           ,[flo_gravity]
-           ,[flo_levFacSet]
-           ,[flo_cell]
-           ,[flo_plastic]
-           ,[flo_quantity]
-           ,[flo_delivery]
-           ,[flo_encase]
-           ,[flo_box]
-           ,[flo_ask]
-           ,[flo_pic]
-           ,[flo_modibom1]
-           ,[flo_modibom2]
-           ,[flo_bomVerify]
-           ,[flo_starv]
-           ,[flo_online]
-           ,[flo_comMater]
-           ,[flo_comqusSolve]
-           ,[flo_oliquan]
-           ,[flo_elequan]
-           ,[flo_elsequan]
-           ,[flo_facAlter]
-           ,[flo_fristMake]
-           ,[flo_fristChk]
-           ,[flo_ProSum]
-           ,[flo_spotChk]
-           ,[flo_out]
-           ,[flo_finish])
-     VALUES
-            ('" + dr["flo_time"].ToString() + @"'
-                                        ,'" + dr["flo_state"].ToString() + @"'
-                                        ,'" + dr["flo_client"].ToString() + @"'
-                                        ,'" + dr["flo_factory"].ToString() + @"'
-                                        ,'" + dr["flo_line"].ToString() + @"'
-                                        ,'" + dr["flo_num"].ToString() + @"'
-                                        ,'" + dr["flo_record"].ToString() + @"'
-                                        ,'" + dr["flo_coding"].ToString() + @"'
-                                        ,'" + dr["flo_cilentID"].ToString() + @"'
-                                        ,'" + dr["flo_model"].ToString() + @"'
-                                        ,'" + dr["flo_logo"].ToString() + @"'
-                                        ,'" + dr["flo_proname"].ToString() + @"'
-                                        ,'" + dr["flo_range"].ToString() + @"'
-                                        ,'" + dr["flo_unit"].ToString() + @"'
-                                        ,'" + dr["flo_reunit"].ToString() + @"'
-                                        ,'" + dr["flo_memunit"].ToString() + @"'
-                                        ,'" + dr["flo_frames"].ToString() + @"'
-                                        ,'" + dr["flo_backcolor"].ToString() + @"'
-                                        ,'" + dr["flo_closetime"].ToString() + @"'
-                                        ,'" + dr["flo_backtime"].ToString() + @"'
-                                        ,'" + dr["flo_revise"].ToString() + @"'
-                                        ,'" + dr["flo_cleRange"].ToString() + @"'
-                                        ,'" + dr["flo_cleShutdown"].ToString() + @"'
-                                        ,'" + dr["flo_gravity"].ToString() + @"'
-                                        ,'" + dr["flo_levFacSet"].ToString() + @"'
-                                        ,'" + dr["flo_cell"].ToString() + @"'
-                                        ,'" + dr["flo_plastic"].ToString() + @"'
-                                        ,'" + dr["flo_quantity"].ToString() + @"'
-                                        ,'" + dr["flo_delivery"].ToString() + @"'
-                                        ,'" + dr["flo_encase"].ToString() + @"'
-                                        ,'" + dr["flo_box"].ToString() + @"'
-                                        ,'" + dr["flo_ask"].ToString() + @"'
-                                        ,'" + dr["flo_pic"].ToString() + @"'
-                                        ,'" + dr["flo_modibom1"].ToString() + @"'
-                                        ,'" + dr["flo_modibom2"].ToString() + @"'
-                                        ,'" + dr["flo_bomVerify"].ToString() + @"'
-                                        ,'" + dr["flo_starv"].ToString() + @"'
-                                        ,'" + dr["flo_online"].ToString() + @"'
-                                        ,'" + dr["flo_comMater"].ToString() + @"'
-                                        ,'" + dr["flo_comqusSolve"].ToString() + @"'
-                                        ,'" + dr["flo_oliquan"].ToString() + @"'
-                                        ,'" + dr["flo_elequan"].ToString() + @"'
-                                        ,'" + dr["flo_elsequan"].ToString() + @"'
-                                        ,'" + dr["flo_facAlter"].ToString() + @"'
-                                        ,'" + dr["flo_fristMake"].ToString() + @"'
-                                        ,'" + dr["flo_fristChk"].ToString() + @"'
-                                        ,'" + dr["flo_ProSum"].ToString() + @"'
-                                        ,'" + dr["flo_spotChk"].ToString() + @"'
-                                        ,'" + dr["flo_out"].ToString() + @"'
-                                        ,'" + dr["flo_finish"].ToString() + @"')";
                     }
                     else if (dr.RowState == System.Data.DataRowState.Deleted)//删除
                     {
-                        strSql = @"DELETE FROM [dbo].[flow]
-                                        WHERE flo_time = '" + dr["flo_time", DataRowVersion.Original].ToString() + @"
-                                            AND flo_num = '" + dr["flo_num", DataRowVersion.Original].ToString() + "'";
+                        strSQL = @"DELETE FROM [dbo].[flow]
+                                     WHERE flo_time = '" + dr["flo_time", DataRowVersion.Original].ToString() + @"' 
+                                       AND flo_num ='" + dr["flo_num", DataRowVersion.Original].ToString() + "'";
                     }
                     else if (dr.RowState == System.Data.DataRowState.Modified)//修改
                     {
-                        strSql = @"UPDATE [Youli_date].[dbo].[flow]
-                                    SET [flo_state]='" + dr["flo_state"].ToString() + @"'
-                                    ,[flo_client]='" + dr["flo_client"].ToString() + @"'
-                                    ,[flo_factory]='" + dr["flo_factory"].ToString() + @"'
-                                    ,[flo_line]='" + dr["flo_line"].ToString() + @"'
-                                    ,[flo_num]='" + dr["flo_num"].ToString() + @"'
-                                    ,[flo_record]='" + dr["flo_record"].ToString() + @"'
-                                    ,[flo_coding]='" + dr["flo_cilentID"].ToString() + @"'
-                                    ,[flo_model]='" + dr["flo_model"].ToString() + @"'
-                                    ,[flo_logo]='" + dr["flo_logo"].ToString() + @"'
-                                    ,[flo_proname]='" + dr["flo_proname"].ToString() + @"'
-                                    ,[flo_unit]='" + dr["flo_unit"].ToString() + @"'
-                                    ,[flo_reunit]='" + dr["flo_reunit"].ToString() + @"'
-                                    ,[flo_memunit]='" + dr["flo_memunit"].ToString() + @"'
-                                    ,[flo_frames]='" + dr["flo_frames"].ToString() + @"'
-                                    ,[flo_backcolor]='" + dr["flo_backcolor"].ToString() + @"'
-                                    ,[flo_closetime]='" + dr["flo_closetime"].ToString() + @"'
-                                    ,[flo_backtime]='" + dr["flo_backtime"].ToString() + @"'
-                                    ,[flo_revise]='" + dr["flo_revise"].ToString() + @"'
-                                    ,[flo_cleRange]='" + dr["flo_cleRange"].ToString() + @"'
-                                    ,[flo_cleShutdown]='" + dr["flo_cleShutdown"].ToString() + @"'
-                                    ,[flo_gravity]='" + dr["flo_gravity"].ToString() + @"'
-                                    ,[flo_levFacSet]='" + dr["flo_levFacSet"].ToString() + @"'
-                                    ,[flo_cell]='" + dr["flo_cell"].ToString() + @"'
-                                    ,[flo_plastic]='" + dr["flo_plastic"].ToString() + @"'
-                                    ,[flo_quantity]='" + dr["flo_quantity"].ToString() + @"'
-                                    ,[flo_delivery]='" + dr["flo_delivery"].ToString() + @"'
-                                    ,[flo_encase]='" + dr["flo_encase"].ToString() + @"'
-                                    ,[flo_box]='" + dr["flo_box"].ToString() + @"'
-                                    ,[flo_ask]='" + dr["flo_ask"].ToString() + @"'
-                                    ,[flo_pic]='" + dr["flo_pic"].ToString() + @"'
-                                    ,[flo_modibom1]='" + dr["flo_modibom1"].ToString() + @"'
-                                    ,[flo_modibom2]='" + dr["flo_modibom2"].ToString() + @"'
-                                    ,[flo_bomVerify]='" + dr["flo_bomVerify"].ToString() + @"'
-                                    ,[flo_online]='" + dr["flo_online"].ToString() + @"'
-                                    ,[flo_comMater]='" + dr["flo_comMater"].ToString() + @"'
-                                    ,[flo_comqusSolve]='" + dr["flo_comqusSolve"].ToString() + @"'
-                                    ,[flo_oliquan]='" + dr["flo_oliquan"].ToString() + @"'
-                                    ,[flo_elequan]='" + dr["flo_elequan"].ToString() + @"'
-                                    ,[flo_elsequan]='" + dr["flo_elsequan"].ToString() + @"'
-                                    ,[flo_facAlter]='" + dr["flo_facAlter"].ToString() + @"'
-                                    ,[flo_fristMake]='" + dr["flo_fristMake"].ToString() + @"'
-                                    ,[flo_fristChk]='" + dr["flo_fristChk"].ToString() + @"'
-                                    ,[flo_ProSum]='" + dr["flo_ProSum"].ToString() + @"'
-                                    ,[flo_spotChk]='" + dr["flo_spotChk"].ToString() + @"'
-                                    ,[flo_out]='" + dr["flo_out"].ToString() + @"'
-                                    ,[flo_finish]='" + dr["flo_finish"].ToString() + @"'
-                                  WHERE flo_time = '" + dr["flo_time"].ToString() + @"'
-                                      AND flo_num='" + dr["flo_num"].ToString() + "'";
+                        strSQL = @"UPDATE [dbo].[flow]
+                                   SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
+                                   ,[flo_client] = '" + dr["flo_client"].ToString() + @"'
+                                   ,[flo_factory] = '" + dr["flo_factory"].ToString() + @"'
+                                   ,[flo_line] = '" + dr["flo_line"].ToString() + @"'
+                                   ,[flo_num] = '" + dr["flo_num"].ToString() + @"'
+                                   ,[flo_record] = '" + dr["flo_record"].ToString() + @"'
+                                   ,[flo_coding] = '" + dr["flo_coding"].ToString() + @"'
+                                   ,[flo_cilentID] = '" + dr["flo_cilentID"].ToString() + @"'
+                                   ,[flo_model] = '" + dr["flo_model"].ToString() + @"'
+                                   ,[flo_logo] = '" + dr["flo_logo"].ToString() + @"'
+                                   ,[flo_proname] = '" + dr["flo_proname"].ToString() + @"'
+                                   ,[flo_range] = '" + dr["flo_range"].ToString() + @"'
+                                   ,[flo_unit] = '" + dr["flo_unit"].ToString() + @"'
+                                   ,[flo_reunit] = '" + dr["flo_reunit"].ToString() + @"'
+                                   ,[flo_memunit] = '" + dr["flo_memunit"].ToString() + @"'
+                                   ,[flo_frames] = '" + dr["flo_frames"].ToString() + @"'
+                                   ,[flo_backcolor] = '" + dr["flo_backcolor"].ToString() + @"'
+                                   ,[flo_closetime] = '" + dr["flo_closetime"].ToString() + @"'
+                                   ,[flo_backtime] = '" + dr["flo_backtime"].ToString() + @"'
+                                   ,[flo_revise] = '" + dr["flo_revise"].ToString() + @"'
+                                   ,[flo_cleRange] = '" + dr["flo_cleRange"].ToString() + @"'
+                                   ,[flo_cleShutdown] = '" + dr["flo_cleShutdown"].ToString() + @"'
+                                   ,[flo_gravity] = '" + dr["flo_gravity"].ToString() + @"'
+                                   ,[flo_levFacSet] = '" + dr["flo_levFacSet"].ToString() + @"'
+                                   ,[flo_cell] = '" + dr["flo_cell"].ToString() + @"'
+                                   ,[flo_plastic] = '" + dr["flo_plastic"].ToString() + @"'
+                                   ,[flo_quantity] = '" + dr["flo_quantity"].ToString() + @"'
+                                   ,[flo_delivery] = '" + dr["flo_delivery"].ToString() + @"'
+                                   ,[flo_encase] = '" + dr["flo_encase"].ToString() + @"'
+                                   ,[flo_box] = '" + dr["flo_box"].ToString() + @"'
+                                   ,[flo_ask] = '" + dr["flo_ask"].ToString() + @"'
+                                   ,[flo_pic] = '" + dr["flo_pic"].ToString() + @"'
+                                   ,[flo_modibom1] = '" + dr["flo_modibom1"].ToString() + @"'
+                                   ,[flo_modibom2] = '" + dr["flo_modibom2"].ToString() + @"'
+                                   ,[flo_bomVerify] = '" + dr["flo_bomVerify"].ToString() + @"'
+                                   ,[flo_starv] = '" + dr["flo_starv"].ToString() + @"'
+                                   ,[flo_online] = '" + dr["flo_online"].ToString() + @"'
+                                   ,[flo_comMater] = '" + dr["flo_comMater"].ToString() + @"'
+                                   ,[flo_comqusSolve] = '" + dr["flo_comqusSolve"].ToString() + @"'
+                                   ,[flo_oliquan] = '" + dr["flo_oliquan"].ToString() + @"'
+                                   ,[flo_elequan] = '" + dr["flo_elequan"].ToString() + @"'
+                                   ,[flo_elsequan] = '" + dr["flo_elsequan"].ToString() + @"'
+                                   ,[flo_facAlter] = '" + dr["flo_facAlter"].ToString() + @"'
+                                   ,[flo_fristMake] = '" + dr["flo_fristMake"].ToString() + @"'
+                                   ,[flo_fristChk] = '" + dr["flo_fristChk"].ToString() + @"'
+                                   ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
+                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
+                                   ,[flo_out] = '" + dr["flo_out"].ToString() + @"'
+                                   ,[flo_finish] = '" + dr["flo_finish"].ToString() + @"'
+                               WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
+                                    AND flo_num= '" + dr["flo_num"].ToString() + "'";
                     }
-
+                    SqlCommand comm = new SqlCommand(strSQL, conn_flow);
+                    comm.ExecuteNonQuery();
                 }
-                SqlCommand comm = new SqlCommand(strSql, conn_flow);
-                comm.ExecuteNonQuery();
                 MessageBox.Show("已提交成功");
-                #region 提交刷新
-                if (conn_flow.State == System.Data.ConnectionState.Closed)
-                {
-                    conn_flow.Open();
-                    string strSql1 = "SELECT * FROM flow";
-                    SqlDataAdapter da = new SqlDataAdapter(strSql1, conn_flow);
-                    DataSet ds = new DataSet();
-                    da.Fill(ds, "flow");
-                    dt_flow = ds.Tables["flow"];
-                    dataGridView1.DataSource = dt_flow.DefaultView;
-                }
+                #region  提交后进行未完成表单刷新
+                searchDate();
                 #endregion
-            //}
-            //catch
-            //{ 
-            
-            //}
-           
-        }
-            
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
+            }
+            catch
             {
-                DataGridViewCell cell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                if (cell.FormattedValue.ToString() == "工艺文件")
-                {
-                    //string currPath = Application.StartupPath;//获取当前文件夹路径
-                    string subPath = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString() + "/";
-                    // MessageBox.Show(subPath);
-                    try
-                    {
-                        if (false == System.IO.Directory.Exists(subPath))
-                        {
-                            System.IO.Directory.CreateDirectory(subPath);
-                        }
-                        else
-                        {
-                            System.Diagnostics.Process.Start(subPath);
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("创建/打开文件夹失败，请联系管理员");
-                    }
-
-                }
-                else if (cell.FormattedValue.ToString() == "截屏")
-                {
-                    var fileContent = string.Empty;
-                    var filePath = string.Empty;
-                    var filename = string.Empty;
-                    try
-                    {
-                        // filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + "AC-0109-04"+ ".png";
-                        filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString() + ".png";
-                        Process m_Process = null;
-                        m_Process = new Process();
-                        m_Process.StartInfo.FileName = @filePath;
-                        bool exist = System.IO.File.Exists(@filePath);
-                        if (exist == true)  //如果存在则显示
-                        {
-                            m_Process.Start();
-                        }
-                        else
-                        {
-                            MessageBox.Show("未找到图片，请检查是否上传截图");
-                        }
-                        //MessageBox.Show( dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());//获取选中行指定列的值
-                    }
-                    catch
-                    {
-                        MessageBox.Show("操作错误：1.还未查询数据就点击图片。");
-                        return;
-                    }
-
-                }
-                else if (cell.FormattedValue.ToString() == "来料问题夹")
-                {
-                    //string currPath = Application.StartupPath;//获取当前文件夹路径
-                    string subPath1 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString() + "/";
-                    // MessageBox.Show(subPath);
-                    try
-                    {
-                        if (false == System.IO.Directory.Exists(subPath1))
-                        {
-                            System.IO.Directory.CreateDirectory(subPath1);
-                        }
-                        else
-                        {
-                            System.Diagnostics.Process.Start(subPath1);
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("创建/打开文件夹失败，请联系管理员");
-                    }
-                }
-            }
-            catch {
-                return;
+                MessageBox.Show("提示：没有发生修改操作 ");
             }
 
         }
+            
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -864,6 +882,173 @@ namespace Youli_Data_Share
             SqlCommand comm = new SqlCommand(strSql, conn_flow);
             comm.ExecuteNonQuery();
             MessageBox.Show("已提交成功");
+        }
+
+        private void dgvWorkFlow_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewCell cell = dgvWorkFlow.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                if (cell.FormattedValue.ToString() == "工艺文件")
+                {
+                    //string currPath = Application.StartupPath;//获取当前文件夹路径
+                    string subPath = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[10].Value.ToString() + "/";
+                    // MessageBox.Show(subPath);
+                    try
+                    {
+                        if (false == System.IO.Directory.Exists(subPath))
+                        {
+                            System.IO.Directory.CreateDirectory(subPath);
+                        }
+                        else
+                        {
+                            System.Diagnostics.Process.Start(subPath);
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("创建/打开文件夹失败，请联系管理员");
+                    }
+
+                }
+                else if (cell.FormattedValue.ToString() == "截屏")
+                {
+                    var fileContent = string.Empty;
+                    var filePath = string.Empty;
+                    var filename = string.Empty;
+                    try
+                    {
+                        // filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + "AC-0109-04"+ ".png";
+                        filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + dgvWorkFlow.Rows[e.RowIndex].Cells[8].Value.ToString() + ".png";
+                        Process m_Process = null;
+                        m_Process = new Process();
+                        m_Process.StartInfo.FileName = @filePath;
+                        bool exist = System.IO.File.Exists(@filePath);
+                        if (exist == true)  //如果存在则显示
+                        {
+                            m_Process.Start();
+                        }
+                        else
+                        {
+                            MessageBox.Show("未找到图片，请检查是否上传截图");
+                        }
+                        //MessageBox.Show( dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());//获取选中行指定列的值
+                    }
+                    catch
+                    {
+                        MessageBox.Show("操作错误：1.还未查询数据就点击图片。");
+                        return;
+                    }
+
+                }
+                else if (cell.FormattedValue.ToString() == "来料问题夹")
+                {
+                    //string currPath = Application.StartupPath;//获取当前文件夹路径
+                    string subPath1 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[8].Value.ToString() + "/";
+                    // MessageBox.Show(subPath);
+                    try
+                    {
+                        if (false == System.IO.Directory.Exists(subPath1))
+                        {
+                            System.IO.Directory.CreateDirectory(subPath1);
+                        }
+                        else
+                        {
+                            System.Diagnostics.Process.Start(subPath1);
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("创建/打开文件夹失败，请联系管理员");
+                    }
+                }
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        private void tsbtn_search_Click(object sender, EventArgs e)
+        {
+            searchDate();//加载sql数据
+        }
+        private void searchDate()
+        {
+            SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
+            scsb.DataSource = "192.168.1.104";
+            scsb.UserID = "sa";
+            scsb.Password = "yelei193";
+            scsb.InitialCatalog = "Youli_date";
+
+            conn_flow = new SqlConnection(scsb.ToString());
+            if (conn_flow.State == System.Data.ConnectionState.Closed)
+                conn_flow.Open();
+            string strSQL = "select * from flow WHERE flo_num LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
+            SqlDataAdapter da = new SqlDataAdapter(strSQL, conn_flow);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "flow");
+
+            //dataGridView1.DataSource = ds;
+            //dataGridView1.DataMember = "wlxq";
+            dt_flow = ds.Tables["flow"];
+            dgvWorkFlow.DataSource = dt_flow.DefaultView;
+            //dgvWorkFlow.Sort(dgvWorkFlow.Columns[0], ListSortDirection.Descending);
+        }
+        /// <summary>
+        /// 删除行
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsbbtn_delete_Click(object sender, EventArgs e)
+        {
+            int index = dgvWorkFlow.CurrentRow.Index;
+            dgvWorkFlow.Rows.RemoveAt(index);
+        }
+        /// <summary>
+        /// 添加行
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            DataRow dr = dt_flow.NewRow();
+            int index = dgvWorkFlow.RowCount == 0 ? 0 : dgvWorkFlow.CurrentRow.Index + 1;
+            dt_flow.Rows.InsertAt(dr, index);
+            dgvWorkFlow.Rows[index].HeaderCell.Value = "New";
+        }
+
+        private void tsbbtn_material_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"\\192.168.1.104\Youli_Server\盘料");
+        }
+
+        private void 已结单ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (conn_flow.State == System.Data.ConnectionState.Closed)
+            {
+                conn_flow.Open();
+            }
+            string strsql = "SELECT * FROM flow WHERE flo_finish LIKE '%0%'";
+            SqlDataAdapter da = new SqlDataAdapter(strsql,conn_flow);
+            DataSet ds = new DataSet();
+            da.Fill(ds,"flow");
+            dt_flow = ds.Tables["flow"];
+            dgvWorkFlow.DataSource = dt_flow.DefaultView;
+        }
+
+        private void 未结单ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (conn_flow.State == System.Data.ConnectionState.Closed)
+            {
+                conn_flow.Open();
+            }
+            string strsql = "SELECT * FROM flow WHERE flo_finish LIKE '%1%'";
+            SqlDataAdapter da = new SqlDataAdapter(strsql, conn_flow);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "flow");
+            dt_flow = ds.Tables["flow"];
+            dgvWorkFlow.DataSource = dt_flow.DefaultView;
         }
     }
 }

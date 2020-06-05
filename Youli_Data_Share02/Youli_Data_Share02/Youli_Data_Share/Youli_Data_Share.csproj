@@ -422,6 +422,14 @@
     <None Include="Resources\8.png" />
     <None Include="Resources\31.png" />
     <None Include="Resources\icons8_save_32.png" />
+    <None Include="Resources\yello.png" />
+    <None Include="Resources\12.png" />
+    <None Include="Resources\ck.png" />
+    <None Include="Resources\SC.png" />
+    <None Include="Resources\huiz.png" />
+    <None Include="Resources\gc.png" />
+    <None Include="Resources\py.png" />
+    <None Include="Resources\icons8_plus_32.png" />
     <Content Include="unweight.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -770,7 +770,7 @@ namespace Youli_Data_Share
       //dataGridView1.DataMember = "wlxq";
       dt = ds.Tables["wlxq02"];
       dataGridView1.DataSource = dt.DefaultView;
-            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
+      dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Descending);
   }
         /// <summary>
         /// 未厂发
