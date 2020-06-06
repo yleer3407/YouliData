@@ -985,7 +985,52 @@ namespace Youli_Data_Share
             conn_flow = new SqlConnection(scsb.ToString());
             if (conn_flow.State == System.Data.ConnectionState.Closed)
                 conn_flow.Open();
-            string strSQL = "select * from flow WHERE flo_num LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
+            string strSQL = "select * from flow WHERE flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
             SqlDataAdapter da = new SqlDataAdapter(strSQL, conn_flow);
             DataSet ds = new DataSet();
             da.Fill(ds, "flow");
@@ -1030,7 +1075,7 @@ namespace Youli_Data_Share
             {
                 conn_flow.Open();
             }
-            string strsql = "SELECT * FROM flow WHERE flo_finish LIKE '%0%'";
+            string strsql = "SELECT * FROM flow WHERE flo_finish LIKE '%1%'";
             SqlDataAdapter da = new SqlDataAdapter(strsql, conn_flow);
             DataSet ds = new DataSet();
             da.Fill(ds, "flow");
@@ -1044,7 +1089,7 @@ namespace Youli_Data_Share
             {
                 conn_flow.Open();
             }
-            string strsql = "SELECT * FROM flow WHERE flo_finish LIKE '%1%'";
+            string strsql = "SELECT * FROM flow WHERE flo_finish LIKE '%0%'";
             SqlDataAdapter da = new SqlDataAdapter(strsql, conn_flow);
             DataSet ds = new DataSet();
             da.Fill(ds, "flow");
