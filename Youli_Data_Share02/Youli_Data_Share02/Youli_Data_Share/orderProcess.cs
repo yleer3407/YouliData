@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 
@@ -20,7 +21,7 @@ namespace Youli_Data_Share
         SqlConnection conn_flow;
         public orderProcess()
         {
-          //  InitializeComponent();
+            //  InitializeComponent();
         }
         public orderProcess(string LoginID)
         {
@@ -33,7 +34,7 @@ namespace Youli_Data_Share
             scsbLogin.InitialCatalog = "Youli_date";
 
             SqlConnection connLogin = new SqlConnection(scsbLogin.ToString());
-            if(connLogin.State == System.Data.ConnectionState.Closed)
+            if (connLogin.State == System.Data.ConnectionState.Closed)
             {
                 connLogin.Open();
                 string strSqlLogin = "SELECT * FROM userAdmin WHERE [userID]='" + LoginID + "'";
@@ -43,7 +44,7 @@ namespace Youli_Data_Share
                 {
                     if (drLgoin.Read())
                     {
-                        labuser.Text = drLgoin["userName"].ToString()+"]";
+                        labuser.Text = drLgoin["userName"].ToString() + "]";
                         for (int i = 0; i < 53; i++)
                         {
 
@@ -91,7 +92,7 @@ namespace Youli_Data_Share
                 return;
             }
 
-            
+
         }
 
         private void orderProcess_Load(object sender, EventArgs e)
@@ -157,13 +158,13 @@ namespace Youli_Data_Share
             DataGridViewColumn dataGridViewColumn51 = dgvWorkFlow.Columns[51];
             DataGridViewColumn dataGridViewColumn52 = dgvWorkFlow.Columns[52];
 
-           //dataGridViewColumn0.HeaderCell.Style.BackColor = Color.YellowGreen;
+            //dataGridViewColumn0.HeaderCell.Style.BackColor = Color.YellowGreen;
             //dataGridViewColumn1.HeaderCell.Style.BackColor = Color.YellowGreen;
             dataGridViewColumn2.HeaderCell.Style.BackColor = Color.Yellow;
             dataGridViewColumn3.HeaderCell.Style.BackColor = Color.Yellow;
             dataGridViewColumn4.HeaderCell.Style.BackColor = Color.Yellow;
             dataGridViewColumn5.HeaderCell.Style.BackColor = Color.Yellow;
-            dataGridViewColumn6.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn6.HeaderCell.Style.BackColor = Color.Red;
             dataGridViewColumn7.HeaderCell.Style.BackColor = Color.Yellow;
             dataGridViewColumn8.HeaderCell.Style.BackColor = Color.Yellow;
             dataGridViewColumn9.HeaderCell.Style.BackColor = Color.Yellow;
@@ -282,7 +283,7 @@ namespace Youli_Data_Share
             string width50 = INIHelper.Read("width", "Columns50", "100", Laypath);
             string width51 = INIHelper.Read("width", "Columns51", "100", Laypath);
             string width52 = INIHelper.Read("width", "Columns52", "100", Laypath);
-           // string width53 = INIHelper.Read("width", "Columns53", "100", Laypath);
+            // string width53 = INIHelper.Read("width", "Columns53", "100", Laypath);
 
             dgvWorkFlow.Columns[0].Width = int.Parse(width0);//0-9
             dgvWorkFlow.Columns[1].Width = int.Parse(width1);
@@ -694,7 +695,7 @@ namespace Youli_Data_Share
             }
 
         }
-            
+
 
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -1030,9 +1031,9 @@ namespace Youli_Data_Share
                 conn_flow.Open();
             }
             string strsql = "SELECT * FROM flow WHERE flo_finish LIKE '%0%'";
-            SqlDataAdapter da = new SqlDataAdapter(strsql,conn_flow);
+            SqlDataAdapter da = new SqlDataAdapter(strsql, conn_flow);
             DataSet ds = new DataSet();
-            da.Fill(ds,"flow");
+            da.Fill(ds, "flow");
             dt_flow = ds.Tables["flow"];
             dgvWorkFlow.DataSource = dt_flow.DefaultView;
         }
@@ -1050,5 +1051,77 @@ namespace Youli_Data_Share
             dt_flow = ds.Tables["flow"];
             dgvWorkFlow.DataSource = dt_flow.DefaultView;
         }
+        /// <summary>
+        /// dataGridView批量复制
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns></returns>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            //在检测到按Ctrl+V键后，系统无法复制多单元格数据，重写ProcessCmdKey方法，屏蔽系统粘贴事件，使用自定义粘贴事件，在事件中对剪贴板的HTML格式进行处理，获取表数据，更新DataGrid控件内容
+
+            if (keyData == (Keys.V | Keys.Control) && this.dgvWorkFlow.SelectedCells.Count > 0 && !this.dgvWorkFlow.SelectedCells[0].IsInEditMode)
+            {
+                IDataObject idataObject = Clipboard.GetDataObject();
+                string[] s = idataObject.GetFormats();
+                string data;
+                if (!s.Any(f => f == "OEMText"))
+                {
+                    if (!s.Any(f => f == "HTML Format"))
+                    {
+                    }
+                    else
+                    {
+                        //data = idataObject.GetData("HTML Format").ToString();//多个单元格
+                        data = idataObject.GetData("System.String").ToString();//多个单元格
+                        copyClipboardTexttoGrid(data);
+                        //msg = Message.;
+                        msg = new Message();
+
+                        return base.ProcessCmdKey(ref msg, Keys.Control);
+                    }
+                }
+                else
+                {
+                    data = idataObject.GetData("OEMText").ToString();//单个单元格,处于未编辑状态
+                    int rowStart = this.dgvWorkFlow.SelectedCells[0].RowIndex;
+                    int columnStart = this.dgvWorkFlow.SelectedCells[0].ColumnIndex;
+                    this.dgvWorkFlow.Rows[rowStart].Cells[columnStart].Value = data;
+                    return base.ProcessCmdKey(ref msg, Keys.Control);
+                }
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+
+        private void copyClipboardTexttoGrid(string data)
+        {
+            string[] rows = data.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+            string[] cols;
+            int rowStart = 0, columnStart = 0, i = 0, j = 0;
+            if (this.dgvWorkFlow.SelectedCells.Count > 0)
+            {
+                rowStart = this.dgvWorkFlow.SelectedCells[0].RowIndex;
+                columnStart = this.dgvWorkFlow.SelectedCells[0].ColumnIndex;
+            }
+            int count = rowStart + rows.Length - this.dgvWorkFlow.RowCount;
+            if (count >= 0)
+            {
+                this.dgvWorkFlow.Rows.Add(count + 1);
+            }
+            for (i = 0; i < rows.Length && i + rowStart < this.dgvWorkFlow.RowCount; i++)
+            {
+                cols = rows[i].Split(new string[] { "\t" }, StringSplitOptions.None);
+                for (j = 0; j < cols.Length && j + columnStart < this.dgvWorkFlow.ColumnCount; j++)
+                {
+                    this.dgvWorkFlow.Rows[i + rowStart].Cells[j + columnStart].Value = cols[j];
+                }
+            }
+            this.dgvWorkFlow.ClearSelection();
+
+            this.dgvWorkFlow.Rows[i + rowStart - 1].Cells[j + columnStart - 1].Selected = true;
+
+        }
     }
-}
+    }
