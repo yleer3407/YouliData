@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -1345,7 +1346,61 @@ namespace Youli_Data_Share
             this.dgvWorkFlow.Rows[i + rowStart - 1].Cells[j + columnStart - 1].Selected = true;
 
         }
+        /// <summary>
+        /// 自动编号
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvWorkFlow_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            //自动编号，与数据无关
+            Rectangle rectangle = new Rectangle(e.RowBounds.Location.X,
+               e.RowBounds.Location.Y,
+               dgvWorkFlow.RowHeadersWidth - 4,
+               e.RowBounds.Height);
+            TextRenderer.DrawText(e.Graphics,
+                  (e.RowIndex + 1).ToString(),
+                   dgvWorkFlow.RowHeadersDefaultCellStyle.Font,
+                   rectangle,
+                   dgvWorkFlow.RowHeadersDefaultCellStyle.ForeColor,
+                   TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
+        }
+        #region  鼠标滚轮
+        [DllImport("user32.dll", EntryPoint = "WindowFromPoint")]
+        static extern IntPtr WindowFromPoint(Point pt);
 
+        private void orderGrid_MouseEnter(object sender, EventArgs e)
+        {
+            this.MouseWheel += orderGrid_MouseWheel;
+        }
 
+        /// <summary>
+        /// 鼠标滚轮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void orderGrid_MouseWheel(object sender, MouseEventArgs e)
+        {
+            Point p = PointToScreen(e.Location);
+            if ((WindowFromPoint(p)) == dgvWorkFlow.Handle)//鼠标指针在框内
+            {
+                if (e.Delta > 0)
+                {
+                    if (dgvWorkFlow.FirstDisplayedScrollingRowIndex - 5 < 0)
+                    {
+                        dgvWorkFlow.FirstDisplayedScrollingRowIndex = 0;
+                    }
+                    else
+                    {
+                        dgvWorkFlow.FirstDisplayedScrollingRowIndex = dgvWorkFlow.FirstDisplayedScrollingRowIndex - 5;
+                    }
+                }
+                else
+                {
+                    dgvWorkFlow.FirstDisplayedScrollingRowIndex = dgvWorkFlow.FirstDisplayedScrollingRowIndex + 5;
+                }
+            }
+        }
+        #endregion
     }
-    }
+}

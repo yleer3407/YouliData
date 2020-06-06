@@ -54,6 +54,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.labuser = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -120,7 +121,6 @@
             this.Column51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column52 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column53 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.youli_dateDataSet1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -292,6 +292,12 @@
             this.labuser.Size = new System.Drawing.Size(33, 22);
             this.labuser.Text = "001]";
             // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(12, 22);
+            this.toolStripLabel2.Text = "]";
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
@@ -446,6 +452,7 @@
             this.dgvWorkFlow.Size = new System.Drawing.Size(1504, 616);
             this.dgvWorkFlow.TabIndex = 0;
             this.dgvWorkFlow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkFlow_CellContentClick);
+            this.dgvWorkFlow.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvWorkFlow_RowPostPaint);
             // 
             // Column1
             // 
@@ -810,12 +817,6 @@
             this.Column53.DataPropertyName = "flo_finish";
             this.Column53.HeaderText = "结单[53]";
             this.Column53.Name = "Column53";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(12, 22);
-            this.toolStripLabel2.Text = "]";
             // 
             // orderProcess
             // 
