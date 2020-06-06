@@ -157,6 +157,7 @@ namespace Youli_Data_Share
             DataGridViewColumn dataGridViewColumn50 = dgvWorkFlow.Columns[50];
             DataGridViewColumn dataGridViewColumn51 = dgvWorkFlow.Columns[51];
             DataGridViewColumn dataGridViewColumn52 = dgvWorkFlow.Columns[52];
+            DataGridViewColumn dataGridViewColumn53 = dgvWorkFlow.Columns[53];
 
             //dataGridViewColumn0.HeaderCell.Style.BackColor = Color.YellowGreen;
             //dataGridViewColumn1.HeaderCell.Style.BackColor = Color.YellowGreen;
@@ -206,9 +207,9 @@ namespace Youli_Data_Share
             dataGridViewColumn39.HeaderCell.Style.BackColor = Color.Yellow;
 
 
-            dataGridViewColumn40.HeaderCell.Style.BackColor = Color.LightGreen;
-            dataGridViewColumn41.HeaderCell.Style.BackColor = Color.LightGreen;
-            dataGridViewColumn42.HeaderCell.Style.BackColor = Color.LightGreen;
+            dataGridViewColumn40.HeaderCell.Style.BackColor = Color.White;
+            dataGridViewColumn41.HeaderCell.Style.BackColor = Color.White;
+            dataGridViewColumn42.HeaderCell.Style.BackColor = Color.White;
             dataGridViewColumn43.HeaderCell.Style.BackColor = Color.Pink;
             dataGridViewColumn44.HeaderCell.Style.BackColor = Color.SkyBlue;
             dataGridViewColumn45.HeaderCell.Style.BackColor = Color.Yellow;
@@ -217,9 +218,10 @@ namespace Youli_Data_Share
             dataGridViewColumn48.HeaderCell.Style.BackColor = Color.LightGreen;
             dataGridViewColumn49.HeaderCell.Style.BackColor = Color.LightCoral;
 
-            dataGridViewColumn50.HeaderCell.Style.BackColor = Color.LightGreen;
-            dataGridViewColumn51.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn50.HeaderCell.Style.BackColor = Color.LightCoral;
+            dataGridViewColumn51.HeaderCell.Style.BackColor = Color.LightGreen;
             dataGridViewColumn52.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn53.HeaderCell.Style.BackColor = Color.Yellow;
 
             #endregion
             string Laypath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sys.ini");
@@ -227,9 +229,9 @@ namespace Youli_Data_Share
             #region 读取datagridview格式
             string width0 = INIHelper.Read("width", "Columns0", "100", Laypath);
             string width1 = INIHelper.Read("width", "Columns1", "100", Laypath);
-            string width2 = INIHelper.Read("width", "Columns2", "100", Laypath);
-            string width3 = INIHelper.Read("width", "Columns3", "100", Laypath);
-            string width4 = INIHelper.Read("width", "Columns4", "100", Laypath);
+            string width2 = INIHelper.Read("width", "Columns2", "50", Laypath);
+            string width3 = INIHelper.Read("width", "Columns3", "50", Laypath);
+            string width4 = INIHelper.Read("width", "Columns4", "30", Laypath);
             string width5 = INIHelper.Read("width", "Columns5", "100", Laypath);
             string width6 = INIHelper.Read("width", "Columns6", "100", Laypath);
             string width7 = INIHelper.Read("width", "Columns7", "100", Laypath);
@@ -244,46 +246,46 @@ namespace Youli_Data_Share
             string width15 = INIHelper.Read("width", "Columns15", "100", Laypath);
             string width16 = INIHelper.Read("width", "Columns16", "100", Laypath);
             string width17 = INIHelper.Read("width", "Columns17", "100", Laypath);
-            string width18 = INIHelper.Read("width", "Columns18", "100", Laypath);
-            string width19 = INIHelper.Read("width", "Columns19", "100", Laypath);
+            string width18 = INIHelper.Read("width", "Columns18", "50", Laypath);
+            string width19 = INIHelper.Read("width", "Columns19", "50", Laypath);
 
-            string width20 = INIHelper.Read("width", "Columns20", "100", Laypath);
-            string width21 = INIHelper.Read("width", "Columns21", "100", Laypath);
-            string width22 = INIHelper.Read("width", "Columns22", "100", Laypath);
-            string width23 = INIHelper.Read("width", "Columns23", "100", Laypath);
-            string width24 = INIHelper.Read("width", "Columns24", "100", Laypath);
+            string width20 = INIHelper.Read("width", "Columns20", "50", Laypath);
+            string width21 = INIHelper.Read("width", "Columns21", "50", Laypath);
+            string width22 = INIHelper.Read("width", "Columns22", "50", Laypath);
+            string width23 = INIHelper.Read("width", "Columns23", "50", Laypath);
+            string width24 = INIHelper.Read("width", "Columns24", "50", Laypath);
             string width25 = INIHelper.Read("width", "Columns25", "100", Laypath);
-            string width26 = INIHelper.Read("width", "Columns26", "100", Laypath);
-            string width27 = INIHelper.Read("width", "Columns27", "100", Laypath);
-            string width28 = INIHelper.Read("width", "Columns28", "100", Laypath);
-            string width29 = INIHelper.Read("width", "Columns29", "100", Laypath);
+            string width26 = INIHelper.Read("width", "Columns26", "50", Laypath);
+            string width27 = INIHelper.Read("width", "Columns27", "50", Laypath);
+            string width28 = INIHelper.Read("width", "Columns28", "70", Laypath);
+            string width29 = INIHelper.Read("width", "Columns29", "50", Laypath);
 
-            string width30 = INIHelper.Read("width", "Columns30", "100", Laypath);
-            string width31 = INIHelper.Read("width", "Columns31", "100", Laypath);
+            string width30 = INIHelper.Read("width", "Columns30", "167", Laypath);
+            string width31 = INIHelper.Read("width", "Columns31", "167", Laypath);
             string width32 = INIHelper.Read("width", "Columns32", "100", Laypath);
-            string width33 = INIHelper.Read("width", "Columns33", "100", Laypath);
-            string width34 = INIHelper.Read("width", "Columns34", "100", Laypath);
+            string width33 = INIHelper.Read("width", "Columns33", "30", Laypath);
+            string width34 = INIHelper.Read("width", "Columns34", "50", Laypath);
             string width35 = INIHelper.Read("width", "Columns35", "100", Laypath);
             string width36 = INIHelper.Read("width", "Columns36", "100", Laypath);
-            string width37 = INIHelper.Read("width", "Columns37", "100", Laypath);
+            string width37 = INIHelper.Read("width", "Columns37", "35", Laypath);
             string width38 = INIHelper.Read("width", "Columns38", "100", Laypath);
             string width39 = INIHelper.Read("width", "Columns39", "100", Laypath);
 
-            string width40 = INIHelper.Read("width", "Columns40", "100", Laypath);
-            string width41 = INIHelper.Read("width", "Columns41", "100", Laypath);
-            string width42 = INIHelper.Read("width", "Columns42", "100", Laypath);
+            string width40 = INIHelper.Read("width", "Columns40", "5", Laypath);
+            string width41 = INIHelper.Read("width", "Columns41", "5", Laypath);
+            string width42 = INIHelper.Read("width", "Columns42", "5", Laypath);
             string width43 = INIHelper.Read("width", "Columns43", "100", Laypath);
             string width44 = INIHelper.Read("width", "Columns44", "100", Laypath);
             string width45 = INIHelper.Read("width", "Columns45", "100", Laypath);
             string width46 = INIHelper.Read("width", "Columns46", "100", Laypath);
             string width47 = INIHelper.Read("width", "Columns47", "100", Laypath);
-            string width48 = INIHelper.Read("width", "Columns48", "100", Laypath);
-            string width49 = INIHelper.Read("width", "Columns49", "100", Laypath);
+            string width48 = INIHelper.Read("width", "Columns48", "88", Laypath);
+            string width49 = INIHelper.Read("width", "Columns49", "95", Laypath);
 
-            string width50 = INIHelper.Read("width", "Columns50", "100", Laypath);
-            string width51 = INIHelper.Read("width", "Columns51", "100", Laypath);
-            string width52 = INIHelper.Read("width", "Columns52", "100", Laypath);
-            // string width53 = INIHelper.Read("width", "Columns53", "100", Laypath);
+            string width50 = INIHelper.Read("width", "Columns50", "87", Laypath);
+            string width51 = INIHelper.Read("width", "Columns51", "30", Laypath);
+            string width52 = INIHelper.Read("width", "Columns52", "30", Laypath);
+            string width53 = INIHelper.Read("width", "Columns53", "30", Laypath);
 
             dgvWorkFlow.Columns[0].Width = int.Parse(width0);//0-9
             dgvWorkFlow.Columns[1].Width = int.Parse(width1);
@@ -343,7 +345,7 @@ namespace Youli_Data_Share
             dgvWorkFlow.Columns[50].Width = int.Parse(width50);//50-52
             dgvWorkFlow.Columns[51].Width = int.Parse(width51);
             dgvWorkFlow.Columns[52].Width = int.Parse(width52);
-            //dataGridView1.Columns[53].Width = int.Parse(width53);
+            dgvWorkFlow.Columns[53].Width = int.Parse(width53);
 
 
             #endregion
@@ -435,66 +437,68 @@ namespace Youli_Data_Share
             string width50 = dgvWorkFlow.Columns[50].Width.ToString();//50-52
             string width51 = dgvWorkFlow.Columns[51].Width.ToString();
             string width52 = dgvWorkFlow.Columns[52].Width.ToString();
+            string width53 = dgvWorkFlow.Columns[53].Width.ToString();
             //string width53 = dataGridView1.Columns[53].Width.ToString();
 
-            INIHelper.Write("width", "Columns0", width3, Laypath);//0-9
-            INIHelper.Write("width", "Columns1", width4, Laypath);
-            INIHelper.Write("width", "Columns2", width5, Laypath);
-            INIHelper.Write("width", "Columns3", width6, Laypath);
-            INIHelper.Write("width", "Columns4", width7, Laypath);
-            INIHelper.Write("width", "Columns5", width8, Laypath);
-            INIHelper.Write("width", "Columns6", width9, Laypath);
-            INIHelper.Write("width", "Columns7", width10, Laypath);
-            INIHelper.Write("width", "Columns8", width11, Laypath);
-            INIHelper.Write("width", "Columns9", width12, Laypath);
+            INIHelper.Write("width", "Columns0", width4, Laypath);//0-9
+            INIHelper.Write("width", "Columns1", width5, Laypath);
+            INIHelper.Write("width", "Columns2", width6, Laypath);
+            INIHelper.Write("width", "Columns3", width7, Laypath);
+            INIHelper.Write("width", "Columns4", width8, Laypath);
+            INIHelper.Write("width", "Columns5", width9, Laypath);
+            INIHelper.Write("width", "Columns6", width10, Laypath);
+            INIHelper.Write("width", "Columns7", width11, Laypath);
+            INIHelper.Write("width", "Columns8", width12, Laypath);
+            INIHelper.Write("width", "Columns9", width13, Laypath);
 
-            INIHelper.Write("width", "Columns10", width13, Laypath);//10-19
-            INIHelper.Write("width", "Columns11", width14, Laypath);
-            INIHelper.Write("width", "Columns12", width15, Laypath);
-            INIHelper.Write("width", "Columns13", width16, Laypath);
-            INIHelper.Write("width", "Columns14", width17, Laypath);
-            INIHelper.Write("width", "Columns15", width18, Laypath);
-            INIHelper.Write("width", "Columns16", width19, Laypath);
-            INIHelper.Write("width", "Columns17", width20, Laypath);
-            INIHelper.Write("width", "Columns18", width21, Laypath);
-            INIHelper.Write("width", "Columns19", width22, Laypath);
+            INIHelper.Write("width", "Columns10", width14, Laypath);//10-19
+            INIHelper.Write("width", "Columns11", width15, Laypath);
+            INIHelper.Write("width", "Columns12", width16, Laypath);
+            INIHelper.Write("width", "Columns13", width17, Laypath);
+            INIHelper.Write("width", "Columns14", width18, Laypath);
+            INIHelper.Write("width", "Columns15", width19, Laypath);
+            INIHelper.Write("width", "Columns16", width20, Laypath);
+            INIHelper.Write("width", "Columns17", width21, Laypath);
+            INIHelper.Write("width", "Columns18", width22, Laypath);
+            INIHelper.Write("width", "Columns19", width23, Laypath);
 
-            INIHelper.Write("width", "Columns20", width23, Laypath);//20-29
-            INIHelper.Write("width", "Columns21", width24, Laypath);
-            INIHelper.Write("width", "Columns22", width25, Laypath);
-            INIHelper.Write("width", "Columns23", width26, Laypath);
-            INIHelper.Write("width", "Columns24", width27, Laypath);
-            INIHelper.Write("width", "Columns25", width28, Laypath);
-            INIHelper.Write("width", "Columns26", width29, Laypath);
-            INIHelper.Write("width", "Columns27", width30, Laypath);
-            INIHelper.Write("width", "Columns28", width31, Laypath);
-            INIHelper.Write("width", "Columns29", width32, Laypath);
+            INIHelper.Write("width", "Columns20", width24, Laypath);//20-29
+            INIHelper.Write("width", "Columns21", width25, Laypath);
+            INIHelper.Write("width", "Columns22", width26, Laypath);
+            INIHelper.Write("width", "Columns23", width27, Laypath);
+            INIHelper.Write("width", "Columns24", width28, Laypath);
+            INIHelper.Write("width", "Columns25", width29, Laypath);
+            INIHelper.Write("width", "Columns26", width30, Laypath);
+            INIHelper.Write("width", "Columns27", width31, Laypath);
+            INIHelper.Write("width", "Columns28", width32, Laypath);
+            INIHelper.Write("width", "Columns29", width33, Laypath);
 
-            INIHelper.Write("width", "Columns30", width33, Laypath);//30-39
-            INIHelper.Write("width", "Columns31", width34, Laypath);
+            INIHelper.Write("width", "Columns30", width34, Laypath);//30-39
+            INIHelper.Write("width", "Columns31", width35, Laypath);
             INIHelper.Write("width", "Columns32", width0, Laypath);
-            INIHelper.Write("width", "Columns33", width35, Laypath);
+            INIHelper.Write("width", "Columns33", width36, Laypath);
             INIHelper.Write("width", "Columns34", width1, Laypath);
-            INIHelper.Write("width", "Columns35", width36, Laypath);
-            INIHelper.Write("width", "Columns36", width37, Laypath);
-            INIHelper.Write("width", "Columns37", width38, Laypath);
-            INIHelper.Write("width", "Columns38", width39, Laypath);
-            INIHelper.Write("width", "Columns39", width40, Laypath);
+            INIHelper.Write("width", "Columns35", width37, Laypath);
+            INIHelper.Write("width", "Columns36", width38, Laypath);
+            INIHelper.Write("width", "Columns37", width39, Laypath);
+            INIHelper.Write("width", "Columns38", width40, Laypath);
+            INIHelper.Write("width", "Columns39", width41, Laypath);
 
-            INIHelper.Write("width", "Columns40", width41, Laypath);//40-49
+            INIHelper.Write("width", "Columns40", width42, Laypath);//40-49
             INIHelper.Write("width", "Columns41", width2, Laypath);
-            INIHelper.Write("width", "Columns42", width42, Laypath);
-            INIHelper.Write("width", "Columns43", width43, Laypath);
-            INIHelper.Write("width", "Columns44", width44, Laypath);
-            INIHelper.Write("width", "Columns45", width45, Laypath);
-            INIHelper.Write("width", "Columns46", width46, Laypath);
-            INIHelper.Write("width", "Columns47", width47, Laypath);
-            INIHelper.Write("width", "Columns48", width48, Laypath);
-            INIHelper.Write("width", "Columns49", width49, Laypath);
+            INIHelper.Write("width", "Columns42", width43, Laypath);
+            INIHelper.Write("width", "Columns43", width44, Laypath);
+            INIHelper.Write("width", "Columns44", width45, Laypath);
+            INIHelper.Write("width", "Columns45", width46, Laypath);
+            INIHelper.Write("width", "Columns46", width47, Laypath);
+            INIHelper.Write("width", "Columns47", width48, Laypath);
+            INIHelper.Write("width", "Columns48", width49, Laypath);
+            INIHelper.Write("width", "Columns49", width50, Laypath);
 
-            INIHelper.Write("width", "Columns50", width50, Laypath);//50-52
+            INIHelper.Write("width", "Columns50", width3, Laypath);//50-52
             INIHelper.Write("width", "Columns51", width51, Laypath);
             INIHelper.Write("width", "Columns52", width52, Laypath);
+            INIHelper.Write("width", "Columns53", width53, Laypath);
             //INIHelper.Write("width", "Columns53", width53, Laypath);
 
             #endregion
@@ -893,7 +897,7 @@ namespace Youli_Data_Share
                 if (cell.FormattedValue.ToString() == "工艺文件")
                 {
                     //string currPath = Application.StartupPath;//获取当前文件夹路径
-                    string subPath = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[10].Value.ToString() + "/";
+                    string subPath = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/";
                     // MessageBox.Show(subPath);
                     try
                     {
@@ -920,7 +924,7 @@ namespace Youli_Data_Share
                     try
                     {
                         // filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + "AC-0109-04"+ ".png";
-                        filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + dgvWorkFlow.Rows[e.RowIndex].Cells[8].Value.ToString() + ".png";
+                        filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + dgvWorkFlow.Rows[e.RowIndex].Cells[9].Value.ToString() + ".png";
                         Process m_Process = null;
                         m_Process = new Process();
                         m_Process.StartInfo.FileName = @filePath;
@@ -942,10 +946,10 @@ namespace Youli_Data_Share
                     }
 
                 }
-                else if (cell.FormattedValue.ToString() == "来料问题夹")
+                else if (cell.FormattedValue.ToString() == "生产问题夹")
                 {
                     //string currPath = Application.StartupPath;//获取当前文件夹路径
-                    string subPath1 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[8].Value.ToString() + "/";
+                    string subPath1 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[9].Value.ToString() + "/";
                     // MessageBox.Show(subPath);
                     try
                     {
@@ -1048,8 +1052,26 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void tsbbtn_delete_Click(object sender, EventArgs e)
         {
-            int index = dgvWorkFlow.CurrentRow.Index;
-            dgvWorkFlow.Rows.RemoveAt(index);
+            String PM = Interaction.InputBox("输入密码", "权限检测", "", -1, -1);
+            if (PM != "")
+            {
+                if (PM == "yl123456")
+                {
+                    int index = dgvWorkFlow.CurrentRow.Index;
+                    dgvWorkFlow.Rows.RemoveAt(index);
+                }
+                else
+                {
+                    MessageBox.Show("请输入正确的密码谢谢！！！！！");
+                    return;
+                }
+
+            }
+            else
+            {
+                return;
+            }
+
         }
         /// <summary>
         /// 添加行
@@ -1063,7 +1085,11 @@ namespace Youli_Data_Share
             dt_flow.Rows.InsertAt(dr, index);
             dgvWorkFlow.Rows[index].HeaderCell.Value = "New";
         }
-
+        /// <summary>
+        /// 盘料接口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsbbtn_material_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(@"\\192.168.1.104\Youli_Server\盘料");

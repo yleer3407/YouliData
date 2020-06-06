@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(orderProcess));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
@@ -115,6 +116,7 @@
             this.Column48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column54 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column52 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column53 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -430,6 +432,7 @@
             this.Column48,
             this.Column49,
             this.Column50,
+            this.Column54,
             this.Column51,
             this.Column52,
             this.Column53});
@@ -708,7 +711,7 @@
             // Column41
             // 
             this.Column41.DataPropertyName = "flo_comMater";
-            this.Column41.HeaderText = "来料问题记录[41]";
+            this.Column41.HeaderText = "预留[41]";
             this.Column41.Name = "Column41";
             this.Column41.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column41.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -718,7 +721,7 @@
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.NullValue = "来料问题夹";
             this.Column42.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column42.HeaderText = "来料问题夹[42]";
+            this.Column42.HeaderText = "预留[42]";
             this.Column42.Name = "Column42";
             this.Column42.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column42.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -726,7 +729,7 @@
             // Column43
             // 
             this.Column43.DataPropertyName = "flo_comqusSolve";
-            this.Column43.HeaderText = "来料问题解决方案[43]";
+            this.Column43.HeaderText = "预留[43]";
             this.Column43.Name = "Column43";
             // 
             // Column44
@@ -776,6 +779,14 @@
             this.Column50.Name = "Column50";
             this.Column50.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column50.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column54
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = "生产问题夹";
+            this.Column54.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column54.HeaderText = "生产问题夹";
+            this.Column54.Name = "Column54";
             // 
             // Column51
             // 
@@ -901,6 +912,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column48;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column49;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column50;
+        private System.Windows.Forms.DataGridViewButtonColumn Column54;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column51;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column52;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column53;
