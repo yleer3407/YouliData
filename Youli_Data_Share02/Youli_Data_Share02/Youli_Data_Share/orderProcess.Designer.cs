@@ -120,6 +120,7 @@
             this.Column51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column52 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column53 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.youli_dateDataSet1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -144,6 +145,7 @@
             this.toolStripSeparator3,
             this.toolStripLabel1,
             this.labuser,
+            this.toolStripLabel2,
             this.toolStripSeparator4,
             this.toolStripButton2,
             this.toolStripButton6,
@@ -437,6 +439,7 @@
             this.Column52,
             this.Column53});
             this.dgvWorkFlow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvWorkFlow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvWorkFlow.Location = new System.Drawing.Point(0, 0);
             this.dgvWorkFlow.Name = "dgvWorkFlow";
             this.dgvWorkFlow.RowTemplate.Height = 23;
@@ -808,6 +811,12 @@
             this.Column53.HeaderText = "结单[53]";
             this.Column53.Name = "Column53";
             // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(12, 22);
+            this.toolStripLabel2.Text = "]";
+            // 
             // orderProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -916,5 +925,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column51;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column52;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column53;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }
