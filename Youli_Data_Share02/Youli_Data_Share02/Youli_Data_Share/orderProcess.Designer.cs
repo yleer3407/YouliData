@@ -445,7 +445,7 @@
             this.Column52,
             this.Column53});
             this.dgvWorkFlow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvWorkFlow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgvWorkFlow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvWorkFlow.Location = new System.Drawing.Point(0, 0);
             this.dgvWorkFlow.Name = "dgvWorkFlow";
             this.dgvWorkFlow.RowTemplate.Height = 23;
