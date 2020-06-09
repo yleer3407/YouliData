@@ -121,6 +121,7 @@
             this.Column51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column52 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column53 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.youli_dateDataSet1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -227,6 +228,7 @@
             this.toolStripButton10.Name = "toolStripButton10";
             this.toolStripButton10.Size = new System.Drawing.Size(52, 22);
             this.toolStripButton10.Text = "保存";
+            this.toolStripButton10.Visible = false;
             this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
             // tsbbtn_submit
@@ -236,6 +238,7 @@
             this.tsbbtn_submit.Name = "tsbbtn_submit";
             this.tsbbtn_submit.Size = new System.Drawing.Size(52, 22);
             this.tsbbtn_submit.Text = "提交";
+            this.tsbbtn_submit.Visible = false;
             this.tsbbtn_submit.Click += new System.EventHandler(this.tsbbtn_submit_Click);
             // 
             // toolStripSeparator1
@@ -385,7 +388,6 @@
             // 
             // dgvWorkFlow
             // 
-            this.dgvWorkFlow.AllowUserToAddRows = false;
             this.dgvWorkFlow.AllowUserToDeleteRows = false;
             this.dgvWorkFlow.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvWorkFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -818,11 +820,24 @@
             this.Column53.HeaderText = "结单[53]";
             this.Column53.Name = "Column53";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(1304, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "提交";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // orderProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1504, 641);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -927,5 +942,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column52;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column53;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.Button button1;
     }
 }
