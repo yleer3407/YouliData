@@ -36,6 +36,7 @@
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.btblogin = new System.Windows.Forms.Button();
             this.btncancle = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +84,7 @@
             // 
             // btblogin
             // 
-            this.btblogin.Location = new System.Drawing.Point(192, 108);
+            this.btblogin.Location = new System.Drawing.Point(192, 128);
             this.btblogin.Name = "btblogin";
             this.btblogin.Size = new System.Drawing.Size(75, 23);
             this.btblogin.TabIndex = 3;
@@ -93,7 +94,7 @@
             // 
             // btncancle
             // 
-            this.btncancle.Location = new System.Drawing.Point(300, 108);
+            this.btncancle.Location = new System.Drawing.Point(300, 128);
             this.btncancle.Name = "btncancle";
             this.btncancle.Size = new System.Drawing.Size(75, 23);
             this.btncancle.TabIndex = 4;
@@ -101,12 +102,26 @@
             this.btncancle.UseVisualStyleBackColor = true;
             this.btncancle.Click += new System.EventHandler(this.btncancle_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(237, 98);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(72, 16);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "记住密码";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Login
             // 
             this.AcceptButton = this.btblogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(417, 188);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btncancle);
             this.Controls.Add(this.btblogin);
             this.Controls.Add(this.txtPwd);
@@ -134,5 +149,6 @@
         private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.Button btblogin;
         private System.Windows.Forms.Button btncancle;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

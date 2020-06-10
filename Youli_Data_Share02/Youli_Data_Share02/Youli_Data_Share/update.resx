@@ -118,7 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.48 data 2020.6.6&gt;&gt;update:
+    <value>版本1.0.0.54 data 2020.6.10&gt;&gt;update:
+    1.添加的订单流程的降序功能
+---------------------------------------------------------
+版本1.0.0.53 data 2020.6.6&gt;&gt;update:
+    1.添加密码保存
+---------------------------------------------------------
+版本1.0.0.50 data 2020.6.6&gt;&gt;update:
+    1.解决自动行宽
+---------------------------------------------------------
+版本1.0.0.48 data 2020.6.6&gt;&gt;update:
     1.修改datagridview表格点击方式 解决批量复制bug
 ---------------------------------------------------------
 版本1.0.0.47 data 2020.6.6&gt;&gt;update:

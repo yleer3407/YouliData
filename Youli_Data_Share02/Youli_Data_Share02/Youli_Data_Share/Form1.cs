@@ -546,6 +546,7 @@ namespace Youli_Data_Share
             //    return;
             //}
             Form4 form4 = new Form4();
+            this.WindowState = FormWindowState.Minimized;
             form4.ShowDialog();
         }
         /// <summary>
@@ -666,6 +667,7 @@ namespace Youli_Data_Share
             #region login
             Login login = new Login();
             login.ShowDialog();
+            this.WindowState = FormWindowState.Minimized;
             #endregion
         }
     }

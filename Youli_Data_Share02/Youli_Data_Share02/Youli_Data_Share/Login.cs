@@ -47,11 +47,17 @@ namespace Youli_Data_Share
                     {
                         string loginName = txtName.Text.Trim();
                         INIHelper.Write("LoginName", "1", loginName,loginPath);
+                        if (checkBox1.Checked)
+                        {
+                            INIHelper.Write("LoginName", "2",user_pwd, loginPath);
+                        }
                        // MessageBox.Show("登录成功！");
                         orderProcess frm_ord = new orderProcess(this.txtName.Text.Trim());
+                        this.Hide();
                         frm_ord.ShowDialog();
                         conn.Close();
                         this.Close();
+
 
                     }
                     else
@@ -77,7 +83,17 @@ namespace Youli_Data_Share
 
             INIHelper.CheckPath(loginPath);
             string loginName = INIHelper.Read("LoginName", "1", "001", loginPath);
+            string loginPwd = INIHelper.Read("LoginName", "2", "", loginPath);
             txtName.Text = loginName;
+            if (checkBox1.Checked)
+            {
+                txtPwd.Text = loginPwd;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

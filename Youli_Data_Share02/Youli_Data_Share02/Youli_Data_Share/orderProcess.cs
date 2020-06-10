@@ -353,8 +353,11 @@ namespace Youli_Data_Share
 
             #region 读取流程数据库内容
             searchDate();
+            dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
             #endregion
+            #region 载入状态
 
+            #endregion
 
         }
 
@@ -1129,6 +1132,7 @@ namespace Youli_Data_Share
         private void tsbtn_search_Click(object sender, EventArgs e)
         {
             searchDate();//加载sql数据
+            dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
         }
         private void searchDate()
         {
