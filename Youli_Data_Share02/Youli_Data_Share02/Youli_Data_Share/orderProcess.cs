@@ -866,7 +866,11 @@ namespace Youli_Data_Share
         {
             SendKeys.Send("{ENTER}");
         }
-
+        /// <summary>
+        /// 提交
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             String strSql = string.Empty;
@@ -1043,7 +1047,11 @@ namespace Youli_Data_Share
             comm.ExecuteNonQuery();
             MessageBox.Show("已提交成功");
         }
-
+        /// <summary>
+        /// datagridview按键
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvWorkFlow_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -1128,12 +1136,19 @@ namespace Youli_Data_Share
                 return;
             }
         }
-
+        /// <summary>
+        /// 查找
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsbtn_search_Click(object sender, EventArgs e)
         {
             searchDate();//加载sql数据
             dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
         }
+        /// <summary>
+        /// 构造函数searchDate
+        /// </summary>
         private void searchDate()
         {
             SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
@@ -1194,10 +1209,8 @@ namespace Youli_Data_Share
             SqlDataAdapter da = new SqlDataAdapter(strSQL, conn_flow);
             DataSet ds = new DataSet();
             da.Fill(ds, "flow");
-
-            //dataGridView1.DataSource = ds;
-            //dataGridView1.DataMember = "wlxq";
             dt_flow = ds.Tables["flow"];
+            insertDgv();
             dgvWorkFlow.DataSource = dt_flow.DefaultView;
             //dgvWorkFlow.Sort(dgvWorkFlow.Columns[0], ListSortDirection.Descending);
         }
@@ -1762,6 +1775,57 @@ namespace Youli_Data_Share
             catch
             {
                 MessageBox.Show("提示：没有发生修改操作 ");
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            insertDgv();
+        }
+        /// <summary>
+        /// datagridview插入数据处理
+        /// </summary>
+        private void insertDgv()
+        {
+            for (int i = 0; i < dt_flow.Rows.Count; i++)
+            {
+                if (dt_flow.Rows[i]["flo_ask"].ToString() != "")
+                {
+                    dt_flow.Rows[i]["flo_state"] = "已经提交订单，等待BOM确认";
+                }
+                else if (dt_flow.Rows[i]["flo_bomVerify"].ToString() == "True")
+                {
+                    dt_flow.Rows[i]["flo_state"] = "已确认BOM,等待物料采购";
+                }
+                else if (dt_flow.Rows[i]["flo_online"].ToString() != "")
+                {
+                    dt_flow.Rows[i]["flo_state"] = "已制定生产计划，等等加工";
+                }
+                else if (dt_flow.Rows[i]["flo_oliquan"].ToString() != "" && dt_flow.Rows[i]["flo_oliquan"].ToString() != "" && dt_flow.Rows[i]["flo_oliquan"].ToString() != "")
+                {
+                    dt_flow.Rows[i]["flo_state"] = "喷油/电镀/其他等工艺加工中";
+                }
+                else if (dt_flow.Rows[i]["flo_fristMake"].ToString() != "")
+                {
+                    dt_flow.Rows[i]["flo_state"] = "首件已经在制作，等待确认";
+                }
+                else if (dt_flow.Rows[i]["flo_fristChk"].ToString() != "")
+                {
+                    dt_flow.Rows[i]["flo_state"] = "首件已经在确认，等待生产";
+                }
+                else if (dt_flow.Rows[i]["flo_spotChk"].ToString() != "")
+                {
+                    dt_flow.Rows[i]["flo_state"] = "已经在生产,等待出货";
+                }
+                else if (dt_flow.Rows[i]["flo_out"].ToString() == "True")
+                {
+                    dt_flow.Rows[i]["flo_state"] = "已经出货,等等结单";
+                }
+                else if (dt_flow.Rows[i]["flo_finish"].ToString() == "True")
+                {
+                    dt_flow.Rows[i]["flo_state"] = "已经结单";
+                }
+
             }
         }
     }
