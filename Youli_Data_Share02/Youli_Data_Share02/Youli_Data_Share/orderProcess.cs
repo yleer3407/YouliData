@@ -353,7 +353,7 @@ namespace Youli_Data_Share
 
             #region 读取流程数据库内容
             searchDate();
-            dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
+           // dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
             #endregion
             #region 载入状态
 
@@ -1144,7 +1144,7 @@ namespace Youli_Data_Share
         private void tsbtn_search_Click(object sender, EventArgs e)
         {
             searchDate();//加载sql数据
-            dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
+            //dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
         }
         /// <summary>
         /// 构造函数searchDate
@@ -1334,7 +1334,10 @@ namespace Youli_Data_Share
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-
+       /// <summary>
+       /// 批量复制
+       /// </summary>
+       /// <param name="data"></param>
         private void copyClipboardTexttoGrid(string data)
         {
             string[] rows = data.Split(new string[] { "\r\n" }, StringSplitOptions.None);
