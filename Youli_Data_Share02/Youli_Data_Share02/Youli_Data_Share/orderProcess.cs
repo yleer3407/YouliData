@@ -29,10 +29,10 @@ namespace Youli_Data_Share
             InitializeComponent();
             #region 权限分配 连接userAdmin数据库
             SqlConnectionStringBuilder scsbLogin = new SqlConnectionStringBuilder();
-            scsbLogin.DataSource = "192.168.1.104";
+            scsbLogin.DataSource = "124.70.203.134,1433";
             scsbLogin.UserID = "sa";
-            scsbLogin.Password = "yelei193";
-            scsbLogin.InitialCatalog = "Youli_date";
+            scsbLogin.Password = "Yelei193";
+            scsbLogin.InitialCatalog = "YouliData";
 
             SqlConnection connLogin = new SqlConnection(scsbLogin.ToString());
             if (connLogin.State == System.Data.ConnectionState.Closed)
@@ -1149,13 +1149,13 @@ namespace Youli_Data_Share
         /// <summary>
         /// 构造函数searchDate
         /// </summary>
-        private void searchDate()
+        public void searchDate()
         {
             SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "192.168.1.104";
+            scsb.DataSource = "124.70.203.134,1433";
             scsb.UserID = "sa";
-            scsb.Password = "yelei193";
-            scsb.InitialCatalog = "Youli_date";
+            scsb.Password = "Yelei193";
+            scsb.InitialCatalog = "YouliData";
 
             conn_flow = new SqlConnection(scsb.ToString());
             if (conn_flow.State == System.Data.ConnectionState.Closed)
@@ -1212,7 +1212,7 @@ namespace Youli_Data_Share
             dt_flow = ds.Tables["flow"];
             insertDgv();
             dgvWorkFlow.DataSource = dt_flow.DefaultView;
-            //dgvWorkFlow.Sort(dgvWorkFlow.Columns[0], ListSortDirection.Descending);
+            dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
         }
         /// <summary>
         /// 删除行
@@ -1242,6 +1242,7 @@ namespace Youli_Data_Share
             }
 
         }
+
         /// <summary>
         /// 添加行
         /// </summary>
@@ -1249,10 +1250,24 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void toolStripButton11_Click(object sender, EventArgs e)
         {
-            DataRow dr = dt_flow.NewRow();
-            int index = dgvWorkFlow.RowCount == 0 ? 0 : dgvWorkFlow.CurrentRow.Index + 1;
-            dt_flow.Rows.InsertAt(dr, index);
-            dgvWorkFlow.Rows[index].HeaderCell.Value = "New";
+            #region 0612改版
+            //DataRow dr = dt_flow.NewRow();
+            //int index = dgvWorkFlow.RowCount == 0 ? 0 : dgvWorkFlow.CurrentRow.Index + 1;
+            //dt_flow.Rows.InsertAt(dr, index);
+            //dgvWorkFlow.Rows[index].HeaderCell.Value = "New";
+            #endregion
+            addNum frmaddNum = new addNum();
+            DialogResult result = frmaddNum.ShowDialog();
+            //frmaddNum.Show();
+            if (result == DialogResult.OK)
+            {
+                searchDate();
+            }
+            else
+            { 
+                
+            }
+
         }
         /// <summary>
         /// 盘料接口
@@ -1318,7 +1333,6 @@ namespace Youli_Data_Share
                         copyClipboardTexttoGrid(data);
                         //msg = Message.;
                         msg = new Message();
-
                         return base.ProcessCmdKey(ref msg, Keys.Control);
                     }
                 }
@@ -1335,12 +1349,12 @@ namespace Youli_Data_Share
         }
 
        /// <summary>
-       /// 批量复制
+       /// 
        /// </summary>
        /// <param name="data"></param>
         private void copyClipboardTexttoGrid(string data)
         {
-            string[] rows = data.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+            string[] rows = data.Split(new string[] { "" }, StringSplitOptions.None);
             string[] cols;
             int rowStart = 0, columnStart = 0, i = 0, j = 0;
             if (this.dgvWorkFlow.SelectedCells.Count > 0)
@@ -1361,7 +1375,7 @@ namespace Youli_Data_Share
                     this.dgvWorkFlow.Rows[i + rowStart].Cells[j + columnStart].Value = cols[j];
                 }
             }
-            this.dgvWorkFlow.ClearSelection();
+           this.dgvWorkFlow.ClearSelection();
 
             this.dgvWorkFlow.Rows[i + rowStart - 1].Cells[j + columnStart - 1].Selected = true;
 
@@ -1486,13 +1500,13 @@ namespace Youli_Data_Share
                                            ,[flo_out]
                                            ,[flo_finish])
                                      VALUES
-                                           ('" + "[" + DateTime.Now.ToString("yy/MM/dd HH") + "]" + @"'
+                                           ('" + "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") + "]" + @"'
                                            ,'" + dr["flo_state"].ToString() + @"'
                                            ,'" + dr["flo_client"].ToString() + @"'
                                            ,'" + dr["flo_factory"].ToString() + @"'
                                            ,'" + dr["flo_line"].ToString() + @"'
                                            ,'" + dr["flo_num"].ToString() + @"'
-                                           ,'" + dr["flo_record"].ToString() + "[" + DateTime.Now.ToString("yy/MM/dd HH") + "]" + @"'
+                                           ,'" + dr["flo_record"].ToString()  + @"'
                                            ,'" + dr["flo_coding"].ToString() + @"'
                                            ,'" + dr["flo_cilentID"].ToString() + @"'
                                            ,'" + dr["flo_model"].ToString() + @"'
@@ -1517,7 +1531,7 @@ namespace Youli_Data_Share
                                            ,'" + dr["flo_delivery"].ToString() + @"'
                                            ,'" + dr["flo_encase"].ToString() + @"'
                                            ,'" + dr["flo_box"].ToString() + @"'
-                                           ,'" + dr["flo_ask"].ToString() + "[" + DateTime.Now.ToString("yy/MM/dd HH") + "]" + @"'
+                                           ,'" + dr["flo_ask"].ToString()  + @"'
                                            ,'" + dr["flo_pic"].ToString() + @"'
                                            ,'" + dr["flo_modibom1"].ToString() + @"'
                                            ,'" + dr["flo_modibom2"].ToString() + @"'
@@ -1554,7 +1568,7 @@ namespace Youli_Data_Share
                                    ,[flo_factory] = '" + dr["flo_factory"].ToString() + @"'
                                    ,[flo_line] = '" + dr["flo_line"].ToString() + @"'
                                    ,[flo_num] = '" + dr["flo_num"].ToString() + @"'
-                                   ,[flo_record] = '" + dr["flo_record"].ToString() + "[" + DateTime.Now.ToString("yy/MM/dd HH") + "]" + @"'
+                                   ,[flo_record] = '" + dr["flo_record"].ToString() + @"'
                                    ,[flo_coding] = '" + dr["flo_coding"].ToString() + @"'
                                    ,[flo_cilentID] = '" + dr["flo_cilentID"].ToString() + @"'
                                    ,[flo_model] = '" + dr["flo_model"].ToString() + @"'
@@ -1579,7 +1593,7 @@ namespace Youli_Data_Share
                                    ,[flo_delivery] = '" + dr["flo_delivery"].ToString() + @"'
                                    ,[flo_encase] = '" + dr["flo_encase"].ToString() + @"'
                                    ,[flo_box] = '" + dr["flo_box"].ToString() + @"'
-                                   ,[flo_ask] = '" + dr["flo_ask"].ToString() + "[" + DateTime.Now.ToString("yy/MM/dd HH") + "]" + @"'
+                                   ,[flo_ask] = '" + dr["flo_ask"].ToString()  + @"'
                                    ,[flo_pic] = '" + dr["flo_pic"].ToString() + @"'
                                    ,[flo_modibom1] = '" + dr["flo_modibom1"].ToString() + @"'
                                    ,[flo_modibom2] = '" + dr["flo_modibom2"].ToString() + @"'
@@ -1636,7 +1650,7 @@ namespace Youli_Data_Share
                                    ,[flo_box] = '" + dr["flo_box"].ToString() + @"'
                                    ,[flo_ask] = '" + dr["flo_ask"].ToString() + @"'
                                    ,[flo_pic] = '" + dr["flo_pic"].ToString() + @"'
-                                   ,[flo_modibom1] = '" + dr["flo_modibom1"].ToString() + "[" + DateTime.Now.ToString("yy/MM/dd HH") + "]" + @"'
+                                   ,[flo_modibom1] = '" + dr["flo_modibom1"].ToString()  + @"'
                                    ,[flo_modibom2] = '" + dr["flo_modibom2"].ToString() + @"'
                                    ,[flo_bomVerify] = '" + dr["flo_bomVerify"].ToString() + @"'
                                    ,[flo_starv] = '" + dr["flo_starv"].ToString() + @"'
@@ -1705,7 +1719,7 @@ namespace Youli_Data_Share
                                    ,[flo_fristMake] = '" + dr["flo_fristMake"].ToString() + @"'
                                    ,[flo_fristChk] = '" + dr["flo_fristChk"].ToString() + @"'
                                    ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
-                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + "[" + DateTime.Now.ToString("yy/MM/dd HH") + "]" + @"'
+                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString()  + @"'
                                    ,[flo_out] = '" + dr["flo_out"].ToString() + @"'
                                    ,[flo_finish] = '" + dr["flo_finish"].ToString() + @"'
                                WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 

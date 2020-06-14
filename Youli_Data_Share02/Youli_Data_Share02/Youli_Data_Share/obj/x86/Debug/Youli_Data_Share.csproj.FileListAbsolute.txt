@@ -95,3 +95,4 @@ C:\Users\Administrator\Desktop\VSProject\YouliData\Youli_Data_Share02\Youli_Data
 C:\Users\Administrator\Desktop\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.orderProcess.resources
 C:\Users\Administrator\Desktop\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.权限分配.resources
 C:\Users\Administrator\Desktop\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.Login.resources
+C:\Users\Administrator\Desktop\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.addNum.resources

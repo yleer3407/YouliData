@@ -27,7 +27,7 @@
     <InstallUrl>\\192.168.1.104\Youli_Server\</InstallUrl>
     <UpdateUrl>\\192.168.1.104\Youli_Server\</UpdateUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>60</ApplicationRevision>
+    <ApplicationRevision>66</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -86,6 +86,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addNum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addNum.Designer.cs">
+      <DependentUpon>addNum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\SQLHelper.cs" />
     <Compile Include="data_Login.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -195,6 +201,9 @@
     <Compile Include="订单排程.Designer.cs">
       <DependentUpon>订单排程.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="addNum.resx">
+      <DependentUpon>addNum.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Engineeringcharcs.resx">
       <DependentUpon>Engineeringcharcs.cs</DependentUpon>
     </EmbeddedResource>
