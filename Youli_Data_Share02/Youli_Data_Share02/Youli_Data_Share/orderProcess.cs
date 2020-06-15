@@ -1054,6 +1054,11 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void dgvWorkFlow_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(labuser.Text.ToString()=="游客")
+            {
+                MessageBox.Show("无权限打开");
+                return;
+            }
             try
             {
                 DataGridViewCell cell = dgvWorkFlow.Rows[e.RowIndex].Cells[e.ColumnIndex];
