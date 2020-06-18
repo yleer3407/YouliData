@@ -675,7 +675,6 @@
             this.Column32.HeaderText = "客户细节要求[32]";
             this.Column32.Name = "Column32";
             this.Column32.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column32.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column33
             // 
@@ -692,6 +691,7 @@
             this.Column34.HeaderText = "截屏[34]";
             this.Column34.Name = "Column34";
             this.Column34.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column34.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column35
             // 
@@ -700,6 +700,7 @@
             this.Column35.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column35.HeaderText = "Bom图片[35]";
             this.Column35.Name = "Column35";
+            this.Column35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column36
             // 
@@ -707,7 +708,6 @@
             this.Column36.HeaderText = "组装材料确认[36]";
             this.Column36.Name = "Column36";
             this.Column36.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column36.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column37
             // 
@@ -715,7 +715,6 @@
             this.Column37.HeaderText = "包装材料确认[37]";
             this.Column37.Name = "Column37";
             this.Column37.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column37.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column38
             // 
@@ -723,6 +722,7 @@
             this.Column38.HeaderText = "物料需求提交[38]";
             this.Column38.Name = "Column38";
             this.Column38.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column38.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column39
             // 
@@ -730,7 +730,6 @@
             this.Column39.HeaderText = "报缺[39]";
             this.Column39.Name = "Column39";
             this.Column39.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column39.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column40
             // 
@@ -738,7 +737,6 @@
             this.Column40.HeaderText = "生产计划[40]";
             this.Column40.Name = "Column40";
             this.Column40.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column40.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column41
             // 
@@ -746,7 +744,6 @@
             this.Column41.HeaderText = "预留[41]";
             this.Column41.Name = "Column41";
             this.Column41.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column41.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column42
             // 
@@ -794,7 +791,6 @@
             this.Column48.HeaderText = "首件制作[48]";
             this.Column48.Name = "Column48";
             this.Column48.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column48.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column49
             // 
@@ -802,7 +798,6 @@
             this.Column49.HeaderText = "首件确认[49]";
             this.Column49.Name = "Column49";
             this.Column49.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column49.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column50
             // 
@@ -810,7 +805,6 @@
             this.Column50.HeaderText = "生产问题汇总[50]";
             this.Column50.Name = "Column50";
             this.Column50.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column50.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column54
             // 
@@ -819,6 +813,7 @@
             this.Column54.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column54.HeaderText = "生产问题夹";
             this.Column54.Name = "Column54";
+            this.Column54.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column51
             // 
@@ -826,7 +821,6 @@
             this.Column51.HeaderText = "成品抽检汇总[51]";
             this.Column51.Name = "Column51";
             this.Column51.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column51.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column52
             // 
@@ -834,6 +828,7 @@
             this.Column52.FalseValue = "未出货";
             this.Column52.HeaderText = "出货[52]";
             this.Column52.Name = "Column52";
+            this.Column52.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column52.TrueValue = "已出货";
             // 
             // Column53
@@ -842,6 +837,7 @@
             this.Column53.FalseValue = "未结单";
             this.Column53.HeaderText = "结单[53]";
             this.Column53.Name = "Column53";
+            this.Column53.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column53.TrueValue = "已结单";
             // 
             // orderProcess
