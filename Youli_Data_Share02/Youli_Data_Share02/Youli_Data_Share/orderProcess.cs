@@ -95,7 +95,10 @@ namespace Youli_Data_Share
 
 
         }
+        private void DGV_DataError(object sender,DataGridViewDataErrorEventArgs e)
+        {
 
+        }
         private void orderProcess_Load(object sender, EventArgs e)
         {
             #region 标题栏改色
@@ -1848,6 +1851,57 @@ namespace Youli_Data_Share
                     dt_flow.Rows[i]["flo_state"] = "已经结单";
                 }
 
+            }
+        }
+
+        object data01 = null;//订单临时变更
+        object data02 = null;//客户细节要求
+        object data03 = null;//组装材料确认
+        object data04 = null;//包装材料确认
+        object data05 = null;//厂发变更
+        object data06 = null;//生产问题汇总
+        object data07 = null;//成品问题汇总
+        private void dgvWorkFlow_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            data01 = dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column7"].Value;
+            data02 = dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column32"].Value;
+            data03 = dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column36"].Value;
+            data04 = dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column37"].Value;
+            data05 = dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column47"].Value;
+            data06 = dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column50"].Value;
+            data07 = dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column51"].Value;
+           // MessageBox.Show(data01 + data02 + data03 + data04 + data05 + data06 + data07);
+        }
+
+        private void dgvWorkFlow_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if(data01 != dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column7"].Value)
+            {
+                dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column7"].Value = "["+DateTime.Now.ToString("yyyy/MM/dd HH:mm")+"]" + dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column7"].Value;
+            }
+            if (data02 != dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column32"].Value)
+            {
+                dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column32"].Value = "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm") + "]" + dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column32"].Value;
+            }
+            if (data03 != dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column36"].Value)
+            {
+                dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column36"].Value = "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm") + "]" + dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column36"].Value;
+            }
+            if (data04 != dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column37"].Value)
+            {
+                dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column37"].Value = "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm") + "]" + dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column37"].Value;
+            }
+            if (data05 != dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column47"].Value)
+            {
+                dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column47"].Value = "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm") + "]" + dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column47"].Value;
+            }
+            if (data06 != dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column50"].Value)
+            {
+                dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column50"].Value = "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm") + "]" + dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column50"].Value;
+            }
+            if (data07 != dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column51"].Value)
+            {
+                dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column51"].Value = "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm") + "]" + dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column51"].Value;
             }
         }
     }

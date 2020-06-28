@@ -39,8 +39,8 @@ namespace Youli_Data_Share
                                     ('" + "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") + "]" + @"'
                                     ,'" + txtAdd + @"'
                                     ,'" + "0" + @"' 
-                                    ,'" + "0" + @"' 
-                                    ,'" + "0" + @"' )";
+                                    ,'" + "N" + @"' 
+                                    ,'" + "N" + @"' )";
             SqlCommand comm = new SqlCommand(strSql, conn_add);
             comm.ExecuteNonQuery();
             MessageBox.Show("添加成功！");

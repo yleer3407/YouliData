@@ -118,7 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.62 data 2020.6.18&gt;&gt;update:
+    <value>版本1.0.0.64 data 2020.6.28&gt;&gt;update:
+   1.解决订单排程表 数据添加格式不对应报错
+---------------------------------------------------------
+版本1.0.0.63 data 2020.6.19&gt;&gt;update:
+    1.订单排程表 [订单临时变更]、[客户细节要求]、[组装材料确认]、
+    [包装材料确认]、[厂发变更记录]、[生产问题汇总]、[成品抽检]。添加时间记录
+---------------------------------------------------------
+版本1.0.0.62 data 2020.6.18&gt;&gt;update:
     1.订单排程表完善手动列序功能
 ---------------------------------------------------------
 版本1.0.0.61 data 2020.6.12&gt;&gt;update:

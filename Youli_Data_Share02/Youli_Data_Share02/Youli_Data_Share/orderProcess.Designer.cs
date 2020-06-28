@@ -69,7 +69,6 @@
             this.youli_dateDataSet1 = new Youli_Data_Share.Youli_dateDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvWorkFlow = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -124,6 +123,7 @@
             this.Column51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column52 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column53 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.youli_dateDataSet1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -461,20 +461,10 @@
             this.dgvWorkFlow.RowTemplate.Height = 23;
             this.dgvWorkFlow.Size = new System.Drawing.Size(1504, 616);
             this.dgvWorkFlow.TabIndex = 0;
+            this.dgvWorkFlow.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvWorkFlow_CellBeginEdit);
             this.dgvWorkFlow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkFlow_CellContentClick);
+            this.dgvWorkFlow.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkFlow_CellEndEdit);
             this.dgvWorkFlow.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvWorkFlow_RowPostPaint);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(1304, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "提交";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Column1
             // 
@@ -825,20 +815,32 @@
             // Column52
             // 
             this.Column52.DataPropertyName = "flo_out";
-            this.Column52.FalseValue = "未出货";
+            this.Column52.FalseValue = "N";
             this.Column52.HeaderText = "出货[52]";
             this.Column52.Name = "Column52";
             this.Column52.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column52.TrueValue = "已出货";
+            this.Column52.TrueValue = "Y";
             // 
             // Column53
             // 
             this.Column53.DataPropertyName = "flo_finish";
-            this.Column53.FalseValue = "未结单";
+            this.Column53.FalseValue = "N";
             this.Column53.HeaderText = "结单[53]";
             this.Column53.Name = "Column53";
             this.Column53.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column53.TrueValue = "已结单";
+            this.Column53.TrueValue = "Y";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(1304, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "提交";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // orderProcess
             // 
