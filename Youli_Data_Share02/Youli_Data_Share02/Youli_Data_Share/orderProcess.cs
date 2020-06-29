@@ -1602,20 +1602,9 @@ namespace Youli_Data_Share
                                    ,[flo_encase] = '" + dr["flo_encase"].ToString() + @"'
                                    ,[flo_box] = '" + dr["flo_box"].ToString() + @"'
                                    ,[flo_ask] = '" + dr["flo_ask"].ToString()  + @"'
-                                   ,[flo_pic] = '" + dr["flo_pic"].ToString() + @"'
-                                   ,[flo_modibom1] = '" + dr["flo_modibom1"].ToString() + @"'
-                                   ,[flo_modibom2] = '" + dr["flo_modibom2"].ToString() + @"'
-                                   ,[flo_bomVerify] = '" + dr["flo_bomVerify"].ToString() + @"'
                                    ,[flo_starv] = '" + dr["flo_starv"].ToString() + @"'
                                    ,[flo_online] = '" + dr["flo_online"].ToString() + @"'
-                                   ,[flo_comMater] = '" + dr["flo_comMater"].ToString() + @"'
-                                   ,[flo_comqusSolve] = '" + dr["flo_comqusSolve"].ToString() + @"'
-                                   ,[flo_oliquan] = '" + dr["flo_oliquan"].ToString() + @"'
-                                   ,[flo_elequan] = '" + dr["flo_elequan"].ToString() + @"'
                                    ,[flo_elsequan] = '" + dr["flo_elsequan"].ToString() + @"'
-                                   ,[flo_facAlter] = '" + dr["flo_facAlter"].ToString() + @"'
-                                   ,[flo_fristMake] = '" + dr["flo_fristMake"].ToString() + @"'
-                                   ,[flo_fristChk] = '" + dr["flo_fristChk"].ToString() + @"'
                                    ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
                                    ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
                                    ,[flo_out] = '" + dr["flo_out"].ToString() + @"'
@@ -1627,54 +1616,19 @@ namespace Youli_Data_Share
                         {
                             strSQL = @"UPDATE [dbo].[flow]
                                    SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
-                                   ,[flo_client] = '" + dr["flo_client"].ToString() + @"'
-                                   ,[flo_factory] = '" + dr["flo_factory"].ToString() + @"'
-                                   ,[flo_line] = '" + dr["flo_line"].ToString() + @"'
-                                   ,[flo_num] = '" + dr["flo_num"].ToString() + @"'
-                                   ,[flo_record] = '" + dr["flo_record"].ToString() + @"'
-                                   ,[flo_coding] = '" + dr["flo_coding"].ToString() + @"'
-                                   ,[flo_cilentID] = '" + dr["flo_cilentID"].ToString() + @"'
-                                   ,[flo_model] = '" + dr["flo_model"].ToString() + @"'
-                                   ,[flo_logo] = '" + dr["flo_logo"].ToString() + @"'
-                                   ,[flo_proname] = '" + dr["flo_proname"].ToString() + @"'
-                                   ,[flo_range] = '" + dr["flo_range"].ToString() + @"'
-                                   ,[flo_unit] = '" + dr["flo_unit"].ToString() + @"'
-                                   ,[flo_reunit] = '" + dr["flo_reunit"].ToString() + @"'
-                                   ,[flo_memunit] = '" + dr["flo_memunit"].ToString() + @"'
-                                   ,[flo_frames] = '" + dr["flo_frames"].ToString() + @"'
-                                   ,[flo_backcolor] = '" + dr["flo_backcolor"].ToString() + @"'
-                                   ,[flo_closetime] = '" + dr["flo_closetime"].ToString() + @"'
-                                   ,[flo_backtime] = '" + dr["flo_backtime"].ToString() + @"'
-                                   ,[flo_revise] = '" + dr["flo_revise"].ToString() + @"'
-                                   ,[flo_cleRange] = '" + dr["flo_cleRange"].ToString() + @"'
-                                   ,[flo_cleShutdown] = '" + dr["flo_cleShutdown"].ToString() + @"'
-                                   ,[flo_gravity] = '" + dr["flo_gravity"].ToString() + @"'
-                                   ,[flo_levFacSet] = '" + dr["flo_levFacSet"].ToString() + @"'
-                                   ,[flo_cell] = '" + dr["flo_cell"].ToString() + @"'
-                                   ,[flo_plastic] = '" + dr["flo_plastic"].ToString() + @"'
-                                   ,[flo_quantity] = '" + dr["flo_quantity"].ToString() + @"'
-                                   ,[flo_delivery] = '" + dr["flo_delivery"].ToString() + @"'
-                                   ,[flo_encase] = '" + dr["flo_encase"].ToString() + @"'
-                                   ,[flo_box] = '" + dr["flo_box"].ToString() + @"'
-                                   ,[flo_ask] = '" + dr["flo_ask"].ToString() + @"'
-                                   ,[flo_pic] = '" + dr["flo_pic"].ToString() + @"'
                                    ,[flo_modibom1] = '" + dr["flo_modibom1"].ToString()  + @"'
-                                   ,[flo_modibom2] = '" + dr["flo_modibom2"].ToString() + @"'
-                                   ,[flo_bomVerify] = '" + dr["flo_bomVerify"].ToString() + @"'
-                                   ,[flo_starv] = '" + dr["flo_starv"].ToString() + @"'
-                                   ,[flo_online] = '" + dr["flo_online"].ToString() + @"'
-                                   ,[flo_comMater] = '" + dr["flo_comMater"].ToString() + @"'
-                                   ,[flo_comqusSolve] = '" + dr["flo_comqusSolve"].ToString() + @"'
-                                   ,[flo_oliquan] = '" + dr["flo_oliquan"].ToString() + @"'
-                                   ,[flo_elequan] = '" + dr["flo_elequan"].ToString() + @"'
-                                   ,[flo_elsequan] = '" + dr["flo_elsequan"].ToString() + @"'
-                                   ,[flo_facAlter] = '" + dr["flo_facAlter"].ToString() + @"'
                                    ,[flo_fristMake] = '" + dr["flo_fristMake"].ToString() + @"'
-                                   ,[flo_fristChk] = '" + dr["flo_fristChk"].ToString() + @"'
                                    ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
                                    ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
-                                   ,[flo_out] = '" + dr["flo_out"].ToString() + @"'
-                                   ,[flo_finish] = '" + dr["flo_finish"].ToString() + @"'
+                               WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
+                                    AND flo_num= '" + dr["flo_num"].ToString() + "'";
+                        }
+                        else if (labuser.Text == "陶志")
+                        {
+                            strSQL = @"UPDATE [dbo].[flow]
+                                   SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
+                                   ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
+                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
                                WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
                                     AND flo_num= '" + dr["flo_num"].ToString() + "'";
                         }
@@ -1682,58 +1636,64 @@ namespace Youli_Data_Share
                         {
                             strSQL = @"UPDATE [dbo].[flow]
                                    SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
-                                   ,[flo_client] = '" + dr["flo_client"].ToString() + @"'
-                                   ,[flo_factory] = '" + dr["flo_factory"].ToString() + @"'
-                                   ,[flo_line] = '" + dr["flo_line"].ToString() + @"'
-                                   ,[flo_num] = '" + dr["flo_num"].ToString() + @"'
-                                   ,[flo_record] = '" + dr["flo_record"].ToString() + @"'
-                                   ,[flo_coding] = '" + dr["flo_coding"].ToString() + @"'
-                                   ,[flo_cilentID] = '" + dr["flo_cilentID"].ToString() + @"'
-                                   ,[flo_model] = '" + dr["flo_model"].ToString() + @"'
-                                   ,[flo_logo] = '" + dr["flo_logo"].ToString() + @"'
-                                   ,[flo_proname] = '" + dr["flo_proname"].ToString() + @"'
-                                   ,[flo_range] = '" + dr["flo_range"].ToString() + @"'
-                                   ,[flo_unit] = '" + dr["flo_unit"].ToString() + @"'
-                                   ,[flo_reunit] = '" + dr["flo_reunit"].ToString() + @"'
-                                   ,[flo_memunit] = '" + dr["flo_memunit"].ToString() + @"'
-                                   ,[flo_frames] = '" + dr["flo_frames"].ToString() + @"'
-                                   ,[flo_backcolor] = '" + dr["flo_backcolor"].ToString() + @"'
-                                   ,[flo_closetime] = '" + dr["flo_closetime"].ToString() + @"'
-                                   ,[flo_backtime] = '" + dr["flo_backtime"].ToString() + @"'
-                                   ,[flo_revise] = '" + dr["flo_revise"].ToString() + @"'
-                                   ,[flo_cleRange] = '" + dr["flo_cleRange"].ToString() + @"'
-                                   ,[flo_cleShutdown] = '" + dr["flo_cleShutdown"].ToString() + @"'
-                                   ,[flo_gravity] = '" + dr["flo_gravity"].ToString() + @"'
-                                   ,[flo_levFacSet] = '" + dr["flo_levFacSet"].ToString() + @"'
-                                   ,[flo_cell] = '" + dr["flo_cell"].ToString() + @"'
-                                   ,[flo_plastic] = '" + dr["flo_plastic"].ToString() + @"'
-                                   ,[flo_quantity] = '" + dr["flo_quantity"].ToString() + @"'
-                                   ,[flo_delivery] = '" + dr["flo_delivery"].ToString() + @"'
-                                   ,[flo_encase] = '" + dr["flo_encase"].ToString() + @"'
-                                   ,[flo_box] = '" + dr["flo_box"].ToString() + @"'
-                                   ,[flo_ask] = '" + dr["flo_ask"].ToString() + @"'
-                                   ,[flo_pic] = '" + dr["flo_pic"].ToString() + @"'
-                                   ,[flo_modibom1] = '" + dr["flo_modibom1"].ToString() + @"'
-                                   ,[flo_modibom2] = '" + dr["flo_modibom2"].ToString() + @"'
-                                   ,[flo_bomVerify] = '" + dr["flo_bomVerify"].ToString() + @"'
-                                   ,[flo_starv] = '" + dr["flo_starv"].ToString() + @"'
-                                   ,[flo_online] = '" + dr["flo_online"].ToString() + @"'
-                                   ,[flo_comMater] = '" + dr["flo_comMater"].ToString() + @"'
-                                   ,[flo_comqusSolve] = '" + dr["flo_comqusSolve"].ToString() + @"'
-                                   ,[flo_oliquan] = '" + dr["flo_oliquan"].ToString() + @"'
-                                   ,[flo_elequan] = '" + dr["flo_elequan"].ToString() + @"'
-                                   ,[flo_elsequan] = '" + dr["flo_elsequan"].ToString() + @"'
-                                   ,[flo_facAlter] = '" + dr["flo_facAlter"].ToString() + @"'
-                                   ,[flo_fristMake] = '" + dr["flo_fristMake"].ToString() + @"'
                                    ,[flo_fristChk] = '" + dr["flo_fristChk"].ToString() + @"'
                                    ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
                                    ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString()  + @"'
-                                   ,[flo_out] = '" + dr["flo_out"].ToString() + @"'
-                                   ,[flo_finish] = '" + dr["flo_finish"].ToString() + @"'
                                WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
                                     AND flo_num= '" + dr["flo_num"].ToString() + "'";
                         }
-                        else  //其他人
+                        else if (labuser.Text == "王庆青")
+                        {
+                            strSQL = @"UPDATE [dbo].[flow]
+                                   SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
+                                   ,[flo_modibom2] = '" + dr["flo_modibom2"].ToString() + @"'
+                                   ,[flo_bomVerify] = '" + dr["flo_bomVerify"].ToString() + @"'
+                                   ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
+                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
+                               WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
+                                    AND flo_num= '" + dr["flo_num"].ToString() + "'";
+                        }
+                        else if (labuser.Text == "陈荣")
+                        {
+                            strSQL = @"UPDATE [dbo].[flow]
+                                   SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
+                                   ,[flo_facAlter] = '" + dr["flo_facAlter"].ToString() + @"'
+                                   ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
+                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
+                               WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
+                                    AND flo_num= '" + dr["flo_num"].ToString() + "'";
+                        }
+                        else if (labuser.Text == "胡镜")
+                        {
+                            strSQL = @"UPDATE [dbo].[flow]
+                                   SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
+                                   ,[flo_elequan] = '" + dr["flo_elequan"].ToString() + @"'
+                                   ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
+                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
+                               WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
+                                    AND flo_num= '" + dr["flo_num"].ToString() + "'";
+                        }
+                        else if (labuser.Text == "陈玉萍")
+                        {
+                            strSQL = @"UPDATE [dbo].[flow]
+                                   SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
+                                   ,[flo_oliquan] = '" + dr["flo_oliquan"].ToString() + @"'
+                                   ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
+                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
+                               WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
+                                    AND flo_num= '" + dr["flo_num"].ToString() + "'";
+                        }
+                        else if (labuser.Text == "叶磊")
+                        {
+                            strSQL = @"UPDATE [dbo].[flow]
+                                   SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
+                                   ,[flo_pic] = '" + dr["flo_pic"].ToString() + @"'
+                                   ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
+                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
+                               WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
+                                    AND flo_num= '" + dr["flo_num"].ToString() + "'";
+                        }
+                        else if (labuser.Text == "管理员") //其他人
                         {
                             strSQL = @"UPDATE [dbo].[flow]
                                    SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
@@ -1816,41 +1776,69 @@ namespace Youli_Data_Share
             {
                 if (dt_flow.Rows[i]["flo_ask"].ToString() != "")
                 {
-                    dt_flow.Rows[i]["flo_state"] = "已经提交订单，等待BOM确认";
-                }
-                else if (dt_flow.Rows[i]["flo_bomVerify"].ToString() == "True")
-                {
-                    dt_flow.Rows[i]["flo_state"] = "已确认BOM,等待物料采购";
-                }
-                else if (dt_flow.Rows[i]["flo_online"].ToString() != "")
-                {
-                    dt_flow.Rows[i]["flo_state"] = "已制定生产计划，等等加工";
-                }
-                else if (dt_flow.Rows[i]["flo_oliquan"].ToString() != "" && dt_flow.Rows[i]["flo_oliquan"].ToString() != "" && dt_flow.Rows[i]["flo_oliquan"].ToString() != "")
-                {
-                    dt_flow.Rows[i]["flo_state"] = "喷油/电镀/其他等工艺加工中";
-                }
-                else if (dt_flow.Rows[i]["flo_fristMake"].ToString() != "")
-                {
-                    dt_flow.Rows[i]["flo_state"] = "首件已经在制作，等待确认";
-                }
-                else if (dt_flow.Rows[i]["flo_fristChk"].ToString() != "")
-                {
-                    dt_flow.Rows[i]["flo_state"] = "首件已经在确认，等待生产";
-                }
-                else if (dt_flow.Rows[i]["flo_spotChk"].ToString() != "")
-                {
-                    dt_flow.Rows[i]["flo_state"] = "已经在生产,等待出货";
-                }
-                else if (dt_flow.Rows[i]["flo_out"].ToString() == "True")
-                {
-                    dt_flow.Rows[i]["flo_state"] = "已经出货,等等结单";
-                }
-                else if (dt_flow.Rows[i]["flo_finish"].ToString() == "True")
-                {
-                    dt_flow.Rows[i]["flo_state"] = "已经结单";
-                }
+                    if (dt_flow.Rows[i]["flo_bomVerify"].ToString() == "1")
+                    {
+                        if (dt_flow.Rows[i]["flo_online"].ToString() != "")
+                        {
+                            if (dt_flow.Rows[i]["flo_oliquan"].ToString() != "" && dt_flow.Rows[i]["flo_oliquan"].ToString() != "" && dt_flow.Rows[i]["flo_oliquan"].ToString() != "")
+                            {
+                                if (dt_flow.Rows[i]["flo_fristMake"].ToString() != "")
+                                {
+                                    if (dt_flow.Rows[i]["flo_fristChk"].ToString() != "")
+                                    {
+                                        if (dt_flow.Rows[i]["flo_spotChk"].ToString() != "")
+                                        {
+                                            if (dt_flow.Rows[i]["flo_out"].ToString() == "True") //已经结单判断
+                                            {
 
+                                                if (dt_flow.Rows[i]["flo_finish"].ToString() == "True")
+                                                {
+                                                    dt_flow.Rows[i]["flo_state"] = "已经结单";
+                                                }
+                                                else
+                                                {
+                                                    dt_flow.Rows[i]["flo_state"] = "已经出货,等等结单";
+                                                }
+                                            }
+                                            else
+                                            {
+                                                dt_flow.Rows[i]["flo_state"] = "已经在生产,等待出货";
+                                            }
+                                        }
+                                        else
+                                        {
+                                            dt_flow.Rows[i]["flo_state"] = "首件已经在确认，等待生产";
+                                        }
+                                    }
+                                    else
+                                    {
+                                        dt_flow.Rows[i]["flo_state"] = "首件已经在制作，等待确认";
+                                    }
+                                }
+                                else
+                                {
+                                    dt_flow.Rows[i]["flo_state"] = "喷油/电镀/其他等工艺加工中";
+                                }
+                            }
+                            else
+                            {
+                                dt_flow.Rows[i]["flo_state"] = "已制定生产计划，等等加工";
+                            }
+                        }
+                        else
+                        {
+                            dt_flow.Rows[i]["flo_state"] = "已确认BOM,等待物料采购";
+                        }
+                    }
+                    else
+                    {
+                        dt_flow.Rows[i]["flo_state"] = "已经提交订单，等待BOM确认";
+                    }
+                }
+                else
+                {
+                    dt_flow.Rows[i]["flo_state"] = "待提交订单需求细节";
+                }
             }
         }
 

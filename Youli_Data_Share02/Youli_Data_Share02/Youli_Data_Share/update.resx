@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.64 data 2020.6.28&gt;&gt;update:
+    <value>版本1.0.0.65 data 2020.6.28&gt;&gt;update:
+   1.解决订单排程表 数据权限未分配问题
+---------------------------------------------------------
+版本1.0.0.64 data 2020.6.28&gt;&gt;update:
    1.解决订单排程表 数据添加格式不对应报错
 ---------------------------------------------------------
 版本1.0.0.63 data 2020.6.19&gt;&gt;update:
