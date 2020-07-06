@@ -228,7 +228,7 @@ namespace Youli_Data_Share
             dataGridViewColumn53.HeaderCell.Style.BackColor = Color.Yellow;
 
             #endregion
-            string Laypath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sys.ini");
+            string Laypath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "YouliDataSystemLayout.ini");
             INIHelper.CheckPath(Laypath);
             #region 读取datagridview格式
             string width0 = INIHelper.Read("width", "Columns0", "100", Laypath);
@@ -368,7 +368,7 @@ namespace Youli_Data_Share
         {
             //有些顺序错乱 需要注意
             #region 记录表格格式
-            string Laypath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sys.ini");
+            string Laypath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "YouliDataSystemLayout.ini");
             string width0 = dgvWorkFlow.Columns[0].Width.ToString();//0-9
             string width1 = dgvWorkFlow.Columns[1].Width.ToString();
             string width2 = dgvWorkFlow.Columns[2].Width.ToString();

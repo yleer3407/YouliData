@@ -28,7 +28,7 @@
     <UpdateUrl>\\192.168.1.104\Youli_Server\</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.71</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>72</ApplicationRevision>
+    <ApplicationRevision>73</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

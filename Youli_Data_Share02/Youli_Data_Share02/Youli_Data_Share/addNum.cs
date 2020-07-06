@@ -29,7 +29,22 @@ namespace Youli_Data_Share
             conn_add = new SqlConnection(scsb.ToString());
             if (conn_add.State == System.Data.ConnectionState.Closed)
                 conn_add.Open();
-            string strSql = @"INSERT INTO [dbo].[flow]
+            #region 判断重复
+            //先读取对sql数据库读取填写的制令单号 检查有没有获取值
+            string strRepet = "SELECT flo_num FROM flow WHERE[flo_num]='" + txtAdd + "'";
+            SqlCommand commm = new SqlCommand(strRepet, conn_add);
+            SqlDataReader dr = commm.ExecuteReader();
+            if (dr.Read())
+            {
+                MessageBox.Show("制令单号重复");
+                conn_add.Close();
+                return;
+            }
+            else
+            {
+                conn_add.Close();
+                conn_add.Open();
+                string strSql = @"INSERT INTO [dbo].[flow]
                                    ([flo_time]
                                     ,[flo_num]
                                     ,[flo_pic]
@@ -41,11 +56,14 @@ namespace Youli_Data_Share
                                     ,'" + "0" + @"' 
                                     ,'" + "N" + @"' 
                                     ,'" + "N" + @"' )";
-            SqlCommand comm = new SqlCommand(strSql, conn_add);
-            comm.ExecuteNonQuery();
-            MessageBox.Show("添加成功！");
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                SqlCommand comm = new SqlCommand(strSql, conn_add);
+                comm.ExecuteNonQuery();
+                MessageBox.Show("添加成功！");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            #endregion
+
 
         }
     }

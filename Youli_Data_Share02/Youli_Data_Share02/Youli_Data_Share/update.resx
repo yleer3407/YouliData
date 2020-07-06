@@ -118,7 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.65 data 2020.6.28&gt;&gt;update:
+    <value>版本1.0.0.66 data 2020.7.6&gt;&gt;update:
+   1.添加订单排程表 制令单号录入重复提示功能。
+   2.订单排程表表格格式保存路径转为C盘我的文档路径
+   3.订单排程表 登录用户信息储存路径转为C盘我的文档路径
+---------------------------------------------------------
+版本1.0.0.65 data 2020.6.28&gt;&gt;update:
    1.解决订单排程表 数据权限未分配问题
 ---------------------------------------------------------
 版本1.0.0.64 data 2020.6.28&gt;&gt;update:

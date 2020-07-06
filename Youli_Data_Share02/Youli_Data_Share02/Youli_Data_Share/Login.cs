@@ -14,7 +14,7 @@ namespace Youli_Data_Share
 {
     public partial class Login : Form
     {
-        string loginPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sys.ini");
+        string loginPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "user.ini");
         public Login()
         {
             InitializeComponent();
