@@ -673,6 +673,16 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap tune_96px {
+            get {
+                object obj = ResourceManager.GetObject("tune_96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap UNWEIGHT {
             get {
                 object obj = ResourceManager.GetObject("UNWEIGHT", resourceCulture);

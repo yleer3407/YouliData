@@ -24,10 +24,10 @@ namespace Youli_Data_Share
         private void btblogin_Click(object sender, EventArgs e)
         {
             SqlConnectionStringBuilder scab = new SqlConnectionStringBuilder();
-            scab.DataSource = "192.168.1.104";//网络地址
+            scab.DataSource = "124.70.203.134,1433";//网络地址
             scab.UserID = "sa";
-            scab.Password = "yelei193";
-            scab.InitialCatalog = "Youli_date";
+            scab.Password = "Yelei193";
+            scab.InitialCatalog = "YouliData";
 
             SqlConnection conn = new SqlConnection(scab.ToString());//参数 连接数据库的字符串
             if (conn.State == System.Data.ConnectionState.Closed)//判断连接的开启状态

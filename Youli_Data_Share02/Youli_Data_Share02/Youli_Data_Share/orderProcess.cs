@@ -216,7 +216,7 @@ namespace Youli_Data_Share
             dataGridViewColumn42.HeaderCell.Style.BackColor = Color.White;
             dataGridViewColumn43.HeaderCell.Style.BackColor = Color.Pink;
             dataGridViewColumn44.HeaderCell.Style.BackColor = Color.SkyBlue;
-            dataGridViewColumn45.HeaderCell.Style.BackColor = Color.Yellow;
+            dataGridViewColumn45.HeaderCell.Style.BackColor = Color.Turquoise;
             dataGridViewColumn46.HeaderCell.Style.BackColor = Color.LightSteelBlue;
             dataGridViewColumn47.HeaderCell.Style.BackColor = Color.Orange;
             dataGridViewColumn48.HeaderCell.Style.BackColor = Color.LightGreen;
@@ -231,264 +231,262 @@ namespace Youli_Data_Share
             string Laypath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "YouliDataSystemLayout.ini");
             INIHelper.CheckPath(Laypath);
             #region 读取datagridview格式
-            string width0 = INIHelper.Read("width", "Columns0", "100", Laypath);
-            string width1 = INIHelper.Read("width", "Columns1", "100", Laypath);
-            string width2 = INIHelper.Read("width", "Columns2", "50", Laypath);
-            string width3 = INIHelper.Read("width", "Columns3", "50", Laypath);
-            string width4 = INIHelper.Read("width", "Columns4", "30", Laypath);
-            string width5 = INIHelper.Read("width", "Columns5", "100", Laypath);
-            string width6 = INIHelper.Read("width", "Columns6", "100", Laypath);
-            string width7 = INIHelper.Read("width", "Columns7", "100", Laypath);
-            string width8 = INIHelper.Read("width", "Columns8", "100", Laypath);
-            string width9 = INIHelper.Read("width", "Columns9", "100", Laypath);
+            string width1 = INIHelper.Read("width", "Columns1", "24", Laypath);
+            string width2 = INIHelper.Read("width", "Columns2", "100", Laypath);
+            string width3 = INIHelper.Read("width", "Columns3", "24", Laypath);
+            string width4 = INIHelper.Read("width", "Columns4", "34", Laypath);
+            string width5 = INIHelper.Read("width", "Columns5", "5", Laypath);
+            string width6 = INIHelper.Read("width", "Columns6", "85", Laypath);
+            string width7 = INIHelper.Read("width", "Columns7", "42", Laypath);
+            string width8 = INIHelper.Read("width", "Columns8", "72", Laypath);
+            string width9 = INIHelper.Read("width", "Columns9", "64", Laypath);
+            string width10 = INIHelper.Read("width", "Columns10", "86", Laypath);
 
-            string width10 = INIHelper.Read("width", "Columns10", "100", Laypath);
-            string width11 = INIHelper.Read("width", "Columns11", "100", Laypath);
-            string width12 = INIHelper.Read("width", "Columns12", "100", Laypath);
-            string width13 = INIHelper.Read("width", "Columns13", "100", Laypath);
-            string width14 = INIHelper.Read("width", "Columns14", "100", Laypath);
-            string width15 = INIHelper.Read("width", "Columns15", "100", Laypath);
-            string width16 = INIHelper.Read("width", "Columns16", "100", Laypath);
-            string width17 = INIHelper.Read("width", "Columns17", "100", Laypath);
-            string width18 = INIHelper.Read("width", "Columns18", "50", Laypath);
+            string width11 = INIHelper.Read("width", "Columns11", "74", Laypath);
+            string width12 = INIHelper.Read("width", "Columns12", "57", Laypath);
+            string width13 = INIHelper.Read("width", "Columns13", "73", Laypath);
+            string width14 = INIHelper.Read("width", "Columns14", "84", Laypath);
+            string width15 = INIHelper.Read("width", "Columns15", "50", Laypath);
+            string width16 = INIHelper.Read("width", "Columns16", "78", Laypath);
+            string width17 = INIHelper.Read("width", "Columns17", "59", Laypath);
+            string width18 = INIHelper.Read("width", "Columns18", "100", Laypath);
             string width19 = INIHelper.Read("width", "Columns19", "50", Laypath);
-
             string width20 = INIHelper.Read("width", "Columns20", "50", Laypath);
+
             string width21 = INIHelper.Read("width", "Columns21", "50", Laypath);
             string width22 = INIHelper.Read("width", "Columns22", "50", Laypath);
             string width23 = INIHelper.Read("width", "Columns23", "50", Laypath);
             string width24 = INIHelper.Read("width", "Columns24", "50", Laypath);
-            string width25 = INIHelper.Read("width", "Columns25", "100", Laypath);
-            string width26 = INIHelper.Read("width", "Columns26", "50", Laypath);
+            string width25 = INIHelper.Read("width", "Columns25", "50", Laypath);
+            string width26 = INIHelper.Read("width", "Columns26", "100", Laypath);
             string width27 = INIHelper.Read("width", "Columns27", "50", Laypath);
-            string width28 = INIHelper.Read("width", "Columns28", "70", Laypath);
-            string width29 = INIHelper.Read("width", "Columns29", "50", Laypath);
+            string width28 = INIHelper.Read("width", "Columns28", "50", Laypath);
+            string width29 = INIHelper.Read("width", "Columns29", "70", Laypath);
+            string width30 = INIHelper.Read("width", "Columns30", "50", Laypath);
 
-            string width30 = INIHelper.Read("width", "Columns30", "167", Laypath);
             string width31 = INIHelper.Read("width", "Columns31", "167", Laypath);
-            string width32 = INIHelper.Read("width", "Columns32", "100", Laypath);
-            string width33 = INIHelper.Read("width", "Columns33", "30", Laypath);
-            string width34 = INIHelper.Read("width", "Columns34", "50", Laypath);
-            string width35 = INIHelper.Read("width", "Columns35", "100", Laypath);
+            string width32 = INIHelper.Read("width", "Columns32", "167", Laypath);
+            string width33 = INIHelper.Read("width", "Columns33", "100", Laypath);
+            string width34 = INIHelper.Read("width", "Columns34", "30", Laypath);
+            string width35 = INIHelper.Read("width", "Columns35", "50", Laypath);
             string width36 = INIHelper.Read("width", "Columns36", "100", Laypath);
-            string width37 = INIHelper.Read("width", "Columns37", "35", Laypath);
-            string width38 = INIHelper.Read("width", "Columns38", "100", Laypath);
+            string width37 = INIHelper.Read("width", "Columns37", "100", Laypath);
+            string width38 = INIHelper.Read("width", "Columns38", "35", Laypath);
             string width39 = INIHelper.Read("width", "Columns39", "100", Laypath);
+            string width40 = INIHelper.Read("width", "Columns40", "100", Laypath);
 
-            string width40 = INIHelper.Read("width", "Columns40", "5", Laypath);
             string width41 = INIHelper.Read("width", "Columns41", "5", Laypath);
             string width42 = INIHelper.Read("width", "Columns42", "5", Laypath);
-            string width43 = INIHelper.Read("width", "Columns43", "100", Laypath);
+            string width43 = INIHelper.Read("width", "Columns43", "5", Laypath);
             string width44 = INIHelper.Read("width", "Columns44", "100", Laypath);
             string width45 = INIHelper.Read("width", "Columns45", "100", Laypath);
             string width46 = INIHelper.Read("width", "Columns46", "100", Laypath);
             string width47 = INIHelper.Read("width", "Columns47", "100", Laypath);
-            string width48 = INIHelper.Read("width", "Columns48", "88", Laypath);
-            string width49 = INIHelper.Read("width", "Columns49", "95", Laypath);
+            string width48 = INIHelper.Read("width", "Columns48", "100", Laypath);
+            string width49 = INIHelper.Read("width", "Columns49", "88", Laypath);
+            string width50 = INIHelper.Read("width", "Columns50", "95", Laypath);
 
-            string width50 = INIHelper.Read("width", "Columns50", "87", Laypath);
-            string width51 = INIHelper.Read("width", "Columns51", "30", Laypath);
+            string width51 = INIHelper.Read("width", "Columns51", "87", Laypath);
             string width52 = INIHelper.Read("width", "Columns52", "30", Laypath);
             string width53 = INIHelper.Read("width", "Columns53", "30", Laypath);
+            string width54 = INIHelper.Read("width", "Columns54", "30", Laypath);
 
-            dgvWorkFlow.Columns[0].Width = int.Parse(width0);//0-9
-            dgvWorkFlow.Columns[1].Width = int.Parse(width1);
-            dgvWorkFlow.Columns[2].Width = int.Parse(width2);
-            dgvWorkFlow.Columns[3].Width = int.Parse(width3);
-            dgvWorkFlow.Columns[4].Width = int.Parse(width4);
-            dgvWorkFlow.Columns[5].Width = int.Parse(width5);
-            dgvWorkFlow.Columns[6].Width = int.Parse(width6);
-            dgvWorkFlow.Columns[7].Width = int.Parse(width7);
-            dgvWorkFlow.Columns[8].Width = int.Parse(width8);
-            dgvWorkFlow.Columns[9].Width = int.Parse(width9);
+            dgvWorkFlow.Columns["Column1"].Width = int.Parse(width1);//0-9
+            dgvWorkFlow.Columns["Column2"].Width = int.Parse(width2);
+            dgvWorkFlow.Columns["Column3"].Width = int.Parse(width3);
+            dgvWorkFlow.Columns["Column4"].Width = int.Parse(width4);
+            dgvWorkFlow.Columns["Column5"].Width = int.Parse(width5);
+            dgvWorkFlow.Columns["Column6"].Width = int.Parse(width6);
+            dgvWorkFlow.Columns["Column7"].Width = int.Parse(width7);
+            dgvWorkFlow.Columns["Column8"].Width = int.Parse(width8);
+            dgvWorkFlow.Columns["Column9"].Width = int.Parse(width9);
+            dgvWorkFlow.Columns["Column10"].Width = int.Parse(width10);
 
-            dgvWorkFlow.Columns[10].Width = int.Parse(width10);//10-19
-            dgvWorkFlow.Columns[11].Width = int.Parse(width11);
-            dgvWorkFlow.Columns[12].Width = int.Parse(width12);
-            dgvWorkFlow.Columns[13].Width = int.Parse(width13);
-            dgvWorkFlow.Columns[14].Width = int.Parse(width14);
-            dgvWorkFlow.Columns[15].Width = int.Parse(width15);
-            dgvWorkFlow.Columns[16].Width = int.Parse(width16);
-            dgvWorkFlow.Columns[17].Width = int.Parse(width17);
-            dgvWorkFlow.Columns[18].Width = int.Parse(width18);
-            dgvWorkFlow.Columns[19].Width = int.Parse(width19);
+            dgvWorkFlow.Columns["Column11"].Width = int.Parse(width11);//0-9
+            dgvWorkFlow.Columns["Column12"].Width = int.Parse(width12);
+            dgvWorkFlow.Columns["Column13"].Width = int.Parse(width13);
+            dgvWorkFlow.Columns["Column14"].Width = int.Parse(width14);
+            dgvWorkFlow.Columns["Column15"].Width = int.Parse(width15);
+            dgvWorkFlow.Columns["Column16"].Width = int.Parse(width16);
+            dgvWorkFlow.Columns["Column17"].Width = int.Parse(width17);
+            dgvWorkFlow.Columns["Column18"].Width = int.Parse(width18);
+            dgvWorkFlow.Columns["Column19"].Width = int.Parse(width19);
+            dgvWorkFlow.Columns["Column20"].Width = int.Parse(width20);
 
-            dgvWorkFlow.Columns[20].Width = int.Parse(width20);//20-29
-            dgvWorkFlow.Columns[21].Width = int.Parse(width21);
-            dgvWorkFlow.Columns[22].Width = int.Parse(width22);
-            dgvWorkFlow.Columns[23].Width = int.Parse(width23);
-            dgvWorkFlow.Columns[24].Width = int.Parse(width24);
-            dgvWorkFlow.Columns[25].Width = int.Parse(width25);
-            dgvWorkFlow.Columns[26].Width = int.Parse(width26);
-            dgvWorkFlow.Columns[27].Width = int.Parse(width27);
-            dgvWorkFlow.Columns[28].Width = int.Parse(width28);
-            dgvWorkFlow.Columns[29].Width = int.Parse(width29);
+            dgvWorkFlow.Columns["Column21"].Width = int.Parse(width21);//0-9
+            dgvWorkFlow.Columns["Column22"].Width = int.Parse(width22);
+            dgvWorkFlow.Columns["Column23"].Width = int.Parse(width23);
+            dgvWorkFlow.Columns["Column24"].Width = int.Parse(width24);
+            dgvWorkFlow.Columns["Column25"].Width = int.Parse(width25);
+            dgvWorkFlow.Columns["Column26"].Width = int.Parse(width26);
+            dgvWorkFlow.Columns["Column27"].Width = int.Parse(width27);
+            dgvWorkFlow.Columns["Column28"].Width = int.Parse(width28);
+            dgvWorkFlow.Columns["Column29"].Width = int.Parse(width29);
+            dgvWorkFlow.Columns["Column30"].Width = int.Parse(width30);
 
-            dgvWorkFlow.Columns[30].Width = int.Parse(width30);//30-39
-            dgvWorkFlow.Columns[31].Width = int.Parse(width31);
-            dgvWorkFlow.Columns[32].Width = int.Parse(width32);
-            dgvWorkFlow.Columns[33].Width = int.Parse(width33);
-            dgvWorkFlow.Columns[34].Width = int.Parse(width34);
-            dgvWorkFlow.Columns[35].Width = int.Parse(width35);
-            dgvWorkFlow.Columns[36].Width = int.Parse(width36);
-            dgvWorkFlow.Columns[37].Width = int.Parse(width37);
-            dgvWorkFlow.Columns[38].Width = int.Parse(width38);
-            dgvWorkFlow.Columns[39].Width = int.Parse(width39);
+            dgvWorkFlow.Columns["Column31"].Width = int.Parse(width31);//0-9
+            dgvWorkFlow.Columns["Column32"].Width = int.Parse(width32);
+            dgvWorkFlow.Columns["Column33"].Width = int.Parse(width33);
+            dgvWorkFlow.Columns["Column34"].Width = int.Parse(width34);
+            dgvWorkFlow.Columns["Column35"].Width = int.Parse(width35);
+            dgvWorkFlow.Columns["Column36"].Width = int.Parse(width36);
+            dgvWorkFlow.Columns["Column37"].Width = int.Parse(width37);
+            dgvWorkFlow.Columns["Column38"].Width = int.Parse(width38);
+            dgvWorkFlow.Columns["Column39"].Width = int.Parse(width39);
+            dgvWorkFlow.Columns["Column40"].Width = int.Parse(width40);
 
-            dgvWorkFlow.Columns[40].Width = int.Parse(width40);//40-49
-            dgvWorkFlow.Columns[41].Width = int.Parse(width41);
-            dgvWorkFlow.Columns[42].Width = int.Parse(width42);
-            dgvWorkFlow.Columns[43].Width = int.Parse(width43);
-            dgvWorkFlow.Columns[44].Width = int.Parse(width44);
-            dgvWorkFlow.Columns[45].Width = int.Parse(width45);
-            dgvWorkFlow.Columns[46].Width = int.Parse(width46);
-            dgvWorkFlow.Columns[47].Width = int.Parse(width47);
-            dgvWorkFlow.Columns[48].Width = int.Parse(width48);
-            dgvWorkFlow.Columns[49].Width = int.Parse(width49);
+            dgvWorkFlow.Columns["Column41"].Width = int.Parse(width41);//0-9
+            dgvWorkFlow.Columns["Column42"].Width = int.Parse(width42);
+            dgvWorkFlow.Columns["Column43"].Width = int.Parse(width43);
+            dgvWorkFlow.Columns["Column44"].Width = int.Parse(width44);
+            dgvWorkFlow.Columns["Column45"].Width = int.Parse(width45);
+            dgvWorkFlow.Columns["Column46"].Width = int.Parse(width46);
+            dgvWorkFlow.Columns["Column47"].Width = int.Parse(width47);
+            dgvWorkFlow.Columns["Column48"].Width = int.Parse(width48);
+            dgvWorkFlow.Columns["Column49"].Width = int.Parse(width49);
+            dgvWorkFlow.Columns["Column50"].Width = int.Parse(width50);
 
-            dgvWorkFlow.Columns[50].Width = int.Parse(width50);//50-52
-            dgvWorkFlow.Columns[51].Width = int.Parse(width51);
-            dgvWorkFlow.Columns[52].Width = int.Parse(width52);
-            dgvWorkFlow.Columns[53].Width = int.Parse(width53);
+            dgvWorkFlow.Columns["Column51"].Width = int.Parse(width51);//50-52
+            dgvWorkFlow.Columns["Column52"].Width = int.Parse(width52);
+            dgvWorkFlow.Columns["Column53"].Width = int.Parse(width53);
+            dgvWorkFlow.Columns["Column54"].Width = int.Parse(width54);
 
 
             #endregion
-
             #region 读取流程数据库内容
             searchDate();
-           // dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
+            // dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
             #endregion
-            #region 载入状态
-
+            #region 列冻结
             #endregion
 
         }
 
         private void tsbbtn_set_Click(object sender, EventArgs e)
         {
-            //有些顺序错乱 需要注意
+           
             #region 记录表格格式
             string Laypath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "YouliDataSystemLayout.ini");
-            string width0 = dgvWorkFlow.Columns[0].Width.ToString();//0-9
-            string width1 = dgvWorkFlow.Columns[1].Width.ToString();
-            string width2 = dgvWorkFlow.Columns[2].Width.ToString();
-            string width3 = dgvWorkFlow.Columns[3].Width.ToString();//c0
-            string width4 = dgvWorkFlow.Columns[4].Width.ToString();
-            string width5 = dgvWorkFlow.Columns[5].Width.ToString();
-            string width6 = dgvWorkFlow.Columns[6].Width.ToString();//
-            string width7 = dgvWorkFlow.Columns[7].Width.ToString();
-            string width8 = dgvWorkFlow.Columns[8].Width.ToString();
-            string width9 = dgvWorkFlow.Columns[9].Width.ToString();
+            string width1 = dgvWorkFlow.Columns["Column1"].Width.ToString();//0-9
+            string width2 = dgvWorkFlow.Columns["Column2"].Width.ToString();
+            string width3 = dgvWorkFlow.Columns["Column3"].Width.ToString();
+            string width4 = dgvWorkFlow.Columns["Column4"].Width.ToString();//c0
+            string width5 = dgvWorkFlow.Columns["Column5"].Width.ToString();
+            string width6 = dgvWorkFlow.Columns["Column6"].Width.ToString();
+            string width7 = dgvWorkFlow.Columns["Column7"].Width.ToString();//
+            string width8 = dgvWorkFlow.Columns["Column8"].Width.ToString();
+            string width9 = dgvWorkFlow.Columns["Column9"].Width.ToString();
+            string width10 = dgvWorkFlow.Columns["Column10"].Width.ToString();
 
-            string width10 = dgvWorkFlow.Columns[10].Width.ToString();//10-19
-            string width11 = dgvWorkFlow.Columns[11].Width.ToString();
-            string width12 = dgvWorkFlow.Columns[12].Width.ToString();
-            string width13 = dgvWorkFlow.Columns[13].Width.ToString();
-            string width14 = dgvWorkFlow.Columns[14].Width.ToString();
-            string width15 = dgvWorkFlow.Columns[15].Width.ToString();
-            string width16 = dgvWorkFlow.Columns[16].Width.ToString();
-            string width17 = dgvWorkFlow.Columns[17].Width.ToString();
-            string width18 = dgvWorkFlow.Columns[18].Width.ToString();
-            string width19 = dgvWorkFlow.Columns[19].Width.ToString();
+            string width11 = dgvWorkFlow.Columns["Column11"].Width.ToString();//10-19
+            string width12 = dgvWorkFlow.Columns["Column12"].Width.ToString();
+            string width13 = dgvWorkFlow.Columns["Column13"].Width.ToString();
+            string width14 = dgvWorkFlow.Columns["Column14"].Width.ToString();
+            string width15 = dgvWorkFlow.Columns["Column15"].Width.ToString();
+            string width16 = dgvWorkFlow.Columns["Column16"].Width.ToString();
+            string width17 = dgvWorkFlow.Columns["Column17"].Width.ToString();
+            string width18 = dgvWorkFlow.Columns["Column18"].Width.ToString();
+            string width19 = dgvWorkFlow.Columns["Column19"].Width.ToString();
+            string width20 = dgvWorkFlow.Columns["Column20"].Width.ToString();
 
-            string width20 = dgvWorkFlow.Columns[20].Width.ToString();//20-29
-            string width21 = dgvWorkFlow.Columns[21].Width.ToString();
-            string width22 = dgvWorkFlow.Columns[22].Width.ToString();
-            string width23 = dgvWorkFlow.Columns[23].Width.ToString();
-            string width24 = dgvWorkFlow.Columns[24].Width.ToString();
-            string width25 = dgvWorkFlow.Columns[25].Width.ToString();
-            string width26 = dgvWorkFlow.Columns[26].Width.ToString();
-            string width27 = dgvWorkFlow.Columns[27].Width.ToString();
-            string width28 = dgvWorkFlow.Columns[28].Width.ToString();
-            string width29 = dgvWorkFlow.Columns[9].Width.ToString();
+            string width21 = dgvWorkFlow.Columns["Column21"].Width.ToString();//20-29
+            string width22 = dgvWorkFlow.Columns["Column22"].Width.ToString();
+            string width23 = dgvWorkFlow.Columns["Column23"].Width.ToString();
+            string width24 = dgvWorkFlow.Columns["Column24"].Width.ToString();
+            string width25 = dgvWorkFlow.Columns["Column25"].Width.ToString();
+            string width26 = dgvWorkFlow.Columns["Column26"].Width.ToString();
+            string width27 = dgvWorkFlow.Columns["Column27"].Width.ToString();
+            string width28 = dgvWorkFlow.Columns["Column28"].Width.ToString();
+            string width29 = dgvWorkFlow.Columns["Column29"].Width.ToString();
+            string width30 = dgvWorkFlow.Columns["Column30"].Width.ToString();
 
-            string width30 = dgvWorkFlow.Columns[30].Width.ToString();//30-39
-            string width31 = dgvWorkFlow.Columns[31].Width.ToString();
-            string width32 = dgvWorkFlow.Columns[32].Width.ToString();
-            string width33 = dgvWorkFlow.Columns[33].Width.ToString();
-            string width34 = dgvWorkFlow.Columns[34].Width.ToString();
-            string width35 = dgvWorkFlow.Columns[35].Width.ToString();
-            string width36 = dgvWorkFlow.Columns[36].Width.ToString();
-            string width37 = dgvWorkFlow.Columns[37].Width.ToString();
-            string width38 = dgvWorkFlow.Columns[38].Width.ToString();
-            string width39 = dgvWorkFlow.Columns[39].Width.ToString();
+            string width31 = dgvWorkFlow.Columns["Column31"].Width.ToString();//30-39
+            string width32 = dgvWorkFlow.Columns["Column32"].Width.ToString();
+            string width33 = dgvWorkFlow.Columns["Column33"].Width.ToString();
+            string width34 = dgvWorkFlow.Columns["Column34"].Width.ToString();
+            string width35 = dgvWorkFlow.Columns["Column35"].Width.ToString();
+            string width36 = dgvWorkFlow.Columns["Column36"].Width.ToString();
+            string width37 = dgvWorkFlow.Columns["Column37"].Width.ToString();
+            string width38 = dgvWorkFlow.Columns["Column38"].Width.ToString();
+            string width39 = dgvWorkFlow.Columns["Column39"].Width.ToString();
+            string width40 = dgvWorkFlow.Columns["Column40"].Width.ToString();
 
-            string width40 = dgvWorkFlow.Columns[40].Width.ToString();//40-49
-            string width41 = dgvWorkFlow.Columns[41].Width.ToString();
-            string width42 = dgvWorkFlow.Columns[42].Width.ToString();
-            string width43 = dgvWorkFlow.Columns[43].Width.ToString();
-            string width44 = dgvWorkFlow.Columns[44].Width.ToString();
-            string width45 = dgvWorkFlow.Columns[45].Width.ToString();
-            string width46 = dgvWorkFlow.Columns[46].Width.ToString();
-            string width47 = dgvWorkFlow.Columns[47].Width.ToString();
-            string width48 = dgvWorkFlow.Columns[48].Width.ToString();
-            string width49 = dgvWorkFlow.Columns[49].Width.ToString();
+            string width41 = dgvWorkFlow.Columns["Column41"].Width.ToString();//40-49
+            string width42 = dgvWorkFlow.Columns["Column42"].Width.ToString();
+            string width43 = dgvWorkFlow.Columns["Column43"].Width.ToString();
+            string width44 = dgvWorkFlow.Columns["Column44"].Width.ToString();
+            string width45 = dgvWorkFlow.Columns["Column45"].Width.ToString();
+            string width46 = dgvWorkFlow.Columns["Column46"].Width.ToString();
+            string width47 = dgvWorkFlow.Columns["Column47"].Width.ToString();
+            string width48 = dgvWorkFlow.Columns["Column48"].Width.ToString();
+            string width49 = dgvWorkFlow.Columns["Column49"].Width.ToString();
+            string width50 = dgvWorkFlow.Columns["Column50"].Width.ToString();
 
-            string width50 = dgvWorkFlow.Columns[50].Width.ToString();//50-52
-            string width51 = dgvWorkFlow.Columns[51].Width.ToString();
-            string width52 = dgvWorkFlow.Columns[52].Width.ToString();
-            string width53 = dgvWorkFlow.Columns[53].Width.ToString();
+            string width51 = dgvWorkFlow.Columns["Column51"].Width.ToString();//50-52
+            string width52 = dgvWorkFlow.Columns["Column52"].Width.ToString();
+            string width53 = dgvWorkFlow.Columns["Column53"].Width.ToString();
+            string width54 = dgvWorkFlow.Columns["Column54"].Width.ToString();
             //string width53 = dataGridView1.Columns[53].Width.ToString();
 
-            INIHelper.Write("width", "Columns0", width4, Laypath);//0-9
-            INIHelper.Write("width", "Columns1", width5, Laypath);
-            INIHelper.Write("width", "Columns2", width6, Laypath);
-            INIHelper.Write("width", "Columns3", width7, Laypath);
-            INIHelper.Write("width", "Columns4", width8, Laypath);
-            INIHelper.Write("width", "Columns5", width9, Laypath);
-            INIHelper.Write("width", "Columns6", width10, Laypath);
-            INIHelper.Write("width", "Columns7", width11, Laypath);
-            INIHelper.Write("width", "Columns8", width12, Laypath);
-            INIHelper.Write("width", "Columns9", width13, Laypath);
+            INIHelper.Write("width", "Columns1", width1, Laypath);//1-10
+            INIHelper.Write("width", "Columns2", width2, Laypath);
+            INIHelper.Write("width", "Columns3", width3, Laypath);
+            INIHelper.Write("width", "Columns4", width4, Laypath);
+            INIHelper.Write("width", "Columns5", width5, Laypath);
+            INIHelper.Write("width", "Columns6", width6, Laypath);
+            INIHelper.Write("width", "Columns7", width7, Laypath);
+            INIHelper.Write("width", "Columns8", width8, Laypath);
+            INIHelper.Write("width", "Columns9", width9, Laypath);
+            INIHelper.Write("width", "Columns10", width10, Laypath);
 
-            INIHelper.Write("width", "Columns10", width14, Laypath);//10-19
-            INIHelper.Write("width", "Columns11", width15, Laypath);
-            INIHelper.Write("width", "Columns12", width16, Laypath);
-            INIHelper.Write("width", "Columns13", width17, Laypath);
-            INIHelper.Write("width", "Columns14", width18, Laypath);
-            INIHelper.Write("width", "Columns15", width19, Laypath);
-            INIHelper.Write("width", "Columns16", width20, Laypath);
-            INIHelper.Write("width", "Columns17", width21, Laypath);
-            INIHelper.Write("width", "Columns18", width22, Laypath);
-            INIHelper.Write("width", "Columns19", width23, Laypath);
+            INIHelper.Write("width", "Columns11", width11, Laypath);//11-20
+            INIHelper.Write("width", "Columns12", width12, Laypath);
+            INIHelper.Write("width", "Columns13", width13, Laypath);
+            INIHelper.Write("width", "Columns14", width14, Laypath);
+            INIHelper.Write("width", "Columns15", width15, Laypath);
+            INIHelper.Write("width", "Columns16", width16, Laypath);
+            INIHelper.Write("width", "Columns17", width17, Laypath);
+            INIHelper.Write("width", "Columns18", width18, Laypath);
+            INIHelper.Write("width", "Columns19", width19, Laypath);
+            INIHelper.Write("width", "Columns20", width20, Laypath);
 
-            INIHelper.Write("width", "Columns20", width24, Laypath);//20-29
-            INIHelper.Write("width", "Columns21", width25, Laypath);
-            INIHelper.Write("width", "Columns22", width26, Laypath);
-            INIHelper.Write("width", "Columns23", width27, Laypath);
-            INIHelper.Write("width", "Columns24", width28, Laypath);
-            INIHelper.Write("width", "Columns25", width29, Laypath);
-            INIHelper.Write("width", "Columns26", width30, Laypath);
-            INIHelper.Write("width", "Columns27", width31, Laypath);
-            INIHelper.Write("width", "Columns28", width32, Laypath);
-            INIHelper.Write("width", "Columns29", width33, Laypath);
+            INIHelper.Write("width", "Columns21", width21, Laypath);//21-30
+            INIHelper.Write("width", "Columns22", width22, Laypath);
+            INIHelper.Write("width", "Columns23", width23, Laypath);
+            INIHelper.Write("width", "Columns24", width24, Laypath);
+            INIHelper.Write("width", "Columns25", width25, Laypath);
+            INIHelper.Write("width", "Columns26", width26, Laypath);
+            INIHelper.Write("width", "Columns27", width27, Laypath);
+            INIHelper.Write("width", "Columns28", width28, Laypath);
+            INIHelper.Write("width", "Columns29", width29, Laypath);
+            INIHelper.Write("width", "Columns30", width30, Laypath);
 
-            INIHelper.Write("width", "Columns30", width34, Laypath);//30-39
-            INIHelper.Write("width", "Columns31", width35, Laypath);
-            INIHelper.Write("width", "Columns32", width0, Laypath);
-            INIHelper.Write("width", "Columns33", width36, Laypath);
-            INIHelper.Write("width", "Columns34", width1, Laypath);
-            INIHelper.Write("width", "Columns35", width37, Laypath);
-            INIHelper.Write("width", "Columns36", width38, Laypath);
-            INIHelper.Write("width", "Columns37", width39, Laypath);
-            INIHelper.Write("width", "Columns38", width40, Laypath);
-            INIHelper.Write("width", "Columns39", width41, Laypath);
+            INIHelper.Write("width", "Columns31", width31, Laypath);//31-40
+            INIHelper.Write("width", "Columns32", width32, Laypath);
+            INIHelper.Write("width", "Columns33", width33, Laypath);
+            INIHelper.Write("width", "Columns34", width34, Laypath);
+            INIHelper.Write("width", "Columns35", width35, Laypath);
+            INIHelper.Write("width", "Columns36", width36, Laypath);
+            INIHelper.Write("width", "Columns37", width37, Laypath);
+            INIHelper.Write("width", "Columns38", width38, Laypath);
+            INIHelper.Write("width", "Columns39", width39, Laypath);
+            INIHelper.Write("width", "Columns40", width40, Laypath);
 
-            INIHelper.Write("width", "Columns40", width42, Laypath);//40-49
-            INIHelper.Write("width", "Columns41", width2, Laypath);
-            INIHelper.Write("width", "Columns42", width43, Laypath);
-            INIHelper.Write("width", "Columns43", width44, Laypath);
-            INIHelper.Write("width", "Columns44", width45, Laypath);
-            INIHelper.Write("width", "Columns45", width46, Laypath);
-            INIHelper.Write("width", "Columns46", width47, Laypath);
-            INIHelper.Write("width", "Columns47", width48, Laypath);
-            INIHelper.Write("width", "Columns48", width49, Laypath);
-            INIHelper.Write("width", "Columns49", width50, Laypath);
+            INIHelper.Write("width", "Columns41", width41, Laypath);//41-50
+            INIHelper.Write("width", "Columns42", width42, Laypath);
+            INIHelper.Write("width", "Columns43", width43, Laypath);
+            INIHelper.Write("width", "Columns44", width44, Laypath);
+            INIHelper.Write("width", "Columns45", width45, Laypath);
+            INIHelper.Write("width", "Columns46", width46, Laypath);
+            INIHelper.Write("width", "Columns47", width47, Laypath);
+            INIHelper.Write("width", "Columns48", width48, Laypath);
+            INIHelper.Write("width", "Columns49", width49, Laypath);
+            INIHelper.Write("width", "Columns50", width50, Laypath);
 
-            INIHelper.Write("width", "Columns50", width3, Laypath);//50-52
-            INIHelper.Write("width", "Columns51", width51, Laypath);
+            INIHelper.Write("width", "Columns51", width51, Laypath);//51-54
             INIHelper.Write("width", "Columns52", width52, Laypath);
             INIHelper.Write("width", "Columns53", width53, Laypath);
+            INIHelper.Write("width", "Columns54", width54, Laypath);
             //INIHelper.Write("width", "Columns53", width53, Laypath);
 
             #endregion
@@ -1075,6 +1073,7 @@ namespace Youli_Data_Share
                         if (false == System.IO.Directory.Exists(subPath))
                         {
                             System.IO.Directory.CreateDirectory(subPath);
+                            System.Diagnostics.Process.Start(subPath);
                         }
                         else
                         {
@@ -1120,13 +1119,14 @@ namespace Youli_Data_Share
                 else if (cell.FormattedValue.ToString() == "生产问题夹")
                 {
                     //string currPath = Application.StartupPath;//获取当前文件夹路径
-                    string subPath1 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[9].Value.ToString() + "/";
+                    string subPath1 = @"\\192.168.1.104\Youli_Server\ProblemFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/";
                     // MessageBox.Show(subPath);
                     try
                     {
                         if (false == System.IO.Directory.Exists(subPath1))
                         {
                             System.IO.Directory.CreateDirectory(subPath1);
+                            System.Diagnostics.Process.Start(subPath1);
                         }
                         else
                         {
@@ -1447,8 +1447,17 @@ namespace Youli_Data_Share
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+
             try
             {
+                toolStripProgressBar1.Maximum = 100;
+                toolStripProgressBar1.Value = 20;
+                toolStripProgressBar1.Step = 10;
+                for (int i = 0; i < 7; i++)
+                {
+                    System.Threading.Thread.Sleep(50);
+                    toolStripProgressBar1.Value += toolStripProgressBar1.Step;
+                }
                 DataTable changeDt = dt_flow.GetChanges();
 
                 foreach (DataRow dr in changeDt.Rows)
@@ -1604,7 +1613,6 @@ namespace Youli_Data_Share
                                    ,[flo_ask] = '" + dr["flo_ask"].ToString()  + @"'
                                    ,[flo_starv] = '" + dr["flo_starv"].ToString() + @"'
                                    ,[flo_online] = '" + dr["flo_online"].ToString() + @"'
-                                   ,[flo_elsequan] = '" + dr["flo_elsequan"].ToString() + @"'
                                    ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
                                    ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
                                    ,[flo_out] = '" + dr["flo_out"].ToString() + @"'
@@ -1650,6 +1658,7 @@ namespace Youli_Data_Share
                                    ,[flo_bomVerify] = '" + dr["flo_bomVerify"].ToString() + @"'
                                    ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
                                    ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
+                                   ,[flo_elsequan] = '" + dr["flo_elsequan"].ToString() + @"'
                                WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
                                     AND flo_num= '" + dr["flo_num"].ToString() + "'";
                         }
@@ -1752,6 +1761,7 @@ namespace Youli_Data_Share
                     SqlCommand comm = new SqlCommand(strSQL, conn_flow);
                     comm.ExecuteNonQuery();
                 }
+                toolStripProgressBar1.Value = 100;
                 MessageBox.Show("已提交成功");
                 #region  提交后进行未完成表单刷新
                 searchDate();
@@ -1817,12 +1827,12 @@ namespace Youli_Data_Share
                                 }
                                 else
                                 {
-                                    dt_flow.Rows[i]["flo_state"] = "喷油/电镀/其他等工艺加工中";
+                                    dt_flow.Rows[i]["flo_state"] = "喷油/电镀/其他等工艺加工完成";
                                 }
                             }
                             else
                             {
-                                dt_flow.Rows[i]["flo_state"] = "已制定生产计划，等等加工";
+                                dt_flow.Rows[i]["flo_state"] = "已制定生产计划，等待喷油/电镀/其他等加工";
                             }
                         }
                         else
@@ -1857,7 +1867,7 @@ namespace Youli_Data_Share
             data04 = dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column37"].Value;
             data05 = dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column47"].Value;
             data06 = dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column50"].Value;
-            data07 = dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column51"].Value;
+            data07 = dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column52"].Value;
            // MessageBox.Show(data01 + data02 + data03 + data04 + data05 + data06 + data07);
         }
 
@@ -1887,10 +1897,93 @@ namespace Youli_Data_Share
             {
                 dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column50"].Value = "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm") + "]" + dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column50"].Value;
             }
-            if (data07 != dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column51"].Value)
+            if (data07 != dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column52"].Value)
             {
-                dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column51"].Value = "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm") + "]" + dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column51"].Value;
+                dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column52"].Value = "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm") + "]" + dgvWorkFlow.Rows[dgvWorkFlow.CurrentRow.Index].Cells["Column52"].Value;
             }
+        }
+        /// <summary>
+        /// 订单信息页面收缩
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            //dgvWorkFlow.Columns["Column3"].Width = 5;
+            //dgvWorkFlow.Columns["Column4"].Width = 5;
+            //dgvWorkFlow.Columns["Column5"].Width = 5;
+            //dgvWorkFlow.Columns["Column6"].Width = 100;
+            //dgvWorkFlow.Columns["Column7"].Width = 100;
+            //dgvWorkFlow.Columns["Column8"].Width = 100;
+            //dgvWorkFlow.Columns["Column9"].Width = 5;
+            //dgvWorkFlow.Columns["Column10"].Width = 5;
+
+            //dgvWorkFlow.Columns["Column11"].Width = 5;
+            //dgvWorkFlow.Columns["Column12"].Width = 5;
+            //dgvWorkFlow.Columns["Column13"].Width = 5;
+            dgvWorkFlow.Columns["Column14"].Width = 5;
+            dgvWorkFlow.Columns["Column15"].Width = 5;
+            dgvWorkFlow.Columns["Column16"].Width = 5;
+            dgvWorkFlow.Columns["Column17"].Width = 5;
+            dgvWorkFlow.Columns["Column18"].Width = 5;
+            dgvWorkFlow.Columns["Column19"].Width = 5;
+            dgvWorkFlow.Columns["Column20"].Width = 5;
+
+            dgvWorkFlow.Columns["Column21"].Width = 5;
+            dgvWorkFlow.Columns["Column22"].Width = 5;
+            dgvWorkFlow.Columns["Column23"].Width = 5;
+            dgvWorkFlow.Columns["Column24"].Width = 5;
+            dgvWorkFlow.Columns["Column25"].Width = 5;
+            dgvWorkFlow.Columns["Column26"].Width = 5;
+            dgvWorkFlow.Columns["Column27"].Width = 5;
+            dgvWorkFlow.Columns["Column28"].Width = 5;
+            dgvWorkFlow.Columns["Column29"].Width = 5;
+            dgvWorkFlow.Columns["Column30"].Width = 5;
+
+            dgvWorkFlow.Columns["Column31"].Width = 5;
+
+
+
+        }
+        /// <summary>
+        /// 页面张开
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dgvWorkFlow.Columns["Column3"].Width = 24;
+            dgvWorkFlow.Columns["Column4"].Width = 34;
+            dgvWorkFlow.Columns["Column5"].Width = 5;
+            dgvWorkFlow.Columns["Column6"].Width = 85;
+            dgvWorkFlow.Columns["Column7"].Width = 42;
+            dgvWorkFlow.Columns["Column8"].Width = 72;
+            dgvWorkFlow.Columns["Column9"].Width = 64;
+            dgvWorkFlow.Columns["Column10"].Width = 86;
+
+            dgvWorkFlow.Columns["Column11"].Width = 74;
+            dgvWorkFlow.Columns["Column12"].Width = 57;
+            dgvWorkFlow.Columns["Column13"].Width = 73;
+            dgvWorkFlow.Columns["Column14"].Width = 84;
+            dgvWorkFlow.Columns["Column15"].Width = 50;
+            dgvWorkFlow.Columns["Column16"].Width = 78;
+            dgvWorkFlow.Columns["Column17"].Width = 59;
+            dgvWorkFlow.Columns["Column18"].Width = 100;
+            dgvWorkFlow.Columns["Column19"].Width = 50;
+            dgvWorkFlow.Columns["Column20"].Width = 50;
+
+            dgvWorkFlow.Columns["Column21"].Width = 50;
+            dgvWorkFlow.Columns["Column22"].Width = 50;
+            dgvWorkFlow.Columns["Column23"].Width = 50;
+            dgvWorkFlow.Columns["Column24"].Width = 50;
+            dgvWorkFlow.Columns["Column25"].Width = 50;
+            dgvWorkFlow.Columns["Column26"].Width = 100;
+            dgvWorkFlow.Columns["Column27"].Width = 50;
+            dgvWorkFlow.Columns["Column28"].Width = 50;
+            dgvWorkFlow.Columns["Column29"].Width = 100;
+            dgvWorkFlow.Columns["Column30"].Width = 50;
+
+            dgvWorkFlow.Columns["Column31"].Width = 160;
         }
     }
 }

@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(orderProcess));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
@@ -51,12 +52,16 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbbtn_material = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbbtn_set = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.labuser = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -119,10 +124,10 @@
             this.Column48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column54 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column52 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column51 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column53 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column54 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.youli_dateDataSet1)).BeginInit();
@@ -143,12 +148,14 @@
             this.toolStripSeparator1,
             this.tsbbtn_material,
             this.toolStripSeparator2,
+            this.toolStripDropDownButton1,
             this.tsbbtn_set,
             this.toolStripButton1,
             this.toolStripSeparator3,
             this.toolStripLabel1,
             this.labuser,
             this.toolStripLabel2,
+            this.toolStripProgressBar1,
             this.toolStripSeparator4,
             this.toolStripButton2,
             this.toolStripButton6,
@@ -262,6 +269,31 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.toolStripDropDownButton1.Image = global::Youli_Data_Share.Properties.Resources.tune_96px;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(85, 22);
+            this.toolStripDropDownButton1.Text = "页面伸缩";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.toolStripMenuItem1.Text = "订单信息页面拉开";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(172, 22);
+            this.toolStripMenuItem2.Text = "订单信息页面收缩";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
             // tsbbtn_set
             // 
             this.tsbbtn_set.Image = global::Youli_Data_Share.Properties.Resources.icons8_job_32;
@@ -302,6 +334,11 @@
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(12, 22);
             this.toolStripLabel2.Text = "]";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 22);
             // 
             // toolStripSeparator4
             // 
@@ -393,9 +430,17 @@
             // 
             this.dgvWorkFlow.AllowUserToAddRows = false;
             this.dgvWorkFlow.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgvWorkFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvWorkFlow.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvWorkFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWorkFlow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -448,16 +493,16 @@
             this.Column48,
             this.Column49,
             this.Column50,
-            this.Column54,
             this.Column51,
             this.Column52,
-            this.Column53});
+            this.Column53,
+            this.Column54});
             this.dgvWorkFlow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWorkFlow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvWorkFlow.Location = new System.Drawing.Point(0, 0);
             this.dgvWorkFlow.Name = "dgvWorkFlow";
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkFlow.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkFlow.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvWorkFlow.RowTemplate.Height = 23;
             this.dgvWorkFlow.Size = new System.Drawing.Size(1504, 616);
             this.dgvWorkFlow.TabIndex = 0;
@@ -469,85 +514,98 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "flo_time";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column1.Frozen = true;
             this.Column1.HeaderText = "下单时间[1]";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "flo_state";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column2.Frozen = true;
             this.Column2.HeaderText = "订单状态[2]";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "flo_client";
+            this.Column3.Frozen = true;
             this.Column3.HeaderText = "客户[3]";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "flo_factory";
+            this.Column4.Frozen = true;
             this.Column4.HeaderText = "工厂[4]";
             this.Column4.Name = "Column4";
             // 
             // Column5
             // 
             this.Column5.DataPropertyName = "flo_line";
+            this.Column5.Frozen = true;
             this.Column5.HeaderText = "拉线[5]";
             this.Column5.Name = "Column5";
             // 
             // Column6
             // 
             this.Column6.DataPropertyName = "flo_num";
+            this.Column6.Frozen = true;
             this.Column6.HeaderText = "制令单号[6]";
             this.Column6.Name = "Column6";
             // 
             // Column7
             // 
             this.Column7.DataPropertyName = "flo_record";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("幼圆", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("幼圆", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column7.Frozen = true;
             this.Column7.HeaderText = "订单临时变更[7]";
             this.Column7.Name = "Column7";
             // 
             // Column8
             // 
             this.Column8.DataPropertyName = "flo_coding";
+            this.Column8.Frozen = true;
             this.Column8.HeaderText = "产品编号[8]";
             this.Column8.Name = "Column8";
             // 
             // Column9
             // 
             this.Column9.DataPropertyName = "flo_cilentID";
+            this.Column9.Frozen = true;
             this.Column9.HeaderText = "合同编号[9]";
             this.Column9.Name = "Column9";
             // 
             // Column10
             // 
             this.Column10.DataPropertyName = "flo_model";
+            this.Column10.Frozen = true;
             this.Column10.HeaderText = "客户机型[10]";
             this.Column10.Name = "Column10";
             // 
             // Column11
             // 
             this.Column11.DataPropertyName = "flo_logo";
+            this.Column11.Frozen = true;
             this.Column11.HeaderText = "LOGO[11]";
             this.Column11.Name = "Column11";
             // 
             // Column12
             // 
             this.Column12.DataPropertyName = "flo_proname";
+            this.Column12.Frozen = true;
             this.Column12.HeaderText = "工厂机型[12]";
             this.Column12.Name = "Column12";
             // 
             // Column13
             // 
             this.Column13.DataPropertyName = "flo_range";
+            this.Column13.Frozen = true;
             this.Column13.HeaderText = "量程精度[13]";
             this.Column13.Name = "Column13";
             // 
@@ -668,9 +726,9 @@
             // 
             // Column33
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.NullValue = "工艺文件";
-            this.Column33.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = "工艺文件";
+            this.Column33.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column33.HeaderText = "工艺文件[33]";
             this.Column33.Name = "Column33";
             this.Column33.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -685,9 +743,9 @@
             // 
             // Column35
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = "截屏";
-            this.Column35.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = "截屏";
+            this.Column35.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column35.HeaderText = "Bom图片[35]";
             this.Column35.Name = "Column35";
             this.Column35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -734,22 +792,25 @@
             this.Column41.HeaderText = "预留[41]";
             this.Column41.Name = "Column41";
             this.Column41.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column41.Visible = false;
             // 
             // Column42
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.NullValue = "来料问题夹";
-            this.Column42.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = "来料问题夹";
+            this.Column42.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column42.HeaderText = "预留[42]";
             this.Column42.Name = "Column42";
             this.Column42.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column42.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column42.Visible = false;
             // 
             // Column43
             // 
             this.Column43.DataPropertyName = "flo_comqusSolve";
             this.Column43.HeaderText = "预留[43]";
             this.Column43.Name = "Column43";
+            this.Column43.Visible = false;
             // 
             // Column44
             // 
@@ -766,7 +827,7 @@
             // Column46
             // 
             this.Column46.DataPropertyName = "flo_elsequan";
-            this.Column46.HeaderText = "其他电镀[46]";
+            this.Column46.HeaderText = "镭雕木纹及其他[46]";
             this.Column46.Name = "Column46";
             // 
             // Column47
@@ -796,45 +857,46 @@
             this.Column50.Name = "Column50";
             this.Column50.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // Column54
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = "生产问题夹";
-            this.Column54.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column54.HeaderText = "生产问题夹";
-            this.Column54.Name = "Column54";
-            this.Column54.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // Column51
             // 
-            this.Column51.DataPropertyName = "flo_spotChk";
-            this.Column51.HeaderText = "成品抽检汇总[51]";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.NullValue = "生产问题夹";
+            this.Column51.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Column51.HeaderText = "生产问题夹[51]";
             this.Column51.Name = "Column51";
-            this.Column51.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column51.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Column52
             // 
-            this.Column52.DataPropertyName = "flo_out";
-            this.Column52.FalseValue = "N";
-            this.Column52.HeaderText = "出货[52]";
+            this.Column52.DataPropertyName = "flo_spotChk";
+            this.Column52.HeaderText = "成品抽检汇总[52]";
             this.Column52.Name = "Column52";
-            this.Column52.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column52.TrueValue = "Y";
+            this.Column52.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Column53
             // 
-            this.Column53.DataPropertyName = "flo_finish";
+            this.Column53.DataPropertyName = "flo_out";
             this.Column53.FalseValue = "N";
-            this.Column53.HeaderText = "结单[53]";
+            this.Column53.HeaderText = "出货[53]";
             this.Column53.Name = "Column53";
             this.Column53.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column53.TrueValue = "Y";
             // 
+            // Column54
+            // 
+            this.Column54.DataPropertyName = "flo_finish";
+            this.Column54.FalseValue = "N";
+            this.Column54.HeaderText = "结单[54]";
+            this.Column54.Name = "Column54";
+            this.Column54.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column54.TrueValue = "Y";
+            // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(1304, 2);
+            this.button1.Location = new System.Drawing.Point(1401, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -899,6 +961,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButton11;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -949,9 +1014,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column48;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column49;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column50;
-        private System.Windows.Forms.DataGridViewButtonColumn Column54;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column51;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column52;
+        private System.Windows.Forms.DataGridViewButtonColumn Column51;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column52;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column53;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column54;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
     }
 }
