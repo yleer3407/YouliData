@@ -1465,6 +1465,8 @@ namespace Youli_Data_Share
 
                 foreach (DataRow dr in changeDt.Rows)
                 {
+                    if (conn_flow.State == System.Data.ConnectionState.Closed)
+                        conn_flow.Open();
                     string strSQL = string.Empty;
                     if (dr.RowState == System.Data.DataRowState.Added)//添加
                     {
@@ -1770,9 +1772,10 @@ namespace Youli_Data_Share
                 searchDate();
                 #endregion
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("提示：没有发生修改操作 ");
+                //MessageBox.Show("提示：没有发生修改操作 ");
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -1991,6 +1994,7 @@ namespace Youli_Data_Share
 
         private void toolStripButton12_Click(object sender, EventArgs e)
         {
+            
             int ind = dgvWorkFlow.CurrentRow.Index;
             string repoterValue = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
             //MessageBox.Show(repoterValue);
