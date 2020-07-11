@@ -63,6 +63,7 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
@@ -157,6 +158,7 @@
             this.toolStripLabel2,
             this.toolStripProgressBar1,
             this.toolStripSeparator4,
+            this.toolStripButton12,
             this.toolStripButton2,
             this.toolStripButton6,
             this.toolStripButton5,
@@ -345,6 +347,15 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.Image = global::Youli_Data_Share.Properties.Resources.表格设置;
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButton12.Text = "生产报表";
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
+            // 
             // toolStripButton2
             // 
             this.toolStripButton2.BackColor = System.Drawing.Color.White;
@@ -400,7 +411,7 @@
             this.toolStripButton9.Image = global::Youli_Data_Share.Properties.Resources.SC;
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton9.Size = new System.Drawing.Size(52, 21);
             this.toolStripButton9.Text = "陈荣";
             // 
             // toolStripButton3
@@ -408,7 +419,7 @@
             this.toolStripButton3.Image = global::Youli_Data_Share.Properties.Resources.huiz;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButton3.Size = new System.Drawing.Size(76, 21);
             this.toolStripButton3.Text = "问题汇总";
             this.toolStripButton3.ToolTipText = "问题汇总";
             // 
@@ -1019,5 +1030,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column53;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column54;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
     }
 }

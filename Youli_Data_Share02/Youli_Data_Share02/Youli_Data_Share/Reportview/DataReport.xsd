@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataReport" targetNamespace="http://tempuri.org/DataReport.xsd" xmlns:mstns="http://tempuri.org/DataReport.xsd" xmlns="http://tempuri.org/DataReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataReport" msprop:Generator_UserDSName="DataReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="flo_client" msprop:Generator_ColumnVarNameInTable="columnflo_client" msprop:Generator_ColumnPropNameInRow="flo_client" msprop:Generator_ColumnPropNameInTable="flo_clientColumn" msprop:Generator_UserColumnName="flo_client" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_num" msprop:Generator_ColumnVarNameInTable="columnflo_num" msprop:Generator_ColumnPropNameInRow="flo_num" msprop:Generator_ColumnPropNameInTable="flo_numColumn" msprop:Generator_UserColumnName="flo_num" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_coding" msprop:Generator_ColumnVarNameInTable="columnflo_coding" msprop:Generator_ColumnPropNameInRow="flo_coding" msprop:Generator_ColumnPropNameInTable="flo_codingColumn" msprop:Generator_UserColumnName="flo_coding" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_model" msprop:Generator_ColumnVarNameInTable="columnflo_model" msprop:Generator_ColumnPropNameInRow="flo_model" msprop:Generator_ColumnPropNameInTable="flo_modelColumn" msprop:Generator_UserColumnName="flo_model" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_logo" msprop:Generator_ColumnVarNameInTable="columnflo_logo" msprop:Generator_ColumnPropNameInRow="flo_logo" msprop:Generator_ColumnPropNameInTable="flo_logoColumn" msprop:Generator_UserColumnName="flo_logo" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_proname" msprop:Generator_ColumnVarNameInTable="columnflo_proname" msprop:Generator_ColumnPropNameInRow="flo_proname" msprop:Generator_ColumnPropNameInTable="flo_pronameColumn" msprop:Generator_UserColumnName="flo_proname" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_range" msprop:Generator_ColumnVarNameInTable="columnflo_range" msprop:Generator_ColumnPropNameInRow="flo_range" msprop:Generator_ColumnPropNameInTable="flo_rangeColumn" msprop:Generator_UserColumnName="flo_range" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_unit" msprop:Generator_ColumnVarNameInTable="columnflo_unit" msprop:Generator_ColumnPropNameInRow="flo_unit" msprop:Generator_ColumnPropNameInTable="flo_unitColumn" msprop:Generator_UserColumnName="flo_unit" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_closetime" msprop:Generator_ColumnVarNameInTable="columnflo_closetime" msprop:Generator_ColumnPropNameInRow="flo_closetime" msprop:Generator_ColumnPropNameInTable="flo_closetimeColumn" msprop:Generator_UserColumnName="flo_closetime" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_backtime" msprop:Generator_ColumnVarNameInTable="columnflo_backtime" msprop:Generator_ColumnPropNameInRow="flo_backtime" msprop:Generator_ColumnPropNameInTable="flo_backtimeColumn" msprop:Generator_UserColumnName="flo_backtime" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_revise" msprop:Generator_ColumnVarNameInTable="columnflo_revise" msprop:Generator_ColumnPropNameInRow="flo_revise" msprop:Generator_ColumnPropNameInTable="flo_reviseColumn" msprop:Generator_UserColumnName="flo_revise" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_levFacSet" msprop:Generator_ColumnVarNameInTable="columnflo_levFacSet" msprop:Generator_ColumnPropNameInRow="flo_levFacSet" msprop:Generator_ColumnPropNameInTable="flo_levFacSetColumn" msprop:Generator_UserColumnName="flo_levFacSet" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_cell" msprop:Generator_ColumnVarNameInTable="columnflo_cell" msprop:Generator_ColumnPropNameInRow="flo_cell" msprop:Generator_ColumnPropNameInTable="flo_cellColumn" msprop:Generator_UserColumnName="flo_cell" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_plastic" msprop:Generator_ColumnVarNameInTable="columnflo_plastic" msprop:Generator_ColumnPropNameInRow="flo_plastic" msprop:Generator_ColumnPropNameInTable="flo_plasticColumn" msprop:Generator_UserColumnName="flo_plastic" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_quantity" msprop:Generator_ColumnVarNameInTable="columnflo_quantity" msprop:Generator_ColumnPropNameInRow="flo_quantity" msprop:Generator_ColumnPropNameInTable="flo_quantityColumn" msprop:Generator_UserColumnName="flo_quantity" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_encase" msprop:Generator_ColumnVarNameInTable="columnflo_encase" msprop:Generator_ColumnPropNameInRow="flo_encase" msprop:Generator_ColumnPropNameInTable="flo_encaseColumn" msprop:Generator_UserColumnName="flo_encase" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_ask" msprop:Generator_ColumnVarNameInTable="columnflo_ask" msprop:Generator_ColumnPropNameInRow="flo_ask" msprop:Generator_ColumnPropNameInTable="flo_askColumn" msprop:Generator_UserColumnName="flo_ask" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

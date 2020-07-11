@@ -12,7 +12,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 using Microsoft.VisualBasic;
+using Youli_Data_Share.Reportview;
 
 namespace Youli_Data_Share
 {
@@ -1221,6 +1223,7 @@ namespace Youli_Data_Share
             insertDgv();
             dgvWorkFlow.DataSource = dt_flow.DefaultView;
             dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
+            conn_flow.Close();
         }
         /// <summary>
         /// 删除行
@@ -1984,6 +1987,16 @@ namespace Youli_Data_Share
             dgvWorkFlow.Columns["Column30"].Width = 50;
 
             dgvWorkFlow.Columns["Column31"].Width = 160;
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            int ind = dgvWorkFlow.CurrentRow.Index;
+            string repoterValue = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
+            //MessageBox.Show(repoterValue);
+            frmReport frmReport = new frmReport(repoterValue);
+            frmReport.ShowDialog();
+            
         }
     }
 }

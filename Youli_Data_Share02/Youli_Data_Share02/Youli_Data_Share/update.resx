@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.67 data 2020.7.9&gt;&gt;update:
+    <value>版本1.0.0.68 data 2020.7.10&gt;&gt;update:
+ 1.添加订单排程报表功能
+---------------------------------------------------------
+版本1.0.0.67 data 2020.7.9&gt;&gt;update:
  1.添加订单排程锁定列功能
  2.其他电镀--&gt;改为 镭射木纹 由王庆青操作
  3.订单排程添加收缩按键功能
