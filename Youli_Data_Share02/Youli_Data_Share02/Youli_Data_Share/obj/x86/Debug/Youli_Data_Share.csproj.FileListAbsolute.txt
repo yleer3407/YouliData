@@ -138,3 +138,5 @@ F:\桌面文档\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_
 F:\桌面文档\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\RdlCompile.compiled
 F:\桌面文档\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.csproj.CopyComplete
 F:\桌面文档\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.Reportview.frmReport.resources
+F:\桌面文档\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.specimen.resources
+F:\桌面文档\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.specimenOpe.resources

@@ -1804,10 +1804,10 @@ namespace Youli_Data_Share
                                     {
                                         if (dt_flow.Rows[i]["flo_spotChk"].ToString() != "")
                                         {
-                                            if (dt_flow.Rows[i]["flo_out"].ToString() == "True") //已经结单判断
+                                            if (dt_flow.Rows[i]["flo_out"].ToString() == "Y") //已经结单判断
                                             {
 
-                                                if (dt_flow.Rows[i]["flo_finish"].ToString() == "True")
+                                                if (dt_flow.Rows[i]["flo_finish"].ToString() == "Y")
                                                 {
                                                     dt_flow.Rows[i]["flo_state"] = "已经结单";
                                                 }

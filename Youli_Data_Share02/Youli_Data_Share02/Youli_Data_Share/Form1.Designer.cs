@@ -231,16 +231,17 @@
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Image = ((System.Drawing.Image)(resources.GetObject("button13.Image")));
+            this.button13.Image = global::Youli_Data_Share.Properties.Resources.warehouse_128px_1285469_easyicon_net;
             this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button13.Location = new System.Drawing.Point(555, 206);
             this.button13.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(126, 152);
             this.button13.TabIndex = 10;
-            this.button13.Text = "未开放";
+            this.button13.Text = "样品仓库";
             this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button14
             // 
@@ -341,7 +342,7 @@
             this.linkLabel1.Size = new System.Drawing.Size(143, 12);
             this.linkLabel1.TabIndex = 11;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "软件版本号：YL-1.0.0.69";
+            this.linkLabel1.Text = "软件版本号：YL-1.0.0.70";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // toolTip2

@@ -133,8 +133,8 @@
   <data name="folder_783px_1229425_easyicon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder_783px_1229425_easyicon.net1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="优力1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\优力1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close_delete_minus_negative_remove_24px_1225442_easyicon.net" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_delete_minus_negative_remove_24px_1225442_easyicon.net.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="viral_16px_1147362_easyicon.net" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\viral_16px_1147362_easyicon.net.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -147,6 +147,9 @@
   </data>
   <data name="优力111" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\优力111.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_warehouse_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_warehouse_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="folder_128px_1229425_easyicon.net" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder_128px_1229425_easyicon.net.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,8 +181,8 @@
   <data name="timg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\timg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close_delete_minus_negative_remove_24px_1225442_easyicon.net" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close_delete_minus_negative_remove_24px_1225442_easyicon.net.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_math_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_math_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="优力11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\优力11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -277,14 +280,20 @@
   <data name="添加图片(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\添加图片(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="magnifying_glass_tilted_left_123.15457413249px_1215124_easyicon.net" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\magnifying_glass_tilted_left_123.15457413249px_1215124_easyicon.net.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8_hand_cursor_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_hand_cursor_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="warehouse_128px_1285469_easyicon.net" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warehouse_128px_1285469_easyicon.net.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_management_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_management_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="优力113" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\优力113.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_subtract_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_subtract_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_ok_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_ok_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,6 +313,9 @@
   <data name="why_help_16px_1191646_easyicon.net" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\why_help_16px_1191646_easyicon.net.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="表格设置" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\表格设置.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -315,6 +327,9 @@
   </data>
   <data name="停止" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\停止.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_add_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_add_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="py" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\py.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,11 +343,14 @@
   <data name="3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_folder_66.727030625832px_1232041_easyicon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_folder_66.727030625832px_1232041_easyicon.net3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="magnifying_glass_tilted_left_123.15457413249px_1215124_easyicon.net" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magnifying_glass_tilted_left_123.15457413249px_1215124_easyicon.net.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="优力1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\优力1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_delete_minus_negative_remove_16px_1225442_easyicon.net" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_delete_minus_negative_remove_16px_1225442_easyicon.net.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -343,8 +361,8 @@
   <data name="icons8_folder_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_folder_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_management_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_management_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_folder_66.727030625832px_1232041_easyicon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_folder_66.727030625832px_1232041_easyicon.net3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UNWEIGHT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UNWEIGHT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -370,7 +388,7 @@
   <data name="add_folder_66.727030625832px_1232041_easyicon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_folder_66.727030625832px_1232041_easyicon.net2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="表格设置" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\表格设置.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_to_do_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_to_do_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -29,7 +29,7 @@
     <UpdateUrl>\\192.168.1.104\Youli_Server\</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.71</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>78</ApplicationRevision>
+    <ApplicationRevision>82</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -173,6 +173,18 @@
     <Compile Include="Sign.Designer.cs">
       <DependentUpon>Sign.cs</DependentUpon>
     </Compile>
+    <Compile Include="specimen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specimen.Designer.cs">
+      <DependentUpon>specimen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="specimenOpe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specimenOpe.Designer.cs">
+      <DependentUpon>specimenOpe.cs</DependentUpon>
+    </Compile>
     <Compile Include="update.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +265,12 @@
     <EmbeddedResource Include="Reportview\Report1.rdlc" />
     <EmbeddedResource Include="Sign.resx">
       <DependentUpon>Sign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="specimen.resx">
+      <DependentUpon>specimen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="specimenOpe.resx">
+      <DependentUpon>specimenOpe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="update.resx">
       <DependentUpon>update.cs</DependentUpon>
@@ -392,6 +410,12 @@
   <ItemGroup>
     <None Include="Resources\tune_96px.png" />
     <None Include="Resources\表格设置.png" />
+    <None Include="Resources\warehouse_128px_1285469_easyicon.net.png" />
+    <None Include="Resources\icons8_add_32.png" />
+    <None Include="Resources\icons8_math_32.png" />
+    <None Include="Resources\icons8_subtract_32.png" />
+    <None Include="Resources\icons8_warehouse_32.png" />
+    <None Include="Resources\icons8_to_do_32.png" />
     <Content Include="youliico.ico" />
     <None Include="Resources\close_32px_1175741_easyicon.net.png" />
     <None Include="Resources\timg.jpg" />

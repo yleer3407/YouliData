@@ -463,6 +463,16 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_add_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_folder_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_folder_32", resourceCulture);
@@ -513,6 +523,16 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_math_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_math_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_ok_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_ok_32", resourceCulture);
@@ -556,6 +576,36 @@ namespace Youli_Data_Share.Properties {
         internal static System.Drawing.Bitmap icons8_search_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_search_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_subtract_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_subtract_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_to_do_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_to_do_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_warehouse_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_warehouse_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -696,6 +746,16 @@ namespace Youli_Data_Share.Properties {
         internal static System.Drawing.Bitmap viral_16px_1147362_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("viral_16px_1147362_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap warehouse_128px_1285469_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("warehouse_128px_1285469_easyicon.net", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

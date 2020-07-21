@@ -118,7 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.68 data 2020.7.10&gt;&gt;update:
+    <value>版本1.0.0.70 data 2020.7.21&gt;&gt;update:
+ 1.添加样品仓管理功能
+ 2.解决订单排程 订单状态分析 文本RTUE 和文本Y的判断bug
+---------------------------------------------------------
+版本1.0.0.68 data 2020.7.10&gt;&gt;update:
  1.添加订单排程报表功能
 ---------------------------------------------------------
 版本1.0.0.67 data 2020.7.9&gt;&gt;update:

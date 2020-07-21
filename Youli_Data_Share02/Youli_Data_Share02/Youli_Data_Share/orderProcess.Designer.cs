@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(orderProcess));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
@@ -441,17 +441,17 @@
             // 
             this.dgvWorkFlow.AllowUserToAddRows = false;
             this.dgvWorkFlow.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            this.dgvWorkFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvWorkFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvWorkFlow.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvWorkFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWorkFlow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -512,8 +512,8 @@
             this.dgvWorkFlow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvWorkFlow.Location = new System.Drawing.Point(0, 0);
             this.dgvWorkFlow.Name = "dgvWorkFlow";
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkFlow.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkFlow.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvWorkFlow.RowTemplate.Height = 23;
             this.dgvWorkFlow.Size = new System.Drawing.Size(1504, 616);
             this.dgvWorkFlow.TabIndex = 0;
@@ -525,8 +525,8 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "flo_time";
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column1.Frozen = true;
             this.Column1.HeaderText = "下单时间[1]";
             this.Column1.Name = "Column1";
@@ -534,8 +534,8 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "flo_state";
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column2.Frozen = true;
             this.Column2.HeaderText = "订单状态[2]";
             this.Column2.Name = "Column2";
@@ -571,9 +571,9 @@
             // Column7
             // 
             this.Column7.DataPropertyName = "flo_record";
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("幼圆", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Red;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("幼圆", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column7.Frozen = true;
             this.Column7.HeaderText = "订单临时变更[7]";
             this.Column7.Name = "Column7";
@@ -737,9 +737,9 @@
             // 
             // Column33
             // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.NullValue = "工艺文件";
-            this.Column33.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = "工艺文件";
+            this.Column33.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column33.HeaderText = "工艺文件[33]";
             this.Column33.Name = "Column33";
             this.Column33.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -754,9 +754,9 @@
             // 
             // Column35
             // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.NullValue = "截屏";
-            this.Column35.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = "截屏";
+            this.Column35.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column35.HeaderText = "Bom图片[35]";
             this.Column35.Name = "Column35";
             this.Column35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -807,9 +807,9 @@
             // 
             // Column42
             // 
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.NullValue = "来料问题夹";
-            this.Column42.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = "来料问题夹";
+            this.Column42.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column42.HeaderText = "预留[42]";
             this.Column42.Name = "Column42";
             this.Column42.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -870,9 +870,9 @@
             // 
             // Column51
             // 
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.NullValue = "生产问题夹";
-            this.Column51.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.NullValue = "生产问题夹";
+            this.Column51.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column51.HeaderText = "生产问题夹[51]";
             this.Column51.Name = "Column51";
             this.Column51.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;

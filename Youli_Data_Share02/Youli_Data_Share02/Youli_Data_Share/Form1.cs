@@ -670,6 +670,17 @@ namespace Youli_Data_Share
             this.WindowState = FormWindowState.Minimized;
             #endregion
         }
+        /// <summary>
+        /// 样品仓库
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button13_Click(object sender, EventArgs e)
+        {
+            specimen frmSpeciman = new specimen();
+            frmSpeciman.ShowDialog();
+           
+        }
     }
 }
 
