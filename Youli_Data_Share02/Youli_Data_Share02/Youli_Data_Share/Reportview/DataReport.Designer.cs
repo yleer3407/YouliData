@@ -313,6 +313,8 @@ namespace Youli_Data_Share.Reportview {
             
             private global::System.Data.DataColumn columnflo_ask;
             
+            private global::System.Data.DataColumn columnflo_record;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DataTable1DataTable() {
@@ -484,6 +486,14 @@ namespace Youli_Data_Share.Reportview {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn flo_recordColumn {
+                get {
+                    return this.columnflo_record;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -536,7 +546,8 @@ namespace Youli_Data_Share.Reportview {
                         string flo_plastic, 
                         string flo_quantity, 
                         string flo_encase, 
-                        string flo_ask) {
+                        string flo_ask, 
+                        string flo_record) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         flo_client,
@@ -555,7 +566,8 @@ namespace Youli_Data_Share.Reportview {
                         flo_plastic,
                         flo_quantity,
                         flo_encase,
-                        flo_ask};
+                        flo_ask,
+                        flo_record};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -595,6 +607,7 @@ namespace Youli_Data_Share.Reportview {
                 this.columnflo_quantity = base.Columns["flo_quantity"];
                 this.columnflo_encase = base.Columns["flo_encase"];
                 this.columnflo_ask = base.Columns["flo_ask"];
+                this.columnflo_record = base.Columns["flo_record"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -634,6 +647,8 @@ namespace Youli_Data_Share.Reportview {
                 base.Columns.Add(this.columnflo_encase);
                 this.columnflo_ask = new global::System.Data.DataColumn("flo_ask", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnflo_ask);
+                this.columnflo_record = new global::System.Data.DataColumn("flo_record", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnflo_record);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1048,6 +1063,22 @@ namespace Youli_Data_Share.Reportview {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string flo_record {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.flo_recordColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“DataTable1”中列“flo_record”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.flo_recordColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isflo_clientNull() {
                 return this.IsNull(this.tableDataTable1.flo_clientColumn);
             }
@@ -1248,6 +1279,18 @@ namespace Youli_Data_Share.Reportview {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setflo_askNull() {
                 this[this.tableDataTable1.flo_askColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isflo_recordNull() {
+                return this.IsNull(this.tableDataTable1.flo_recordColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setflo_recordNull() {
+                this[this.tableDataTable1.flo_recordColumn] = global::System.Convert.DBNull;
             }
         }
         
