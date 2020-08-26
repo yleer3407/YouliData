@@ -184,3 +184,6 @@ F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_S
 F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.csproj.CopyComplete
 F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.exe
 F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.pdb
+F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.orderProcessfrm1.resources
+F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.MateNum.frmMateNum.resources
+F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.ERPbasicBata.frmERP_Basic_Data.resources

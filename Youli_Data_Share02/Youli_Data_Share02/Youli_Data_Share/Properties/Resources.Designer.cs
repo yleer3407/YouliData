@@ -333,6 +333,16 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap cogwheel_733px_1224810_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("cogwheel_733px_1224810_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap data_background {
             get {
                 object obj = ResourceManager.GetObject("data_background", resourceCulture);
@@ -593,6 +603,26 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_support_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_support_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_to_do_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_to_do_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_to_do_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_to_do_32", resourceCulture);
@@ -626,6 +656,16 @@ namespace Youli_Data_Share.Properties {
         internal static System.Drawing.Bitmap magnifying_glass_tilted_left_123_15457413249px_1215124_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("magnifying_glass_tilted_left_123.15457413249px_1215124_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap OS_Windows_128px_1180144_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("OS_Windows_128px_1180144_easyicon.net", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

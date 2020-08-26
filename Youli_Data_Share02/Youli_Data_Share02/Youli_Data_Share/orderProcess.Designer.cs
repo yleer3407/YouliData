@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(orderProcess));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
@@ -64,14 +65,15 @@
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripSplitButton();
+            this.业务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.高超填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.王庆青填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qC填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.喷油丝印填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.胡镜填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.陈荣填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.问题汇总区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.youli_dateDataSet1 = new Youli_Data_Share.Youli_dateDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvWorkFlow = new System.Windows.Forms.DataGridView();
@@ -129,11 +131,15 @@
             this.Column52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column53 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column54 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.展开数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.youli_dateDataSet1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkFlow)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -159,14 +165,7 @@
             this.toolStripProgressBar1,
             this.toolStripSeparator4,
             this.toolStripButton12,
-            this.toolStripButton2,
-            this.toolStripButton6,
-            this.toolStripButton5,
-            this.toolStripButton4,
-            this.toolStripButton8,
-            this.toolStripButton7,
-            this.toolStripButton9,
-            this.toolStripButton3});
+            this.toolStripDropDownButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1504, 25);
@@ -356,72 +355,79 @@
             this.toolStripButton12.Text = "生产报表";
             this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
             // 
-            // toolStripButton2
+            // toolStripDropDownButton2
             // 
-            this.toolStripButton2.BackColor = System.Drawing.Color.White;
-            this.toolStripButton2.Image = global::Youli_Data_Share.Properties.Resources.yello;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton2.Text = "业务";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.toolStripDropDownButton2.BackColor = System.Drawing.Color.Aqua;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.业务ToolStripMenuItem,
+            this.高超填写区域ToolStripMenuItem,
+            this.王庆青填写区域ToolStripMenuItem,
+            this.qC填写区域ToolStripMenuItem,
+            this.喷油丝印填写区域ToolStripMenuItem,
+            this.胡镜填写区域ToolStripMenuItem,
+            this.陈荣填写区域ToolStripMenuItem,
+            this.问题汇总区域ToolStripMenuItem});
+            this.toolStripDropDownButton2.Image = global::Youli_Data_Share.Properties.Resources.cogwheel_733px_1224810_easyicon_net;
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(112, 22);
+            this.toolStripDropDownButton2.Text = "填写区域划分";
             // 
-            // toolStripButton6
+            // 业务ToolStripMenuItem
             // 
-            this.toolStripButton6.Image = global::Youli_Data_Share.Properties.Resources.gc;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton6.Text = "高超";
+            this.业务ToolStripMenuItem.BackColor = System.Drawing.Color.Yellow;
+            this.业务ToolStripMenuItem.Name = "业务ToolStripMenuItem";
+            this.业务ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.业务ToolStripMenuItem.Text = "业务填写区域";
             // 
-            // toolStripButton5
+            // 高超填写区域ToolStripMenuItem
             // 
-            this.toolStripButton5.Image = global::Youli_Data_Share.Properties.Resources._12;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(64, 22);
-            this.toolStripButton5.Text = "王庆青";
+            this.高超填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.高超填写区域ToolStripMenuItem.Name = "高超填写区域ToolStripMenuItem";
+            this.高超填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.高超填写区域ToolStripMenuItem.Text = "高超填写区域";
             // 
-            // toolStripButton4
+            // 王庆青填写区域ToolStripMenuItem
             // 
-            this.toolStripButton4.Image = global::Youli_Data_Share.Properties.Resources.qc;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(46, 22);
-            this.toolStripButton4.Text = "QC";
+            this.王庆青填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.Aqua;
+            this.王庆青填写区域ToolStripMenuItem.Name = "王庆青填写区域ToolStripMenuItem";
+            this.王庆青填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.王庆青填写区域ToolStripMenuItem.Text = "王庆青填写区域";
             // 
-            // toolStripButton8
+            // qC填写区域ToolStripMenuItem
             // 
-            this.toolStripButton8.Image = global::Youli_Data_Share.Properties.Resources.py;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(64, 22);
-            this.toolStripButton8.Text = "陈玉萍";
+            this.qC填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.qC填写区域ToolStripMenuItem.Name = "qC填写区域ToolStripMenuItem";
+            this.qC填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.qC填写区域ToolStripMenuItem.Text = "QC填写区域";
             // 
-            // toolStripButton7
+            // 喷油丝印填写区域ToolStripMenuItem
             // 
-            this.toolStripButton7.Image = global::Youli_Data_Share.Properties.Resources.ck;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton7.Text = "胡镜";
+            this.喷油丝印填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.喷油丝印填写区域ToolStripMenuItem.Name = "喷油丝印填写区域ToolStripMenuItem";
+            this.喷油丝印填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.喷油丝印填写区域ToolStripMenuItem.Text = "喷油丝印填写区域";
             // 
-            // toolStripButton9
+            // 胡镜填写区域ToolStripMenuItem
             // 
-            this.toolStripButton9.Image = global::Youli_Data_Share.Properties.Resources.SC;
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton9.Text = "陈荣";
+            this.胡镜填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.SkyBlue;
+            this.胡镜填写区域ToolStripMenuItem.Name = "胡镜填写区域ToolStripMenuItem";
+            this.胡镜填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.胡镜填写区域ToolStripMenuItem.Text = "胡镜填写区域";
             // 
-            // toolStripButton3
+            // 陈荣填写区域ToolStripMenuItem
             // 
-            this.toolStripButton3.Image = global::Youli_Data_Share.Properties.Resources.huiz;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(76, 22);
-            this.toolStripButton3.Text = "问题汇总";
-            this.toolStripButton3.ToolTipText = "问题汇总";
+            this.陈荣填写区域ToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.陈荣填写区域ToolStripMenuItem.Name = "陈荣填写区域ToolStripMenuItem";
+            this.陈荣填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.陈荣填写区域ToolStripMenuItem.Text = "陈荣填写区域";
+            // 
+            // 问题汇总区域ToolStripMenuItem
+            // 
+            this.问题汇总区域ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.问题汇总区域ToolStripMenuItem.Name = "问题汇总区域ToolStripMenuItem";
+            this.问题汇总区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.问题汇总区域ToolStripMenuItem.Text = "问题汇总区域";
             // 
             // youli_dateDataSet1
             // 
@@ -441,17 +447,17 @@
             // 
             this.dgvWorkFlow.AllowUserToAddRows = false;
             this.dgvWorkFlow.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvWorkFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.dgvWorkFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvWorkFlow.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvWorkFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWorkFlow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -508,25 +514,27 @@
             this.Column52,
             this.Column53,
             this.Column54});
+            this.dgvWorkFlow.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvWorkFlow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWorkFlow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvWorkFlow.Location = new System.Drawing.Point(0, 0);
             this.dgvWorkFlow.Name = "dgvWorkFlow";
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkFlow.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkFlow.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvWorkFlow.RowTemplate.Height = 23;
             this.dgvWorkFlow.Size = new System.Drawing.Size(1504, 616);
             this.dgvWorkFlow.TabIndex = 0;
             this.dgvWorkFlow.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvWorkFlow_CellBeginEdit);
             this.dgvWorkFlow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkFlow_CellContentClick);
             this.dgvWorkFlow.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkFlow_CellEndEdit);
+            this.dgvWorkFlow.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvWorkFlow_CellMouseDown);
             this.dgvWorkFlow.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvWorkFlow_RowPostPaint);
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "flo_time";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle13;
             this.Column1.Frozen = true;
             this.Column1.HeaderText = "下单时间[1]";
             this.Column1.Name = "Column1";
@@ -534,8 +542,8 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "flo_state";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column2.Frozen = true;
             this.Column2.HeaderText = "订单状态[2]";
             this.Column2.Name = "Column2";
@@ -571,9 +579,9 @@
             // Column7
             // 
             this.Column7.DataPropertyName = "flo_record";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("幼圆", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("幼圆", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Red;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle15;
             this.Column7.Frozen = true;
             this.Column7.HeaderText = "订单临时变更[7]";
             this.Column7.Name = "Column7";
@@ -737,9 +745,9 @@
             // 
             // Column33
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = "工艺文件";
-            this.Column33.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.NullValue = "工艺文件";
+            this.Column33.DefaultCellStyle = dataGridViewCellStyle16;
             this.Column33.HeaderText = "工艺文件[33]";
             this.Column33.Name = "Column33";
             this.Column33.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -754,9 +762,9 @@
             // 
             // Column35
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.NullValue = "截屏";
-            this.Column35.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.NullValue = "截屏";
+            this.Column35.DefaultCellStyle = dataGridViewCellStyle17;
             this.Column35.HeaderText = "Bom图片[35]";
             this.Column35.Name = "Column35";
             this.Column35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -807,9 +815,9 @@
             // 
             // Column42
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = "来料问题夹";
-            this.Column42.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.NullValue = "来料问题夹";
+            this.Column42.DefaultCellStyle = dataGridViewCellStyle18;
             this.Column42.HeaderText = "预留[42]";
             this.Column42.Name = "Column42";
             this.Column42.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -870,9 +878,9 @@
             // 
             // Column51
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.NullValue = "生产问题夹";
-            this.Column51.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.NullValue = "生产问题夹";
+            this.Column51.DefaultCellStyle = dataGridViewCellStyle19;
             this.Column51.HeaderText = "生产问题夹[51]";
             this.Column51.Name = "Column51";
             this.Column51.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -901,6 +909,30 @@
             this.Column54.Name = "Column54";
             this.Column54.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column54.TrueValue = "Y";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.展开数据ToolStripMenuItem,
+            this.toolStripMenuItem4});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 48);
+            this.contextMenuStrip1.Text = "~~~~(>_<)~~~~";
+            // 
+            // 展开数据ToolStripMenuItem
+            // 
+            this.展开数据ToolStripMenuItem.Image = global::Youli_Data_Share.Properties.Resources.icons8_to_do_16;
+            this.展开数据ToolStripMenuItem.Name = "展开数据ToolStripMenuItem";
+            this.展开数据ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.展开数据ToolStripMenuItem.Text = "展开数据";
+            this.展开数据ToolStripMenuItem.Click += new System.EventHandler(this.展开数据ToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Image = global::Youli_Data_Share.Properties.Resources.icons8_support_16;
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(126, 22);
+            this.toolStripMenuItem4.Text = "(*^__^*) ";
             // 
             // button1
             // 
@@ -933,6 +965,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.youli_dateDataSet1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkFlow)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -954,14 +987,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripLabel labuser;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
         private System.Windows.Forms.Panel panel1;
@@ -1031,5 +1056,17 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column54;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripSplitButton toolStripDropDownButton2;
+        private System.Windows.Forms.ToolStripMenuItem 业务ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 高超填写区域ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 王庆青填写区域ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem qC填写区域ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 喷油丝印填写区域ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 胡镜填写区域ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 陈荣填写区域ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 问题汇总区域ToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 展开数据ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     }
 }

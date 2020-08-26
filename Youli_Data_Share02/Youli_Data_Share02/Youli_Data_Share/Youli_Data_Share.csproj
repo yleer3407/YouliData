@@ -29,7 +29,7 @@
     <UpdateUrl>\\192.168.1.104\Youli_Server\</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.71</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>83</ApplicationRevision>
+    <ApplicationRevision>87</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -73,6 +73,9 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms">
       <HintPath>..\..\..\..\..\YouliTest\YouliTest\YouliTest\bin\Debug\Microsoft.ReportViewer.WinForms.dll</HintPath>
@@ -113,6 +116,12 @@
     <Compile Include="Engineeringcharcs.Designer.cs">
       <DependentUpon>Engineeringcharcs.cs</DependentUpon>
     </Compile>
+    <Compile Include="ERPbasicBata\frmERP_Basic_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ERPbasicBata\frmERP_Basic_Data.Designer.cs">
+      <DependentUpon>frmERP_Basic_Data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +147,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MateNum\frmMateNum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MateNum\frmMateNum.Designer.cs">
+      <DependentUpon>frmMateNum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -148,6 +163,12 @@
     </Compile>
     <Compile Include="orderProcess.Designer.cs">
       <DependentUpon>orderProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="orderProcessfrm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="orderProcessfrm1.Designer.cs">
+      <DependentUpon>orderProcessfrm1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -239,6 +260,9 @@
     <EmbeddedResource Include="Engineeringcharcs.resx">
       <DependentUpon>Engineeringcharcs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ERPbasicBata\frmERP_Basic_Data.resx">
+      <DependentUpon>frmERP_Basic_Data.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,8 +275,14 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MateNum\frmMateNum.resx">
+      <DependentUpon>frmMateNum.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="orderProcess.resx">
       <DependentUpon>orderProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="orderProcessfrm1.resx">
+      <DependentUpon>orderProcessfrm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -416,6 +446,10 @@
     <None Include="Resources\icons8_subtract_32.png" />
     <None Include="Resources\icons8_warehouse_32.png" />
     <None Include="Resources\icons8_to_do_32.png" />
+    <None Include="Resources\cogwheel_733px_1224810_easyicon.net.png" />
+    <None Include="Resources\OS_Windows_128px_1180144_easyicon.net.png" />
+    <None Include="Resources\icons8_to_do_16.png" />
+    <None Include="Resources\icons8_support_16.png" />
     <Content Include="youliico.ico" />
     <None Include="Resources\close_32px_1175741_easyicon.net.png" />
     <None Include="Resources\timg.jpg" />
@@ -502,6 +536,9 @@
     <None Include="Resources\py.png" />
     <None Include="Resources\icons8_plus_32.png" />
     <Content Include="unweight.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ERPloginName\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

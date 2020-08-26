@@ -14,6 +14,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using Microsoft.VisualBasic;
+using Youli_Data_Share.MateNum;
 using Youli_Data_Share.Reportview;
 
 namespace Youli_Data_Share
@@ -1057,7 +1058,8 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void dgvWorkFlow_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(labuser.Text.ToString()=="游客")
+
+            if (labuser.Text.ToString() == "游客")
             {
                 MessageBox.Show("无权限打开");
                 return;
@@ -1095,6 +1097,8 @@ namespace Youli_Data_Share
                     var filename = string.Empty;
                     try
                     {
+                        //frmMateNum frmMateNum = new frmMateNum();
+                        //frmMateNum.Show();
                         // filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + "AC-0109-04"+ ".png";
                         filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + dgvWorkFlow.Rows[e.RowIndex].Cells[9].Value.ToString() + ".png";
                         Process m_Process = null;
@@ -1296,7 +1300,7 @@ namespace Youli_Data_Share
             {
                 conn_flow.Open();
             }
-            string strsql = "SELECT * FROM flow WHERE flo_finish LIKE '%1%'";
+            string strsql = "SELECT * FROM flow WHERE flo_finish LIKE '%Y%'";
             SqlDataAdapter da = new SqlDataAdapter(strsql, conn_flow);
             DataSet ds = new DataSet();
             da.Fill(ds, "flow");
@@ -1310,7 +1314,7 @@ namespace Youli_Data_Share
             {
                 conn_flow.Open();
             }
-            string strsql = "SELECT * FROM flow WHERE flo_finish LIKE '%0%'";
+            string strsql = "SELECT * FROM flow WHERE flo_finish LIKE '%N%'";
             SqlDataAdapter da = new SqlDataAdapter(strsql, conn_flow);
             DataSet ds = new DataSet();
             da.Fill(ds, "flow");
@@ -2001,6 +2005,40 @@ namespace Youli_Data_Share
             frmReport frmReport = new frmReport(repoterValue);
             frmReport.ShowDialog();
             
+        }
+
+        private void dgvWorkFlow_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.Button==MouseButtons.Right)
+            {
+                if(e.RowIndex>=0)
+                {
+                    //若行已经是选中状态就不在进行设置
+                    if(dgvWorkFlow.Rows[e.RowIndex].Selected==false)
+                    {
+                        dgvWorkFlow.ClearSelection();
+                        dgvWorkFlow.Rows[e.RowIndex].Selected = true;
+                    }
+                    //只选中一行时设置活动单元
+                    if(dgvWorkFlow.SelectedRows.Count==1)
+                    {
+                        dgvWorkFlow.CurrentCell = dgvWorkFlow.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    }
+                    //弹出操作菜单
+                    contextMenuStrip1.Show(MousePosition.X, MousePosition.Y);
+                }
+            }
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 展开数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            orderProcessfrm1 frmOrder1 = new orderProcessfrm1();
+            frmOrder1.ShowDialog();
         }
     }
 }

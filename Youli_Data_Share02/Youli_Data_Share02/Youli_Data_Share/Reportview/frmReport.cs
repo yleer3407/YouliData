@@ -25,9 +25,35 @@ namespace Youli_Data_Share.Reportview
 
         private void Report_Load(object sender, EventArgs e)
         {
+            MessageBox.Show(mretext);
+            try
+            {
+                SqlConnection conn;
+                conn = new SqlConnection("server=124.70.203.134,1433;database=YouliData;uid=sa;pwd=Yelei193");
+                string sql = "SELECT * FROM flow WHERE flo_num LIKE '%" + mretext + "%' order by flo_num " ;
+                conn.Open();
+                SqlDataAdapter thisAdapter = new SqlDataAdapter(sql, conn);
+                System.Data.DataSet dst = new System.Data.DataSet();
+                thisAdapter.Fill(dst, "table");
+                DataTable dt = dst.Tables["table"];
+                int count = dst.Tables[0].Rows.Count;
+                this.reportViewer1.LocalReport.ReportEmbeddedResource = "Youli_Data_Share.Reportview.Report1.rdlc";
+                this.reportViewer1.LocalReport.DataSources.Clear();
+                this.reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataReport", dst.Tables[0]));
+                this.reportViewer1.RefreshReport();
+                conn.Close();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
             SqlConnection conn;
             conn = new SqlConnection("server=124.70.203.134,1433;database=YouliData;uid=sa;pwd=Yelei193");
-            string sql = "SELECT* FROM flow WHERE flo_num LIKE '%" + mretext + "%'";
+            string sql = "SELECT * FROM flow WHERE flo_num LIKE '%"+toolStripTextBox1.Text.Trim().ToString()+"%'";
             conn.Open();
             SqlDataAdapter thisAdapter = new SqlDataAdapter(sql, conn);
             System.Data.DataSet dst = new System.Data.DataSet();
@@ -41,22 +67,9 @@ namespace Youli_Data_Share.Reportview
             conn.Close();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            SqlConnection conn;
-            conn = new SqlConnection("server=124.70.203.134,1433;database=YouliData;uid=sa;pwd=Yelei193");
-            string sql = "SELECT* FROM flow WHERE flo_num LIKE '%"+toolStripTextBox1.Text.Trim()+"%'";
-            conn.Open();
-            SqlDataAdapter thisAdapter = new SqlDataAdapter(sql, conn);
-            System.Data.DataSet dst = new System.Data.DataSet();
-            thisAdapter.Fill(dst, "table");
-            DataTable dt = dst.Tables["table"];
-            int count = dst.Tables[0].Rows.Count;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Youli_Data_Share.Reportview.Report1.rdlc";
-            this.reportViewer1.LocalReport.DataSources.Clear();
-            this.reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataReport", dst.Tables[0]));
-            this.reportViewer1.RefreshReport();
-            conn.Close();
+
         }
     }
 }

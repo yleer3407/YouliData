@@ -118,7 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.71 data 2020.7.25&gt;&gt;update:
+    <value>版本1.0.0.73data 2020.8.25&gt;&gt;update:
+ 1.ERP基础资料升级 添加 库存表（实时数据）
+---------------------------------------------------------
+版本1.0.0.72data 2020.8.20&gt;&gt;update:
+ 1.订单排程报表 解决报表bug 将sql语句 like 替换为 = 和升序排列
+---------------------------------------------------------
+版本1.0.0.71 data 2020.7.25&gt;&gt;update:
  1.订单排程报表添加 临时变更行
 ---------------------------------------------------------
 版本1.0.0.70 data 2020.7.21&gt;&gt;update:
