@@ -25,7 +25,7 @@ namespace Youli_Data_Share.Reportview
 
         private void Report_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(mretext);
+           // MessageBox.Show(mretext);
             try
             {
                 SqlConnection conn;

@@ -369,7 +369,7 @@ namespace Youli_Data_Share
             //            {
             //                MessageBox.Show("路径错误");
             //            }
-            notifyIcon1.ShowBalloonTip(1000, "提示", "数据载入中...请稍等", ToolTipIcon.Info);
+            notifyIcon1.ShowBalloonTip(1000, "提示", "数据疯狂载入中...\r\n......\r\n......\r\n请勿多次点击！", ToolTipIcon.Info);
             frmERP_Basic_Data frmERPData = new frmERP_Basic_Data();
                       frmERPData.Show();
         }
@@ -670,16 +670,10 @@ namespace Youli_Data_Share
         private void button13_Click(object sender, EventArgs e)
         {
             specimen frmSpeciman = new specimen();
-            frmSpeciman.ShowDialog();
+            frmSpeciman.Show();
            
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            SqlConnection connlogin = new SqlConnection("server=.;database=Youli_Data;uid=sa;pwd=111111");
-            SqlDataAdapter sdaLogin = new SqlDataAdapter("select computername from pas_m_id", connlogin);
-
-        }
     }
 }
 

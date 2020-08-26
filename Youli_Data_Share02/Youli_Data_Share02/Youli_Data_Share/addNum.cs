@@ -11,7 +11,7 @@ namespace Youli_Data_Share
 {
     public partial class addNum : Form
     {
-        DataTable dt_add;
+       
         SqlConnection conn_add;
         public addNum()
         {
