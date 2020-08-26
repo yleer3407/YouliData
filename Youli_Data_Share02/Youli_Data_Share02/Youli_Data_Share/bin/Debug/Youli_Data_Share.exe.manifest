@@ -211,14 +211,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Youli_Data_Share.exe" size="4388848">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Youli_Data_Share.exe" size="4462576">
       <assemblyIdentity name="Youli_Data_Share" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mazYQ+X4rbt7gyeu5VF8CplU2gEqyJX6ZumCA7DNOn4=</dsig:DigestValue>
+        <dsig:DigestValue>VUbMFYa29P/xFBZKw6/+xFF1P27Geaydat9vQX9W3Jk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

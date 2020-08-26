@@ -42,41 +42,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(orderProcess));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.tsbtn_search = new System.Windows.Forms.ToolStripButton();
-            this.tsbbtn_order = new System.Windows.Forms.ToolStripDropDownButton();
-            this.已结单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.未结单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.tsbbtn_delete = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.tsbbtn_submit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbbtn_material = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbbtn_set = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.labuser = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripSplitButton();
-            this.业务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.高超填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.王庆青填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.qC填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.喷油丝印填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.胡镜填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.陈荣填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.问题汇总区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.youli_dateDataSet1 = new Youli_Data_Share.Youli_dateDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvWorkFlow = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -131,10 +109,32 @@
             this.Column52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column53 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column54 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.展开数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tsbtn_search = new System.Windows.Forms.ToolStripButton();
+            this.tsbbtn_order = new System.Windows.Forms.ToolStripDropDownButton();
+            this.已结单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.未结单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.tsbbtn_delete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.tsbbtn_submit = new System.Windows.Forms.ToolStripButton();
+            this.tsbbtn_material = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbbtn_set = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripSplitButton();
+            this.业务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.高超填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.王庆青填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qC填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.喷油丝印填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.胡镜填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.陈荣填写区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.问题汇总区域ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.youli_dateDataSet1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -179,139 +179,15 @@
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
             // 
-            // tsbtn_search
-            // 
-            this.tsbtn_search.Image = global::Youli_Data_Share.Properties.Resources.icons8_search_32;
-            this.tsbtn_search.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtn_search.Name = "tsbtn_search";
-            this.tsbtn_search.Size = new System.Drawing.Size(52, 22);
-            this.tsbtn_search.Text = "查找";
-            this.tsbtn_search.Click += new System.EventHandler(this.tsbtn_search_Click);
-            // 
-            // tsbbtn_order
-            // 
-            this.tsbbtn_order.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.已结单ToolStripMenuItem,
-            this.未结单ToolStripMenuItem});
-            this.tsbbtn_order.Image = global::Youli_Data_Share.Properties.Resources.icons8_hand_cursor_32;
-            this.tsbbtn_order.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbbtn_order.Name = "tsbbtn_order";
-            this.tsbbtn_order.Size = new System.Drawing.Size(85, 22);
-            this.tsbbtn_order.Text = "单据筛选";
-            // 
-            // 已结单ToolStripMenuItem
-            // 
-            this.已结单ToolStripMenuItem.Name = "已结单ToolStripMenuItem";
-            this.已结单ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.已结单ToolStripMenuItem.Text = "已结单";
-            this.已结单ToolStripMenuItem.Click += new System.EventHandler(this.已结单ToolStripMenuItem_Click);
-            // 
-            // 未结单ToolStripMenuItem
-            // 
-            this.未结单ToolStripMenuItem.Name = "未结单ToolStripMenuItem";
-            this.未结单ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.未结单ToolStripMenuItem.Text = "未结单";
-            this.未结单ToolStripMenuItem.Click += new System.EventHandler(this.未结单ToolStripMenuItem_Click);
-            // 
-            // toolStripButton11
-            // 
-            this.toolStripButton11.Image = global::Youli_Data_Share.Properties.Resources.icons8_plus_32;
-            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton11.Text = "添加";
-            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
-            // 
-            // tsbbtn_delete
-            // 
-            this.tsbbtn_delete.Image = global::Youli_Data_Share.Properties.Resources.icons8_remove_32;
-            this.tsbbtn_delete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbbtn_delete.Name = "tsbbtn_delete";
-            this.tsbbtn_delete.Size = new System.Drawing.Size(52, 22);
-            this.tsbbtn_delete.Text = "删单";
-            this.tsbbtn_delete.Click += new System.EventHandler(this.tsbbtn_delete_Click);
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.Image = global::Youli_Data_Share.Properties.Resources.icons8_save_32;
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton10.Text = "保存";
-            this.toolStripButton10.Visible = false;
-            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
-            // 
-            // tsbbtn_submit
-            // 
-            this.tsbbtn_submit.Image = global::Youli_Data_Share.Properties.Resources.icons8_ok_32;
-            this.tsbbtn_submit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbbtn_submit.Name = "tsbbtn_submit";
-            this.tsbbtn_submit.Size = new System.Drawing.Size(52, 22);
-            this.tsbbtn_submit.Text = "提交";
-            this.tsbbtn_submit.Visible = false;
-            this.tsbbtn_submit.Click += new System.EventHandler(this.tsbbtn_submit_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // tsbbtn_material
-            // 
-            this.tsbbtn_material.Image = global::Youli_Data_Share.Properties.Resources.brand_brands_excel_logo_16px_1212964_easyicon_net;
-            this.tsbbtn_material.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbbtn_material.Name = "tsbbtn_material";
-            this.tsbbtn_material.Size = new System.Drawing.Size(105, 22);
-            this.tsbbtn_material.Text = "缺料/生产计划";
-            this.tsbbtn_material.Click += new System.EventHandler(this.tsbbtn_material_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
-            this.toolStripDropDownButton1.Image = global::Youli_Data_Share.Properties.Resources.tune_96px;
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(85, 22);
-            this.toolStripDropDownButton1.Text = "页面伸缩";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
-            this.toolStripMenuItem1.Text = "订单信息页面拉开";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(172, 22);
-            this.toolStripMenuItem2.Text = "订单信息页面收缩";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // tsbbtn_set
-            // 
-            this.tsbbtn_set.Image = global::Youli_Data_Share.Properties.Resources.icons8_job_32;
-            this.tsbbtn_set.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbbtn_set.Name = "tsbbtn_set";
-            this.tsbbtn_set.Size = new System.Drawing.Size(76, 22);
-            this.tsbbtn_set.Text = "保存格式";
-            this.tsbbtn_set.Click += new System.EventHandler(this.tsbbtn_set_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = global::Youli_Data_Share.Properties.Resources.best_terraria_48px1;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(76, 22);
-            this.toolStripButton1.Text = "权限设置";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator3
             // 
@@ -345,89 +221,6 @@
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.Image = global::Youli_Data_Share.Properties.Resources.表格设置;
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(76, 22);
-            this.toolStripButton12.Text = "生产报表";
-            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
-            // 
-            // toolStripDropDownButton2
-            // 
-            this.toolStripDropDownButton2.BackColor = System.Drawing.Color.Aqua;
-            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.业务ToolStripMenuItem,
-            this.高超填写区域ToolStripMenuItem,
-            this.王庆青填写区域ToolStripMenuItem,
-            this.qC填写区域ToolStripMenuItem,
-            this.喷油丝印填写区域ToolStripMenuItem,
-            this.胡镜填写区域ToolStripMenuItem,
-            this.陈荣填写区域ToolStripMenuItem,
-            this.问题汇总区域ToolStripMenuItem});
-            this.toolStripDropDownButton2.Image = global::Youli_Data_Share.Properties.Resources.cogwheel_733px_1224810_easyicon_net;
-            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(112, 22);
-            this.toolStripDropDownButton2.Text = "填写区域划分";
-            // 
-            // 业务ToolStripMenuItem
-            // 
-            this.业务ToolStripMenuItem.BackColor = System.Drawing.Color.Yellow;
-            this.业务ToolStripMenuItem.Name = "业务ToolStripMenuItem";
-            this.业务ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.业务ToolStripMenuItem.Text = "业务填写区域";
-            // 
-            // 高超填写区域ToolStripMenuItem
-            // 
-            this.高超填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.高超填写区域ToolStripMenuItem.Name = "高超填写区域ToolStripMenuItem";
-            this.高超填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.高超填写区域ToolStripMenuItem.Text = "高超填写区域";
-            // 
-            // 王庆青填写区域ToolStripMenuItem
-            // 
-            this.王庆青填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.Aqua;
-            this.王庆青填写区域ToolStripMenuItem.Name = "王庆青填写区域ToolStripMenuItem";
-            this.王庆青填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.王庆青填写区域ToolStripMenuItem.Text = "王庆青填写区域";
-            // 
-            // qC填写区域ToolStripMenuItem
-            // 
-            this.qC填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.qC填写区域ToolStripMenuItem.Name = "qC填写区域ToolStripMenuItem";
-            this.qC填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.qC填写区域ToolStripMenuItem.Text = "QC填写区域";
-            // 
-            // 喷油丝印填写区域ToolStripMenuItem
-            // 
-            this.喷油丝印填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.喷油丝印填写区域ToolStripMenuItem.Name = "喷油丝印填写区域ToolStripMenuItem";
-            this.喷油丝印填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.喷油丝印填写区域ToolStripMenuItem.Text = "喷油丝印填写区域";
-            // 
-            // 胡镜填写区域ToolStripMenuItem
-            // 
-            this.胡镜填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.SkyBlue;
-            this.胡镜填写区域ToolStripMenuItem.Name = "胡镜填写区域ToolStripMenuItem";
-            this.胡镜填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.胡镜填写区域ToolStripMenuItem.Text = "胡镜填写区域";
-            // 
-            // 陈荣填写区域ToolStripMenuItem
-            // 
-            this.陈荣填写区域ToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.陈荣填写区域ToolStripMenuItem.Name = "陈荣填写区域ToolStripMenuItem";
-            this.陈荣填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.陈荣填写区域ToolStripMenuItem.Text = "陈荣填写区域";
-            // 
-            // 问题汇总区域ToolStripMenuItem
-            // 
-            this.问题汇总区域ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.问题汇总区域ToolStripMenuItem.Name = "问题汇总区域ToolStripMenuItem";
-            this.问题汇总区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.问题汇总区域ToolStripMenuItem.Text = "问题汇总区域";
             // 
             // youli_dateDataSet1
             // 
@@ -529,6 +322,28 @@
             this.dgvWorkFlow.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWorkFlow_CellEndEdit);
             this.dgvWorkFlow.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvWorkFlow_CellMouseDown);
             this.dgvWorkFlow.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvWorkFlow_RowPostPaint);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.展开数据ToolStripMenuItem,
+            this.toolStripMenuItem4});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 48);
+            this.contextMenuStrip1.Text = "~~~~(>_<)~~~~";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(1401, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "提交";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Column1
             // 
@@ -755,7 +570,7 @@
             // Column34
             // 
             this.Column34.DataPropertyName = "flo_pic";
-            this.Column34.HeaderText = "截屏[34]";
+            this.Column34.HeaderText = "工艺文件确认";
             this.Column34.Name = "Column34";
             this.Column34.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column34.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -763,9 +578,9 @@
             // Column35
             // 
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.NullValue = "截屏";
+            dataGridViewCellStyle7.NullValue = "BOM材料状态分析";
             this.Column35.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column35.HeaderText = "Bom图片[35]";
+            this.Column35.HeaderText = "BOM材料状态分析";
             this.Column35.Name = "Column35";
             this.Column35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -910,15 +725,6 @@
             this.Column54.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column54.TrueValue = "Y";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.展开数据ToolStripMenuItem,
-            this.toolStripMenuItem4});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 48);
-            this.contextMenuStrip1.Text = "~~~~(>_<)~~~~";
-            // 
             // 展开数据ToolStripMenuItem
             // 
             this.展开数据ToolStripMenuItem.Image = global::Youli_Data_Share.Properties.Resources.icons8_to_do_16;
@@ -934,18 +740,212 @@
             this.toolStripMenuItem4.Size = new System.Drawing.Size(126, 22);
             this.toolStripMenuItem4.Text = "(*^__^*) ";
             // 
-            // button1
+            // tsbtn_search
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(1401, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "提交";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.tsbtn_search.Image = global::Youli_Data_Share.Properties.Resources.icons8_search_32;
+            this.tsbtn_search.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtn_search.Name = "tsbtn_search";
+            this.tsbtn_search.Size = new System.Drawing.Size(52, 22);
+            this.tsbtn_search.Text = "查找";
+            this.tsbtn_search.Click += new System.EventHandler(this.tsbtn_search_Click);
+            // 
+            // tsbbtn_order
+            // 
+            this.tsbbtn_order.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.已结单ToolStripMenuItem,
+            this.未结单ToolStripMenuItem});
+            this.tsbbtn_order.Image = global::Youli_Data_Share.Properties.Resources.icons8_hand_cursor_32;
+            this.tsbbtn_order.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbbtn_order.Name = "tsbbtn_order";
+            this.tsbbtn_order.Size = new System.Drawing.Size(85, 22);
+            this.tsbbtn_order.Text = "单据筛选";
+            // 
+            // 已结单ToolStripMenuItem
+            // 
+            this.已结单ToolStripMenuItem.Name = "已结单ToolStripMenuItem";
+            this.已结单ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.已结单ToolStripMenuItem.Text = "已结单";
+            this.已结单ToolStripMenuItem.Click += new System.EventHandler(this.已结单ToolStripMenuItem_Click);
+            // 
+            // 未结单ToolStripMenuItem
+            // 
+            this.未结单ToolStripMenuItem.Name = "未结单ToolStripMenuItem";
+            this.未结单ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.未结单ToolStripMenuItem.Text = "未结单";
+            this.未结单ToolStripMenuItem.Click += new System.EventHandler(this.未结单ToolStripMenuItem_Click);
+            // 
+            // toolStripButton11
+            // 
+            this.toolStripButton11.Image = global::Youli_Data_Share.Properties.Resources.icons8_plus_32;
+            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton11.Name = "toolStripButton11";
+            this.toolStripButton11.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton11.Text = "添加";
+            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
+            // 
+            // tsbbtn_delete
+            // 
+            this.tsbbtn_delete.Image = global::Youli_Data_Share.Properties.Resources.icons8_remove_32;
+            this.tsbbtn_delete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbbtn_delete.Name = "tsbbtn_delete";
+            this.tsbbtn_delete.Size = new System.Drawing.Size(52, 22);
+            this.tsbbtn_delete.Text = "删单";
+            this.tsbbtn_delete.Click += new System.EventHandler(this.tsbbtn_delete_Click);
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.Image = global::Youli_Data_Share.Properties.Resources.icons8_save_32;
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton10.Text = "保存";
+            this.toolStripButton10.Visible = false;
+            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
+            // 
+            // tsbbtn_submit
+            // 
+            this.tsbbtn_submit.Image = global::Youli_Data_Share.Properties.Resources.icons8_ok_32;
+            this.tsbbtn_submit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbbtn_submit.Name = "tsbbtn_submit";
+            this.tsbbtn_submit.Size = new System.Drawing.Size(52, 22);
+            this.tsbbtn_submit.Text = "提交";
+            this.tsbbtn_submit.Visible = false;
+            this.tsbbtn_submit.Click += new System.EventHandler(this.tsbbtn_submit_Click);
+            // 
+            // tsbbtn_material
+            // 
+            this.tsbbtn_material.Image = global::Youli_Data_Share.Properties.Resources.brand_brands_excel_logo_16px_1212964_easyicon_net;
+            this.tsbbtn_material.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbbtn_material.Name = "tsbbtn_material";
+            this.tsbbtn_material.Size = new System.Drawing.Size(105, 22);
+            this.tsbbtn_material.Text = "缺料/生产计划";
+            this.tsbbtn_material.Click += new System.EventHandler(this.tsbbtn_material_Click);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.toolStripDropDownButton1.Image = global::Youli_Data_Share.Properties.Resources.tune_96px;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(85, 22);
+            this.toolStripDropDownButton1.Text = "页面伸缩";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.toolStripMenuItem1.Text = "订单信息页面拉开";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(172, 22);
+            this.toolStripMenuItem2.Text = "订单信息页面收缩";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // tsbbtn_set
+            // 
+            this.tsbbtn_set.Image = global::Youli_Data_Share.Properties.Resources.icons8_job_32;
+            this.tsbbtn_set.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbbtn_set.Name = "tsbbtn_set";
+            this.tsbbtn_set.Size = new System.Drawing.Size(76, 22);
+            this.tsbbtn_set.Text = "保存格式";
+            this.tsbbtn_set.Click += new System.EventHandler(this.tsbbtn_set_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::Youli_Data_Share.Properties.Resources.best_terraria_48px1;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButton1.Text = "权限设置";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.Image = global::Youli_Data_Share.Properties.Resources.表格设置;
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButton12.Text = "生产报表";
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
+            // 
+            // toolStripDropDownButton2
+            // 
+            this.toolStripDropDownButton2.BackColor = System.Drawing.Color.Aqua;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.业务ToolStripMenuItem,
+            this.高超填写区域ToolStripMenuItem,
+            this.王庆青填写区域ToolStripMenuItem,
+            this.qC填写区域ToolStripMenuItem,
+            this.喷油丝印填写区域ToolStripMenuItem,
+            this.胡镜填写区域ToolStripMenuItem,
+            this.陈荣填写区域ToolStripMenuItem,
+            this.问题汇总区域ToolStripMenuItem});
+            this.toolStripDropDownButton2.Image = global::Youli_Data_Share.Properties.Resources.cogwheel_733px_1224810_easyicon_net;
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(112, 22);
+            this.toolStripDropDownButton2.Text = "填写区域划分";
+            // 
+            // 业务ToolStripMenuItem
+            // 
+            this.业务ToolStripMenuItem.BackColor = System.Drawing.Color.Yellow;
+            this.业务ToolStripMenuItem.Name = "业务ToolStripMenuItem";
+            this.业务ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.业务ToolStripMenuItem.Text = "业务填写区域";
+            // 
+            // 高超填写区域ToolStripMenuItem
+            // 
+            this.高超填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.高超填写区域ToolStripMenuItem.Name = "高超填写区域ToolStripMenuItem";
+            this.高超填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.高超填写区域ToolStripMenuItem.Text = "高超填写区域";
+            // 
+            // 王庆青填写区域ToolStripMenuItem
+            // 
+            this.王庆青填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.Aqua;
+            this.王庆青填写区域ToolStripMenuItem.Name = "王庆青填写区域ToolStripMenuItem";
+            this.王庆青填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.王庆青填写区域ToolStripMenuItem.Text = "王庆青填写区域";
+            // 
+            // qC填写区域ToolStripMenuItem
+            // 
+            this.qC填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.qC填写区域ToolStripMenuItem.Name = "qC填写区域ToolStripMenuItem";
+            this.qC填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.qC填写区域ToolStripMenuItem.Text = "QC填写区域";
+            // 
+            // 喷油丝印填写区域ToolStripMenuItem
+            // 
+            this.喷油丝印填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.喷油丝印填写区域ToolStripMenuItem.Name = "喷油丝印填写区域ToolStripMenuItem";
+            this.喷油丝印填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.喷油丝印填写区域ToolStripMenuItem.Text = "喷油丝印填写区域";
+            // 
+            // 胡镜填写区域ToolStripMenuItem
+            // 
+            this.胡镜填写区域ToolStripMenuItem.BackColor = System.Drawing.Color.SkyBlue;
+            this.胡镜填写区域ToolStripMenuItem.Name = "胡镜填写区域ToolStripMenuItem";
+            this.胡镜填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.胡镜填写区域ToolStripMenuItem.Text = "胡镜填写区域";
+            // 
+            // 陈荣填写区域ToolStripMenuItem
+            // 
+            this.陈荣填写区域ToolStripMenuItem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.陈荣填写区域ToolStripMenuItem.Name = "陈荣填写区域ToolStripMenuItem";
+            this.陈荣填写区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.陈荣填写区域ToolStripMenuItem.Text = "陈荣填写区域";
+            // 
+            // 问题汇总区域ToolStripMenuItem
+            // 
+            this.问题汇总区域ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.问题汇总区域ToolStripMenuItem.Name = "问题汇总区域ToolStripMenuItem";
+            this.问题汇总区域ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.问题汇总区域ToolStripMenuItem.Text = "问题汇总区域";
             // 
             // orderProcess
             // 
@@ -1000,6 +1000,20 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripSplitButton toolStripDropDownButton2;
+        private System.Windows.Forms.ToolStripMenuItem 业务ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 高超填写区域ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 王庆青填写区域ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem qC填写区域ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 喷油丝印填写区域ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 胡镜填写区域ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 陈荣填写区域ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 问题汇总区域ToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 展开数据ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -1054,19 +1068,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column52;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column53;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column54;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
-        private System.Windows.Forms.ToolStripButton toolStripButton12;
-        private System.Windows.Forms.ToolStripSplitButton toolStripDropDownButton2;
-        private System.Windows.Forms.ToolStripMenuItem 业务ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 高超填写区域ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 王庆青填写区域ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem qC填写区域ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 喷油丝印填写区域ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 胡镜填写区域ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 陈荣填写区域ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 问题汇总区域ToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 展开数据ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     }
 }

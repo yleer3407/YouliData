@@ -21,6 +21,7 @@ namespace Youli_Data_Share
 {
     public partial class orderProcess : Form
     {
+        public static string pdsNum = "";//传递当前行产品编码
         DataTable dt_flow;//定于变量
         SqlConnection conn_flow;
         public orderProcess()
@@ -1119,6 +1120,24 @@ namespace Youli_Data_Share
                     catch
                     {
                         MessageBox.Show("操作错误：1.还未查询数据就点击图片。");
+                        return;
+                    }
+
+                }
+                else if (cell.FormattedValue.ToString() == "BOM材料状态分析")
+                {
+
+                    try
+                    {
+                        int ind = dgvWorkFlow.CurrentRow.Index;
+                        string ordNum = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
+                        pdsNum = dgvWorkFlow.Rows[ind].Cells["Column8"].Value.ToString();
+                        orderProBomData frmOrderBom = new orderProBomData(ordNum);
+                        frmOrderBom.Show();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("操作错误：该行未找到产品编号！");
                         return;
                     }
 

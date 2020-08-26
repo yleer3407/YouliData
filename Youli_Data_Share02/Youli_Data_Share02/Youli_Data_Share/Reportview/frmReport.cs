@@ -15,7 +15,7 @@ namespace Youli_Data_Share.Reportview
         string mretext;
         public frmReport()
         {
-            InitializeComponent();
+           // InitializeComponent();
         }
         public frmReport(string retext)
         {
