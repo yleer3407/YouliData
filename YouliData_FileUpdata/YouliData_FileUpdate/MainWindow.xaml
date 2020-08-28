@@ -1,0 +1,16 @@
+﻿<Window x:Class="YouliData_FileUpdate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YouliData_FileUpdate"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="143,62,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="354"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="143,24,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="产品编号" HorizontalAlignment="Left" Margin="66,24,0,0" VerticalAlignment="Top" Width="59"/>
+        <Label Content="产品编号" HorizontalAlignment="Left" Margin="66,62,0,0" VerticalAlignment="Top" Width="59"/>
+
+    </Grid>
+</Window>

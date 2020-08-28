@@ -1,0 +1,15 @@
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\bin\Debug\YouliData_FileUpdate.exe.config
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\bin\Debug\YouliData_FileUpdate.exe
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\bin\Debug\YouliData_FileUpdate.pdb
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\obj\Debug\YouliData_FileUpdate.csprojAssemblyReference.cache
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\obj\Debug\MainWindow.g.cs
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\obj\Debug\App.g.cs
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\obj\Debug\YouliData_FileUpdate_MarkupCompile.cache
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\obj\Debug\YouliData_FileUpdate_MarkupCompile.lref
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\obj\Debug\MainWindow.baml
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\obj\Debug\YouliData_FileUpdate.g.resources
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\obj\Debug\YouliData_FileUpdate.Properties.Resources.resources
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\obj\Debug\YouliData_FileUpdate.csproj.GenerateResource.cache
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\obj\Debug\YouliData_FileUpdate.csproj.CoreCompileInputs.cache
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\obj\Debug\YouliData_FileUpdate.exe
+F:\desket\VSProject\YouliData\YouliData_FileUpdata\YouliData_FileUpdate\obj\Debug\YouliData_FileUpdate.pdb

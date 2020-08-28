@@ -53,7 +53,6 @@ namespace Youli_Data_Share
                         }
                        // MessageBox.Show("登录成功！");
                         orderProcess frm_ord = new orderProcess(this.txtName.Text.Trim());
-                        this.Hide();
                         frm_ord.Show();
                         conn.Close();
                         this.Close();

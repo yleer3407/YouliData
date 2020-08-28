@@ -47,7 +47,14 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            #region 程序多次打开检测
+            if (Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Length > 1)
+            {
+                MessageBox.Show("程序已打开，无法多个打开！");
+                this.Close();
+            }
+            
+            #endregion
             string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
             #region 创建INI文件
             // File.Create(filePath);
@@ -658,8 +665,8 @@ namespace Youli_Data_Share
 
             #region login
             Login login = new Login();
-            login.ShowDialog();
-            this.WindowState = FormWindowState.Minimized;
+            login.Show();
+            //this.WindowState = FormWindowState.Minimized;
             #endregion
         }
         /// <summary>

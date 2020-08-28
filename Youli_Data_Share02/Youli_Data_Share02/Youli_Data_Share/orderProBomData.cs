@@ -73,43 +73,85 @@ namespace Youli_Data_Share
         private void proNum()
         {
             //1.读取BOM清单
-            string sql2 = @"SELECT
-                          [pds_id]
-                          FROM [eric_YL].[dbo].[BOM]
-                          WHERE bom_id = '" + orderProcess.pdsNum + "'";//WHERE ord_m_id = '%" + OrdNum + "%'
+            string sql2 = string.Format(@"SELECT  [bom_id]
+                          ,[sortid]
+                          ,[pds_id]
+                          ,[pds_name]
+                          ,[pds_spec]
+                          ,[pur_mak]
+                          ,[mak_id]
+                          ,[stk_id]
+                          ,[qty]
+                          ,[base]
+                          ,[lost]
+                          ,[uni_id]
+                      FROM [eric_YL].[dbo].[BOM]
+                      WHERE bom_id = '{0}'
+                      UNION
+                      SELECT  [bom_id]
+                          ,[sortid]
+                          ,[pds_id]
+                          ,[pds_name]
+                          ,[pds_spec]
+                          ,[pur_mak]
+                          ,[mak_id]
+                          ,[stk_id]
+                          ,[qty]
+                          ,[base]
+                          ,[lost]
+                          ,[uni_id]
+                      FROM [eric_YL].[dbo].[BOM]
+                      WHERE bom_id = (SELECT TOP 1 [pds_id] FROM [eric_YL].[dbo].[BOM] WHERE bom_id = '{0}' AND pur_mak=1)",orderProcess.pdsNum.ToString());//WHERE ord_m_id = '%" + OrdNum + "%'
             SqlDataAdapter da2 = new SqlDataAdapter(sql2, conn1);
             DataSet ds2 = new DataSet();
             da2.Fill(ds2, "BOM1");
             DataTable dt2 = ds2.Tables["BOM1"];
-            //此处正常！
-            MessageBox.Show(orderProcess.pdsNum);
+            ////此处正常！
+            ////MessageBox.Show(orderProcess.pdsNum);
 
 
-            //2.先根据产品编号找到BOM明细 1级 给到DataTable中转
-            //3.找到bom二级明细 添加到dt2中
+            ////2.先根据产品编号找到BOM明细 1级 给到DataTable中转
 
-            string sql3 = @"SELECT
-                          [pds_id]
-                           FROM [eric_YL].[dbo].[BOM]
-                           WHERE bom_id = '" + orderProcess.pdsNum + "' AND pur_mak = '1'";
-            SqlCommand cmd1 = new SqlCommand(sql3, conn1);
-            if (conn1.State==System.Data.ConnectionState.Closed)
-            {
-                conn1.Open();
-            }
-                object rdrValue = cmd1.ExecuteScalar();
+            ////3.找到bom二级明细 添加到dt2中
 
-            string sql4 = @"SELECT
-                          [pds_id]
-                          FROM [eric_YL].[dbo].[BOM]
-                          WHERE bom_id = '" + rdrValue.ToString() + "'";
-            SqlDataAdapter da3 = new SqlDataAdapter(sql4, conn1);
-            DataSet ds3 = new DataSet();
-            da3.Fill(ds3, "BOM2");
-            DataTable dt3 = ds3.Tables["BOM2"];
+            //string sql3 = @"SELECT
+            //              [pds_id]
+            //               FROM [eric_YL].[dbo].[BOM]
+            //               WHERE bom_id = '" + orderProcess.pdsNum + "' AND pur_mak = '1'";
+            //SqlCommand cmd1 = new SqlCommand(sql3, conn1);
+            //if (conn1.State==System.Data.ConnectionState.Closed)
+            //{
+            //    conn1.Open();
+            //}
+            //SqlDataReader dr = cmd1.ExecuteReader();
+            //if (dr.Read())
+            //{
+            //    SqlCommand cmd2 = new SqlCommand(sql3, conn1);
+            //    object rdrValue = cmd2.ExecuteScalar();
+            //    string sql4 = @"SELECT
+            //              [pds_id] 产品编号
+            //             ,[pds_name] 产品名称
+            //             ,[pds_spec]  备注
+            //              ,[stk_id]  库位
+            //              ,[qty]    标准用量
+            //              ,[base]   子件基量
+            //              ,[lost]   子件损耗
+            //              ,[uni_id]
+            //              FROM [eric_YL].[dbo].[BOM]
+            //              WHERE bom_id = '" + rdrValue.ToString() + "'";
+            //    SqlDataAdapter da3 = new SqlDataAdapter(sql4, conn1);
+            //    DataSet ds3 = new DataSet();
+            //    da3.Fill(ds3, "BOM2");
+            //    DataTable dt3 = ds3.Tables["BOM2"];
+            //    dt2.Merge(dt3); //dt2和dt3合并
+            //}
+            dataGridView2.AutoGenerateColumns = false;
+            dataGridView2.DataSource = dt2.DefaultView;
 
 
-            dt2.Merge(dt3);
+
+
+
 
             //DataRow row = dt2.NewRow();
             ////for(int i=0;i<3; i++)
@@ -129,7 +171,7 @@ namespace Youli_Data_Share
             //    row["pds_id"] = "测试1";
             //    dt2.Rows.Add(row);
             //}
-            dataGridView2.DataSource = dt2;
+
             ////dt2 添加行
             //DataRow row = dt2.NewRow();
             //for (int i = 0; i < dt3.Rows.Count; i++)

@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.73data 2020.8.25&gt;&gt;update:
+    <value>版本1.0.0.74data 2020.8.28&gt;&gt;update:
+ 1.订单流程里bom截屏  转化为  读取ERP数据 实时展示
+---------------------------------------------------------
+版本1.0.0.73data 2020.8.25&gt;&gt;update:
  1.ERP基础资料升级 添加 库存表（实时数据）
 ---------------------------------------------------------
 版本1.0.0.72data 2020.8.20&gt;&gt;update:
