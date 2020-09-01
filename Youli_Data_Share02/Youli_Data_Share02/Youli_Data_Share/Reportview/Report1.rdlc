@@ -639,6 +639,43 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="flo_box">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!flo_box.Value</Value>
+                              <Style>
+                                <FontSize>14pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>flo_box</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
               <Height>1.09389cm</Height>
               <TablixCells>
                 <TablixCell>
@@ -1208,6 +1245,7 @@
                           <TextRun>
                             <Value>电池：</Value>
                             <Style>
+                              <FontFamily>Arial Black</FontFamily>
                               <FontSize>14pt</FontSize>
                             </Style>
                           </TextRun>
@@ -1314,7 +1352,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>装箱</Value>
+                            <Value>装箱:</Value>
                             <Style>
                               <FontSize>14pt</FontSize>
                             </Style>
@@ -1324,6 +1362,42 @@
                       </Paragraph>
                     </Paragraphs>
                     <rd:DefaultName>Textbox34</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <KeepWithGroup>Before</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>4.98734cm</Size>
+                <CellContents>
+                  <Textbox Name="Textbox7">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>箱唛：</Value>
+                            <Style>
+                              <FontSize>14pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox7</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
@@ -1416,7 +1490,7 @@
         <DataSetName>DataReport</DataSetName>
         <Top>4.5303cm</Top>
         <Left>1.2398cm</Left>
-        <Height>12.08791cm</Height>
+        <Height>12.68791cm</Height>
         <Width>18.16328cm</Width>
         <Style>
           <Border>
@@ -1609,6 +1683,10 @@
         </Field>
         <Field Name="flo_record">
           <DataField>flo_record</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="flo_box">
+          <DataField>flo_box</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

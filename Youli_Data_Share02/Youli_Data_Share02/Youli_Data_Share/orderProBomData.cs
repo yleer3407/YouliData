@@ -47,10 +47,10 @@ namespace Youli_Data_Share
             string sql1 = @"SELECT 
                           [pds_id] 产品编号
                           ,[pds_name] 产品名称
-                          ,[qty]    
-                          ,[cal_qty]
-                          ,[can_qty]
-                          ,[stk_qty]
+                          ,[qty] 采购数量
+                          ,[cal_qty] 生产用量
+                          ,[can_qty] 当时可用数量
+                          ,[stk_qty] 当时库存数量
                           ,[bom_qty] 标准用量
                           ,[bom_base] 子件基量
                           ,[bom_lost] 子件损耗
@@ -62,6 +62,7 @@ namespace Youli_Data_Share
             DataTable dt1 = ds1.Tables["NED"];
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = dt1;
+            //conn1.Close();
             //conn1.Close();
             #endregion
             #region 实际bom材料分析
@@ -103,6 +104,7 @@ namespace Youli_Data_Share
                       FROM [eric_YL].[dbo].[BOM]
                       WHERE bom_id = (SELECT TOP 1 [pds_id] FROM [eric_YL].[dbo].[BOM] WHERE bom_id = '{0}' AND pur_mak=1)",orderProcess.pdsNum.ToString());//WHERE ord_m_id = '%" + OrdNum + "%'
             SqlDataAdapter da2 = new SqlDataAdapter(sql2, conn1);
+            //conn1.Open();
             DataSet ds2 = new DataSet();
             da2.Fill(ds2, "BOM1");
             DataTable dt2 = ds2.Tables["BOM1"];
@@ -147,7 +149,7 @@ namespace Youli_Data_Share
             //}
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.DataSource = dt2.DefaultView;
-
+            conn1.Close();
 
 
 

@@ -55,6 +55,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +78,11 @@
             this.flowLayoutPanel1.Controls.Add(this.button10);
             this.flowLayoutPanel1.Controls.Add(this.button13);
             this.flowLayoutPanel1.Controls.Add(this.button14);
+            this.flowLayoutPanel1.Controls.Add(this.button15);
+            this.flowLayoutPanel1.Controls.Add(this.button16);
+            this.flowLayoutPanel1.Controls.Add(this.button17);
+            this.flowLayoutPanel1.Controls.Add(this.button18);
+            this.flowLayoutPanel1.Controls.Add(this.button19);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 226);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(8);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -223,6 +233,7 @@
             this.button10.Text = "订单BOM确认";
             this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Visible = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button13
@@ -266,11 +277,12 @@
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = global::Youli_Data_Share.Properties.Resources.viral_16px_1147362_easyicon_net;
-            this.button8.Location = new System.Drawing.Point(815, 12);
+            this.button8.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(787, 0);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(21, 21);
+            this.button8.Size = new System.Drawing.Size(36, 36);
             this.button8.TabIndex = 6;
+            this.button8.Text = "Set";
             this.toolTip1.SetToolTip(this.button8, "开发者调试");
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -281,11 +293,13 @@
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = global::Youli_Data_Share.Properties.Resources.cancel_close_delete_reject_remove_16px_1225515_easyicon_net;
-            this.button7.Location = new System.Drawing.Point(896, 12);
+            this.button7.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(895, 1);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(21, 21);
+            this.button7.Size = new System.Drawing.Size(36, 36);
             this.button7.TabIndex = 5;
+            this.button7.Text = "×";
             this.toolTip1.SetToolTip(this.button7, "关闭");
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -294,11 +308,12 @@
             // 
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::Youli_Data_Share.Properties.Resources.close_delete_minus_negative_remove_16px_1225442_easyicon_net;
-            this.button6.Location = new System.Drawing.Point(842, 12);
+            this.button6.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(823, 0);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(21, 21);
+            this.button6.Size = new System.Drawing.Size(36, 36);
             this.button6.TabIndex = 4;
+            this.button6.Text = "—";
             this.toolTip1.SetToolTip(this.button6, "最小化窗口");
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -316,11 +331,13 @@
             // 
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Image = global::Youli_Data_Share.Properties.Resources.why_help_16px_1191646_easyicon_net;
-            this.button9.Location = new System.Drawing.Point(869, 12);
+            this.button9.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(859, 0);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(21, 21);
+            this.button9.Size = new System.Drawing.Size(36, 36);
             this.button9.TabIndex = 8;
+            this.button9.Text = "?";
             this.toolTip1.SetToolTip(this.button9, "软件详细");
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
@@ -342,7 +359,7 @@
             this.linkLabel1.Size = new System.Drawing.Size(143, 12);
             this.linkLabel1.TabIndex = 11;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "软件版本号：YL-1.0.0.74";
+            this.linkLabel1.Text = "软件版本号：YL-1.0.0.75";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // toolTip2
@@ -363,9 +380,8 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 16);
+            this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 12;
-            this.label2.Text = "优力电子||内部软件";
             // 
             // pictureBox1
             // 
@@ -400,6 +416,91 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "label5";
             // 
+            // button15
+            // 
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button15.ForeColor = System.Drawing.Color.White;
+            this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
+            this.button15.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button15.Location = new System.Drawing.Point(48, 401);
+            this.button15.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(126, 152);
+            this.button15.TabIndex = 12;
+            this.button15.Text = "未开放";
+            this.button15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button16.ForeColor = System.Drawing.Color.White;
+            this.button16.Image = ((System.Drawing.Image)(resources.GetObject("button16.Image")));
+            this.button16.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button16.Location = new System.Drawing.Point(217, 401);
+            this.button16.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(126, 152);
+            this.button16.TabIndex = 13;
+            this.button16.Text = "未开放";
+            this.button16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.FlatAppearance.BorderSize = 0;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button17.ForeColor = System.Drawing.Color.White;
+            this.button17.Image = ((System.Drawing.Image)(resources.GetObject("button17.Image")));
+            this.button17.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button17.Location = new System.Drawing.Point(386, 401);
+            this.button17.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(126, 152);
+            this.button17.TabIndex = 14;
+            this.button17.Text = "未开放";
+            this.button17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            this.button18.FlatAppearance.BorderSize = 0;
+            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button18.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button18.ForeColor = System.Drawing.Color.White;
+            this.button18.Image = ((System.Drawing.Image)(resources.GetObject("button18.Image")));
+            this.button18.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button18.Location = new System.Drawing.Point(555, 401);
+            this.button18.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(126, 152);
+            this.button18.TabIndex = 15;
+            this.button18.Text = "未开放";
+            this.button18.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // button19
+            // 
+            this.button19.FlatAppearance.BorderSize = 0;
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button19.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button19.ForeColor = System.Drawing.Color.White;
+            this.button19.Image = ((System.Drawing.Image)(resources.GetObject("button19.Image")));
+            this.button19.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button19.Location = new System.Drawing.Point(724, 401);
+            this.button19.Margin = new System.Windows.Forms.Padding(40, 3, 3, 40);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(126, 152);
+            this.button19.TabIndex = 16;
+            this.button19.Text = "未开放";
+            this.button19.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button19.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -422,6 +523,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -468,6 +570,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button19;
     }
 }
 

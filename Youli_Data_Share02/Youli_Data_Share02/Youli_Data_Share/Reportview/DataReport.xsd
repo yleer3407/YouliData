@@ -12,7 +12,7 @@
   <xs:element name="DataReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataReport" msprop:Generator_UserDSName="DataReport">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="flo_client" msprop:Generator_ColumnVarNameInTable="columnflo_client" msprop:Generator_ColumnPropNameInRow="flo_client" msprop:Generator_ColumnPropNameInTable="flo_clientColumn" msprop:Generator_UserColumnName="flo_client" type="xs:string" minOccurs="0" />
@@ -33,6 +33,7 @@
               <xs:element name="flo_encase" msprop:Generator_ColumnVarNameInTable="columnflo_encase" msprop:Generator_ColumnPropNameInRow="flo_encase" msprop:Generator_ColumnPropNameInTable="flo_encaseColumn" msprop:Generator_UserColumnName="flo_encase" type="xs:string" minOccurs="0" />
               <xs:element name="flo_ask" msprop:Generator_ColumnVarNameInTable="columnflo_ask" msprop:Generator_ColumnPropNameInRow="flo_ask" msprop:Generator_ColumnPropNameInTable="flo_askColumn" msprop:Generator_UserColumnName="flo_ask" type="xs:string" minOccurs="0" />
               <xs:element name="flo_record" msprop:Generator_ColumnVarNameInTable="columnflo_record" msprop:Generator_ColumnPropNameInRow="flo_record" msprop:Generator_ColumnPropNameInTable="flo_recordColumn" msprop:Generator_UserColumnName="flo_record" type="xs:string" minOccurs="0" />
+              <xs:element name="flo_box" msprop:Generator_ColumnVarNameInTable="columnflo_box" msprop:Generator_ColumnPropNameInRow="flo_box" msprop:Generator_ColumnPropNameInTable="flo_boxColumn" msprop:Generator_UserColumnName="flo_box" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

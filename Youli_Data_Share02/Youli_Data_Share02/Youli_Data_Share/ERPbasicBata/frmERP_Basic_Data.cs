@@ -60,22 +60,23 @@ namespace Youli_Data_Share.ERPbasicBata
             try
             {
                 string sql1 = @"SELECT  [bom_id] 产品编号
-                              ,[sortid] 序号
-                              ,[pds_id] 材料编号
-                              ,[pds_name] 材料名称
-                              ,[pds_spec] 规格型号
-                              ,[pur_mak] 购制编号
-                              ,[mak_id] 厂家机组
-                              ,[stk_id] 库位编号
-                              ,[qty]    标准用量
-                              ,[base]   子件基量
-                              ,[lost]   子件损耗
-                              ,[uni_id] 单位
-                          FROM[eric_YL].[dbo].[BOM]
+                                      ,[Expr1] 产品名称
+                                      ,[Expr2] 产品规格型号
+                                      ,[sortid] 序号
+                                      ,[pds_id] 材料编号
+                                      ,[pds_name] 材料名称
+                                      ,[pds_spec] 材料规格型号
+                                      ,[pur_mak] 购制
+                                      ,[qty] 标准用量
+                                      ,[base] 子件基量
+                                      ,[lost] 子件损耗
+                          FROM[eric_YL].[dbo].[GCB_BEWBOM]
                            WHERE bom_id LIKE '%" + toolSearchTxt.Text.Trim() +
-                         "%'or pds_id LIKE '%" + toolSearchTxt.Text.Trim() +
+                         "%'or Expr1 LIKE '%" + toolSearchTxt.Text.Trim() +
                          "%'or pds_name LIKE '%" + toolSearchTxt.Text.Trim() +
-                         "%'or pds_spec LIKE '%" + toolSearchTxt.Text.Trim() + "%'";
+                         "%'or pds_spec LIKE '%" + toolSearchTxt.Text.Trim() +
+                         "%'or Expr2 LIKE '%" + toolSearchTxt.Text.Trim() +
+                         "%'or pds_id LIKE '%" + toolSearchTxt.Text.Trim() + "%'";
                 conn1 = new SqlConnection(scsb1.ToString());
                 SqlDataAdapter da1 = new SqlDataAdapter(sql1, conn1);
                 DataSet ds1 = new DataSet();
