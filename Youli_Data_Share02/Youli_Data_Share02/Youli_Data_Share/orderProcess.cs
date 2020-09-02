@@ -1073,18 +1073,54 @@ namespace Youli_Data_Share
                 {
                     //string currPath = Application.StartupPath;//获取当前文件夹路径
                     string subPath = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/";
+                    string subFilePath1 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/" + "/包材文件夹/";
+                    string subFilePath2 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/" + "/喷油丝印文件夹/";
+                    string subFilePath3 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/" + "/PCB板文件夹/";
+                    string subFilePath4 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/" + "/产品材料图片文件夹/";
                     // MessageBox.Show(subPath);
                     try
                     {
-                        if (false == System.IO.Directory.Exists(subPath))
+                        if (false == System.IO.Directory.Exists(subPath))//如果没有母路径 新建母路径 检测子路径
                         {
                             System.IO.Directory.CreateDirectory(subPath);
-                            System.Diagnostics.Process.Start(subPath);
+                            if (System.IO.Directory.Exists(subFilePath1) == false)
+                            {
+                                System.IO.Directory.CreateDirectory(subFilePath1);
+                            }
+                            if (System.IO.Directory.Exists(subFilePath2) == false)
+                            {
+                                System.IO.Directory.CreateDirectory(subFilePath2);
+                            }
+                            if (System.IO.Directory.Exists(subFilePath3) == false)
+                            {
+                                System.IO.Directory.CreateDirectory(subFilePath3);
+                            }
+                            if (System.IO.Directory.Exists(subFilePath4) == false)
+                            {
+                                System.IO.Directory.CreateDirectory(subFilePath4);
+                            }
+                            // System.Diagnostics.Process.Start(subPath);
                         }
-                        else
+                        else //如果有母路径 检测子路径 没有就创建
                         {
-                            System.Diagnostics.Process.Start(subPath);
+                            if (System.IO.Directory.Exists(subFilePath1) == false)
+                            {
+                                System.IO.Directory.CreateDirectory(subFilePath1);
+                            }
+                            if (System.IO.Directory.Exists(subFilePath2) == false)
+                            {
+                                System.IO.Directory.CreateDirectory(subFilePath2);
+                            }
+                            if (System.IO.Directory.Exists(subFilePath3) == false)
+                            {
+                                System.IO.Directory.CreateDirectory(subFilePath3);
+                            }
+                            if (System.IO.Directory.Exists(subFilePath4) == false)
+                            {
+                                System.IO.Directory.CreateDirectory(subFilePath4);
+                            }
                         }
+                        System.Diagnostics.Process.Start(subPath);
                     }
                     catch
                     {

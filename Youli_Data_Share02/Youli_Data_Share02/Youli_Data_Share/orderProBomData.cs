@@ -45,15 +45,16 @@ namespace Youli_Data_Share
             #region 订单排程表1
             //MessageBox.Show(OrdNum);
             string sql1 = @"SELECT 
-                          [pds_id] 产品编号
-                          ,[pds_name] 产品名称
-                          ,[qty] 采购数量
-                          ,[cal_qty] 生产用量
-                          ,[can_qty] 当时可用数量
-                          ,[stk_qty] 当时库存数量
-                          ,[bom_qty] 标准用量
-                          ,[bom_base] 子件基量
-                          ,[bom_lost] 子件损耗
+                          [pds_id] 
+                          ,[pds_name] 
+                          ,[degree]  
+                          ,[qty]  
+                          ,[cal_qty]  
+                          ,[can_qty]  
+                          ,[stk_qty]  
+                          ,[bom_qty]  
+                          ,[bom_base] 
+                          ,[bom_lost] 
                       FROM [eric_YL].[dbo].[NED_D]
                          WHERE ord_m_id = '" + OrdNum + "'";//WHERE ord_m_id = '%" + OrdNum + "%'
             SqlDataAdapter da1 = new SqlDataAdapter(sql1, conn1);
@@ -62,6 +63,19 @@ namespace Youli_Data_Share
             DataTable dt1 = ds1.Tables["NED"];
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = dt1;
+            #region 颜色划分
+                for(int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (this.dataGridView1.Rows[i].Cells["Column11"].Value.ToString() == "0")
+                {
+                    this.dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.DarkTurquoise;
+                }
+                if (this.dataGridView1.Rows[i].Cells["Column11"].Value.ToString() == "2")
+                {
+                    this.dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.YellowGreen;
+                }
+            }
+            #endregion
             //conn1.Close();
             //conn1.Close();
             #endregion
@@ -149,6 +163,15 @@ namespace Youli_Data_Share
             //}
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.DataSource = dt2.DefaultView;
+            #region 表2 颜色区分
+             for(int j=0 ; j < dataGridView2.RowCount; j++)
+            {
+                if (this.dataGridView2.Rows[j].Cells["Column19"].Value.ToString().Length == 7)
+                {
+                    this.dataGridView2.Rows[j].DefaultCellStyle.BackColor = Color.YellowGreen;
+                }
+            }
+            #endregion
             conn1.Close();
 
 
