@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.75data 2020.9.01&gt;&gt;update:
+    <value>版本1.0.0.76 data 2020.9.03&gt;&gt;update:
+1.添加BOM物料状态分析
+---------------------------------------------------------
+版本1.0.0.75data 2020.9.01&gt;&gt;update:
  1.基础资料 - Bom表引用视图
 2.订单流程 - 上线日期
 3.工艺文件 新增4个文件夹 包材文件夹/喷油丝印文件夹/pcb板文件夹/产品材料文件夹

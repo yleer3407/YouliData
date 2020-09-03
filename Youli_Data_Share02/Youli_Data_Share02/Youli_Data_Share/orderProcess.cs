@@ -22,6 +22,8 @@ namespace Youli_Data_Share
     public partial class orderProcess : Form
     {
         public static string pdsNum = "";//传递当前行产品编码
+        public static int orderIntNum; //传递当前行产品数量
+
         DataTable dt_flow;//定于变量
         SqlConnection conn_flow;
         public orderProcess()
@@ -1162,12 +1164,13 @@ namespace Youli_Data_Share
                 }
                 else if (cell.FormattedValue.ToString() == "BOM材料状态分析")
                 {
-
+                    notifyIcon1.ShowBalloonTip(3000, "提示：", "数据加载计算中... \r\n...... \r\n...... \r\n请耐心等待！", ToolTipIcon.Warning);
                     try
                     {
                         int ind = dgvWorkFlow.CurrentRow.Index;
                         string ordNum = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
                         pdsNum = dgvWorkFlow.Rows[ind].Cells["Column8"].Value.ToString();
+                        orderIntNum = int.Parse(dgvWorkFlow.Rows[ind].Cells["Column28"].Value.ToString());
                         orderProBomData frmOrderBom = new orderProBomData(ordNum);
                         frmOrderBom.Show();
                     }

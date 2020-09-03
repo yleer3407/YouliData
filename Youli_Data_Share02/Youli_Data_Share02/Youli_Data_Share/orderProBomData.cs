@@ -42,6 +42,7 @@ namespace Youli_Data_Share
 
         private void orderProBomData_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(orderProcess.orderIntNum.ToString());//实现数量读取
             #region 订单排程表1
             //MessageBox.Show(OrdNum);
             string sql1 = @"SELECT 
@@ -80,9 +81,76 @@ namespace Youli_Data_Share
             //conn1.Close();
             #endregion
             #region 实际bom材料分析
-            proNum();
+           // proNum();
+           ProNumnn();
             conn1.Close();
             #endregion
+        }
+
+        private void ProNumnn()
+        {
+            string sql3 = string.Format(@"SELECT a.*,b.dfsl ,(qty*'{0}')/base as qtynum from
+                                [dbo].[GCB_BOM_ALLNUM] a left join [dbo].[GCB_LAST_DFSL] b
+                                on a.pds_id = b.pds_id
+                              WHERE bom_id = '{1}'
+                               UNION
+                                SELECT a.*,b.dfsl ,(qty*'{0}')/base as qtynum from
+                                [dbo].[GCB_BOM_ALLNUM] a left join [dbo].[GCB_LAST_DFSL] b
+                                on a.pds_id = b.pds_id
+                                WHERE bom_id = (SELECT TOP 1 [pds_id] FROM  [dbo].[GCB_BOM_ALLNUM] WHERE bom_id = '{1}' AND pur_mak = 1)", orderProcess.orderIntNum, orderProcess.pdsNum.ToString());
+            //string sql3 = @"SELECT a.*,b.dfsl from
+            //                    [dbo].[GCB_BOM_ALLNUM] a left join [dbo].[GCB_LAST_DFSL] b
+            //                    on a.pds_id = b.pds_id
+            //                  WHERE bom_id = '" + orderProcess.pdsNum.ToString()+"'";
+            SqlDataAdapter da3 = new SqlDataAdapter(sql3, conn1);
+                da3.SelectCommand.CommandTimeout = 400;
+                                               // conn1.Open();
+                                                DataSet ds3 = new DataSet();
+                                                da3.Fill(ds3, "BOM1");
+                                                DataTable dt3 = ds3.Tables["BOM1"];
+            dataGridView2.AutoGenerateColumns = false;
+            dataGridView2.DataSource = dt3.DefaultView;
+            #region 表2 颜色区分
+            //MessageBox.Show(int.Parse(this.dataGridView2.Rows[10].Cells["Column5"].Value.ToString()).ToString());
+            for(int z = 0; z < dataGridView2.RowCount; z++)//无数据填充 0
+            {
+                if (this.dataGridView2.Rows[z].Cells["Column5"].Value.ToString() == "" || this.dataGridView2.Rows[z].Cells["Column5"].Value.ToString() == null)
+                {
+                    this.dataGridView2.Rows[z].Cells["Column5"].Value = 0;
+                }
+                if (this.dataGridView2.Rows[z].Cells["Column8"].Value.ToString() == "" || this.dataGridView2.Rows[z].Cells["Column8"].Value.ToString() == null)
+                {
+                    this.dataGridView2.Rows[z].Cells["Column8"].Value = 0;
+                }
+            }
+
+            for ( int j = 0; j < dataGridView2.RowCount; j++)//颜色区分
+            {
+                if (this.dataGridView2.Rows[j].Cells["Column1"].Value.ToString().Length <=9)
+                {
+                    this.dataGridView2.Rows[j].Cells["Column2"].Style.BackColor= Color.YellowGreen;
+                }
+                if (double.Parse(this.dataGridView2.Rows[j].Cells["Column5"].Value.ToString()) > double.Parse(this.dataGridView2.Rows[j].Cells["Column8"].Value.ToString()))
+                {
+                    this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    if (double.Parse(this.dataGridView2.Rows[j].Cells["Column5"].Value.ToString()) < double.Parse(this.dataGridView2.Rows[j].Cells["Column19"].Value.ToString()))
+                    {
+                        this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.LightSalmon;
+                    }
+                    else
+                    {
+                        this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.LightYellow;
+                    }
+                }
+                
+
+
+            }
+            #endregion
+            conn1.Close();
         }
 
         private void proNum()
