@@ -25,10 +25,10 @@ namespace Youli_Data_Share.ERPbasicBata
         {
             InitializeComponent();
             scsb1 = new SqlConnectionStringBuilder();
-            scsb1.DataSource = "akt-server";
+            scsb1.DataSource = "192.168.1.104";
             scsb1.UserID = "sa";
-            scsb1.Password = "eisoft";
-            scsb1.InitialCatalog = "eric_YL";
+            scsb1.Password = "yelei193";
+            scsb1.InitialCatalog = "EPRcopy";
 
         }
 
@@ -70,7 +70,7 @@ namespace Youli_Data_Share.ERPbasicBata
                                       ,[qty] 标准用量
                                       ,[base] 子件基量
                                       ,[lost] 子件损耗
-                          FROM[eric_YL].[dbo].[GCB_BEWBOM]
+                          FROM [EPRcopy].[dbo].[GCB_BEWBOM]
                            WHERE bom_id LIKE '%" + toolSearchTxt.Text.Trim() +
                          "%'or Expr1 LIKE '%" + toolSearchTxt.Text.Trim() +
                          "%'or pds_name LIKE '%" + toolSearchTxt.Text.Trim() +
@@ -110,7 +110,7 @@ namespace Youli_Data_Share.ERPbasicBata
                                   ,[uni_id] 单位
                                   ,[stk_id] 库位编号
                                   ,[pur_mak]    购制代号
-                              FROM [eric_YL].[dbo].[PDS]
+                              FROM [EPRcopy].[dbo].[PDS]
                         WHERE pds_id LIKE '%" + toolSearchTxt.Text.Trim() +
                                "%'or pds_name LIKE '%" + toolSearchTxt.Text.Trim() +
                                "%'or pds_ename LIKE '%" + toolSearchTxt.Text.Trim() +
@@ -148,7 +148,7 @@ namespace Youli_Data_Share.ERPbasicBata
                           ,[stk_name]   库位名称
                           ,[stkqty] 库位数量
                           ,[uni_id] 单位
-                      FROM [eric_YL].[dbo].[GCB_STK]
+                      FROM [EPRcopy].[dbo].[GCB_STK]
                         WHERE pds_id LIKE '%" + toolSearchTxt.Text.Trim() +
                                "%'or glo_id LIKE '%" + toolSearchTxt.Text.Trim() +
                                "%'or pds_name LIKE '%" + toolSearchTxt.Text.Trim() +

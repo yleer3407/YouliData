@@ -31,10 +31,10 @@ namespace Youli_Data_Share
             InitializeComponent();
             OrdNum = ordNum;
             scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "akt-server";
+            scsb.DataSource = "192.168.1.104";
             scsb.UserID = "sa";
-            scsb.Password = "eisoft";
-            scsb.InitialCatalog = "eric_YL";
+            scsb.Password = "yelei193";
+            scsb.InitialCatalog = "EPRcopy";
             conn1 = new SqlConnection(scsb.ToString());
             //conn2 = new SqlConnection(scsb.ToString());
 
@@ -45,8 +45,8 @@ namespace Youli_Data_Share
             //MessageBox.Show(orderProcess.orderIntNum.ToString());//实现数量读取
             #region 订单排程表1
             //MessageBox.Show(OrdNum);
-            string sql1 = @"SELECT 
-                          [pds_id] 
+            string sql1 = @"SELECT [pln_m_id]
+                          ,[pds_id] 
                           ,[pds_name] 
                           ,[degree]  
                           ,[qty]  
@@ -56,8 +56,8 @@ namespace Youli_Data_Share
                           ,[bom_qty]  
                           ,[bom_base] 
                           ,[bom_lost] 
-                      FROM [eric_YL].[dbo].[NED_D]
-                         WHERE ord_m_id = '" + OrdNum + "'";//WHERE ord_m_id = '%" + OrdNum + "%'
+                      FROM [EPRcopy].[dbo].[GCB_NED_D]
+                         WHERE pln_m_id = '" + OrdNum + "'";//WHERE ord_m_id = '%" + OrdNum + "%'
             SqlDataAdapter da1 = new SqlDataAdapter(sql1, conn1);
             DataSet ds1 = new DataSet();
             da1.Fill(ds1, "NED");
@@ -89,14 +89,12 @@ namespace Youli_Data_Share
 
         private void ProNumnn()
         {
-            string sql3 = string.Format(@"SELECT a.*,b.dfsl ,(qty*'{0}')/base as qtynum from
-                                [dbo].[GCB_BOM_ALLNUM] a left join [dbo].[GCB_LAST_DFSL] b
-                                on a.pds_id = b.pds_id
+            string sql3 = string.Format(@"SELECT a.*,(qty*'{0}')/base as qtynum from
+                                [dbo].[GCB_BOM_ALLNUM] a 
                               WHERE bom_id = '{1}'
                                UNION
-                                SELECT a.*,b.dfsl ,(qty*'{0}')/base as qtynum from
-                                [dbo].[GCB_BOM_ALLNUM] a left join [dbo].[GCB_LAST_DFSL] b
-                                on a.pds_id = b.pds_id
+                                SELECT a.*,(qty*'{0}')/base as qtynum from
+                                [dbo].[GCB_BOM_ALLNUM] a
                                 WHERE bom_id = (SELECT TOP 1 [pds_id] FROM  [dbo].[GCB_BOM_ALLNUM] WHERE bom_id = '{1}' AND pur_mak = 1)", orderProcess.orderIntNum, orderProcess.pdsNum.ToString());
             //string sql3 = @"SELECT a.*,b.dfsl from
             //                    [dbo].[GCB_BOM_ALLNUM] a left join [dbo].[GCB_LAST_DFSL] b

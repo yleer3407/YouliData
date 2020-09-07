@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.76 data 2020.9.03&gt;&gt;update:
+    <value>版本1.0.0.77 data 2020.9.04&gt;&gt;update:
+1.BOM物料数据转移到104服务器上
+---------------------------------------------------------
+版本1.0.0.76 data 2020.9.03&gt;&gt;update:
 1.添加BOM物料状态分析
 ---------------------------------------------------------
 版本1.0.0.75data 2020.9.01&gt;&gt;update:

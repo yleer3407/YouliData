@@ -1724,8 +1724,6 @@ namespace Youli_Data_Share
                                    SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
                                    ,[flo_modibom2] = '" + dr["flo_modibom2"].ToString() + @"'
                                    ,[flo_bomVerify] = '" + dr["flo_bomVerify"].ToString() + @"'
-                                   ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
-                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
                                    ,[flo_elsequan] = '" + dr["flo_elsequan"].ToString() + @"'
                                WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
                                     AND flo_num= '" + dr["flo_num"].ToString() + "'";
@@ -1745,8 +1743,6 @@ namespace Youli_Data_Share
                             strSQL = @"UPDATE [dbo].[flow]
                                    SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
                                    ,[flo_elequan] = '" + dr["flo_elequan"].ToString() + @"'
-                                   ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
-                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
                                WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
                                     AND flo_num= '" + dr["flo_num"].ToString() + "'";
                         }
@@ -1755,8 +1751,6 @@ namespace Youli_Data_Share
                             strSQL = @"UPDATE [dbo].[flow]
                                    SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
                                    ,[flo_oliquan] = '" + dr["flo_oliquan"].ToString() + @"'
-                                   ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
-                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
                                WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
                                     AND flo_num= '" + dr["flo_num"].ToString() + "'";
                         }
@@ -1764,9 +1758,14 @@ namespace Youli_Data_Share
                         {
                             strSQL = @"UPDATE [dbo].[flow]
                                    SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
+                               WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
+                                    AND flo_num= '" + dr["flo_num"].ToString() + "'";
+                        }
+                        else if (labuser.Text == "张栋")
+                        {
+                            strSQL = @"UPDATE [dbo].[flow]
+                                   SET [flo_state] = '" + dr["flo_state"].ToString() + @"'
                                    ,[flo_pic] = '" + dr["flo_pic"].ToString() + @"'
-                                   ,[flo_ProSum] = '" + dr["flo_ProSum"].ToString() + @"'
-                                   ,[flo_spotChk] = '" + dr["flo_spotChk"].ToString() + @"'
                                WHERE flo_time = '" + dr["flo_time"].ToString() + @"' 
                                     AND flo_num= '" + dr["flo_num"].ToString() + "'";
                         }
@@ -2099,6 +2098,20 @@ namespace Youli_Data_Share
         {
             orderProcessfrm1 frmOrder1 = new orderProcessfrm1();
             frmOrder1.ShowDialog();
+        }
+
+        private void 生产计划ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (conn_flow.State == System.Data.ConnectionState.Closed)
+            {
+                conn_flow.Open();
+            }
+            string strsql = "SELECT * FROM flow WHERE  flo_online !='' AND flo_facAlter = ' ' AND flo_finish='N' order by flo_online";
+            SqlDataAdapter da = new SqlDataAdapter(strsql, conn_flow);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "flow");
+            dt_flow = ds.Tables["flow"];
+            dgvWorkFlow.DataSource = dt_flow.DefaultView;
         }
     }
 }
