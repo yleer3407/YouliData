@@ -118,7 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.77 data 2020.9.04&gt;&gt;update:
+    <value>版本1.0.0.79 data 2020.9.10&gt;&gt;update:
+1.订单流程里 BOM材料分析添加制令单号显示/物料报缺颜色更换
+---------------------------------------------------------
+版本1.0.0.78 data 2020.9.04&gt;&gt;update:
+1.订单流程里 添加单个订单修改页面
+---------------------------------------------------------
+版本1.0.0.77 data 2020.9.04&gt;&gt;update:
 1.BOM物料数据转移到104服务器上
 ---------------------------------------------------------
 版本1.0.0.76 data 2020.9.03&gt;&gt;update:

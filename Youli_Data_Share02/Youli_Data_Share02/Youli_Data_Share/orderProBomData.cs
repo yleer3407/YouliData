@@ -17,7 +17,6 @@ namespace Youli_Data_Share
     {
         SqlConnectionStringBuilder scsb;
         string OrdNum;
-        private string ordNum;
         SqlConnection conn1;
         //SqlConnection conn2;
 
@@ -45,6 +44,7 @@ namespace Youli_Data_Share
             //MessageBox.Show(orderProcess.orderIntNum.ToString());//实现数量读取
             #region 订单排程表1
             //MessageBox.Show(OrdNum);
+            labFlowNum.Text = OrdNum;
             string sql1 = @"SELECT [pln_m_id]
                           ,[pds_id] 
                           ,[pds_name] 
@@ -130,17 +130,18 @@ namespace Youli_Data_Share
                 }
                 if (double.Parse(this.dataGridView2.Rows[j].Cells["Column5"].Value.ToString()) > double.Parse(this.dataGridView2.Rows[j].Cells["Column8"].Value.ToString()))
                 {
-                    this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.LightGreen;
+                    this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.White;
                 }
                 else
                 {
                     if (double.Parse(this.dataGridView2.Rows[j].Cells["Column5"].Value.ToString()) < double.Parse(this.dataGridView2.Rows[j].Cells["Column19"].Value.ToString()))
                     {
-                        this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.LightSalmon;
+                        this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.Red;
+                        this.dataGridView2.Rows[j].Cells["Column5"].Style.ForeColor = Color.White;
                     }
                     else
                     {
-                        this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.LightYellow;
+                        this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.LightSalmon;
                     }
                 }
                 

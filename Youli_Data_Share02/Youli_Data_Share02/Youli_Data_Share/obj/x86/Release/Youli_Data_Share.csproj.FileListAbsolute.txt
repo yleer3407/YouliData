@@ -45,3 +45,5 @@ F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_S
 F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.csproj.CopyComplete
 F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.exe
 F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.pdb
+F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.orderProcessEdit.resources
+F:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.csprojAssemblyReference.cache

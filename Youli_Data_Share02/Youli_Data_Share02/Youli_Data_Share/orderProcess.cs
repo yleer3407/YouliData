@@ -19,11 +19,13 @@ using Youli_Data_Share.Reportview;
 
 namespace Youli_Data_Share
 {
+
     public partial class orderProcess : Form
     {
+        
         public static string pdsNum = "";//传递当前行产品编码
         public static int orderIntNum; //传递当前行产品数量
-
+        public static string txtuser;
         DataTable dt_flow;//定于变量
         SqlConnection conn_flow;
         public orderProcess()
@@ -32,6 +34,7 @@ namespace Youli_Data_Share
         }
         public orderProcess(string LoginID)
         {
+           
             InitializeComponent();
             #region 权限分配 连接userAdmin数据库
             SqlConnectionStringBuilder scsbLogin = new SqlConnectionStringBuilder();
@@ -51,6 +54,7 @@ namespace Youli_Data_Share
                 {
                     if (drLgoin.Read())
                     {
+                        
                         labuser.Text = drLgoin["userName"].ToString();
                         for (int i = 0; i < 54; i++)
                         {
@@ -107,6 +111,7 @@ namespace Youli_Data_Share
         }
         private void orderProcess_Load(object sender, EventArgs e)
         {
+           
             //this.TopMost = true;
             #region 标题栏改色
             dgvWorkFlow.EnableHeadersVisualStyles = false;
@@ -1318,32 +1323,6 @@ namespace Youli_Data_Share
         }
 
         /// <summary>
-        /// 添加行
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void toolStripButton11_Click(object sender, EventArgs e)
-        {
-            #region 0612改版
-            //DataRow dr = dt_flow.NewRow();
-            //int index = dgvWorkFlow.RowCount == 0 ? 0 : dgvWorkFlow.CurrentRow.Index + 1;
-            //dt_flow.Rows.InsertAt(dr, index);
-            //dgvWorkFlow.Rows[index].HeaderCell.Value = "New";
-            #endregion
-            addNum frmaddNum = new addNum();
-            DialogResult result = frmaddNum.ShowDialog();
-            //frmaddNum.Show();
-            if (result == DialogResult.OK)
-            {
-                searchDate();
-            }
-            else
-            { 
-                
-            }
-
-        }
-        /// <summary>
         /// 盘料接口
         /// </summary>
         /// <param name="sender"></param>
@@ -2096,8 +2075,11 @@ namespace Youli_Data_Share
 
         private void 展开数据ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            orderProcessfrm1 frmOrder1 = new orderProcessfrm1();
-            frmOrder1.ShowDialog();
+            int ind = dgvWorkFlow.CurrentRow.Index;
+            txtuser = labuser.Text.Trim();
+            string EditValue = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
+            orderProcessEdit frmOPEdit = new orderProcessEdit(EditValue);
+            frmOPEdit.Show();
         }
 
         private void 生产计划ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2112,6 +2094,54 @@ namespace Youli_Data_Share
             da.Fill(ds, "flow");
             dt_flow = ds.Tables["flow"];
             dgvWorkFlow.DataSource = dt_flow.DefaultView;
+        }
+        /// <summary>
+        /// 添加订单
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton2_Click_1(object sender, EventArgs e)
+        {
+            #region 0612改版
+            //DataRow dr = dt_flow.NewRow();
+            //int index = dgvWorkFlow.RowCount == 0 ? 0 : dgvWorkFlow.CurrentRow.Index + 1;
+            //dt_flow.Rows.InsertAt(dr, index);
+            //dgvWorkFlow.Rows[index].HeaderCell.Value = "New";
+            #endregion
+            addNum frmaddNum = new addNum();
+            DialogResult result = frmaddNum.ShowDialog();
+            //frmaddNum.Show();
+            if (result == DialogResult.OK)
+            {
+                searchDate();
+            }
+            else
+            {
+
+            }
+        }
+        /// <summary>
+        /// 订单编辑
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsBtnCompile_Click(object sender, EventArgs e)
+        {
+            int ind = dgvWorkFlow.CurrentRow.Index;
+            txtuser = labuser.Text.Trim();
+            string EditValue = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
+            orderProcessEdit frmOPEdit = new orderProcessEdit(EditValue);
+            frmOPEdit.Show();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            int ind = dgvWorkFlow.CurrentRow.Index;
+            string repoterValue = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
+            //MessageBox.Show(repoterValue);
+            frmReport frmReport = new frmReport(repoterValue);
+
+            frmReport.Show();
         }
     }
 }

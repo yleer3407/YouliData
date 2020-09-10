@@ -29,7 +29,7 @@
     <UpdateUrl>\\192.168.1.104\Youli_Server\</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.71</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>94</ApplicationRevision>
+    <ApplicationRevision>98</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -104,6 +104,7 @@
     <Compile Include="addNum.Designer.cs">
       <DependentUpon>addNum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class\SQLHelper2.cs" />
     <Compile Include="Class\SQLHelper.cs" />
     <Compile Include="data_Login.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -169,6 +170,12 @@
     </Compile>
     <Compile Include="orderProcess.Designer.cs">
       <DependentUpon>orderProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="orderProcessEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="orderProcessEdit.Designer.cs">
+      <DependentUpon>orderProcessEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="orderProcessfrm1.cs">
       <SubType>Form</SubType>
@@ -289,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="orderProcess.resx">
       <DependentUpon>orderProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="orderProcessEdit.resx">
+      <DependentUpon>orderProcessEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="orderProcessfrm1.resx">
       <DependentUpon>orderProcessfrm1.cs</DependentUpon>
@@ -459,6 +469,8 @@
     <None Include="Resources\OS_Windows_128px_1180144_easyicon.net.png" />
     <None Include="Resources\icons8_to_do_16.png" />
     <None Include="Resources\icons8_support_16.png" />
+    <None Include="Resources\edit_property_80px.png" />
+    <None Include="Resources\表格设置%281%29.png" />
     <Content Include="youliico.ico" />
     <None Include="Resources\close_32px_1175741_easyicon.net.png" />
     <None Include="Resources\timg.jpg" />
