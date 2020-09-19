@@ -1,0 +1,117 @@
+﻿<Window x:Class="YouliDataShare_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YouliDataShare_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="660" Width="950" WindowStyle="None" WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True" ResizeMode="CanMinimize" >
+    <Window.Resources>
+        <Style x:Key="BtnInfoStyle" TargetType="Button">
+            <Setter Property="Width" Value="70"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="#BEE6FD"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <TextBlock Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#BEE6FD"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#BEE6FD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="DodgerBlue">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition />
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="0" Width="135">
+            <Button x:Name="btnmin"  Style="{StaticResource BtnInfoStyle}" Width="45" Height="30" Content="─" BorderThickness="0"  Foreground="White" Background="Transparent" Click="btn_Min"/>
+            <Button x:Name="btnhelp" Style="{StaticResource BtnInfoStyle}" Width="45" Height="30" Content="Set" BorderThickness="0" Foreground="White" Background="Transparent" Click="btn_Help"/>
+            <Button x:Name="btnclose" Style="{StaticResource BtnInfoStyle}" Width="45" Height="30" Content="✕" BorderThickness="0" Foreground="White" Background="Transparent" Click="btn_Close"/>
+        </StackPanel>
+        <Image Grid.Row="1" Source="/rescource/uniweigh.png"/>
+        <WrapPanel Grid.Row="2">
+            <Button x:Name="btn01"  FontSize="150"  FontFamily="./#iconfont" Margin="20" Width="150" Height="150" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                <StackPanel>
+                    <Image Source="/rescource/teamwork_128px_1208219_easyicon.net.png" Width="120"/>
+                    <TextBlock Text="订单流程" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btn02" FontSize="150"  FontFamily="./#iconfont" Margin="20" Width="150" Height="150" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                <StackPanel>
+                    <Image Source="/rescource/production_139.13043478261px_1215962_easyicon.net.png" Width="120"/>
+                    <TextBlock Text="配发计划汇总" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btn03" FontSize="150"  FontFamily="./#iconfont" Margin="20" Width="150" Height="150" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                <StackPanel>
+                    <Image Source="/rescource/folders_144.66546112116px_1214078_easyicon.net.png" Width="120"/>
+                    <TextBlock Text="包装材料汇总" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btn04" FontSize="150"  FontFamily="./#iconfont" Margin="20" Width="150" Height="150" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                <StackPanel>
+                    <Image Source="/rescource/folder_783px_1229425_easyicon.net.png" Width="120"/>
+                    <TextBlock Text="ERP基础资料" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btn05" FontSize="150"  FontFamily="./#iconfont" Margin="20" Width="150" Height="150" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                <StackPanel>
+                    <Image Source="/rescource/magnifying_glass_tilted_left_123.15457413249px_1215124_easyicon.net.png" Width="120"/>
+                    <TextBlock Text="QC反馈汇总" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btn06" FontSize="150"  FontFamily="./#iconfont" Margin="20" Width="150" Height="150" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                <StackPanel>
+                    <Image Source="/rescource/checklist_108.5466155811px_1234207_easyicon.net.png" Width="110"/>
+                    <TextBlock Text="考核数据汇总" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btn07" FontSize="150"  FontFamily="./#iconfont" Margin="20" Width="150" Height="150" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                <StackPanel>
+                    <Image Source="/rescource/teamwork_128px_1208219_easyicon.net.png" Width="120"/>
+                    <TextBlock Text="产品问题" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btn08" FontSize="150"  FontFamily="./#iconfont" Margin="20" Width="150" Height="150" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                <StackPanel>
+                    <Image Source="/rescource/warehouse_128px_1285469_easyicon.net.png" Width="120"/>
+                    <TextBlock Text="样品仓库" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btn09" FontSize="150"  FontFamily="./#iconfont" Margin="20" Width="150" Height="150" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                <StackPanel>
+                    <Image Source="/rescource/chevron_128px_1232004_easyicon.net.ico" Width="120"/>
+                    <TextBlock Text="未开放" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="btn10" FontSize="150"  FontFamily="./#iconfont" Margin="20" Width="150" Height="150" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                <StackPanel>
+                    <Image Source="/rescource/chevron_128px_1232004_easyicon.net.ico" Width="120"/>
+                    <TextBlock Text="未开放" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
+                </StackPanel>
+            </Button>
+        </WrapPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="3">
+            <TextBlock Text="软件版本号：YL-1.0.0.80" Foreground="Blue" FontSize="15" HorizontalAlignment="Right" Margin="0,0,20,0" />
+            <TextBlock Text="联系人：优力 工程部" Foreground="White" FontSize="15" FontStretch="ExtraCondensed" HorizontalAlignment="Right" Margin="0,0,20,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

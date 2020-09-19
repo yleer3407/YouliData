@@ -1,0 +1,15 @@
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\bin\Debug\YouliDataShare_WPF.exe.config
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\bin\Debug\YouliDataShare_WPF.exe
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\bin\Debug\YouliDataShare_WPF.pdb
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Debug\YouliDataShare_WPF.csprojAssemblyReference.cache
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Debug\MainWindow.g.cs
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Debug\App.g.cs
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Debug\YouliDataShare_WPF_MarkupCompile.cache
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Debug\YouliDataShare_WPF_MarkupCompile.lref
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Debug\MainWindow.baml
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Debug\YouliDataShare_WPF.g.resources
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Debug\YouliDataShare_WPF.Properties.Resources.resources
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Debug\YouliDataShare_WPF.csproj.GenerateResource.cache
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Debug\YouliDataShare_WPF.csproj.CoreCompileInputs.cache
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Debug\YouliDataShare_WPF.exe
+H:\desket\VSProject\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Debug\YouliDataShare_WPF.pdb

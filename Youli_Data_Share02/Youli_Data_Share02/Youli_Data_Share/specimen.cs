@@ -52,7 +52,7 @@ namespace Youli_Data_Share
         public void SqlTable()
         {
             SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "192.168.1.104";
+            scsb.DataSource = "NQSRSUXS2GWHMON";
             scsb.UserID = "sa";
             scsb.Password = "yelei193";
             scsb.InitialCatalog = "Youli_date";

@@ -16,7 +16,7 @@ using Microsoft.Reporting.WinForms;
 using Microsoft.VisualBasic;
 using Youli_Data_Share.MateNum;
 using Youli_Data_Share.Reportview;
-
+using WPF_OrderPlan;
 namespace Youli_Data_Share
 {
 
@@ -111,7 +111,12 @@ namespace Youli_Data_Share
         }
         private void orderProcess_Load(object sender, EventArgs e)
         {
-           
+            #region  筛选框初始化
+            toolStripComboBox1.SelectedIndex = 3;
+            toolStripComboBox2.SelectedIndex = 0;
+            toolStripComboBox3.SelectedIndex = 0;
+            toolStripComboBox4.SelectedIndex = 1;
+            #endregion
             //this.TopMost = true;
             #region 标题栏改色
             dgvWorkFlow.EnableHeadersVisualStyles = false;
@@ -1495,14 +1500,15 @@ namespace Youli_Data_Share
 
             try
             {
-                toolStripProgressBar1.Maximum = 100;
-                toolStripProgressBar1.Value = 20;
-                toolStripProgressBar1.Step = 10;
-                for (int i = 0; i < 7; i++)
-                {
-                    System.Threading.Thread.Sleep(50);
-                    toolStripProgressBar1.Value += toolStripProgressBar1.Step;
-                }
+                //进度条显示
+                //toolStripProgressBar1.Maximum = 100;
+                //toolStripProgressBar1.Value = 20;
+                //toolStripProgressBar1.Step = 10;
+                //for (int i = 0; i < 7; i++)
+                //{
+                //    System.Threading.Thread.Sleep(50);
+                //    toolStripProgressBar1.Value += toolStripProgressBar1.Step;
+                //}
                 DataTable changeDt = dt_flow.GetChanges();
 
                 foreach (DataRow dr in changeDt.Rows)
@@ -1807,7 +1813,7 @@ namespace Youli_Data_Share
                     SqlCommand comm = new SqlCommand(strSQL, conn_flow);
                     comm.ExecuteNonQuery();
                 }
-                toolStripProgressBar1.Value = 100;
+                //toolStripProgressBar1.Value = 100;
                 MessageBox.Show("已提交成功");
                 #region  提交后进行未完成表单刷新
                 searchDate();
@@ -2142,6 +2148,36 @@ namespace Youli_Data_Share
             frmReport frmReport = new frmReport(repoterValue);
 
             frmReport.Show();
+        }
+
+        private void toolStripbtnNumMath_Click(object sender, EventArgs e)
+        {
+            decimal cg = 0;
+            //int selectedCellCount = dgvWorkFlow.GetCellCount(DataGridViewElementStates.Selected);
+            //for (int i = 0; i <=selectedCellCount; i++)
+            //    {
+            //        if (dgvWorkFlow.Rows[i].Cells["Column28"].Selected)
+            //        {
+            //            cg += Convert.ToInt32(dgvWorkFlow.Rows[i].Cells["Column28"].Value);
+            //        }
+            //    }
+
+            for(int i = 0; i < dgvWorkFlow.Rows.Count; i++)
+            {
+                if (dgvWorkFlow.Rows[i].Cells["Column28"].Selected)
+                {
+                    cg += Convert.ToInt32(dgvWorkFlow.Rows[i].Cells["Column28"].Value);
+                }
+            }
+            toolSTxt.Text = cg.ToString();
+        }
+
+        private void 生产计划ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //OrderPlan frmorderPaln = new OrderPlan();
+            //frmorderPaln.Show();
+            WPF_OrderPlan.MainWindow frmorderPlan = new WPF_OrderPlan.MainWindow();
+            frmorderPlan.Show();
         }
     }
 }
