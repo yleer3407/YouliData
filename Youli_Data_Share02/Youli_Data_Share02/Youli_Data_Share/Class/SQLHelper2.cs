@@ -15,7 +15,7 @@ namespace Youli_Data_Share
     class SQLHelper2
     {
 
-         private static readonly string connString = "Server=124.70.203.134,1433;DataBase=Youlidata;Uid=sa;Pwd=Yelei193";
+         private static readonly string connString = "Server=192.168.1.104;DataBase=Youlidata;Uid=sa;Pwd=yelei193";
 
 
         //private static readonly string connString =

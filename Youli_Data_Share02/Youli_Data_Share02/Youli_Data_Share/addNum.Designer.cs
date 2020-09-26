@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addNum));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnAddOrderNum = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +63,7 @@
             this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddOrderNum = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -87,17 +88,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(1215, 244);
             this.splitContainer1.SplitterDistance = 215;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // btnAddOrderNum
-            // 
-            this.btnAddOrderNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddOrderNum.Location = new System.Drawing.Point(1085, 2);
-            this.btnAddOrderNum.Name = "btnAddOrderNum";
-            this.btnAddOrderNum.Size = new System.Drawing.Size(118, 23);
-            this.btnAddOrderNum.TabIndex = 0;
-            this.btnAddOrderNum.Text = "提交";
-            this.btnAddOrderNum.UseVisualStyleBackColor = true;
-            this.btnAddOrderNum.Click += new System.EventHandler(this.btnAddOrderNum_Click);
             // 
             // dataGridView1
             // 
@@ -138,6 +128,8 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(1215, 215);
             this.dataGridView1.TabIndex = 0;
@@ -294,6 +286,17 @@
             // 
             this.Column29.HeaderText = "客户细节要求";
             this.Column29.Name = "Column29";
+            // 
+            // btnAddOrderNum
+            // 
+            this.btnAddOrderNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddOrderNum.Location = new System.Drawing.Point(1085, 2);
+            this.btnAddOrderNum.Name = "btnAddOrderNum";
+            this.btnAddOrderNum.Size = new System.Drawing.Size(118, 23);
+            this.btnAddOrderNum.TabIndex = 0;
+            this.btnAddOrderNum.Text = "提交";
+            this.btnAddOrderNum.UseVisualStyleBackColor = true;
+            this.btnAddOrderNum.Click += new System.EventHandler(this.btnAddOrderNum_Click);
             // 
             // addNum
             // 

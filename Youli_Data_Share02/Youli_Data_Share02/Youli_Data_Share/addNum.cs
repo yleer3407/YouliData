@@ -101,9 +101,9 @@ namespace Youli_Data_Share
         {
             //dataGridView1.CancelEdit();
             SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "124.70.203.134,1433";
+            scsb.DataSource = "192.168.1.104";
             scsb.UserID = "sa";
-            scsb.Password = "Yelei193";
+            scsb.Password = "yelei193";
             scsb.InitialCatalog = "YouliData";
             //string txtAdd = textBox1.Text.ToString();
             string txtAdd = dataGridView1.Rows[0].Cells["Column4"].Value.ToString();

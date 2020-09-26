@@ -46,6 +46,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.labFlowNum = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +59,6 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.labFlowNum = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -244,69 +244,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(506, 532);
             this.dataGridView2.TabIndex = 2;
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "bom_id";
-            this.Column1.HeaderText = "产品编号";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "pds_id";
-            this.Column2.HeaderText = "物料编号";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "pds_name";
-            this.Column3.HeaderText = "材料名称";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "pds_spec";
-            this.Column4.HeaderText = "规格型号";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column19
-            // 
-            this.Column19.DataPropertyName = "qtynum";
-            this.Column19.HeaderText = "本单用量";
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "stkqty";
-            this.Column5.HeaderText = "实时库存";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "zgslq";
-            this.Column6.HeaderText = "在购数量";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "dgslq";
-            this.Column7.HeaderText = "待购数量";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "dfsl";
-            this.Column8.HeaderText = "待发数量";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
@@ -318,6 +255,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(506, 30);
             this.panel2.TabIndex = 1;
+            // 
+            // labFlowNum
+            // 
+            this.labFlowNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labFlowNum.AutoSize = true;
+            this.labFlowNum.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labFlowNum.ForeColor = System.Drawing.Color.White;
+            this.labFlowNum.Location = new System.Drawing.Point(115, 9);
+            this.labFlowNum.Name = "labFlowNum";
+            this.labFlowNum.Size = new System.Drawing.Size(69, 16);
+            this.labFlowNum.TabIndex = 1;
+            this.labFlowNum.Text = "实际BOM";
             // 
             // label2
             // 
@@ -337,17 +286,77 @@
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
-            // labFlowNum
+            // Column1
             // 
-            this.labFlowNum.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labFlowNum.AutoSize = true;
-            this.labFlowNum.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labFlowNum.ForeColor = System.Drawing.Color.White;
-            this.labFlowNum.Location = new System.Drawing.Point(115, 9);
-            this.labFlowNum.Name = "labFlowNum";
-            this.labFlowNum.Size = new System.Drawing.Size(69, 16);
-            this.labFlowNum.TabIndex = 1;
-            this.labFlowNum.Text = "实际BOM";
+            this.Column1.DataPropertyName = "bom_id";
+            this.Column1.FillWeight = 1F;
+            this.Column1.HeaderText = "产品编号";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "pds_id";
+            this.Column2.FillWeight = 1F;
+            this.Column2.HeaderText = "物料编号";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "pds_name";
+            this.Column3.FillWeight = 3F;
+            this.Column3.HeaderText = "材料名称";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "pds_spec";
+            this.Column4.FillWeight = 3F;
+            this.Column4.HeaderText = "规格型号";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column19
+            // 
+            this.Column19.DataPropertyName = "qtynum";
+            this.Column19.FillWeight = 1F;
+            this.Column19.HeaderText = "本单用量";
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "stkqty";
+            this.Column5.FillWeight = 1F;
+            this.Column5.HeaderText = "实时库存";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "zgslq";
+            this.Column6.FillWeight = 1F;
+            this.Column6.HeaderText = "在购数量";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "dgslq";
+            this.Column7.FillWeight = 1F;
+            this.Column7.HeaderText = "待购数量";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "dfsl";
+            this.Column8.FillWeight = 1F;
+            this.Column8.HeaderText = "待发数量";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // orderProBomData
             // 
@@ -395,6 +404,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.Label labFlowNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -404,6 +414,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.Label labFlowNum;
     }
 }

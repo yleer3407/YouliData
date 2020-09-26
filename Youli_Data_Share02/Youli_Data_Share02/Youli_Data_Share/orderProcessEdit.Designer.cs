@@ -766,6 +766,7 @@
             this.txtflobox.Location = new System.Drawing.Point(0, 0);
             this.txtflobox.Multiline = true;
             this.txtflobox.Name = "txtflobox";
+            this.txtflobox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtflobox.Size = new System.Drawing.Size(390, 90);
             this.txtflobox.TabIndex = 0;
             // 
@@ -798,6 +799,7 @@
             this.txtfloask.Location = new System.Drawing.Point(0, 0);
             this.txtfloask.Multiline = true;
             this.txtfloask.Name = "txtfloask";
+            this.txtfloask.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtfloask.Size = new System.Drawing.Size(390, 156);
             this.txtfloask.TabIndex = 0;
             this.txtfloask.TextChanged += new System.EventHandler(this.txtfloask_TextChanged);

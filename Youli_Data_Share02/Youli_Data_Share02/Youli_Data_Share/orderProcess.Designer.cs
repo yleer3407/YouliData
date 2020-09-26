@@ -138,9 +138,9 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.展开数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.生产计划ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.生产计划ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.youli_dateDataSet1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -189,7 +189,7 @@
             "未结单",
             "生产计划"});
             this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(75, 25);
+            this.toolStripComboBox1.Size = new System.Drawing.Size(100, 25);
             // 
             // toolStripComboBox2
             // 
@@ -198,7 +198,7 @@
             "已物料确认",
             "未物料确认"});
             this.toolStripComboBox2.Name = "toolStripComboBox2";
-            this.toolStripComboBox2.Size = new System.Drawing.Size(75, 25);
+            this.toolStripComboBox2.Size = new System.Drawing.Size(100, 25);
             // 
             // toolStripComboBox3
             // 
@@ -207,7 +207,7 @@
             "已厂制发料",
             "未厂制发料"});
             this.toolStripComboBox3.Name = "toolStripComboBox3";
-            this.toolStripComboBox3.Size = new System.Drawing.Size(75, 25);
+            this.toolStripComboBox3.Size = new System.Drawing.Size(100, 25);
             // 
             // toolStripComboBox4
             // 
@@ -217,12 +217,13 @@
             "宿松",
             "深圳"});
             this.toolStripComboBox4.Name = "toolStripComboBox4";
-            this.toolStripComboBox4.Size = new System.Drawing.Size(75, 25);
+            this.toolStripComboBox4.Size = new System.Drawing.Size(100, 25);
             // 
             // toolStripTextBox1
             // 
             this.toolStripTextBox1.BackColor = System.Drawing.Color.White;
             this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
             // 
@@ -246,6 +247,7 @@
             this.tsbbtn_order.Name = "tsbbtn_order";
             this.tsbbtn_order.Size = new System.Drawing.Size(85, 22);
             this.tsbbtn_order.Text = "单据筛选";
+            this.tsbbtn_order.Visible = false;
             // 
             // 已结单ToolStripMenuItem
             // 
@@ -470,6 +472,7 @@
             // 
             // toolSTxt
             // 
+            this.toolSTxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.toolSTxt.Name = "toolSTxt";
             this.toolSTxt.Size = new System.Drawing.Size(60, 25);
             // 
@@ -1012,14 +1015,15 @@
             this.toolStripMenuItem4,
             this.生产计划ToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 70);
             this.contextMenuStrip1.Text = "~~~~(>_<)~~~~";
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // 展开数据ToolStripMenuItem
             // 
             this.展开数据ToolStripMenuItem.Image = global::Youli_Data_Share.Properties.Resources.icons8_to_do_16;
             this.展开数据ToolStripMenuItem.Name = "展开数据ToolStripMenuItem";
-            this.展开数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.展开数据ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.展开数据ToolStripMenuItem.Text = "展开数据";
             this.展开数据ToolStripMenuItem.Click += new System.EventHandler(this.展开数据ToolStripMenuItem_Click);
             // 
@@ -1027,9 +1031,17 @@
             // 
             this.toolStripMenuItem4.Image = global::Youli_Data_Share.Properties.Resources.表格设置;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(148, 22);
             this.toolStripMenuItem4.Text = "打印订单报表";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // 生产计划ToolStripMenuItem1
+            // 
+            this.生产计划ToolStripMenuItem1.Image = global::Youli_Data_Share.Properties.Resources.edit_property_80px;
+            this.生产计划ToolStripMenuItem1.Name = "生产计划ToolStripMenuItem1";
+            this.生产计划ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.生产计划ToolStripMenuItem1.Text = "生产计划";
+            this.生产计划ToolStripMenuItem1.Click += new System.EventHandler(this.生产计划ToolStripMenuItem1_Click);
             // 
             // button1
             // 
@@ -1050,14 +1062,6 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
-            // 
-            // 生产计划ToolStripMenuItem1
-            // 
-            this.生产计划ToolStripMenuItem1.Image = global::Youli_Data_Share.Properties.Resources.edit_property_80px;
-            this.生产计划ToolStripMenuItem1.Name = "生产计划ToolStripMenuItem1";
-            this.生产计划ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.生产计划ToolStripMenuItem1.Text = "生产计划";
-            this.生产计划ToolStripMenuItem1.Click += new System.EventHandler(this.生产计划ToolStripMenuItem1_Click);
             // 
             // orderProcess
             // 

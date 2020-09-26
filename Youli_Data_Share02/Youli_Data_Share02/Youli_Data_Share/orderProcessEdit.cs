@@ -192,7 +192,7 @@ namespace Youli_Data_Share
                     txtflofacAlter.Enabled = true;
                     txtfloProSum.Enabled = true;
                 }
-                if (orderProcess.txtuser == "QC")
+                if (orderProcess.txtuser == "叶显俊")
                 {
                     txtflofristChk.Enabled = true;
                     txtflospotChk.Enabled = true;
@@ -369,6 +369,8 @@ namespace Youli_Data_Share
                     }
                     SQLHelper2.Update(strSQL);
                     MessageBox.Show("提交成功!");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 catch
                 {

@@ -29,7 +29,7 @@ namespace Youli_Data_Share.Reportview
             try
             {
                 SqlConnection conn;
-                conn = new SqlConnection("server=124.70.203.134,1433;database=YouliData;uid=sa;pwd=Yelei193");
+                conn = new SqlConnection("server=192.168.1.104;database=YouliData;uid=sa;pwd=yelei193");
                 string sql = "SELECT * FROM flow WHERE flo_num LIKE '%" + mretext + "%' order by flo_num " ;
                 conn.Open();
                 SqlDataAdapter thisAdapter = new SqlDataAdapter(sql, conn);
@@ -52,7 +52,7 @@ namespace Youli_Data_Share.Reportview
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             SqlConnection conn;
-            conn = new SqlConnection("server=124.70.203.134,1433;database=YouliData;uid=sa;pwd=Yelei193");
+            conn = new SqlConnection("server=192.168.1.104;database=YouliData;uid=sa;pwd=yelei193");
             string sql = "SELECT * FROM flow WHERE flo_num LIKE '%"+toolStripTextBox1.Text.Trim().ToString()+"%'";
             conn.Open();
             SqlDataAdapter thisAdapter = new SqlDataAdapter(sql, conn);

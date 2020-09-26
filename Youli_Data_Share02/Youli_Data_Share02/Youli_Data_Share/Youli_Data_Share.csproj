@@ -29,7 +29,7 @@
     <UpdateUrl>\\192.168.1.104\Youli_Server\</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.71</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>100</ApplicationRevision>
+    <ApplicationRevision>111</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -67,10 +67,20 @@
     <ManifestCertificateThumbprint>8C62FB6907A2F30E007E0876CDFBE174D12AE991</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Youli_Data_Share_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
@@ -180,12 +190,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="OrderPlan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrderPlan.Designer.cs">
-      <DependentUpon>OrderPlan.cs</DependentUpon>
-    </Compile>
     <Compile Include="orderProBomData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +214,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportview\DataReport.cs">
+      <DependentUpon>DataReport.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportview\DataReport.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -312,9 +319,6 @@
     <EmbeddedResource Include="MateNum\frmMateNum.resx">
       <DependentUpon>frmMateNum.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderPlan.resx">
-      <DependentUpon>OrderPlan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="orderProBomData.resx">
       <DependentUpon>orderProBomData.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,6 +372,7 @@
       <DependentUpon>data_Login.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -582,12 +587,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ERPloginName\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WPF_OrderPlan\WPF_OrderPlan.csproj">
-      <Project>{1b64863f-575f-465c-b894-d6a582e15ec4}</Project>
-      <Name>WPF_OrderPlan</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

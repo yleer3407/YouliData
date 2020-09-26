@@ -16,13 +16,12 @@ using Microsoft.Reporting.WinForms;
 using Microsoft.VisualBasic;
 using Youli_Data_Share.MateNum;
 using Youli_Data_Share.Reportview;
-using WPF_OrderPlan;
 namespace Youli_Data_Share
 {
 
     public partial class orderProcess : Form
     {
-        
+        public string strSQLALL;
         public static string pdsNum = "";//传递当前行产品编码
         public static int orderIntNum; //传递当前行产品数量
         public static string txtuser;
@@ -38,9 +37,9 @@ namespace Youli_Data_Share
             InitializeComponent();
             #region 权限分配 连接userAdmin数据库
             SqlConnectionStringBuilder scsbLogin = new SqlConnectionStringBuilder();
-            scsbLogin.DataSource = "124.70.203.134,1433";
+            scsbLogin.DataSource = "192.168.1.104";
             scsbLogin.UserID = "sa";
-            scsbLogin.Password = "Yelei193";
+            scsbLogin.Password = "yelei193";
             scsbLogin.InitialCatalog = "YouliData";
 
             SqlConnection connLogin = new SqlConnection(scsbLogin.ToString());
@@ -112,7 +111,7 @@ namespace Youli_Data_Share
         private void orderProcess_Load(object sender, EventArgs e)
         {
             #region  筛选框初始化
-            toolStripComboBox1.SelectedIndex = 3;
+            toolStripComboBox1.SelectedIndex = 0;
             toolStripComboBox2.SelectedIndex = 0;
             toolStripComboBox3.SelectedIndex = 0;
             toolStripComboBox4.SelectedIndex = 1;
@@ -371,13 +370,15 @@ namespace Youli_Data_Share
 
             #endregion
             #region 读取流程数据库内容
-           searchDate();
+            searchDate2();
+           //searchDate();
             // dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
             #endregion
             #region 列冻结
             #endregion
 
         }
+
 
         private void tsbbtn_set_Click(object sender, EventArgs e)
         {
@@ -1226,18 +1227,1861 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void tsbtn_search_Click(object sender, EventArgs e)
         {
-            searchDate();//加载sql数据
+            searchDate2();//加载sql数据
             //dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
         }
+
+        /// <summary>
+        /// 页面读取查找
+        /// </summary>
+        public void searchDate2()
+        {
+            
+            SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
+            scsb.DataSource = "192.168.1.104";
+            scsb.UserID = "sa";
+            scsb.Password = "yelei193";
+            scsb.InitialCatalog = "YouliData";
+
+            conn_flow = new SqlConnection(scsb.ToString());
+            if (conn_flow.State == System.Data.ConnectionState.Closed)
+                conn_flow.Open();
+            //0-0-0
+            if (toolStripComboBox1.SelectedIndex == 0)
+            {
+                if (toolStripComboBox2.SelectedIndex == 0)
+                {
+                    if (toolStripComboBox3.SelectedIndex == 0)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%'";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 1)
+                    {
+                        strSQLALL = "select * from flow WHERE  flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 2) //未厂制
+                    {
+                        strSQLALL = "select * from flow WHERE flo_online ='' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                }
+                if (toolStripComboBox2.SelectedIndex == 1)
+                {
+                    if (toolStripComboBox3.SelectedIndex == 0)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_bomVerify ='1' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 1)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_bomVerify ='1' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 2)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_bomVerify ='1' AND flo_facAlter =''  AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                }
+                if (toolStripComboBox2.SelectedIndex == 2)
+                {
+                    if (toolStripComboBox3.SelectedIndex == 0)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_bomVerify ='0' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 1)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_bomVerify ='1' AND flo_facAlter !='' AND  (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 2)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_bomVerify ='1' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                }
+            }
+            //1-0-0
+            if (toolStripComboBox1.SelectedIndex == 1)
+            {
+                if (toolStripComboBox2.SelectedIndex == 0)
+                {
+                    if (toolStripComboBox3.SelectedIndex == 0)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='Y' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 1)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='Y' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 2) //未厂制
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='Y' AND flo_online ='' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                }
+                if (toolStripComboBox2.SelectedIndex == 1)
+                {
+                    if (toolStripComboBox3.SelectedIndex == 0)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='Y' AND flo_bomVerify ='1' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 1)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='Y' AND flo_bomVerify ='1' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 2)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='Y' AND flo_bomVerify ='1' AND flo_facAlter =''  AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                }
+                if (toolStripComboBox2.SelectedIndex == 2)
+                {
+                    if (toolStripComboBox3.SelectedIndex == 0)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='Y' AND flo_bomVerify ='0' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 1)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='Y' AND flo_bomVerify ='1' AND flo_facAlter !='' AND  (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 2)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='Y' AND  flo_bomVerify ='1' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                }
+            }
+            //2-0-0
+            if (toolStripComboBox1.SelectedIndex == 2)
+            {
+                if (toolStripComboBox2.SelectedIndex == 0)
+                {
+                    if (toolStripComboBox3.SelectedIndex == 0)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='N' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 1)
+                    {
+                        strSQLALL = "select * from flow WHEREflo_finish='N' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 2) //未厂制
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='N' AND flo_online ='' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                }
+                if (toolStripComboBox2.SelectedIndex == 1)
+                {
+                    if (toolStripComboBox3.SelectedIndex == 0)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='N' AND flo_bomVerify ='1' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 1)
+                    {
+                        strSQLALL = "select * from flow WHERE  flo_finish='N' AND flo_bomVerify ='1' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 2)
+                    {
+                        strSQLALL = "select * from flow WHERE  flo_finish='N' AND flo_bomVerify ='1' AND flo_facAlter =''  AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                }
+                if (toolStripComboBox2.SelectedIndex == 2)
+                {
+                    if (toolStripComboBox3.SelectedIndex == 0)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='N' AND  flo_bomVerify ='0' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 1)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='N' AND flo_bomVerify ='1' AND flo_facAlter !='' AND  (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 2)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_finish='N' AND flo_bomVerify ='1' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                }
+            }
+            //3-0-0 生产计划
+            if (toolStripComboBox1.SelectedIndex == 3)
+            {
+                if (toolStripComboBox2.SelectedIndex == 0)
+                {
+                    if (toolStripComboBox3.SelectedIndex == 0)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_online !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 1)
+                    {
+                        strSQLALL = "select * from flow WHERE  flo_online !='' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 2) //未厂制
+                    {
+                        strSQLALL = "select * from flow WHERE flo_online !='' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                }
+                if (toolStripComboBox2.SelectedIndex == 1)
+                {
+                    if (toolStripComboBox3.SelectedIndex == 0)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_online !='' AND flo_bomVerify ='1' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 1)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_online !='' AND flo_bomVerify ='1' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 2)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_online !='' AND flo_bomVerify ='1' AND flo_facAlter =''  AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                }
+                if (toolStripComboBox2.SelectedIndex == 2)
+                {
+                    if (toolStripComboBox3.SelectedIndex == 0)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_online !='' AND flo_bomVerify ='0' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 1)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_online !='' AND flo_bomVerify ='1' AND flo_facAlter !='' AND  (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                    if (toolStripComboBox3.SelectedIndex == 2)
+                    {
+                        strSQLALL = "select * from flow WHERE flo_online !='' AND flo_bomVerify ='1' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_line LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_record LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cilentID LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_logo LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_range LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_unit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_memunit LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backcolor LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_closetime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_backtime LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_revise LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleRange LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cleShutdown LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_gravity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_levFacSet LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_cell LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_plastic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_quantity LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_delivery LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_encase LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_box LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ask LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_pic LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom1 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_modibom2 LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_bomVerify LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_starv LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_online LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comMater LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_comqusSolve LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_oliquan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_elsequan LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_facAlter LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristMake LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_fristChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_ProSum LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_spotChk LIKE '%" + toolStripTextBox1.Text.Trim() +
+                                                    "%'or flo_out LIKE '%" + toolStripTextBox1.Text.Trim() + "%')";
+                    }
+                }
+            }
+
+            SqlDataAdapter da = new SqlDataAdapter(strSQLALL, conn_flow);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "flow");
+            dt_flow = ds.Tables["flow"];
+            insertDgv();
+            dgvWorkFlow.DataSource = dt_flow.DefaultView;
+            dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
+            conn_flow.Close();
+        }
+
         /// <summary>
         /// 构造函数searchDate
         /// </summary>
         public void searchDate()
         {
             SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "124.70.203.134,1433";
+            scsb.DataSource = "192.168.1.104";
             scsb.UserID = "sa";
-            scsb.Password = "Yelei193";
+            scsb.Password = "yelei193";
             scsb.InitialCatalog = "YouliData";
 
             conn_flow = new SqlConnection(scsb.ToString());
@@ -2085,7 +3929,11 @@ namespace Youli_Data_Share
             txtuser = labuser.Text.Trim();
             string EditValue = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
             orderProcessEdit frmOPEdit = new orderProcessEdit(EditValue);
-            frmOPEdit.Show();
+            DialogResult result = frmOPEdit.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                searchDate2();
+            }
         }
 
         private void 生产计划ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2176,8 +4024,12 @@ namespace Youli_Data_Share
         {
             //OrderPlan frmorderPaln = new OrderPlan();
             //frmorderPaln.Show();
-            WPF_OrderPlan.MainWindow frmorderPlan = new WPF_OrderPlan.MainWindow();
-            frmorderPlan.Show();
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }
