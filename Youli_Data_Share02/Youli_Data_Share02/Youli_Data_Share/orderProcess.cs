@@ -1236,7 +1236,6 @@ namespace Youli_Data_Share
         /// </summary>
         public void searchDate2()
         {
-            
             SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
             scsb.DataSource = "192.168.1.104";
             scsb.UserID = "sa";

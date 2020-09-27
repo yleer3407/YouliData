@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.82 data 2020.9.22&gt;&gt;update:
+    <value>版本1.0.0.83 data 2020.9.27&gt;&gt;update:
+1.解决报表插件缺失问题
+---------------------------------------------------------
+版本1.0.0.82 data 2020.9.22&gt;&gt;update:
 1.订单流程里 数据库迁移到104数据库
 ---------------------------------------------------------
 版本1.0.0.81 data 2020.9.22&gt;&gt;update:
