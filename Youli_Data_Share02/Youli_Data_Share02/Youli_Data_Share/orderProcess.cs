@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -370,7 +371,7 @@ namespace Youli_Data_Share
 
             #endregion
             #region 读取流程数据库内容
-            searchDate2();
+            //searchDate2();
            //searchDate();
             // dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
             #endregion
@@ -3924,15 +3925,24 @@ namespace Youli_Data_Share
 
         private void 展开数据ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int ind = dgvWorkFlow.CurrentRow.Index;
-            txtuser = labuser.Text.Trim();
-            string EditValue = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
-            orderProcessEdit frmOPEdit = new orderProcessEdit(EditValue);
-            DialogResult result = frmOPEdit.ShowDialog();
-            if (result == DialogResult.OK)
+            try
             {
-                searchDate2();
+                int ind = dgvWorkFlow.CurrentRow.Index;
+                txtuser = labuser.Text.Trim();
+                string EditValue = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
+                orderProcessEdit frmOPEdit = new orderProcessEdit(EditValue);
+                DialogResult result = frmOPEdit.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    searchDate2();
+                }
             }
+            catch
+            {
+                MessageBox.Show("请先查找数据！");
+                return;
+            }
+
         }
 
         private void 生产计划ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3989,12 +3999,21 @@ namespace Youli_Data_Share
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            int ind = dgvWorkFlow.CurrentRow.Index;
-            string repoterValue = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
-            //MessageBox.Show(repoterValue);
-            frmReport frmReport = new frmReport(repoterValue);
+            try
+            {
+                int ind = dgvWorkFlow.CurrentRow.Index;
+                string repoterValue = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
+                //MessageBox.Show(repoterValue);
+                frmReport frmReport = new frmReport(repoterValue);
 
-            frmReport.Show();
+                frmReport.Show();
+            }
+            catch
+            {
+                MessageBox.Show("请先查询数据！");
+                return;
+            }
+
         }
 
         private void toolStripbtnNumMath_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -515,6 +516,29 @@ namespace Youli_Data_Share
         private void txtflofacAlter_TextChanged(object sender, EventArgs e)
         {
             txtflofacChg = true;
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            String PM = Interaction.InputBox("输入密码", "删除订单", "", -1, -1);
+            if (PM != "")
+            {
+                if (PM == "yl123")
+                {
+                    string strSQLDelete = @"DELETE FROM [dbo].[flow]
+                                     WHERE flo_time = '" + txtflotime.Text + @"' 
+                                       AND flo_num ='" + txtflonum.Text + "'";
+                    SQLHelper2.Update(strSQLDelete);
+                    MessageBox.Show("删除成功!");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("请输入正确的密码谢谢！！！！！");
+                    return;
+                }
+            }
         }
         #endregion
 

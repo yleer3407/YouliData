@@ -33,7 +33,7 @@ namespace Youli_Data_Share
             scsb.DataSource = "192.168.1.104";
             scsb.UserID = "sa";
             scsb.Password = "yelei193";
-            scsb.InitialCatalog = "EPRcopy";
+            scsb.InitialCatalog = "YouliData";
             conn1 = new SqlConnection(scsb.ToString());
             //conn2 = new SqlConnection(scsb.ToString());
 
@@ -45,7 +45,8 @@ namespace Youli_Data_Share
             #region 订单排程表1
             //MessageBox.Show(OrdNum);
             labFlowNum.Text = OrdNum;
-            string sql1 = @"SELECT [pln_m_id]
+            string sql1 = @"SELECT 
+                           [pln_m_id]
                           ,[pds_id] 
                           ,[pds_name] 
                           ,[degree]  
@@ -56,8 +57,8 @@ namespace Youli_Data_Share
                           ,[bom_qty]  
                           ,[bom_base] 
                           ,[bom_lost] 
-                      FROM [EPRcopy].[dbo].[GCB_NED_D]
-                         WHERE pln_m_id = '" + OrdNum + "'";//WHERE ord_m_id = '%" + OrdNum + "%'
+                      FROM [dbo].[GCB_NED_D]
+                         WHERE pln_m_id = '" + OrdNum + "' order by len(pds_id) DESC";//WHERE ord_m_id = '%" + OrdNum + "%'
             SqlDataAdapter da1 = new SqlDataAdapter(sql1, conn1);
             DataSet ds1 = new DataSet();
             da1.Fill(ds1, "NED");
@@ -167,7 +168,7 @@ namespace Youli_Data_Share
                           ,[base]
                           ,[lost]
                           ,[uni_id]
-                      FROM [eric_YL].[dbo].[BOM]
+                      FROM [YouliData].[dbo].[BOM]
                       WHERE bom_id = '{0}'
                       UNION
                       SELECT  [bom_id]
@@ -182,8 +183,8 @@ namespace Youli_Data_Share
                           ,[base]
                           ,[lost]
                           ,[uni_id]
-                      FROM [eric_YL].[dbo].[BOM]
-                      WHERE bom_id = (SELECT TOP 1 [pds_id] FROM [eric_YL].[dbo].[BOM] WHERE bom_id = '{0}' AND pur_mak=1)",orderProcess.pdsNum.ToString());//WHERE ord_m_id = '%" + OrdNum + "%'
+                      FROM [YouliData].[dbo].[BOM]
+                      WHERE bom_id = (SELECT TOP 1 [pds_id] FROM [YouliData].[dbo].[BOM] WHERE bom_id = '{0}' AND pur_mak=1)", orderProcess.pdsNum.ToString());//WHERE ord_m_id = '%" + OrdNum + "%'
             SqlDataAdapter da2 = new SqlDataAdapter(sql2, conn1);
             //conn1.Open();
             DataSet ds2 = new DataSet();

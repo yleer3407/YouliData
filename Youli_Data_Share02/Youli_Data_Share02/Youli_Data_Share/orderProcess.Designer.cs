@@ -183,6 +183,7 @@
             // 
             // toolStripComboBox1
             // 
+            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolStripComboBox1.Items.AddRange(new object[] {
             "ALL",
             "已结单",
@@ -193,6 +194,7 @@
             // 
             // toolStripComboBox2
             // 
+            this.toolStripComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolStripComboBox2.Items.AddRange(new object[] {
             "ALL",
             "已物料确认",
@@ -202,6 +204,7 @@
             // 
             // toolStripComboBox3
             // 
+            this.toolStripComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolStripComboBox3.Items.AddRange(new object[] {
             "ALL",
             "已厂制发料",
@@ -211,6 +214,7 @@
             // 
             // toolStripComboBox4
             // 
+            this.toolStripComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolStripComboBox4.Items.AddRange(new object[] {
             "ALL",
             "铜陵",
@@ -286,6 +290,7 @@
             this.tsbbtn_delete.Name = "tsbbtn_delete";
             this.tsbbtn_delete.Size = new System.Drawing.Size(52, 22);
             this.tsbbtn_delete.Text = "删单";
+            this.tsbbtn_delete.Visible = false;
             this.tsbbtn_delete.Click += new System.EventHandler(this.tsbbtn_delete_Click);
             // 
             // toolStripSeparator1
@@ -348,6 +353,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(76, 22);
             this.toolStripButton1.Text = "权限设置";
+            this.toolStripButton1.Visible = false;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator3
@@ -385,6 +391,7 @@
             this.toolStripButton12.Name = "toolStripButton12";
             this.toolStripButton12.Size = new System.Drawing.Size(76, 22);
             this.toolStripButton12.Text = "生产报表";
+            this.toolStripButton12.Visible = false;
             this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
             // 
             // toolStripDropDownButton2
