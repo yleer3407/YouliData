@@ -296,5 +296,10 @@ namespace Youli_Data_Share
         {
 
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

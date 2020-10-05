@@ -187,6 +187,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="OrderPaln\frmOrderPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderPaln\frmOrderPlan.Designer.cs">
+      <DependentUpon>frmOrderPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderPaln\frmOrderPlanMater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderPaln\frmOrderPlanMater.Designer.cs">
+      <DependentUpon>frmOrderPlanMater.cs</DependentUpon>
+    </Compile>
     <Compile Include="orderProBomData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +327,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MateNum\frmMateNum.resx">
       <DependentUpon>frmMateNum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderPaln\frmOrderPlan.resx">
+      <DependentUpon>frmOrderPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderPaln\frmOrderPlanMater.resx">
+      <DependentUpon>frmOrderPlanMater.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="orderProBomData.resx">
       <DependentUpon>orderProBomData.cs</DependentUpon>

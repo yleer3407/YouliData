@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using Microsoft.VisualBasic;
 using Youli_Data_Share.MateNum;
+using Youli_Data_Share.OrderPaln;
 using Youli_Data_Share.Reportview;
 namespace Youli_Data_Share
 {
@@ -1176,7 +1177,7 @@ namespace Youli_Data_Share
                 }
                 else if (cell.FormattedValue.ToString() == "BOM材料状态分析")
                 {
-                    notifyIcon1.ShowBalloonTip(3000, "提示：", "数据加载计算中... \r\n...... \r\n...... \r\n请耐心等待！", ToolTipIcon.Warning);
+                    notifyIcon1.ShowBalloonTip(1000, "提示：", "数据加载计算中... \r\n...... \r\n...... \r\n请耐心等待！", ToolTipIcon.Warning);
                     try
                     {
                         int ind = dgvWorkFlow.CurrentRow.Index;
@@ -4040,9 +4041,8 @@ namespace Youli_Data_Share
 
         private void 生产计划ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //OrderPlan frmorderPaln = new OrderPlan();
-            //frmorderPaln.Show();
-
+            frmOrderPlan frmOrderp = new frmOrderPlan();
+            frmOrderp.Show();
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)

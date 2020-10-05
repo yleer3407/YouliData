@@ -1544,9 +1544,10 @@
               <TextRun>
                 <Value>优力电子－订单生产信息</Value>
                 <Style>
+                  <FontStyle>Normal</FontStyle>
                   <FontFamily>微软雅黑</FontFamily>
                   <FontSize>26pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
+                  <FontWeight>Light</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>

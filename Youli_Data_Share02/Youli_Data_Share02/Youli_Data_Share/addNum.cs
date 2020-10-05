@@ -302,7 +302,7 @@ namespace Youli_Data_Share
                                     ,'" + dataGridView1.Rows[0].Cells["Column22"].Value.ToString() + @"'
                                     ,'" + dataGridView1.Rows[0].Cells["Column23"].Value.ToString() + @"'
                                     ,'" + dataGridView1.Rows[0].Cells["Column24"].Value.ToString() + @"'
-                                    ,'" + dataGridView1.Rows[0].Cells["Column25"].Value.ToString() + @"'
+                                    ,'" + dataGridView1.Rows[0].Cells["Column25"].Value.ToString().Trim()+ @"'
                                     ,'" + dataGridView1.Rows[0].Cells["Column26"].Value.ToString() + @"'
                                     ,'" + dataGridView1.Rows[0].Cells["Column27"].Value.ToString() + @"'
                                     ,'" + dataGridView1.Rows[0].Cells["Column28"].Value.ToString() + @"'

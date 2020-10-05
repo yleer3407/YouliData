@@ -258,7 +258,7 @@ namespace Youli_Data_Share
                                    ,[flo_levFacSet] = '" + txtflolevFacSet.Text + @"'
                                    ,[flo_cell] = '" + txtflocell.Text + @"'
                                    ,[flo_plastic] = '" + txtfloplastic.Text + @"'
-                                   ,[flo_quantity] = '" + txtfloquantity.Text + @"'
+                                   ,[flo_quantity] = '" + txtfloquantity.Text.Trim() + @"'
                                    ,[flo_delivery] = '" + txtflodelivery.Text + @"'
                                    ,[flo_encase] = '" + txtfloencase.Text + @"'
                                    ,[flo_box] = '" + txtflobox.Text + @"'
