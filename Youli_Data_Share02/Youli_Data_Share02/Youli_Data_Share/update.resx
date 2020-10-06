@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.85 data 2020.9.28&gt;&gt;update:
+    <value>版本1.0.0.86 data 2020.10.05&gt;&gt;update:
+1.新增订单计划窗体
+---------------------------------------------------------
+版本1.0.0.85 data 2020.9.28&gt;&gt;update:
 1.修复由于编辑页面的转移导致的删单功能丢失问题
 ---------------------------------------------------------
 版本1.0.0.84 data 2020.9.27&gt;&gt;update:

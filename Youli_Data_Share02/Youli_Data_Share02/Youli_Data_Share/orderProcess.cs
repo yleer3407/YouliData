@@ -4041,6 +4041,7 @@ namespace Youli_Data_Share
 
         private void 生产计划ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            notifyIcon1.ShowBalloonTip(3000, "提示：", "数据加载计算中... \r\n...... \r\n...... \r\n请耐心等待！", ToolTipIcon.Warning);
             frmOrderPlan frmOrderp = new frmOrderPlan();
             frmOrderp.Show();
         }

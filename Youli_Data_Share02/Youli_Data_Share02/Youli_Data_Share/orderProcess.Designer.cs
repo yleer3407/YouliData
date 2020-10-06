@@ -1047,7 +1047,7 @@
             this.生产计划ToolStripMenuItem1.Image = global::Youli_Data_Share.Properties.Resources.edit_property_80px;
             this.生产计划ToolStripMenuItem1.Name = "生产计划ToolStripMenuItem1";
             this.生产计划ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
-            this.生产计划ToolStripMenuItem1.Text = "生产计划";
+            this.生产计划ToolStripMenuItem1.Text = "物料报缺报表";
             this.生产计划ToolStripMenuItem1.Click += new System.EventHandler(this.生产计划ToolStripMenuItem1_Click);
             // 
             // button1

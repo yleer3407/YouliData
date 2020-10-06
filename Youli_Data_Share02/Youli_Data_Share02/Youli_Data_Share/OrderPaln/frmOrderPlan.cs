@@ -21,50 +21,20 @@ namespace Youli_Data_Share.OrderPaln
 
         private void OrderPlan_Load(object sender, EventArgs e)
         {
-            string strSql = @"SELECT [flo_line]
-                                        ,[flo_num]
-                                        ,[flo_client]
-                                        ,[flo_coding]
-                                        ,[flo_model]
-                                        ,[flo_proname]
-                                        ,[flo_range]
-                                        ,[flo_plastic]
-                                        ,[flo_quantity]
-                                    FROM [dbo].[flow]
-                                        WHERE flo_online !='' AND flo_finish !='Y'";
+            string strSql = @"SELECT  [flo_online]
+      ,[flo_line]
+      ,[flo_num]
+      ,[flo_client]
+      ,[flo_coding]
+      ,[flo_model]
+      ,[flo_proname]
+      ,[flo_range]
+      ,[flo_plastic]
+      ,[flo_quantity]
+      ,[Names]
+      ,[Expr1]
+  FROM [YouliData].[dbo].[GCB_LAST_JIHUA]";
              dt = SQLHelper2.GetDataSet(strSql).Tables[0];
-            #region 本单缺料
-            dt.Columns.Add("本单缺料", typeof(string));
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                string strSqlbd = @"SELECT[pds_id]
-                FROM [YouliData].[dbo].[GCB_JIHUA]
-                WHERE flo_num='"+dt.Rows[i]["flo_num"] +"' AND bdbig='0'";
-                DataTable dtbd = SQLHelper2.GetDataSet(strSqlbd).Tables[0];
-                string strbdbig = "";
-                for (int j = 0; j < dtbd.Rows.Count; j++)
-                {
-                    strbdbig+= dtbd.Rows[j]["pds_id"].ToString()+"|";
-                }
-                dt.Rows[i]["本单缺料"] = strbdbig;
-            }
-            #endregion
-            #region 计划缺料
-            dt.Columns.Add("计划缺料", typeof(string));
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                string strSqlbd = @"SELECT[pds_id]
-                FROM [YouliData].[dbo].[GCB_JIHUA]
-                WHERE flo_num='" + dt.Rows[i]["flo_num"] + "' AND adbig='0'";
-                DataTable dtbd = SQLHelper2.GetDataSet(strSqlbd).Tables[0];
-                string strbdbig = "";
-                for (int j = 0; j < dtbd.Rows.Count; j++)
-                {
-                    strbdbig += dtbd.Rows[j]["pds_id"].ToString() + "|";
-                }
-                dt.Rows[i]["计划缺料"] = strbdbig;
-            }
-            #endregion
             dataGridView1.DataSource = dt;
 
         }
@@ -168,11 +138,35 @@ namespace Youli_Data_Share.OrderPaln
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             var query = from q in dt.AsEnumerable()
-                        orderby q["本单缺料"].ToString().Length
+                        orderby q["Names"].ToString().Length
                         select q;
             dataGridView1.DataSource = query.CopyToDataTable();
 
 
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            var query = from q in dt.AsEnumerable()
+                        orderby q["Expr1"].ToString().Length
+                        select q;
+            dataGridView1.DataSource = query.CopyToDataTable();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            search();
+        }
+
+        private void search()
+        {
+            string strSql = @"SELECT * FROM GCB_LAST_JIHUA WHERE flo_num LIKE '%" + toolStripTextBox1.Text.Trim()
+                                    + "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim()
+                                    + "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim()
+                                    + "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim()
+                                    + "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() + "%'";
+            dt = SQLHelper2.GetDataSet(strSql).Tables[0];
+            dataGridView1.DataSource = dt;
         }
     }
 }
