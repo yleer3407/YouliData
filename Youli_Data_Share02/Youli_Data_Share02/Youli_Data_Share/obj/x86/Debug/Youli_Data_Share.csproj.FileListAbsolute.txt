@@ -379,7 +379,6 @@ G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Yo
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.application
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.csproj.CopyComplete
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.TrustInfo.xml
-G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.csprojAssemblyReference.cache
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\bin\Debug\Microsoft.SqlServer.Types.dll
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\RdlCompile.cache
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\RdlCompile.compiled

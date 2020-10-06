@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -41,6 +42,16 @@ namespace Youli_Data_Share
 
         private void orderProBomData_Load(object sender, EventArgs e)
         {
+            Control.CheckForIllegalCrossThreadCalls = false;//ui跨线程检查关闭
+            label3.Visible = true;
+            Thread th = new Thread(loading);
+            th.IsBackground = true;
+            th.Start();
+         
+        }
+
+        private void loading()
+        {
             //MessageBox.Show(orderProcess.orderIntNum.ToString());//实现数量读取
             #region 订单排程表1
             //MessageBox.Show(OrdNum);
@@ -66,7 +77,7 @@ namespace Youli_Data_Share
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = dt1;
             #region 颜色划分
-                for(int i = 0; i < dataGridView1.RowCount; i++)
+            for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 if (this.dataGridView1.Rows[i].Cells["Column11"].Value.ToString() == "0")
                 {
@@ -82,9 +93,11 @@ namespace Youli_Data_Share
             //conn1.Close();
             #endregion
             #region 实际bom材料分析
-           // proNum();
-           ProNumnn();
+            // proNum();
+            ProNumnn();
+            label3.Visible = false;
             conn1.Close();
+
             #endregion
         }
 

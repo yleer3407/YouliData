@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -49,6 +50,14 @@ namespace Youli_Data_Share
 
         private void orderProcessEdit_Load(object sender, EventArgs e)
         {
+            Control.CheckForIllegalCrossThreadCalls = false;
+            Thread th = new Thread(loading); //Test为多线程运行程序
+            th.IsBackground = true;//设置后台运行
+            th.Start();//开始运行 参数应该在这里设置
+        }
+
+        private void loading()
+        {
             string Sqlstr = "SELECT * FROM flow WHERE flo_num = '" + this.editValue + "'";
             dt = SQLHelper2.GetDataSet(Sqlstr).Tables[0];
             #region 读取sql数据存入txt文本框
@@ -85,7 +94,6 @@ namespace Youli_Data_Share
             txtfloencase.Text = dt.Rows[0]["flo_encase"].ToString();
             txtflobox.Text = dt.Rows[0]["flo_box"].ToString();
             txtfloask.Text = dt.Rows[0]["flo_ask"].ToString();
-
             if (dt.Rows[0]["flo_pic"].ToString() == "1")
             {
                 chkflopic.Checked = true;
@@ -113,10 +121,13 @@ namespace Youli_Data_Share
             }
             if (dt.Rows[0]["flo_finish"].ToString() == "Y")
             {
+                checkBox1.Checked = true;
+            }
+            if (dt.Rows[0]["flo_finishTo"].ToString() == "Y")
+            {
                 chkfinish.Checked = true;
             }
             #endregion
-
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -163,6 +174,7 @@ namespace Youli_Data_Share
                     txtfloProSum.Enabled = true;
                     chkout.Enabled = true;
                     chkfinish.Enabled = true;
+                    checkBox1.Enabled = true;
                 }
                 if (orderProcess.txtuser == "高超")
                 {
@@ -213,8 +225,13 @@ namespace Youli_Data_Share
                 {
                     if (orderProcess.txtuser == "严华新" || orderProcess.txtuser == "胡连年")
                     {
+                        string scValue = "N";
                         string outValue = "N";
                         string finValue = "N";
+                        if (checkBox1.Checked)
+                        {
+                            scValue = "Y";
+                        }
                         if (chkout.Checked)
                         {
                             outValue = "Y";
@@ -267,8 +284,9 @@ namespace Youli_Data_Share
                                    ,[flo_online] = '" + txtfloonline.Text + @"'
                                    ,[flo_ProSum] = '" + txtfloProSum.Text + @"'
                                    ,[flo_spotChk] = '" + txtflospotChk.Text + @"'
+                                   ,[flo_finish] = '" + scValue + @"'
                                    ,[flo_out] = '" + outValue + @"'
-                                   ,[flo_finish] = '" + finValue + @"'
+                                   ,[flo_finishTo] = '" + finValue + @"'
                                WHERE flo_time = '" + txtflotime.Text + @"' 
                                     AND flo_num= '" + txtflonum.Text + "'";
                     }

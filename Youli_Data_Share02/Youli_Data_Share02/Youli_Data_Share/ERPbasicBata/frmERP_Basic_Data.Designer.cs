@@ -40,6 +40,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_Login1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -86,6 +87,7 @@
             // 
             // toolSearchTxt
             // 
+            this.toolSearchTxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.toolSearchTxt.Name = "toolSearchTxt";
             this.toolSearchTxt.Size = new System.Drawing.Size(100, 25);
             // 
@@ -163,11 +165,22 @@
             this.dataGridView3.TabIndex = 3;
             this.dataGridView3.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView3_RowPostPaint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(458, 255);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(219, 46);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "数据读取中...";
+            // 
             // frmERP_Basic_Data
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 675);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -200,5 +213,6 @@
         private System.Windows.Forms.ToolStripTextBox toolSearchTxt;
         private System.Windows.Forms.ToolStripButton toolSearchBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.Label label1;
     }
 }

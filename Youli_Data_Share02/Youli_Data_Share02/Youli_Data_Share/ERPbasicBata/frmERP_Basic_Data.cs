@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -39,6 +40,17 @@ namespace Youli_Data_Share.ERPbasicBata
         /// <param name="e"></param>
         private void frmERP_Basic_Data_Load(object sender, EventArgs e)
         {
+            Control.CheckForIllegalCrossThreadCalls = false;
+            label1.Visible = true;
+            Thread th = new Thread(loading); //Test为多线程运行程序
+            th.IsBackground = true;//设置后台运行
+            th.Start();//开始运行 参数应该在这里设置
+
+
+        }
+
+        private void loading()
+        {
             //BOM表-dgv1
             //材料表-dgv2
             //库存表-dgv3
@@ -49,8 +61,8 @@ namespace Youli_Data_Share.ERPbasicBata
             dataGridView3.Visible = false;
             toolStripComboBox1.SelectedIndex = 0;
             searchDgv1();
-
         }
+
         /// <summary>
         /// 表1读取sql数据
         /// </summary>
@@ -83,6 +95,7 @@ namespace Youli_Data_Share.ERPbasicBata
                 da1.Fill(ds1, "BOM");
                 dt1 = ds1.Tables["BOM"];
                 dataGridView1.AutoGenerateColumns = true;
+                label1.Visible = false;
                 dataGridView1.DataSource = dt1;
                 conn1.Close();
             }

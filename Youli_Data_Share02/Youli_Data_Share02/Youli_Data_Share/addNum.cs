@@ -275,7 +275,7 @@ namespace Youli_Data_Share
                                     ,[flo_ask]
                                     ,[flo_pic]
                                     ,[flo_out]
-                                    ,[flo_finish])
+                                    ,[flo_finishTo])
                                   VALUES
                                     ('" + "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") + "]" + @"'
                                     ,'" + dataGridView1.Rows[0].Cells["Column1"].Value.ToString() + @"'

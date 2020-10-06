@@ -128,6 +128,7 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void button7_Click(object sender, EventArgs e)
         {
+            notifyIcon1.Dispose();
             Application.ExitThread();
 
         }
@@ -334,51 +335,8 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)//窗口3：材料资料
         {
-            //            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
-            //            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
-            //            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
-            //            string win3 = INIHelper.Read("window", "3", "0", filePath1);//服务器窗口
-            //            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
-            //            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
-            //            notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
-            //            #region 测试ping
-            //            int index = win3.IndexOf("\\", 3);
-            //            string ipStr = win3.Substring(2, index - 2);
-            //            //string ipStr = "NQSRSUXS2GWHMON";
-            //            Ping pingSender = new Ping();
-            //            string data = "ping test data";
-            //            byte[] buf = Encoding.ASCII.GetBytes(data);
-            //            int timeout = 1000;
-
-            //            try
-            //            {
-            //                PingReply reply = pingSender.Send(ipStr, timeout, buf);
-            //                if (reply.Status == IPStatus.Success)
-            //                {
-
-            //                }
-            //            }
-            //            catch
-            //            {
-            //                MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
-            //                return;
-            //            }
-            //#endregion
-
-            //            var fileContent = string.Empty;
-            //            var filePath = string.Empty;
-            //            var filename = string.Empty;
-            //            try
-            //            {
-            //                System.Diagnostics.Process.Start(win3);
-            //            }
-            //            catch
-            //            {
-            //                MessageBox.Show("路径错误");
-            //            }
-            notifyIcon1.ShowBalloonTip(1000, "提示", "数据疯狂载入中...\r\n......\r\n......\r\n请勿多次点击！", ToolTipIcon.Info);
             frmERP_Basic_Data frmERPData = new frmERP_Basic_Data();
-                      frmERPData.Show();
+            frmERPData.Show();
         }
         /// <summary>
         /// QC 质检

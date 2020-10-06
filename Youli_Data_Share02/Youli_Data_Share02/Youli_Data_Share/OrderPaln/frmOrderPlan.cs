@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,23 +22,30 @@ namespace Youli_Data_Share.OrderPaln
 
         private void OrderPlan_Load(object sender, EventArgs e)
         {
-            string strSql = @"SELECT  [flo_online]
-      ,[flo_line]
-      ,[flo_num]
-      ,[flo_client]
-      ,[flo_coding]
-      ,[flo_model]
-      ,[flo_proname]
-      ,[flo_range]
-      ,[flo_plastic]
-      ,[flo_quantity]
-      ,[Names]
-      ,[Expr1]
-  FROM [YouliData].[dbo].[GCB_LAST_JIHUA]";
-             dt = SQLHelper2.GetDataSet(strSql).Tables[0];
-            dataGridView1.DataSource = dt;
+            label1.Visible = true;
+            label1.Text = "数据疯狂计算中...";
+            Control.CheckForIllegalCrossThreadCalls = false;
+            Thread th = new Thread(loading);
+            th.IsBackground = true;
+            th.Start();
+  //          string strSql = @"SELECT  [flo_online]
+  //    ,[flo_line]
+  //    ,[flo_num]
+  //    ,[flo_client]
+  //    ,[flo_coding]
+  //    ,[flo_model]
+  //    ,[flo_proname]
+  //    ,[flo_range]
+  //    ,[flo_plastic]
+  //    ,[flo_quantity]
+  //    ,[Names]
+  //    ,[Expr1]
+  ////FROM [YouliData].[dbo].[GCB_LAST_JIHUA]";
+  //           dt = SQLHelper2.GetDataSet(strSql).Tables[0];
+  //          dataGridView1.DataSource = dt;
 
         }
+
         /// <summary>
         /// 工艺文件 Button
         /// </summary>
@@ -155,17 +163,35 @@ namespace Youli_Data_Share.OrderPaln
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
+
             search();
         }
 
         private void search()
         {
-            string strSql = @"SELECT * FROM GCB_LAST_JIHUA WHERE flo_num LIKE '%" + toolStripTextBox1.Text.Trim()
-                                    + "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim()
-                                    + "%'or flo_coding LIKE '%" + toolStripTextBox1.Text.Trim()
-                                    + "%'or flo_model LIKE '%" + toolStripTextBox1.Text.Trim()
-                                    + "%'or flo_proname LIKE '%" + toolStripTextBox1.Text.Trim() + "%'";
+            DataView dv = dt.DefaultView;
+            dv.RowFilter = string.Format("flo_num LIKE '%{0} %' or flo_client LIKE '%{0}%' or flo_coding LIKE '%{0}%' or flo_model LIKE '%{0}%' or flo_online LIKE '%{0}%' or flo_plastic LIKE '%{0}%' or flo_range LIKE '%{0}%' or flo_proname LIKE '%{0}%'", toolStripTextBox1.Text.Trim());
+            DataTable dtSelect = dv.ToTable();
+            dataGridView1.DataSource = dtSelect;
+        }
+
+        private void loading()
+        {
+            string strSql = @"SELECT  [flo_online]
+                                      ,[flo_line]
+                                      ,[flo_num]
+                                      ,[flo_client]
+                                      ,[flo_coding]
+                                      ,[flo_model]
+                                      ,[flo_proname]
+                                      ,[flo_range]
+                                      ,[flo_plastic]
+                                      ,[flo_quantity]
+                                      ,[Names]
+                                      ,[Expr1]
+                                FROM GCB_LAST_JIHUA ";
             dt = SQLHelper2.GetDataSet(strSql).Tables[0];
+            label1.Visible = false;
             dataGridView1.DataSource = dt;
         }
     }

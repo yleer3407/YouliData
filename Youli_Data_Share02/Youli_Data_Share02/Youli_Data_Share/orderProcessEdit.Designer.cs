@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(orderProcessEdit));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -148,7 +147,8 @@
             this.txtflofristChk = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.tableAdapterManager1 = new Youli_Data_Share.data_LoginTableAdapters.TableAdapterManager();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label49 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -1241,7 +1241,7 @@
             this.groupBox3.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox3.Location = new System.Drawing.Point(0, 814);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1210, 307);
+            this.groupBox3.Size = new System.Drawing.Size(1210, 317);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "生产环节";
@@ -1275,18 +1275,20 @@
             this.tableLayoutPanel3.Controls.Add(this.panel8, 5, 6);
             this.tableLayoutPanel3.Controls.Add(this.label42, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.label43, 1, 6);
-            this.tableLayoutPanel3.Controls.Add(this.label46, 1, 7);
-            this.tableLayoutPanel3.Controls.Add(this.chkout, 2, 7);
-            this.tableLayoutPanel3.Controls.Add(this.label47, 1, 8);
-            this.tableLayoutPanel3.Controls.Add(this.chkfinish, 2, 8);
+            this.tableLayoutPanel3.Controls.Add(this.label47, 1, 9);
+            this.tableLayoutPanel3.Controls.Add(this.chkfinish, 2, 9);
             this.tableLayoutPanel3.Controls.Add(this.txtflofristMake, 2, 5);
             this.tableLayoutPanel3.Controls.Add(this.txtflofristChk, 2, 6);
             this.tableLayoutPanel3.Controls.Add(this.button3, 6, 3);
+            this.tableLayoutPanel3.Controls.Add(this.chkout, 2, 8);
+            this.tableLayoutPanel3.Controls.Add(this.checkBox1, 2, 7);
+            this.tableLayoutPanel3.Controls.Add(this.label46, 1, 7);
+            this.tableLayoutPanel3.Controls.Add(this.label49, 1, 8);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 29);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 10;
+            this.tableLayoutPanel3.RowCount = 11;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -1294,10 +1296,11 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1204, 275);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1204, 285);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label36
@@ -1481,8 +1484,8 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(747, 183);
             this.panel8.Name = "panel8";
-            this.tableLayoutPanel3.SetRowSpan(this.panel8, 3);
-            this.panel8.Size = new System.Drawing.Size(390, 84);
+            this.tableLayoutPanel3.SetRowSpan(this.panel8, 4);
+            this.panel8.Size = new System.Drawing.Size(390, 104);
             this.panel8.TabIndex = 26;
             // 
             // txtflospotChk
@@ -1492,7 +1495,7 @@
             this.txtflospotChk.Location = new System.Drawing.Point(0, 0);
             this.txtflospotChk.Multiline = true;
             this.txtflospotChk.Name = "txtflospotChk";
-            this.txtflospotChk.Size = new System.Drawing.Size(390, 84);
+            this.txtflospotChk.Size = new System.Drawing.Size(390, 104);
             this.txtflospotChk.TabIndex = 0;
             // 
             // label42
@@ -1525,18 +1528,18 @@
             this.label46.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label46.Location = new System.Drawing.Point(53, 210);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(44, 17);
+            this.label46.Size = new System.Drawing.Size(68, 17);
             this.label46.TabIndex = 10;
-            this.label46.Text = "出货：";
+            this.label46.Text = "生产完成：";
             // 
             // chkout
             // 
             this.chkout.AutoSize = true;
             this.chkout.Enabled = false;
             this.chkout.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.chkout.Location = new System.Drawing.Point(152, 213);
+            this.chkout.Location = new System.Drawing.Point(152, 238);
             this.chkout.Name = "chkout";
-            this.chkout.Size = new System.Drawing.Size(51, 21);
+            this.chkout.Size = new System.Drawing.Size(51, 19);
             this.chkout.TabIndex = 22;
             this.chkout.Text = "出货";
             this.chkout.UseVisualStyleBackColor = true;
@@ -1546,7 +1549,7 @@
             this.label47.AutoSize = true;
             this.label47.BackColor = System.Drawing.Color.Yellow;
             this.label47.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label47.Location = new System.Drawing.Point(53, 240);
+            this.label47.Location = new System.Drawing.Point(53, 260);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(44, 17);
             this.label47.TabIndex = 11;
@@ -1557,7 +1560,7 @@
             this.chkfinish.AutoSize = true;
             this.chkfinish.Enabled = false;
             this.chkfinish.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.chkfinish.Location = new System.Drawing.Point(152, 243);
+            this.chkfinish.Location = new System.Drawing.Point(152, 263);
             this.chkfinish.Name = "chkfinish";
             this.chkfinish.Size = new System.Drawing.Size(51, 21);
             this.chkfinish.TabIndex = 23;
@@ -1602,11 +1605,28 @@
             this.tableAdapterManager1.UpdateOrder = Youli_Data_Share.data_LoginTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager1.userAdminTableAdapter = null;
             // 
-            // notifyIcon1
+            // checkBox1
             // 
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox1.Location = new System.Drawing.Point(152, 213);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(75, 19);
+            this.checkBox1.TabIndex = 30;
+            this.checkBox1.Text = "生产完成";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.BackColor = System.Drawing.Color.Yellow;
+            this.label49.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label49.Location = new System.Drawing.Point(53, 235);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(44, 17);
+            this.label49.TabIndex = 31;
+            this.label49.Text = "出货：";
             // 
             // orderProcessEdit
             // 
@@ -1614,7 +1634,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1227, 957);
+            this.ClientSize = new System.Drawing.Size(1227, 599);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -1623,6 +1643,7 @@
             this.Name = "orderProcessEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "订单编辑";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.orderProcessEdit_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -1775,7 +1796,8 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.TextBox txtflomodel;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label49;
     }
 }
