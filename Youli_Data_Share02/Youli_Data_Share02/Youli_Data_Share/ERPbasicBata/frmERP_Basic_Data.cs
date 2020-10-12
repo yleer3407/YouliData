@@ -15,22 +15,9 @@ namespace Youli_Data_Share.ERPbasicBata
 {
     public partial class frmERP_Basic_Data : Form
     {
-        SqlConnectionStringBuilder scsb1;
-        SqlConnection conn1;
-        SqlConnection conn2;
-        SqlConnection conn3;
-        DataTable dt1;
-        DataTable dt2;
-        DataTable dt3;
         public frmERP_Basic_Data()
         {
             InitializeComponent();
-            scsb1 = new SqlConnectionStringBuilder();
-            scsb1.DataSource = "192.168.1.104";
-            scsb1.UserID = "sa";
-            scsb1.Password = "yelei193";
-            scsb1.InitialCatalog = "YouliData";
-
         }
 
         /// <summary>
@@ -41,12 +28,11 @@ namespace Youli_Data_Share.ERPbasicBata
         private void frmERP_Basic_Data_Load(object sender, EventArgs e)
         {
             Control.CheckForIllegalCrossThreadCalls = false;
-            label1.Visible = true;
+            toolStripComboBox1.SelectedIndex = 0;
+            // label1.Visible = true;
             Thread th = new Thread(loading); //Test为多线程运行程序
             th.IsBackground = true;//设置后台运行
             th.Start();//开始运行 参数应该在这里设置
-
-
         }
 
         private void loading()
@@ -55,11 +41,6 @@ namespace Youli_Data_Share.ERPbasicBata
             //材料表-dgv2
             //库存表-dgv3
             //默认显示BOM表-dgv1
-
-            dataGridView1.Visible = true;
-            dataGridView2.Visible = false;
-            dataGridView3.Visible = false;
-            toolStripComboBox1.SelectedIndex = 0;
             searchDgv1();
         }
 
@@ -89,15 +70,8 @@ namespace Youli_Data_Share.ERPbasicBata
                          "%'or pds_spec LIKE '%" + toolSearchTxt.Text.Trim() +
                          "%'or Expr2 LIKE '%" + toolSearchTxt.Text.Trim() +
                          "%'or pds_id LIKE '%" + toolSearchTxt.Text.Trim() + "%'";
-                conn1 = new SqlConnection(scsb1.ToString());
-                SqlDataAdapter da1 = new SqlDataAdapter(sql1, conn1);
-                DataSet ds1 = new DataSet();
-                da1.Fill(ds1, "BOM");
-                dt1 = ds1.Tables["BOM"];
-                dataGridView1.AutoGenerateColumns = true;
+                dataGridView1.DataSource = SQLHelper2.GetDataSet(sql1).Tables[0];
                 label1.Visible = false;
-                dataGridView1.DataSource = dt1;
-                conn1.Close();
             }
             catch
             {
@@ -129,14 +103,8 @@ namespace Youli_Data_Share.ERPbasicBata
                                "%'or pds_ename LIKE '%" + toolSearchTxt.Text.Trim() +
                                "%'or pds_spec LIKE '%" + toolSearchTxt.Text.Trim() +
                                "%'or cus_pds_id LIKE '%" + toolSearchTxt.Text.Trim() + "%'";
-                conn2 = new SqlConnection(scsb1.ToString());
-                SqlDataAdapter da2 = new SqlDataAdapter(sql2, conn2);
-                DataSet ds2 = new DataSet();
-                da2.Fill(ds2, "PDS");
-                dt2 = ds2.Tables["PDS"];
-                dataGridView2.AutoGenerateColumns = true;
-                dataGridView2.DataSource = dt2;
-                conn2.Close();
+                dataGridView1.DataSource = SQLHelper2.GetDataSet(sql2).Tables[0];
+                label1.Visible = false;
             }
             catch
             {
@@ -168,14 +136,8 @@ namespace Youli_Data_Share.ERPbasicBata
                                "%'or pds_spec LIKE '%" + toolSearchTxt.Text.Trim() +
                                "%'or mak_name LIKE '%" + toolSearchTxt.Text.Trim() +
                                "%'or cus_pds_id LIKE '%" + toolSearchTxt.Text.Trim() + "%'";
-                conn3 = new SqlConnection(scsb1.ToString());
-                SqlDataAdapter da3 = new SqlDataAdapter(sql3, conn3);
-                DataSet ds3 = new DataSet();
-                da3.Fill(ds3, "GCB_STK");
-                dt3 = ds3.Tables["GCB_STK"];
-                dataGridView3.AutoGenerateColumns = true;
-                dataGridView3.DataSource = dt3;
-                conn3.Close();
+                dataGridView1.DataSource = SQLHelper2.GetDataSet(sql3).Tables[0];
+                label1.Visible = false;
             }
             catch
             {
@@ -185,6 +147,29 @@ namespace Youli_Data_Share.ERPbasicBata
             
         }
 
+        /// <summary>
+        /// 表4读取sql数据
+        /// </summary>
+        private void searchDgv4()
+        {
+            try
+            {
+                string sql3 = @"SELECT  [pds_id] 产品编号
+                          ,[pds_name]   产品名称
+                          ,[pds_spec]   规格型号
+                          ,[hhstock] 库存数量
+                      FROM [dbo].[GCB_HH_STOCK]
+                        WHERE pds_id LIKE '%" + toolSearchTxt.Text.Trim() +
+                               "%'or pds_name LIKE '%" + toolSearchTxt.Text.Trim() +
+                               "%'or pds_spec LIKE '%" + toolSearchTxt.Text.Trim() +"%'";
+                dataGridView1.DataSource = SQLHelper2.GetDataSet(sql3).Tables[0];
+                label1.Visible = false;
+            }
+            catch
+            {
+                MessageBox.Show("数据库连接失败！");
+            }
+        }
         /// <summary>
         /// 表格下拉框筛选
         /// </summary>
@@ -196,24 +181,23 @@ namespace Youli_Data_Share.ERPbasicBata
             {
                 case 0:
                     dataGridView1.Visible = true;
-                    dataGridView2.Visible = false;
-                    dataGridView3.Visible = false;
                     toolSearchTxt.Text = "";
                     searchDgv1();
                     break;
                 case 1:
-                    dataGridView1.Visible = false;
-                    dataGridView2.Visible = true;
-                    dataGridView3.Visible = false;
+                    dataGridView1.Visible = true;
                     toolSearchTxt.Text = "";
                     searchDgv2();
                     break;
                 case 2:
-                    dataGridView1.Visible = false;
-                    dataGridView2.Visible = false;
-                    dataGridView3.Visible = true;
+                    dataGridView1.Visible = true;
                     toolSearchTxt.Text = "";
                     searchDgv3();
+                    break;
+                case 3:
+                    dataGridView1.Visible = true;
+                    toolSearchTxt.Text = "";
+                    searchDgv4();
                     break;
                 default: break;
             }
@@ -230,27 +214,9 @@ namespace Youli_Data_Share.ERPbasicBata
             TextRenderer.DrawText(e.Graphics, (e.RowIndex + 1).ToString(), dataGridView1.RowHeadersDefaultCellStyle.Font, rectangle1, dataGridView1.RowHeadersDefaultCellStyle.ForeColor, TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
         }
 
-        /// <summary>
-        /// 表2显示行号
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dataGridView2_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            Rectangle rectangle2 = new Rectangle(e.RowBounds.Location.X, e.RowBounds.Location.Y, dataGridView1.RowHeadersWidth - 4, e.RowBounds.Height);
-            TextRenderer.DrawText(e.Graphics, (e.RowIndex + 1).ToString(), dataGridView2.RowHeadersDefaultCellStyle.Font, rectangle2, dataGridView2.RowHeadersDefaultCellStyle.ForeColor, TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
-        }
 
-        /// <summary>
-        /// 表3显示行号
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dataGridView3_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            Rectangle rectangle3 = new Rectangle(e.RowBounds.Location.X, e.RowBounds.Location.Y, dataGridView1.RowHeadersWidth - 4, e.RowBounds.Height);
-            TextRenderer.DrawText(e.Graphics, (e.RowIndex + 1).ToString(), dataGridView3.RowHeadersDefaultCellStyle.Font, rectangle3, dataGridView3.RowHeadersDefaultCellStyle.ForeColor, TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
-        }
+
+
 
         /// <summary>
         /// 导出当前表的excel
@@ -343,9 +309,14 @@ namespace Youli_Data_Share.ERPbasicBata
                 case 2:
                     searchDgv3();
                     break;
+                case 3:
+                    searchDgv4();
+                    break;
                 default: break;
             }
         }
+
+
     }
 
 }

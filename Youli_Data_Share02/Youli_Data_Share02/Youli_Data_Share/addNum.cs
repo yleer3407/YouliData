@@ -275,7 +275,8 @@ namespace Youli_Data_Share
                                     ,[flo_ask]
                                     ,[flo_pic]
                                     ,[flo_out]
-                                    ,[flo_finishTo])
+                                    ,[flo_finishTo]
+                                    ,[flo_bomVerify])
                                   VALUES
                                     ('" + "[" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") + "]" + @"'
                                     ,'" + dataGridView1.Rows[0].Cells["Column1"].Value.ToString() + @"'
@@ -309,7 +310,8 @@ namespace Youli_Data_Share
                                     ,'" + dataGridView1.Rows[0].Cells["Column29"].Value.ToString() + @"'
                                     ,'" + "0" + @"' 
                                     ,'" + "N" + @"' 
-                                    ,'" + "N" + @"' )";
+                                    ,'" + "N" + @"' 
+                                    ,'" + "0" + @"' )";
                 SqlCommand comm = new SqlCommand(strSql, conn_add);
                 comm.ExecuteNonQuery();
                 MessageBox.Show("添加成功！");

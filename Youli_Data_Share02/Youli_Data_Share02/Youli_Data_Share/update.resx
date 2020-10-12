@@ -118,9 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.87 data 2020.10.06&gt;&gt;update:
+    <value>版本1.0.0.90 data 2020.10.11&gt;&gt;update:
+1.添加后焊库存表
+---------------------------------------------------------
+版本1.0.0.89 data 2020.10.11&gt;&gt;update:
+1.修改订单排程BUG
+---------------------------------------------------------
+版本1.0.0.88 data 2020.10.10&gt;&gt;update:
+1.修改flo_finishToTObug
+---------------------------------------------------------
+版本1.0.0.87 data 2020.10.06&gt;&gt;update:
 1.增加生产完成勾选框
-2.数据读取改为多线程工作
+2.数据读取改为多线程工作flo_finishTo
 ---------------------------------------------------------
 版本1.0.0.86 data 2020.10.05&gt;&gt;update:
 1.新增订单计划窗体

@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(orderProcess));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
@@ -80,6 +80,8 @@
             this.toolSTxt = new System.Windows.Forms.ToolStripTextBox();
             this.youli_dateDataSet1 = new Youli_Data_Share.Youli_dateDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvWorkFlow = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -141,8 +143,6 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.生产计划ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.youli_dateDataSet1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -501,21 +501,43 @@
             this.panel1.Size = new System.Drawing.Size(1504, 616);
             this.panel1.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(503, 277);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(514, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "查找全部：清除输入框内容，点击【查找】按钮";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(503, 230);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(478, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "条件筛选：输入查找内容 点击【查找】按钮";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // dgvWorkFlow
             // 
             this.dgvWorkFlow.AllowUserToAddRows = false;
             this.dgvWorkFlow.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            this.dgvWorkFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvWorkFlow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvWorkFlow.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkFlow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvWorkFlow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWorkFlow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -578,8 +600,8 @@
             this.dgvWorkFlow.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvWorkFlow.Location = new System.Drawing.Point(0, 0);
             this.dgvWorkFlow.Name = "dgvWorkFlow";
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvWorkFlow.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvWorkFlow.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvWorkFlow.RowTemplate.Height = 23;
             this.dgvWorkFlow.Size = new System.Drawing.Size(1504, 616);
             this.dgvWorkFlow.TabIndex = 0;
@@ -592,8 +614,8 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "flo_time";
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column1.Frozen = true;
             this.Column1.HeaderText = "下单时间[1]";
             this.Column1.Name = "Column1";
@@ -602,8 +624,8 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "flo_state";
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column2.Frozen = true;
             this.Column2.HeaderText = "订单状态[2]";
             this.Column2.Name = "Column2";
@@ -644,9 +666,9 @@
             // Column7
             // 
             this.Column7.DataPropertyName = "flo_record";
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("幼圆", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Red;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("幼圆", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column7.Frozen = true;
             this.Column7.HeaderText = "订单临时变更[7]";
             this.Column7.Name = "Column7";
@@ -836,9 +858,9 @@
             // 
             // Column33
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.NullValue = "工艺文件";
-            this.Column33.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = "工艺文件";
+            this.Column33.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column33.HeaderText = "工艺文件[33]";
             this.Column33.Name = "Column33";
             this.Column33.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -855,9 +877,9 @@
             // 
             // Column35
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.NullValue = "BOM材料状态分析";
-            this.Column35.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = "BOM材料状态分析";
+            this.Column35.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column35.HeaderText = "BOM材料状态分析";
             this.Column35.Name = "Column35";
             this.Column35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -914,9 +936,9 @@
             // 
             // Column42
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.NullValue = "来料问题夹";
-            this.Column42.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = "来料问题夹";
+            this.Column42.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column42.HeaderText = "预留[42]";
             this.Column42.Name = "Column42";
             this.Column42.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -984,9 +1006,9 @@
             // 
             // Column51
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.NullValue = "生产问题夹";
-            this.Column51.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.NullValue = "生产问题夹";
+            this.Column51.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column51.HeaderText = "生产问题夹[51]";
             this.Column51.Name = "Column51";
             this.Column51.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -1037,7 +1059,7 @@
             this.toolStripMenuItem4,
             this.生产计划ToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             this.contextMenuStrip1.Text = "~~~~(>_<)~~~~";
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
@@ -1045,7 +1067,7 @@
             // 
             this.展开数据ToolStripMenuItem.Image = global::Youli_Data_Share.Properties.Resources.icons8_to_do_16;
             this.展开数据ToolStripMenuItem.Name = "展开数据ToolStripMenuItem";
-            this.展开数据ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.展开数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.展开数据ToolStripMenuItem.Text = "展开数据";
             this.展开数据ToolStripMenuItem.Click += new System.EventHandler(this.展开数据ToolStripMenuItem_Click);
             // 
@@ -1053,7 +1075,7 @@
             // 
             this.toolStripMenuItem4.Image = global::Youli_Data_Share.Properties.Resources.表格设置;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem4.Text = "打印订单报表";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
@@ -1061,7 +1083,7 @@
             // 
             this.生产计划ToolStripMenuItem1.Image = global::Youli_Data_Share.Properties.Resources.edit_property_80px;
             this.生产计划ToolStripMenuItem1.Name = "生产计划ToolStripMenuItem1";
-            this.生产计划ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.生产计划ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.生产计划ToolStripMenuItem1.Text = "物料报缺报表";
             this.生产计划ToolStripMenuItem1.Click += new System.EventHandler(this.生产计划ToolStripMenuItem1_Click);
             // 
@@ -1078,28 +1100,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(503, 230);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(478, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "条件筛选：输入查找内容 点击【查找】按钮";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(503, 277);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(514, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "查找全部：清除输入框内容，点击【查找】按钮";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // orderProcess
             // 

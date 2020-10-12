@@ -23,7 +23,7 @@ namespace Youli_Data_Share.OrderPaln
         private void OrderPlan_Load(object sender, EventArgs e)
         {
             label1.Visible = true;
-            label1.Text = "数据疯狂计算中...";
+            //label1.Text = "数据疯狂计算中...";
             Control.CheckForIllegalCrossThreadCalls = false;
             Thread th = new Thread(loading);
             th.IsBackground = true;
@@ -170,7 +170,7 @@ namespace Youli_Data_Share.OrderPaln
         private void search()
         {
             DataView dv = dt.DefaultView;
-            dv.RowFilter = string.Format("flo_num LIKE '%{0} %' or flo_client LIKE '%{0}%' or flo_coding LIKE '%{0}%' or flo_model LIKE '%{0}%' or flo_online LIKE '%{0}%' or flo_plastic LIKE '%{0}%' or flo_range LIKE '%{0}%' or flo_proname LIKE '%{0}%'", toolStripTextBox1.Text.Trim());
+            dv.RowFilter = string.Format("flo_num LIKE '%{0}%' or flo_client LIKE '%{0}%' or flo_coding LIKE '%{0}%' or flo_model LIKE '%{0}%' or flo_online LIKE '%{0}%' or flo_plastic LIKE '%{0}%' or flo_range LIKE '%{0}%' or flo_proname LIKE '%{0}%'", toolStripTextBox1.Text.Trim());
             DataTable dtSelect = dv.ToTable();
             dataGridView1.DataSource = dtSelect;
         }
@@ -193,6 +193,26 @@ namespace Youli_Data_Share.OrderPaln
             dt = SQLHelper2.GetDataSet(strSql).Tables[0];
             label1.Visible = false;
             dataGridView1.DataSource = dt;
+        }
+
+        private void 编辑数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ind = dataGridView1.CurrentRow.Index;
+                string EditValue = dataGridView1.Rows[ind].Cells["Column2"].Value.ToString();
+                orderProcessEdit frmOpedit = new orderProcessEdit(EditValue);
+                DialogResult result = frmOpedit.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    loading();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("请先查找数据！");
+                return;
+            }
         }
     }
 }

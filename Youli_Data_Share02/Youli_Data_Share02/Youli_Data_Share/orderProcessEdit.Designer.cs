@@ -139,16 +139,16 @@
             this.txtflospotChk = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.chkout = new System.Windows.Forms.CheckBox();
             this.label47 = new System.Windows.Forms.Label();
             this.chkfinish = new System.Windows.Forms.CheckBox();
             this.txtflofristMake = new System.Windows.Forms.TextBox();
             this.txtflofristChk = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.tableAdapterManager1 = new Youli_Data_Share.data_LoginTableAdapters.TableAdapterManager();
+            this.chkout = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label46 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
+            this.tableAdapterManager1 = new Youli_Data_Share.data_LoginTableAdapters.TableAdapterManager();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -1521,29 +1521,6 @@
             this.label43.TabIndex = 7;
             this.label43.Text = "首件确认：";
             // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.BackColor = System.Drawing.Color.Yellow;
-            this.label46.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label46.Location = new System.Drawing.Point(53, 210);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(68, 17);
-            this.label46.TabIndex = 10;
-            this.label46.Text = "生产完成：";
-            // 
-            // chkout
-            // 
-            this.chkout.AutoSize = true;
-            this.chkout.Enabled = false;
-            this.chkout.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.chkout.Location = new System.Drawing.Point(152, 238);
-            this.chkout.Name = "chkout";
-            this.chkout.Size = new System.Drawing.Size(51, 19);
-            this.chkout.TabIndex = 22;
-            this.chkout.Text = "出货";
-            this.chkout.UseVisualStyleBackColor = true;
-            // 
             // label47
             // 
             this.label47.AutoSize = true;
@@ -1598,12 +1575,17 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // tableAdapterManager1
+            // chkout
             // 
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.Connection = null;
-            this.tableAdapterManager1.UpdateOrder = Youli_Data_Share.data_LoginTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager1.userAdminTableAdapter = null;
+            this.chkout.AutoSize = true;
+            this.chkout.Enabled = false;
+            this.chkout.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.chkout.Location = new System.Drawing.Point(152, 238);
+            this.chkout.Name = "chkout";
+            this.chkout.Size = new System.Drawing.Size(51, 19);
+            this.chkout.TabIndex = 22;
+            this.chkout.Text = "出货";
+            this.chkout.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
@@ -1617,6 +1599,17 @@
             this.checkBox1.Text = "生产完成";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.Yellow;
+            this.label46.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label46.Location = new System.Drawing.Point(53, 210);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(68, 17);
+            this.label46.TabIndex = 10;
+            this.label46.Text = "生产完成：";
+            // 
             // label49
             // 
             this.label49.AutoSize = true;
@@ -1627,6 +1620,13 @@
             this.label49.Size = new System.Drawing.Size(44, 17);
             this.label49.TabIndex = 31;
             this.label49.Text = "出货：";
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.UpdateOrder = Youli_Data_Share.data_LoginTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.userAdminTableAdapter = null;
             // 
             // orderProcessEdit
             // 

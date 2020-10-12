@@ -196,48 +196,57 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)//窗口1：配发计划
         {
-            notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
-            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
-            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
-            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
-            string win3 = INIHelper.Read("window", "3", "0", filePath1);//服务器窗口
-            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
-            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
-            #region 测试ping
-            int index = win1.IndexOf("\\",3);
-            string ipStr = win1.Substring(2, index - 2);
-            //MessageBox.Show(ipStr);
-            //string ipStr = "Youli-pc";
-            Ping pingSender = new Ping();
-            string data = "ping test data";
-            byte[] buf = Encoding.ASCII.GetBytes(data);
-            int timeout = 1000;
-
             try
             {
-                PingReply reply = pingSender.Send(ipStr, timeout, buf);
-                if (reply.Status == IPStatus.Success)
+                notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
+                string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+                string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+                string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+                string win3 = INIHelper.Read("window", "3", "0", filePath1);//服务器窗口
+                string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+                string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
+                #region 测试ping
+                int index = win1.IndexOf("\\", 3);
+                string ipStr = win1.Substring(2, index - 2);
+                //MessageBox.Show(ipStr);
+                //string ipStr = "Youli-pc";
+                Ping pingSender = new Ping();
+                string data = "ping test data";
+                byte[] buf = Encoding.ASCII.GetBytes(data);
+                int timeout = 1000;
+
+                try
                 {
-                   
+                    PingReply reply = pingSender.Send(ipStr, timeout, buf);
+                    if (reply.Status == IPStatus.Success)
+                    {
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
+                    return;
+                }
+                #endregion
+                var fileContent = string.Empty;
+                var filePath = string.Empty;
+                var filename = string.Empty;
+                try
+                {
+                    System.Diagnostics.Process.Start(win1);
+                }
+                catch
+                {
+                    MessageBox.Show("路径错误");
                 }
             }
             catch
             {
-                MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
+                MessageBox.Show("未读到路径信息！");
                 return;
             }
-#endregion
-            var fileContent = string.Empty;
-            var filePath = string.Empty;
-            var filename = string.Empty;
-            try
-            {
-                System.Diagnostics.Process.Start(win1);
-            }
-            catch
-            {
-                MessageBox.Show("路径错误");
-            }
+
             //using (OpenFileDialog openFileDialog = new OpenFileDialog())
             //{
 
@@ -265,49 +274,58 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)//窗口2：包装材料
         {
-            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
-            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
-            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
-            string win3 = INIHelper.Read("window", "3", "0", filePath1);//服务器窗口
-            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
-            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
-            notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
-            #region 测试ping
-            int index = win2.IndexOf("\\", 3);
-            string ipStr = win2.Substring(2, index - 2);
-           // MessageBox.Show(ipStr);
-           // string ipStr = "Ms-20171213flwd";
-            Ping pingSender = new Ping();
-            string data = "ping test data";
-            byte[] buf = Encoding.ASCII.GetBytes(data);
-            int timeout = 1000;
-
             try
             {
-                PingReply reply = pingSender.Send(ipStr, timeout, buf);
-                if (reply.Status == IPStatus.Success)
-                {
+                string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+                string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+                string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+                string win3 = INIHelper.Read("window", "3", "0", filePath1);//服务器窗口
+                string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+                string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
+                notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
+                #region 测试ping
+                int index = win2.IndexOf("\\", 3);
+                string ipStr = win2.Substring(2, index - 2);
+                // MessageBox.Show(ipStr);
+                // string ipStr = "Ms-20171213flwd";
+                Ping pingSender = new Ping();
+                string data = "ping test data";
+                byte[] buf = Encoding.ASCII.GetBytes(data);
+                int timeout = 1000;
 
+                try
+                {
+                    PingReply reply = pingSender.Send(ipStr, timeout, buf);
+                    if (reply.Status == IPStatus.Success)
+                    {
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
+                    return;
+                }
+                #endregion
+
+                var fileContent = string.Empty;
+                var filePath = string.Empty;
+                var filename = string.Empty;
+                try
+                {
+                    System.Diagnostics.Process.Start(win2);
+                }
+                catch
+                {
+                    MessageBox.Show("路径错误");
                 }
             }
             catch
             {
-                MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
+                MessageBox.Show("未读到路径信息！");
                 return;
             }
-#endregion
-
-            var fileContent = string.Empty;
-            var filePath = string.Empty;
-            var filename = string.Empty;
-            try
-            {
-                System.Diagnostics.Process.Start(win2);
-            }
-            catch
-            {
-                MessageBox.Show("路径错误");
-            }
+            
             //using (OpenFileDialog openFileDialog = new OpenFileDialog())
             //{
 
@@ -345,48 +363,57 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)//窗口4：QC质检
         {
-            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
-            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
-            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
-            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
-            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
-            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
-            notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
-            #region 测试ping
-            int index = win4.IndexOf("\\", 3);
-            string ipStr = win4.Substring(2, index - 2);
-            //string ipStr = "Pc-201910071521";
-            Ping pingSender = new Ping();
-            string data = "ping test data";
-            byte[] buf = Encoding.ASCII.GetBytes(data);
-            int timeout = 1000;
-
             try
             {
-                PingReply reply = pingSender.Send(ipStr, timeout, buf);
-                if (reply.Status == IPStatus.Success)
-                {
+                string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+                string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+                string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+                string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
+                string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+                string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
+                notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
+                #region 测试ping
+                int index = win4.IndexOf("\\", 3);
+                string ipStr = win4.Substring(2, index - 2);
+                //string ipStr = "Pc-201910071521";
+                Ping pingSender = new Ping();
+                string data = "ping test data";
+                byte[] buf = Encoding.ASCII.GetBytes(data);
+                int timeout = 1000;
 
+                try
+                {
+                    PingReply reply = pingSender.Send(ipStr, timeout, buf);
+                    if (reply.Status == IPStatus.Success)
+                    {
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
+                    return;
+                }
+                #endregion
+
+                var fileContent = string.Empty;
+                var filePath = string.Empty;
+                var filename = string.Empty;
+                try
+                {
+                    System.Diagnostics.Process.Start(win4);
+                }
+                catch
+                {
+                    MessageBox.Show("路径错误");
                 }
             }
             catch
             {
-                MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
+                MessageBox.Show("未读到路径信息！");
                 return;
             }
-#endregion
-
-            var fileContent = string.Empty;
-            var filePath = string.Empty;
-            var filename = string.Empty;
-            try
-            {
-                System.Diagnostics.Process.Start(win4);
-            }
-            catch
-            {
-                MessageBox.Show("路径错误");
-            }
+          
             //using (OpenFileDialog openFileDialog = new OpenFileDialog())
             //{
 
@@ -414,48 +441,57 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)//窗口5：内部检查
         {
-            string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
-            string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
-            string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
-            string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
-            string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
-            string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
-            notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
-            #region 测试ping
-            int index = win5.IndexOf("\\", 3);
-            string ipStr = win5.Substring(2, index - 2);
-            //string ipStr = "LENOVO-PC";
-            Ping pingSender = new Ping();
-            string data = "ping test data";
-            byte[] buf = Encoding.ASCII.GetBytes(data);
-            int timeout = 1000;
-
             try
             {
-                PingReply reply = pingSender.Send(ipStr, timeout, buf);
-                if (reply.Status == IPStatus.Success)
-                {
+                string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+                string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
+                string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
+                string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
+                string win4 = INIHelper.Read("window", "4", "0", filePath1);//QC窗口
+                string win5 = INIHelper.Read("window", "5", "0", filePath1);//查会计窗口
+                notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
+                #region 测试ping
+                int index = win5.IndexOf("\\", 3);
+                string ipStr = win5.Substring(2, index - 2);
+                //string ipStr = "LENOVO-PC";
+                Ping pingSender = new Ping();
+                string data = "ping test data";
+                byte[] buf = Encoding.ASCII.GetBytes(data);
+                int timeout = 1000;
 
+                try
+                {
+                    PingReply reply = pingSender.Send(ipStr, timeout, buf);
+                    if (reply.Status == IPStatus.Success)
+                    {
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
+                    return;
+                }
+                #endregion
+
+                var fileContent = string.Empty;
+                var filePath = string.Empty;
+                var filename = string.Empty;
+                try
+                {
+                    System.Diagnostics.Process.Start(win5);
+                }
+                catch
+                {
+                    MessageBox.Show("路径错误");
                 }
             }
             catch
             {
-                MessageBox.Show("别拿鼠标戳我了，对方关机或者断网了");
+                MessageBox.Show("未读到路径信息！");
                 return;
             }
-#endregion
-
-            var fileContent = string.Empty;
-            var filePath = string.Empty;
-            var filename = string.Empty;
-            try
-            {
-                System.Diagnostics.Process.Start(win5);
-            }
-            catch
-            {
-                MessageBox.Show("路径错误");
-            }
+           
             //using (OpenFileDialog openFileDialog = new OpenFileDialog())
             //{
 

@@ -46,9 +46,6 @@ namespace Youli_Data_Share.OrderPaln
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.编辑数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +60,9 @@ namespace Youli_Data_Share.OrderPaln
             this.Column13 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.编辑数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -149,6 +149,7 @@ namespace Youli_Data_Share.OrderPaln
             this.Column13,
             this.Column11,
             this.Column12});
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -165,29 +166,6 @@ namespace Youli_Data_Share.OrderPaln
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.编辑数据ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 26);
-            // 
-            // 编辑数据ToolStripMenuItem
-            // 
-            this.编辑数据ToolStripMenuItem.Name = "编辑数据ToolStripMenuItem";
-            this.编辑数据ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.编辑数据ToolStripMenuItem.Text = "编辑数据";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(518, 264);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 46);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "读取数据中...";
             // 
             // Column1
             // 
@@ -318,6 +296,30 @@ namespace Youli_Data_Share.OrderPaln
             this.Column12.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column12.HeaderText = "计划缺料";
             this.Column12.Name = "Column12";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.编辑数据ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 26);
+            // 
+            // 编辑数据ToolStripMenuItem
+            // 
+            this.编辑数据ToolStripMenuItem.Name = "编辑数据ToolStripMenuItem";
+            this.编辑数据ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.编辑数据ToolStripMenuItem.Text = "展开数据";
+            this.编辑数据ToolStripMenuItem.Click += new System.EventHandler(this.编辑数据ToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(433, 275);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(236, 46);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Please Wait...";
             // 
             // frmOrderPlan
             // 

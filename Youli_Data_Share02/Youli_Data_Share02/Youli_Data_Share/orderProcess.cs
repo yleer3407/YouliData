@@ -26,7 +26,7 @@ namespace Youli_Data_Share
         public string strSQLALL;
         public static string pdsNum = "";//传递当前行产品编码
         public static int orderIntNum; //传递当前行产品数量
-        public static string txtuser;
+        public static string txtuser; //用户名
         DataTable dt_flow;//定于变量
         SqlConnection conn_flow;
         public orderProcess()
@@ -372,9 +372,7 @@ namespace Youli_Data_Share
 
             #endregion
             #region 读取流程数据库内容
-            //searchDate2();
-           //searchDate();
-            // dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
+
             #endregion
             #region 列冻结
             #endregion
@@ -1708,7 +1706,7 @@ namespace Youli_Data_Share
                 {
                     if (toolStripComboBox3.SelectedIndex == 0)
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishToTo='Y' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='Y' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -1757,7 +1755,7 @@ namespace Youli_Data_Share
                     }
                     if (toolStripComboBox3.SelectedIndex == 1)
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishToTo='Y' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='Y' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -1806,7 +1804,7 @@ namespace Youli_Data_Share
                     }
                     if (toolStripComboBox3.SelectedIndex == 2) //未厂制
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishToTo='Y' AND flo_online ='' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='Y' AND flo_online ='' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -1858,7 +1856,7 @@ namespace Youli_Data_Share
                 {
                     if (toolStripComboBox3.SelectedIndex == 0)
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishToTo='Y' AND flo_bomVerify ='1' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='Y' AND flo_bomVerify ='1' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -1907,7 +1905,7 @@ namespace Youli_Data_Share
                     }
                     if (toolStripComboBox3.SelectedIndex == 1)
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishToTo='Y' AND flo_bomVerify ='1' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='Y' AND flo_bomVerify ='1' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -1956,7 +1954,7 @@ namespace Youli_Data_Share
                     }
                     if (toolStripComboBox3.SelectedIndex == 2)
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishToTo='Y' AND flo_bomVerify ='1' AND flo_facAlter =''  AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='Y' AND flo_bomVerify ='1' AND flo_facAlter =''  AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -2008,7 +2006,7 @@ namespace Youli_Data_Share
                 {
                     if (toolStripComboBox3.SelectedIndex == 0)
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishToTo='Y' AND flo_bomVerify ='0' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='Y' AND flo_bomVerify ='0' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -2057,7 +2055,7 @@ namespace Youli_Data_Share
                     }
                     if (toolStripComboBox3.SelectedIndex == 1)
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishToTo='Y' AND flo_bomVerify ='1' AND flo_facAlter !='' AND  (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='Y' AND flo_bomVerify ='1' AND flo_facAlter !='' AND  (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -2106,7 +2104,7 @@ namespace Youli_Data_Share
                     }
                     if (toolStripComboBox3.SelectedIndex == 2)
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishToTo='Y' AND  flo_bomVerify ='1' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='Y' AND  flo_bomVerify ='1' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -2162,7 +2160,7 @@ namespace Youli_Data_Share
                 {
                     if (toolStripComboBox3.SelectedIndex == 0)
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishToTo='N' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='N' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -2211,7 +2209,7 @@ namespace Youli_Data_Share
                     }
                     if (toolStripComboBox3.SelectedIndex == 1)
                     {
-                        strSQLALL = "select * from flow WHEREflo_finishToTo='N' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow flo_finishTo='N' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -2260,7 +2258,7 @@ namespace Youli_Data_Share
                     }
                     if (toolStripComboBox3.SelectedIndex == 2) //未厂制
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishToTo='N' AND flo_online ='' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='N' AND flo_online ='' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -2312,7 +2310,7 @@ namespace Youli_Data_Share
                 {
                     if (toolStripComboBox3.SelectedIndex == 0)
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishToTo='N' AND flo_bomVerify ='1' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='N' AND flo_bomVerify ='1' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -2361,7 +2359,7 @@ namespace Youli_Data_Share
                     }
                     if (toolStripComboBox3.SelectedIndex == 1)
                     {
-                        strSQLALL = "select * from flow WHERE  flo_finishToTo='N' AND flo_bomVerify ='1' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE  flo_finishTo='N' AND flo_bomVerify ='1' AND flo_facAlter !='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -2410,7 +2408,7 @@ namespace Youli_Data_Share
                     }
                     if (toolStripComboBox3.SelectedIndex == 2)
                     {
-                        strSQLALL = "select * from flow WHERE  flo_finishToTo='N' AND flo_bomVerify ='1' AND flo_facAlter =''  AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE  flo_finishTo='N' AND flo_bomVerify ='1' AND flo_facAlter =''  AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -2511,7 +2509,7 @@ namespace Youli_Data_Share
                     }
                     if (toolStripComboBox3.SelectedIndex == 1)
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishTo='N' AND flo_bomVerify ='1' AND flo_facAlter !='' AND  (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='N' AND flo_bomVerify ='0' AND flo_facAlter !='' AND  (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
@@ -2560,7 +2558,7 @@ namespace Youli_Data_Share
                     }
                     if (toolStripComboBox3.SelectedIndex == 2)
                     {
-                        strSQLALL = "select * from flow WHERE flo_finishTo='N' AND flo_bomVerify ='1' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
+                        strSQLALL = "select * from flow WHERE flo_finishTo='N' AND flo_bomVerify ='0' AND flo_facAlter ='' AND (flo_num LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_state LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_client LIKE '%" + toolStripTextBox1.Text.Trim() +
                                                     "%'or flo_factory LIKE '%" + toolStripTextBox1.Text.Trim() +
