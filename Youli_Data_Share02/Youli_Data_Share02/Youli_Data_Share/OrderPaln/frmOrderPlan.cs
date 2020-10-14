@@ -169,15 +169,23 @@ namespace Youli_Data_Share.OrderPaln
 
         private void search()
         {
-            DataView dv = dt.DefaultView;
-            dv.RowFilter = string.Format("flo_num LIKE '%{0}%' or flo_client LIKE '%{0}%' or flo_coding LIKE '%{0}%' or flo_model LIKE '%{0}%' or flo_online LIKE '%{0}%' or flo_plastic LIKE '%{0}%' or flo_range LIKE '%{0}%' or flo_proname LIKE '%{0}%'", toolStripTextBox1.Text.Trim());
-            DataTable dtSelect = dv.ToTable();
-            dataGridView1.DataSource = dtSelect;
+            try
+            {
+                DataView dv = dt.DefaultView;
+                dv.RowFilter = string.Format("flo_num LIKE '%{0}%' or flo_client LIKE '%{0}%' or flo_coding LIKE '%{0}%' or flo_model LIKE '%{0}%' or flo_online LIKE '%{0}%' or flo_plastic LIKE '%{0}%' or flo_range LIKE '%{0}%' or flo_proname LIKE '%{0}%'", toolStripTextBox1.Text.Trim());
+                DataTable dtSelect = dv.ToTable();
+                dataGridView1.DataSource = dtSelect;
+            }
+            catch
+            {
+                MessageBox.Show("查找失败 请检查是否有数据！");
+            }
+
         }
 
         private void loading()
         {
-            string strSql = @"SELECT  [flo_online]
+            string strSql = @"SELECT   [flo_online]
                                       ,[flo_line]
                                       ,[flo_num]
                                       ,[flo_client]
@@ -187,6 +195,8 @@ namespace Youli_Data_Share.OrderPaln
                                       ,[flo_range]
                                       ,[flo_plastic]
                                       ,[flo_quantity]
+                                      ,[yishangxians]
+                                      ,[flo_oliquan]
                                       ,[Names]
                                       ,[Expr1]
                                 FROM GCB_LAST_JIHUA ";

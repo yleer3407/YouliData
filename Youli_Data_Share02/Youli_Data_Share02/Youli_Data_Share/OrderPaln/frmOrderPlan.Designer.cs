@@ -55,9 +55,11 @@ namespace Youli_Data_Share.OrderPaln
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -144,9 +146,11 @@ namespace Youli_Data_Share.OrderPaln
             this.Column7,
             this.Column8,
             this.Column9,
+            this.Column15,
             this.Column14,
             this.Column10,
             this.Column13,
+            this.Column16,
             this.Column11,
             this.Column12});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
@@ -246,10 +250,18 @@ namespace Youli_Data_Share.OrderPaln
             this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Column9.DataPropertyName = "flo_quantity";
             this.Column9.FillWeight = 75.81804F;
-            this.Column9.HeaderText = "数量";
+            this.Column9.HeaderText = "订单数量";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
-            this.Column9.Width = 50;
+            this.Column9.Width = 80;
+            // 
+            // Column15
+            // 
+            this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column15.DataPropertyName = "yishangxians";
+            this.Column15.HeaderText = "上线数量";
+            this.Column15.Name = "Column15";
+            this.Column15.Width = 80;
             // 
             // Column14
             // 
@@ -279,6 +291,14 @@ namespace Youli_Data_Share.OrderPaln
             this.Column13.Name = "Column13";
             this.Column13.Width = 80;
             // 
+            // Column16
+            // 
+            this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column16.DataPropertyName = "flo_oliquan";
+            this.Column16.HeaderText = "喷油丝印";
+            this.Column16.Name = "Column16";
+            this.Column16.Width = 60;
+            // 
             // Column11
             // 
             this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -302,13 +322,14 @@ namespace Youli_Data_Share.OrderPaln
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.编辑数据ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
             // 
             // 编辑数据ToolStripMenuItem
             // 
             this.编辑数据ToolStripMenuItem.Name = "编辑数据ToolStripMenuItem";
-            this.编辑数据ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.编辑数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.编辑数据ToolStripMenuItem.Text = "展开数据";
+            this.编辑数据ToolStripMenuItem.Visible = false;
             this.编辑数据ToolStripMenuItem.Click += new System.EventHandler(this.编辑数据ToolStripMenuItem_Click);
             // 
             // label1
@@ -364,9 +385,11 @@ namespace Youli_Data_Share.OrderPaln
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column15;
         private DataGridViewTextBoxColumn Column14;
         private DataGridViewButtonColumn Column10;
         private DataGridViewButtonColumn Column13;
+        private DataGridViewTextBoxColumn Column16;
         private DataGridViewTextBoxColumn Column11;
         private DataGridViewTextBoxColumn Column12;
     }

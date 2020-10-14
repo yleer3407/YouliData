@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.90 data 2020.10.11&gt;&gt;update:
+    <value>版本1.0.0.91 data 2020.10.12&gt;&gt;update:
+1.材料报缺表添加喷油丝印/已上线数量
+---------------------------------------------------------
+版本1.0.0.90 data 2020.10.11&gt;&gt;update:
 1.添加后焊库存表
 ---------------------------------------------------------
 版本1.0.0.89 data 2020.10.11&gt;&gt;update:

@@ -1,0 +1,15 @@
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\bin\Debug\OrderPlanFlow.exe.config
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\bin\Debug\OrderPlanFlow.exe
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\bin\Debug\OrderPlanFlow.pdb
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\obj\Debug\OrderPlanFlow.csprojAssemblyReference.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\obj\Debug\MainWindow.g.cs
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\obj\Debug\App.g.cs
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\obj\Debug\OrderPlanFlow_MarkupCompile.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\obj\Debug\OrderPlanFlow_MarkupCompile.lref
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\obj\Debug\MainWindow.baml
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\obj\Debug\OrderPlanFlow.g.resources
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\obj\Debug\OrderPlanFlow.Properties.Resources.resources
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\obj\Debug\OrderPlanFlow.csproj.GenerateResource.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\obj\Debug\OrderPlanFlow.csproj.CoreCompileInputs.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\obj\Debug\OrderPlanFlow.exe
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\OrderPlanFlow\obj\Debug\OrderPlanFlow.pdb

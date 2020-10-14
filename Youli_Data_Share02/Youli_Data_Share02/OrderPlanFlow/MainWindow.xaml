@@ -1,0 +1,102 @@
+﻿<Window x:Class="OrderPlanFlow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrderPlanFlow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ToolBar Grid.Row="0" >
+            <DatePicker />
+        </ToolBar>
+        <DataGrid Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="拉线" Width="50" />
+                <DataGridTextColumn Header="订单号" Width="150"/>
+                <DataGridTextColumn Header="客户" Width="80"/>
+                <DataGridTextColumn Header="产品编号" Width="100"/>
+                <DataGridTextColumn Header="机种名称" Width="*"/>
+                <DataGridTextColumn Header="机种" Width="*"/>
+                <DataGridTextColumn Header="量程精度" Width="*"/>
+                <DataGridTextColumn Header="颜色" Width="80"/>
+                <DataGridTextColumn Header="数量" Width="80"/>
+                <DataGridTextColumn>
+                    <DataGridTextColumn.Header>
+                        <StackPanel >
+                            <TextBlock Text="26"/>
+                            <TextBlock Text="星期六"/>
+                        </StackPanel>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn>
+                    <DataGridTextColumn.Header>
+                        <StackPanel >
+                            <TextBlock Text="27"/>
+                            <TextBlock Text="星期日"/>
+                        </StackPanel>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                <DataGridTextColumn>
+                    <DataGridTextColumn.Header>
+                        <StackPanel >
+                            <TextBlock Text="28"/>
+                            <TextBlock Text="星期一"/>
+                        </StackPanel>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn>
+                    <DataGridTextColumn.Header>
+                        <StackPanel >
+                            <TextBlock Text="29"/>
+                            <TextBlock Text="星期二"/>
+                        </StackPanel>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn>
+                    <DataGridTextColumn.Header>
+                        <StackPanel >
+                            <TextBlock Text="30"/>
+                            <TextBlock Text="星期三"/>
+                        </StackPanel>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn>
+                    <DataGridTextColumn.Header>
+                        <StackPanel >
+                            <TextBlock Text="26"/>
+                            <TextBlock Text="星期四"/>
+                        </StackPanel>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn>
+                    <DataGridTextColumn.Header>
+                        <StackPanel >
+                            <TextBlock Text="26"/>
+                            <TextBlock Text="星期五"/>
+                        </StackPanel>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn>
+                    <DataGridTextColumn.Header>
+                        <StackPanel >
+                            <TextBlock Text="26"/>
+                            <TextBlock Text="星期六"/>
+                        </StackPanel>
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

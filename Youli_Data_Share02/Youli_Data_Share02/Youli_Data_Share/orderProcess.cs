@@ -77,8 +77,7 @@ namespace Youli_Data_Share
                 }
                 connLogin.Close();
             }
-
-
+            txtuser = labuser.Text.Trim();
             #endregion
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -3929,7 +3928,6 @@ namespace Youli_Data_Share
             try
             {
                 int ind = dgvWorkFlow.CurrentRow.Index;
-                txtuser = labuser.Text.Trim();
                 string EditValue = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
                 orderProcessEdit frmOPEdit = new orderProcessEdit(EditValue);
                 DialogResult result = frmOPEdit.ShowDialog();

@@ -1059,7 +1059,7 @@
             this.toolStripMenuItem4,
             this.生产计划ToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 70);
             this.contextMenuStrip1.Text = "~~~~(>_<)~~~~";
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
@@ -1067,7 +1067,7 @@
             // 
             this.展开数据ToolStripMenuItem.Image = global::Youli_Data_Share.Properties.Resources.icons8_to_do_16;
             this.展开数据ToolStripMenuItem.Name = "展开数据ToolStripMenuItem";
-            this.展开数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.展开数据ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.展开数据ToolStripMenuItem.Text = "展开数据";
             this.展开数据ToolStripMenuItem.Click += new System.EventHandler(this.展开数据ToolStripMenuItem_Click);
             // 
@@ -1075,7 +1075,7 @@
             // 
             this.toolStripMenuItem4.Image = global::Youli_Data_Share.Properties.Resources.表格设置;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(148, 22);
             this.toolStripMenuItem4.Text = "打印订单报表";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
@@ -1083,7 +1083,7 @@
             // 
             this.生产计划ToolStripMenuItem1.Image = global::Youli_Data_Share.Properties.Resources.edit_property_80px;
             this.生产计划ToolStripMenuItem1.Name = "生产计划ToolStripMenuItem1";
-            this.生产计划ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.生产计划ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.生产计划ToolStripMenuItem1.Text = "物料报缺报表";
             this.生产计划ToolStripMenuItem1.Click += new System.EventHandler(this.生产计划ToolStripMenuItem1_Click);
             // 
