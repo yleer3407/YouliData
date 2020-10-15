@@ -373,6 +373,16 @@ namespace Youli_Data_Share.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap error_48px {
+            get {
+                object obj = ResourceManager.GetObject("error_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap folder_128px_1229425_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("folder_128px_1229425_easyicon.net", resourceCulture);
@@ -706,6 +716,16 @@ namespace Youli_Data_Share.Properties {
         internal static System.Drawing.Bitmap qc {
             get {
                 object obj = ResourceManager.GetObject("qc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_30px {
+            get {
+                object obj = ResourceManager.GetObject("refresh_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

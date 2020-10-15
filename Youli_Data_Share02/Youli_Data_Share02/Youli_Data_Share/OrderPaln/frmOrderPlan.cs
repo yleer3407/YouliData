@@ -215,7 +215,8 @@ namespace Youli_Data_Share.OrderPaln
                 DialogResult result = frmOpedit.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    loading();
+                    reLoading();
+                    dataGridView1.DataSource = dt;
                 }
             }
             catch
@@ -223,6 +224,28 @@ namespace Youli_Data_Share.OrderPaln
                 MessageBox.Show("请先查找数据！");
                 return;
             }
+        }
+
+        private void reLoading()
+        {
+            //string strSqlRead = "SELECT [flo_line] FROM flow WHERE flo_num ='"++"' ";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dt.Rows[i]["flo_line"]= SQLHelper2.GetSingleResult("SELECT [flo_line] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//拉线
+                //dt.Rows[i]["flo_client"] = SQLHelper2.GetSingleResult("SELECT [flo_client] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//客户
+                //dt.Rows[i]["flo_oliquan"] = SQLHelper2.GetSingleResult("SELECT [flo_oliquan] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//喷油
+                dt.Rows[i]["flo_online"] = SQLHelper2.GetSingleResult("SELECT [flo_online] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//上线时间
+            }
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            label1.Visible = true;
+            //label1.Text = "数据疯狂计算中...";
+            Control.CheckForIllegalCrossThreadCalls = false;
+            Thread th = new Thread(loading);
+            th.IsBackground = true;
+            th.Start();
         }
     }
 }

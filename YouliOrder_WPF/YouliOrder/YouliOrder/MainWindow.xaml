@@ -5,28 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YouliOrder"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="700" Width="1200"  WindowStyle="None" MouseDown="Window_MouseDown" AllowsTransparency="True" ResizeMode="CanResizeWithGrip"  WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="BtnInfoStyle" TargetType="Button">
+            <Setter Property="Width" Value="70"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="#1E73B4"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <TextBlock Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#1E73B4"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#1E73B4"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <ItemsControl ItemsSource="{Binding Modules}" Background="DarkGray">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
+        <StackPanel Background="#3E5B87">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
+                <Image Source="logo003.png"  Margin="20" Width="30" Height="30" HorizontalAlignment="Left" />
+                <TextBlock Text="优力订单助手"  Margin="0,20,30,20" FontSize="20"  Foreground="White" FontFamily="Yu Gothic UI Semibold" />
+            </StackPanel>
+            <ItemsControl Grid.Column="0" ItemsSource="{Binding Modules}" Background="#3E5B87">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
 
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button Command="{Binding RelativeSource={RelativeSource AncestorType=local:MainWindow},Path=DataContext.OpenCommand}" CommandParameter="{Binding Name}" Height="40"  Margin="3" Content="{Binding Name}"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-            
-        </ItemsControl>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button  Command="{Binding RelativeSource={RelativeSource AncestorType=local:MainWindow},Path=DataContext.OpenCommand}" CommandParameter="{Binding Name}" Height="40"  Margin="3" Content="{Binding Name}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
 
-        <ContentControl Grid.Column="1" Content="{Binding Page}"/>
+            </ItemsControl>
+        </StackPanel>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="0">
+                <Button x:Name="btnmin" Style="{StaticResource BtnInfoStyle}" Width="45" Height="30" Content="─" BorderThickness="0" Background="Transparent" Click="btnMin"/>
+                <Button x:Name="btnmax" Style="{StaticResource BtnInfoStyle}" Width="45" Height="30" Content="☐" BorderThickness="0" Background="Transparent" Click="btnMax"/>
+                <Button x:Name="btnclose" Style="{StaticResource BtnInfoStyle}" Width="45" Height="30" Content="✕" BorderThickness="0" Background="Transparent" Click="btnClose"/>
+            </StackPanel>
+            <ContentControl Grid.Row="1" Content="{Binding Page}"/>
+        </Grid>
     </Grid>
 </Window>

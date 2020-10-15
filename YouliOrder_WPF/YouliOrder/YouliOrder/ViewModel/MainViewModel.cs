@@ -27,9 +27,9 @@ namespace YouliOrder.ViewModel
         public MainViewModel()
         {
             Modules = new List<Module>();
-            Modules.Add(new Module() { Name = "Module1" });
-            Modules.Add(new Module() { Name = "Module2" });
-            Modules.Add(new Module() { Name = "Module3" });
+            Modules.Add(new Module() { Name = "客户下单" });
+            Modules.Add(new Module() { Name = "订单汇总" });
+            Modules.Add(new Module() { Name = "工厂接单" });
 
             OpenCommand = new RelayCommand<string>(t => OpenPage(t));
         }
@@ -38,11 +38,11 @@ namespace YouliOrder.ViewModel
         {
             switch(Name)
             {
-                case "Module1":  Page = new Page1(); 
+                case "客户下单":  Page = new Page1(); 
                     break;
-                case "Module2": Page = new Page2(); 
+                case "订单汇总": Page = new Page2(); 
                     break;
-                case "Module3": Page = new Page3();
+                case "工厂接单": Page = new Page3();
                     break;
 
             }

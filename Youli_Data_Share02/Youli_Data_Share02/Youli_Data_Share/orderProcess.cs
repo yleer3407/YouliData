@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -375,7 +376,6 @@ namespace Youli_Data_Share
             #endregion
             #region 列冻结
             #endregion
-
         }
 
 
@@ -4041,12 +4041,23 @@ namespace Youli_Data_Share
         {
             //notifyIcon1.ShowBalloonTip(3000, "提示：", "数据加载计算中... \r\n...... \r\n...... \r\n请耐心等待！", ToolTipIcon.Warning);
             frmOrderPlan frmOrderp = new frmOrderPlan();
-            frmOrderp.Show();
+            frmOrderp.ShowDialog();//解决外部修改数据 内部不刷新无法加载的问题
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            Form4 frmdd = new Form4();
+            frmdd.Show();
+        }
+
+        private void toolStripButton3_Click_1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"\\192.168.1.104\Youli_Server\提案改善");
         }
     }
 }

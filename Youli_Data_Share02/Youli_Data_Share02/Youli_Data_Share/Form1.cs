@@ -180,7 +180,7 @@ namespace Youli_Data_Share
             //Form3 form3 = new Form3();
             //form3.ShowDialog();
 
-            ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder("readme.html"), new StringBuilder(""), new StringBuilder(@"\\192.168.1.104\Youli_Server\内部软件说明文档"), 1);
+            ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder("优力共享软件使用说明201014.pdf"), new StringBuilder(""), new StringBuilder(@"\\192.168.1.104\Youli_Server\内部软件说明文档"), 1);
         }
 
 

@@ -97,25 +97,52 @@ namespace Youli_Data_Share
             ProNumnn();
             label3.Visible = false;
             conn1.Close();
-
             #endregion
         }
 
         private void ProNumnn()
         {
-            string sql3 = string.Format(@"SELECT a.*,(qty*'{0}')/base as qtynum from
-                                [dbo].[GCB_BOM_ALLNUM] a 
-                              WHERE bom_id = '{1}'
-                               UNION
-                                SELECT a.*,(qty*'{0}')/base as qtynum from
-                                [dbo].[GCB_BOM_ALLNUM] a
-                                WHERE bom_id = (SELECT TOP 1 [pds_id] FROM  [dbo].[GCB_BOM_ALLNUM] WHERE bom_id = '{1}' AND pur_mak = 1)", orderProcess.orderIntNum, orderProcess.pdsNum.ToString());
-            //string sql3 = @"SELECT a.*,b.dfsl from
-            //                    [dbo].[GCB_BOM_ALLNUM] a left join [dbo].[GCB_LAST_DFSL] b
-            //                    on a.pds_id = b.pds_id
-            //                  WHERE bom_id = '" + orderProcess.pdsNum.ToString()+"'";
+            //string sql3 = string.Format(@"SELECT a.*,(qty*'{0}')/base as qtynum from
+            //                    [dbo].[GCB_BOM_ALLNUM] a 
+            //                  WHERE bom_id = '{1}'
+            //                   UNION
+            //                    SELECT a.*,(qty*'{0}')/base as qtynum from
+            //                    [dbo].[GCB_BOM_ALLNUM] a
+            //                    WHERE bom_id = (SELECT TOP 1 [pds_id] FROM  [dbo].[GCB_BOM_ALLNUM] WHERE bom_id = '{1}' AND pur_mak = 1)", orderProcess.orderIntNum, orderProcess.pdsNum.ToString());
+
+            string sql3 = string.Format(@"SELECT [bom_id]
+                                                          ,[pds_id]
+                                                          ,[pds_name]
+                                                          ,[pds_spec]
+                                                          ,[dfsl]
+                                                          ,[zfsl]
+                                                          ,[dgslq]
+                                                          ,[zgslq]
+                                                          ,[stkqty]
+                                                          ,[flo_num]
+                                                          ,[numss]
+                                                          ,[bdbig]
+                                                          ,[adbig]
+                                                      FROM [YouliData].[dbo].[GCB_FLOW_BOM_NUM]
+                                                    WHERE bom_id='{0}' AND flo_num='{1}'  
+                                        UNION
+                                                SELECT [bom_id]
+                                                      ,[pds_id]
+                                                      ,[pds_name]
+                                                      ,[pds_spec]
+                                                      ,[dfsl]
+                                                      ,[zfsl]
+                                                      ,[dgslq]
+                                                      ,[zgslq]
+                                                      ,[stkqty]
+                                                      ,[flo_num]
+                                                      ,[numss]
+                                                      ,[bdbig]
+                                                      ,[adbig]
+                                                      FROM [YouliData].[dbo].[GCB_FLOW_BOM_NUM1]
+                                                    WHERE bom_id=(SELECT TOP 1 [pds_id] FROM  [YouliData].[dbo].[GCB_FLOW_BOM_NUM] WHERE bom_id = '{0}' AND pur_mak ='1') AND flo_num='{1}' ", orderProcess.pdsNum.ToString(), OrdNum);
             SqlDataAdapter da3 = new SqlDataAdapter(sql3, conn1);
-                da3.SelectCommand.CommandTimeout = 400;
+                //da3.SelectCommand.CommandTimeout = 400;
                                                // conn1.Open();
                                                 DataSet ds3 = new DataSet();
                                                 da3.Fill(ds3, "BOM1");
@@ -123,187 +150,207 @@ namespace Youli_Data_Share
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.DataSource = dt3.DefaultView;
             #region 表2 颜色区分
-            //MessageBox.Show(int.Parse(this.dataGridView2.Rows[10].Cells["Column5"].Value.ToString()).ToString());
-            for(int z = 0; z < dataGridView2.RowCount; z++)//无数据填充 0
-            {
-                if (this.dataGridView2.Rows[z].Cells["Column5"].Value.ToString() == "" || this.dataGridView2.Rows[z].Cells["Column5"].Value.ToString() == null)
-                {
-                    this.dataGridView2.Rows[z].Cells["Column5"].Value = 0;
-                }
-                if (this.dataGridView2.Rows[z].Cells["Column8"].Value.ToString() == "" || this.dataGridView2.Rows[z].Cells["Column8"].Value.ToString() == null)
-                {
-                    this.dataGridView2.Rows[z].Cells["Column8"].Value = 0;
-                }
-            }
+            //for(int z = 0; z < dataGridView2.RowCount; z++)//无数据填充 0
+            //{
+            //    if (this.dataGridView2.Rows[z].Cells["Column5"].Value.ToString() == "" || this.dataGridView2.Rows[z].Cells["Column5"].Value.ToString() == null)
+            //    {
+            //        this.dataGridView2.Rows[z].Cells["Column5"].Value = 0;
+            //    }
+            //    if (this.dataGridView2.Rows[z].Cells["Column8"].Value.ToString() == "" || this.dataGridView2.Rows[z].Cells["Column8"].Value.ToString() == null)
+            //    {
+            //        this.dataGridView2.Rows[z].Cells["Column8"].Value = 0;
+            //    }
+            //}
 
-            for ( int j = 0; j < dataGridView2.RowCount; j++)//颜色区分
+            //for ( int j = 0; j < dataGridView2.RowCount; j++)//颜色区分
+            //{
+            //    if (this.dataGridView2.Rows[j].Cells["Column1"].Value.ToString().Length <=9) //AB板颜色区分
+            //    {
+            //        this.dataGridView2.Rows[j].Cells["Column2"].Style.BackColor= Color.YellowGreen;
+            //    }
+            //    if (double.Parse(this.dataGridView2.Rows[j].Cells["Column5"].Value.ToString()) > double.Parse(this.dataGridView2.Rows[j].Cells["Column8"].Value.ToString())) //如果库存大于计划用量
+            //    {
+            //        this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.White;
+            //    }
+            //    else
+            //    {
+            //        if (double.Parse(this.dataGridView2.Rows[j].Cells["Column5"].Value.ToString()) < double.Parse(this.dataGridView2.Rows[j].Cells["Column19"].Value.ToString())) //如果库存小于计划用量 并 库存小于当前用量
+            //        {
+            //            this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.Red;
+            //            this.dataGridView2.Rows[j].Cells["Column5"].Style.ForeColor = Color.White;
+            //        }
+            //        else  //如果库存小于计划用量 并 库存大于等于当前用量
+            //        {
+            //            this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.LightSalmon;
+            //        }
+            //    }
+            //}
+
+            for (int i = 0; i < dt3.Rows.Count; i++)
             {
-                if (this.dataGridView2.Rows[j].Cells["Column1"].Value.ToString().Length <=9)
+                if (dt3.Rows[i]["bom_id"].ToString().Length <= 9)
                 {
-                    this.dataGridView2.Rows[j].Cells["Column2"].Style.BackColor= Color.YellowGreen;
+                    this.dataGridView2.Rows[i].Cells["Column2"].Style.BackColor = Color.YellowGreen;
                 }
-                if (double.Parse(this.dataGridView2.Rows[j].Cells["Column5"].Value.ToString()) > double.Parse(this.dataGridView2.Rows[j].Cells["Column8"].Value.ToString()))
+                if (dt3.Rows[i]["bdbig"].ToString() == "1")
                 {
-                    this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.White;
+                    if (dt3.Rows[i]["adbig"].ToString() == "1")
+                    {
+                        this.dataGridView2.Rows[i].Cells["Column5"].Style.BackColor = Color.White;
+                    }
+                    if (dt3.Rows[i]["adbig"].ToString() == "0")
+                    {
+                        this.dataGridView2.Rows[i].Cells["Column5"].Style.BackColor = Color.LightSalmon;
+                    }
                 }
                 else
                 {
-                    if (double.Parse(this.dataGridView2.Rows[j].Cells["Column5"].Value.ToString()) < double.Parse(this.dataGridView2.Rows[j].Cells["Column19"].Value.ToString()))
-                    {
-                        this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.Red;
-                        this.dataGridView2.Rows[j].Cells["Column5"].Style.ForeColor = Color.White;
-                    }
-                    else
-                    {
-                        this.dataGridView2.Rows[j].Cells["Column5"].Style.BackColor = Color.LightSalmon;
-                    }
+                    this.dataGridView2.Rows[i].Cells["Column5"].Style.BackColor = Color.Red;
+                    this.dataGridView2.Rows[i].Cells["Column5"].Style.ForeColor = Color.White;
                 }
-                
-
-
             }
             #endregion
             conn1.Close();
         }
 
-        private void proNum()
-        {
-            //1.读取BOM清单
-            string sql2 = string.Format(@"SELECT  [bom_id]
-                          ,[sortid]
-                          ,[pds_id]
-                          ,[pds_name]
-                          ,[pds_spec]
-                          ,[pur_mak]
-                          ,[mak_id]
-                          ,[stk_id]
-                          ,[qty]
-                          ,[base]
-                          ,[lost]
-                          ,[uni_id]
-                      FROM [YouliData].[dbo].[BOM]
-                      WHERE bom_id = '{0}'
-                      UNION
-                      SELECT  [bom_id]
-                          ,[sortid]
-                          ,[pds_id]
-                          ,[pds_name]
-                          ,[pds_spec]
-                          ,[pur_mak]
-                          ,[mak_id]
-                          ,[stk_id]
-                          ,[qty]
-                          ,[base]
-                          ,[lost]
-                          ,[uni_id]
-                      FROM [YouliData].[dbo].[BOM]
-                      WHERE bom_id = (SELECT TOP 1 [pds_id] FROM [YouliData].[dbo].[BOM] WHERE bom_id = '{0}' AND pur_mak=1)", orderProcess.pdsNum.ToString());//WHERE ord_m_id = '%" + OrdNum + "%'
-            SqlDataAdapter da2 = new SqlDataAdapter(sql2, conn1);
-            //conn1.Open();
-            DataSet ds2 = new DataSet();
-            da2.Fill(ds2, "BOM1");
-            DataTable dt2 = ds2.Tables["BOM1"];
-            ////此处正常！
-            ////MessageBox.Show(orderProcess.pdsNum);
+        //private void proNum()
+        //{
+        //    //1.读取BOM清单
+        //    string sql2 = string.Format(@"SELECT  [bom_id]
+        //                  ,[sortid]
+        //                  ,[pds_id]
+        //                  ,[pds_name]
+        //                  ,[pds_spec]
+        //                  ,[pur_mak]
+        //                  ,[mak_id]
+        //                  ,[stk_id]
+        //                  ,[qty]
+        //                  ,[base]
+        //                  ,[lost]
+        //                  ,[uni_id]
+        //              FROM [YouliData].[dbo].[BOM]
+        //              WHERE bom_id = '{0}'
+        //              UNION
+        //              SELECT  [bom_id]
+        //                  ,[sortid]
+        //                  ,[pds_id]
+        //                  ,[pds_name]
+        //                  ,[pds_spec]
+        //                  ,[pur_mak]
+        //                  ,[mak_id]
+        //                  ,[stk_id]
+        //                  ,[qty]
+        //                  ,[base]
+        //                  ,[lost]
+        //                  ,[uni_id]
+        //              FROM [YouliData].[dbo].[BOM]
+        //              WHERE bom_id = (SELECT TOP 1 [pds_id] FROM [YouliData].[dbo].[BOM] WHERE bom_id = '{0}' AND pur_mak=1)", orderProcess.pdsNum.ToString());//WHERE ord_m_id = '%" + OrdNum + "%'
+        //    SqlDataAdapter da2 = new SqlDataAdapter(sql2, conn1);
+        //    //conn1.Open();
+        //    DataSet ds2 = new DataSet();
+        //    da2.Fill(ds2, "BOM1");
+        //    DataTable dt2 = ds2.Tables["BOM1"];
+        //    ////此处正常！
+        //    ////MessageBox.Show(orderProcess.pdsNum);
 
 
-            ////2.先根据产品编号找到BOM明细 1级 给到DataTable中转
+        //    ////2.先根据产品编号找到BOM明细 1级 给到DataTable中转
 
-            ////3.找到bom二级明细 添加到dt2中
+        //    ////3.找到bom二级明细 添加到dt2中
 
-            //string sql3 = @"SELECT
-            //              [pds_id]
-            //               FROM [eric_YL].[dbo].[BOM]
-            //               WHERE bom_id = '" + orderProcess.pdsNum + "' AND pur_mak = '1'";
-            //SqlCommand cmd1 = new SqlCommand(sql3, conn1);
-            //if (conn1.State==System.Data.ConnectionState.Closed)
-            //{
-            //    conn1.Open();
-            //}
-            //SqlDataReader dr = cmd1.ExecuteReader();
-            //if (dr.Read())
-            //{
-            //    SqlCommand cmd2 = new SqlCommand(sql3, conn1);
-            //    object rdrValue = cmd2.ExecuteScalar();
-            //    string sql4 = @"SELECT
-            //              [pds_id] 产品编号
-            //             ,[pds_name] 产品名称
-            //             ,[pds_spec]  备注
-            //              ,[stk_id]  库位
-            //              ,[qty]    标准用量
-            //              ,[base]   子件基量
-            //              ,[lost]   子件损耗
-            //              ,[uni_id]
-            //              FROM [eric_YL].[dbo].[BOM]
-            //              WHERE bom_id = '" + rdrValue.ToString() + "'";
-            //    SqlDataAdapter da3 = new SqlDataAdapter(sql4, conn1);
-            //    DataSet ds3 = new DataSet();
-            //    da3.Fill(ds3, "BOM2");
-            //    DataTable dt3 = ds3.Tables["BOM2"];
-            //    dt2.Merge(dt3); //dt2和dt3合并
-            //}
-            dataGridView2.AutoGenerateColumns = false;
-            dataGridView2.DataSource = dt2.DefaultView;
-            #region 表2 颜色区分
-             for(int j=0 ; j < dataGridView2.RowCount; j++)
-            {
-                if (this.dataGridView2.Rows[j].Cells["Column19"].Value.ToString().Length == 7)
-                {
-                    this.dataGridView2.Rows[j].DefaultCellStyle.BackColor = Color.YellowGreen;
-                }
-            }
-            #endregion
-            conn1.Close();
-
-
-
-
-
-            //DataRow row = dt2.NewRow();
-            ////for(int i=0;i<3; i++)
-            ////{
-            ////    row["psd_id"] = "AAAA";
-            ////    //row["psd_id"] = dt3.Rows[i]["psd_id"].ToString();
-            ////    dt2.Rows.Add(row);
-            ////}
-            //row["pds_id"] = "test";
-            //dt2.Rows.Add(row);
-            //dt2.Rows.Add("测试", typeof(string));
-            //dataGridView2.DataSource = dt3;
-
-            //DataRow row = dt2.NewRow();
-            //for(int i = 0; i < dt3.Rows.Count; i++)
-            //{
-            //    row["pds_id"] = "测试1";
-            //    dt2.Rows.Add(row);
-            //}
-
-            ////dt2 添加行
-            //DataRow row = dt2.NewRow();
-            //for (int i = 0; i < dt3.Rows.Count; i++)
-            //{
-            //    row["pds_id"] = dt3.Rows[i]["pds_id"].ToString();
-            //    dt2.Rows.Add(row);
-            //}
-            //dataGridView2.DataSource = dt2;
-            // MessageBox.Show(rdrValue.ToString());
-            //响应添加子件数据
-
-
-            //conn1.Close();
-
-
-            //查找数据库无响应 只能先通过查找dt
-            //MessageBox.Show(dt2.Rows[0]["pds_id"].ToString());
+        //    //string sql3 = @"SELECT
+        //    //              [pds_id]
+        //    //               FROM [eric_YL].[dbo].[BOM]
+        //    //               WHERE bom_id = '" + orderProcess.pdsNum + "' AND pur_mak = '1'";
+        //    //SqlCommand cmd1 = new SqlCommand(sql3, conn1);
+        //    //if (conn1.State==System.Data.ConnectionState.Closed)
+        //    //{
+        //    //    conn1.Open();
+        //    //}
+        //    //SqlDataReader dr = cmd1.ExecuteReader();
+        //    //if (dr.Read())
+        //    //{
+        //    //    SqlCommand cmd2 = new SqlCommand(sql3, conn1);
+        //    //    object rdrValue = cmd2.ExecuteScalar();
+        //    //    string sql4 = @"SELECT
+        //    //              [pds_id] 产品编号
+        //    //             ,[pds_name] 产品名称
+        //    //             ,[pds_spec]  备注
+        //    //              ,[stk_id]  库位
+        //    //              ,[qty]    标准用量
+        //    //              ,[base]   子件基量
+        //    //              ,[lost]   子件损耗
+        //    //              ,[uni_id]
+        //    //              FROM [eric_YL].[dbo].[BOM]
+        //    //              WHERE bom_id = '" + rdrValue.ToString() + "'";
+        //    //    SqlDataAdapter da3 = new SqlDataAdapter(sql4, conn1);
+        //    //    DataSet ds3 = new DataSet();
+        //    //    da3.Fill(ds3, "BOM2");
+        //    //    DataTable dt3 = ds3.Tables["BOM2"];
+        //    //    dt2.Merge(dt3); //dt2和dt3合并
+        //    //}
+        //    dataGridView2.AutoGenerateColumns = false;
+        //    dataGridView2.DataSource = dt2.DefaultView;
+        //    #region 表2 颜色区分
+        //     for(int j=0 ; j < dataGridView2.RowCount; j++)
+        //    {
+        //        if (this.dataGridView2.Rows[j].Cells["Column19"].Value.ToString().Length == 7)
+        //        {
+        //            this.dataGridView2.Rows[j].DefaultCellStyle.BackColor = Color.YellowGreen;
+        //        }
+        //    }
+        //    #endregion
+        //    conn1.Close();
 
 
 
-            //MessageBox.Show(dt3.Rows[0]["pds_id"].ToString()); //可以实现读取
-
-            //子件添加到母件中
 
 
-        }
+        //    //DataRow row = dt2.NewRow();
+        //    ////for(int i=0;i<3; i++)
+        //    ////{
+        //    ////    row["psd_id"] = "AAAA";
+        //    ////    //row["psd_id"] = dt3.Rows[i]["psd_id"].ToString();
+        //    ////    dt2.Rows.Add(row);
+        //    ////}
+        //    //row["pds_id"] = "test";
+        //    //dt2.Rows.Add(row);
+        //    //dt2.Rows.Add("测试", typeof(string));
+        //    //dataGridView2.DataSource = dt3;
+
+        //    //DataRow row = dt2.NewRow();
+        //    //for(int i = 0; i < dt3.Rows.Count; i++)
+        //    //{
+        //    //    row["pds_id"] = "测试1";
+        //    //    dt2.Rows.Add(row);
+        //    //}
+
+        //    ////dt2 添加行
+        //    //DataRow row = dt2.NewRow();
+        //    //for (int i = 0; i < dt3.Rows.Count; i++)
+        //    //{
+        //    //    row["pds_id"] = dt3.Rows[i]["pds_id"].ToString();
+        //    //    dt2.Rows.Add(row);
+        //    //}
+        //    //dataGridView2.DataSource = dt2;
+        //    // MessageBox.Show(rdrValue.ToString());
+        //    //响应添加子件数据
+
+
+        //    //conn1.Close();
+
+
+        //    //查找数据库无响应 只能先通过查找dt
+        //    //MessageBox.Show(dt2.Rows[0]["pds_id"].ToString());
+
+
+
+        //    //MessageBox.Show(dt3.Rows[0]["pds_id"].ToString()); //可以实现读取
+
+        //    //子件添加到母件中
+
+
+        //}
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {

@@ -32,3 +32,5 @@ G:\desket\VSProject\YouliData\YouliData\YouliOrder_WPF\YouliOrder\YouliOrder\obj
 G:\desket\VSProject\YouliData\YouliData\YouliOrder_WPF\YouliOrder\YouliOrder\obj\Debug\View\Page1.baml
 G:\desket\VSProject\YouliData\YouliData\YouliOrder_WPF\YouliOrder\YouliOrder\obj\Debug\View\Page2.baml
 G:\desket\VSProject\YouliData\YouliData\YouliOrder_WPF\YouliOrder\YouliOrder\obj\Debug\View\Page3.baml
+G:\desket\VSProject\YouliData\YouliData\YouliOrder_WPF\YouliOrder\YouliOrder\obj\Debug\Login.g.cs
+G:\desket\VSProject\YouliData\YouliData\YouliOrder_WPF\YouliOrder\YouliOrder\obj\Debug\Login.baml
