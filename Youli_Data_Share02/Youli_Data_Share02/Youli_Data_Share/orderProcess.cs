@@ -3068,6 +3068,7 @@ namespace Youli_Data_Share
             insertDgv();
             label1.Visible = false;
             label2.Visible = false;
+            dgvWorkFlow.AutoGenerateColumns = false;
             dgvWorkFlow.DataSource = dt_flow.DefaultView;
             //dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
             conn_flow.Close();
@@ -3138,6 +3139,7 @@ namespace Youli_Data_Share
             da.Fill(ds, "flow");
             dt_flow = ds.Tables["flow"];
             insertDgv();
+            dgvWorkFlow.AutoGenerateColumns = false;
             dgvWorkFlow.DataSource = dt_flow.DefaultView;
             dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
             conn_flow.Close();

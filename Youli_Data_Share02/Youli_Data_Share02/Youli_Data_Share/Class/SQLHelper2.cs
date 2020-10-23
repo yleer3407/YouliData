@@ -15,11 +15,12 @@ namespace Youli_Data_Share
     class SQLHelper2
     {
 
-         private static readonly string connString = "Server=192.168.1.104;DataBase=YouliData;Uid=sa;Pwd=yelei193";
+        //private static readonly string connString = "Server=192.168.1.104;DataBase=EPRcopy;Uid=sa;Pwd=yelei193";
+        private static readonly string connString = "Server=192.168.1.104;DataBase=YouliData;Uid=sa;Pwd=yelei193";
 
 
         //private static readonly string connString =
-            //ConfigurationManager.ConnectionStrings["connString"].ToString();
+        //ConfigurationManager.ConnectionStrings["connString"].ToString();
 
         //private static readonly string connString =
         //    Common.StringSecurity.DESDecrypt(ConfigurationManager.ConnectionStrings["connString"].ToString());

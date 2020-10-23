@@ -39,9 +39,14 @@ namespace Youli_Data_Share.OrderPaln
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrderPlan));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,16 +62,14 @@ namespace Youli_Data_Share.OrderPaln
             this.Column10 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.编辑数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -82,12 +85,32 @@ namespace Youli_Data_Share.OrderPaln
             this.toolStripButton3,
             this.toolStripSeparator2,
             this.toolStripButton4,
-            this.toolStripLabel1});
+            this.toolStripLabel1,
+            this.toolStripButton5,
+            this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1354, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::Youli_Data_Share.Properties.Resources.folder_128px_1229425_easyicon_net;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(100, 22);
+            this.toolStripButton1.Text = "本单缺料排序";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::Youli_Data_Share.Properties.Resources.hand_cursor_100px;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(100, 22);
+            this.toolStripButton2.Text = "计划缺料排序";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripSeparator1
             // 
@@ -100,10 +123,34 @@ namespace Youli_Data_Share.OrderPaln
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
             // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::Youli_Data_Share.Properties.Resources.icons8_search_32;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton3.Text = "查找";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = global::Youli_Data_Share.Properties.Resources.refresh_30px;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton4.Text = "刷新";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripLabel1.Text = "→ 如需刷新订单数量请点击刷新";
             // 
             // dataGridView1
             // 
@@ -128,6 +175,7 @@ namespace Youli_Data_Share.OrderPaln
             this.Column10,
             this.Column13,
             this.Column16,
+            this.Column17,
             this.Column11,
             this.Column12});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
@@ -276,6 +324,12 @@ namespace Youli_Data_Share.OrderPaln
             this.Column16.Name = "Column16";
             this.Column16.Width = 60;
             // 
+            // Column17
+            // 
+            this.Column17.DataPropertyName = "flo_back";
+            this.Column17.HeaderText = "缺料追回时间";
+            this.Column17.Name = "Column17";
+            // 
             // Column11
             // 
             this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -312,53 +366,28 @@ namespace Youli_Data_Share.OrderPaln
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(433, 275);
+            this.label1.Location = new System.Drawing.Point(499, 275);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 46);
+            this.label1.Size = new System.Drawing.Size(334, 46);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Please Wait...";
+            this.label1.Text = "请等待 加载数据中...";
             // 
-            // toolStripButton1
+            // toolStripButton5
             // 
-            this.toolStripButton1.Image = global::Youli_Data_Share.Properties.Resources.folder_128px_1229425_easyicon_net;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(100, 22);
-            this.toolStripButton1.Text = "本单缺料排序";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripButton5.Image = global::Youli_Data_Share.Properties.Resources.提交成功;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton5.Text = "提交";
+            this.toolStripButton5.Visible = false;
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
-            // toolStripButton2
+            // toolStripLabel2
             // 
-            this.toolStripButton2.Image = global::Youli_Data_Share.Properties.Resources.hand_cursor_100px;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(100, 22);
-            this.toolStripButton2.Text = "计划缺料排序";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Image = global::Youli_Data_Share.Properties.Resources.icons8_search_32;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton3.Text = "查找";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.Image = global::Youli_Data_Share.Properties.Resources.refresh_30px;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton4.Text = "刷新";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(180, 22);
-            this.toolStripLabel1.Text = "→ 如需刷新订单数量请点击刷新";
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(540, 22);
+            this.toolStripLabel2.Text = "    批量修改注意：  1.修改完需要按回车键退出修改状态     2.通过查找切换页面数据前需要保存数据";
+            this.toolStripLabel2.Visible = false;
             // 
             // frmOrderPlan
             // 
@@ -394,6 +423,8 @@ namespace Youli_Data_Share.OrderPaln
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.Label label1;
+        private ToolStripButton toolStripButton4;
+        private ToolStripLabel toolStripLabel1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
@@ -408,9 +439,10 @@ namespace Youli_Data_Share.OrderPaln
         private DataGridViewButtonColumn Column10;
         private DataGridViewButtonColumn Column13;
         private DataGridViewTextBoxColumn Column16;
+        private DataGridViewTextBoxColumn Column17;
         private DataGridViewTextBoxColumn Column11;
         private DataGridViewTextBoxColumn Column12;
-        private ToolStripButton toolStripButton4;
-        private ToolStripLabel toolStripLabel1;
+        private ToolStripButton toolStripButton5;
+        private ToolStripLabel toolStripLabel2;
     }
 }

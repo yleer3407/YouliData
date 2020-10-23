@@ -99,31 +99,30 @@ namespace Youli_Data_Share
         }
         private void btnAddOrderNum_Click(object sender, EventArgs e)
         {
-            //dataGridView1.CancelEdit();
-            SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "192.168.1.104";
-            scsb.UserID = "sa";
-            scsb.Password = "yelei193";
-            scsb.InitialCatalog = "YouliData";
-            //string txtAdd = textBox1.Text.ToString();
+            //SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
+            //scsb.DataSource = "192.168.1.104";
+            //scsb.UserID = "sa";
+            //scsb.Password = "yelei193";
+            //scsb.InitialCatalog = "YouliData";
             string txtAdd = dataGridView1.Rows[0].Cells["Column4"].Value.ToString();
-            conn_add = new SqlConnection(scsb.ToString());
-            if (conn_add.State == System.Data.ConnectionState.Closed)
-                conn_add.Open();
+            //conn_add = new SqlConnection(scsb.ToString());
+            //if (conn_add.State == System.Data.ConnectionState.Closed)
+            //    conn_add.Open();
             //先读取对sql数据库读取填写的制令单号 检查有没有获取值
             string strRepet = "SELECT flo_num FROM flow WHERE[flo_num]='" + txtAdd + "'";
-            SqlCommand commm = new SqlCommand(strRepet, conn_add);
-            SqlDataReader dr = commm.ExecuteReader();
+            //SQLHelper.GetReader(strRepet);
+            //SqlCommand commm = new SqlCommand(strRepet, conn_add);
+            SqlDataReader dr = SQLHelper.GetReader(strRepet);
             if (dr.Read())
             {
                 MessageBox.Show("制令单号重复");
-                conn_add.Close();
+                //conn_add.Close();
                 return;
             }
             else
             {
-                conn_add.Close();
-                conn_add.Open();
+                //conn_add.Close();
+                //conn_add.Open();
                 #region 判断为NULL 及其他数据为空
                 if (dataGridView1.Rows[0].Cells["Column1"].Value==null)
                 {
@@ -312,11 +311,15 @@ namespace Youli_Data_Share
                                     ,'" + "N" + @"' 
                                     ,'" + "N" + @"' 
                                     ,'" + "0" + @"' )";
-                SqlCommand comm = new SqlCommand(strSql, conn_add);
-                comm.ExecuteNonQuery();
+                //SqlCommand comm = new SqlCommand(strSql, conn_add);
+                //comm.ExecuteNonQuery();
+                #region 添加到云服务器
+                SQLHelper2.Update(strSql);
+                SQLHelper.Update(strSql);
+                #endregion
                 MessageBox.Show("添加成功！");
                 this.DialogResult = DialogResult.OK;
-                this.Close();
+                //this.Close();
             }
         }
     }

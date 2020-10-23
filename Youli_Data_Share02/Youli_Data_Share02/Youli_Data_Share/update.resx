@@ -118,7 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.95data 2020.10.15&gt;&gt;update:
+    <value>版本1.0.0.98data 2020.10.22&gt;&gt;update:
+1.添加采购追料时间填写框
+---------------------------------------------------------
+版本1.0.0.97data 2020.10.17&gt;&gt;update:
+1.数据同步到云端
+---------------------------------------------------------
+版本1.0.0.95data 2020.10.15&gt;&gt;update:
 1.发布地址改变 更新地址改变
 ---------------------------------------------------------
 版本1.0.0.94 data 2020.10.15&gt;&gt;update:

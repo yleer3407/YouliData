@@ -169,5 +169,8 @@
     <Resource Include="rescource\表格设置.png" />
     <Resource Include="rescource\设置.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cogwheel_733px_1224810_easyicon.net.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

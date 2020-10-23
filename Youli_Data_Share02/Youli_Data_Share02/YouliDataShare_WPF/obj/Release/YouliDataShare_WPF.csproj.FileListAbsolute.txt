@@ -1,0 +1,15 @@
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\bin\Release\YouliDataShare_WPF.exe.config
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\bin\Release\YouliDataShare_WPF.exe
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\bin\Release\YouliDataShare_WPF.pdb
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Release\YouliDataShare_WPF.csprojAssemblyReference.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Release\MainWindow.g.cs
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Release\App.g.cs
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Release\YouliDataShare_WPF_MarkupCompile.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Release\YouliDataShare_WPF_MarkupCompile.lref
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Release\MainWindow.baml
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Release\YouliDataShare_WPF.g.resources
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Release\YouliDataShare_WPF.Properties.Resources.resources
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Release\YouliDataShare_WPF.csproj.GenerateResource.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Release\YouliDataShare_WPF.csproj.CoreCompileInputs.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Release\YouliDataShare_WPF.exe
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataShare_WPF\obj\Release\YouliDataShare_WPF.pdb

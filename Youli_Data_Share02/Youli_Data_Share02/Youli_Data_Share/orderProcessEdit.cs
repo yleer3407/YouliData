@@ -94,6 +94,7 @@ namespace Youli_Data_Share
             txtfloencase.Text = dt.Rows[0]["flo_encase"].ToString();
             txtflobox.Text = dt.Rows[0]["flo_box"].ToString();
             txtfloask.Text = dt.Rows[0]["flo_ask"].ToString();
+            txtflowback.Text = dt.Rows[0]["flo_back"].ToString();
             if (dt.Rows[0]["flo_pic"].ToString() == "1")
             {
                 chkflopic.Checked = true;
@@ -186,6 +187,7 @@ namespace Youli_Data_Share
                 {
                     txtflomodibom2.Enabled = true;
                     chkflobomVerify.Enabled = true;
+                    txtflowback.Enabled = true;
                     txtfloelsequan.Enabled = true;
                 }
                 if (orderProcess.txtuser == "张栋")
@@ -338,6 +340,7 @@ namespace Youli_Data_Share
                         strSQL = @"UPDATE [dbo].[flow]
                                    SET [flo_state] = '" + txtflostate.Text + @"'
                                    ,[flo_modibom2] = '" + txtflomodibom2.Text + @"'
+                                   ,[flo_back] = '" +txtflowback.Text + @"'
                                    ,[flo_bomVerify] = '" + bomVerifyValue + @"'
                                    ,[flo_elsequan] = '" + txtfloelsequan.Text + @"'
                                WHERE flo_time = '" + txtflotime.Text + @"' 
@@ -387,6 +390,7 @@ namespace Youli_Data_Share
                                     AND flo_num= '" + txtflonum.Text + "'";
                     }
                     SQLHelper2.Update(strSQL);
+                    SQLHelper.Update(strSQL);
                     MessageBox.Show("提交成功!");
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -547,6 +551,7 @@ namespace Youli_Data_Share
                                      WHERE flo_time = '" + txtflotime.Text + @"' 
                                        AND flo_num ='" + txtflonum.Text + "'";
                     SQLHelper2.Update(strSQLDelete);
+                    SQLHelper.Update(strSQLDelete);
                     MessageBox.Show("删除成功!");
                     this.DialogResult = DialogResult.OK;
                     this.Close();

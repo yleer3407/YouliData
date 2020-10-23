@@ -1,0 +1,9 @@
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Release\YouliDataCloud.Form1.resources
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Release\YouliDataCloud.Properties.Resources.resources
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Release\YouliDataCloud.csproj.GenerateResource.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Release\YouliDataCloud.csproj.CoreCompileInputs.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\bin\Release\优力基础资料云享版.exe.config
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\bin\Release\优力基础资料云享版.exe
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\bin\Release\优力基础资料云享版.pdb
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Release\优力基础资料云享版.exe
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Release\优力基础资料云享版.pdb

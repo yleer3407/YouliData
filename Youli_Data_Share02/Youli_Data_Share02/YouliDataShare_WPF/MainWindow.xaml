@@ -62,49 +62,49 @@
             </Button>
             <Button x:Name="btn03"  FontSize="150"  FontFamily="./#iconfont" Margin="5" Width="180" Height="180" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
                 <StackPanel>
-                    <Image Source="/rescource/folders_144.66546112116px_1214078_easyicon.net.png" Width="120"/>
+                    <Image Source="/rescource/folders_144.66546112116px_1214078_easyicon.net.png" Width="150"/>
                     <TextBlock Text="包装材料汇总" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
                 </StackPanel>
             </Button>
             <Button x:Name="btn04"  FontSize="150"  FontFamily="./#iconfont" Margin="5" Width="180" Height="180" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
                 <StackPanel>
-                    <Image Source="/rescource/folder_783px_1229425_easyicon.net.png" Width="120"/>
+                    <Image Source="/rescource/folder_783px_1229425_easyicon.net.png" Width="150"/>
                     <TextBlock Text="ERP基础资料" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
                 </StackPanel>
             </Button>
             <Button x:Name="btn05"  FontSize="150"  FontFamily="./#iconfont" Margin="5" Width="180" Height="180" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
                 <StackPanel>
-                    <Image Source="/rescource/magnifying_glass_tilted_left_123.15457413249px_1215124_easyicon.net.png" Width="120"/>
+                    <Image Source="/rescource/magnifying_glass_tilted_left_123.15457413249px_1215124_easyicon.net.png" Width="150"/>
                     <TextBlock Text="QC反馈汇总" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
                 </StackPanel>
             </Button>
             <Button x:Name="btn06"  FontSize="150"  FontFamily="./#iconfont" Margin="5" Width="180" Height="180" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
                 <StackPanel>
-                    <Image Source="/rescource/checklist_108.5466155811px_1234207_easyicon.net.png" Width="110"/>
+                    <Image Source="/rescource/checklist_108.5466155811px_1234207_easyicon.net.png" Width="125"/>
                     <TextBlock Text="考核数据汇总" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
                 </StackPanel>
             </Button>
             <Button x:Name="btn07"  FontSize="150"  FontFamily="./#iconfont" Margin="5" Width="180" Height="180" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
                 <StackPanel>
-                    <Image Source="/rescource/teamwork_128px_1208219_easyicon.net.png" Width="120"/>
+                    <Image Source="cogwheel_733px_1224810_easyicon.net.png" Width="150"/>
                     <TextBlock Text="产品问题" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
                 </StackPanel>
             </Button>
             <Button x:Name="btn08"  FontSize="150"  FontFamily="./#iconfont" Margin="5" Width="180" Height="180" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
                 <StackPanel>
-                    <Image Source="/rescource/warehouse_128px_1285469_easyicon.net.png" Width="120"/>
+                    <Image Source="/rescource/warehouse_128px_1285469_easyicon.net.png" Width="150"/>
                     <TextBlock Text="样品仓库" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
                 </StackPanel>
             </Button>
             <Button x:Name="btn09"  FontSize="150"  FontFamily="./#iconfont" Margin="5" Width="180" Height="180" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
                 <StackPanel>
-                    <Image Source="/rescource/chevron_128px_1232004_easyicon.net.ico" Width="120"/>
+                    <Image Source="/rescource/chevron_128px_1232004_easyicon.net.ico" Width="150"/>
                     <TextBlock Text="未开放" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
                 </StackPanel>
             </Button>
             <Button x:Name="btn10"  FontSize="150"  FontFamily="./#iconfont" Margin="5" Width="180" Height="180" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
                 <StackPanel>
-                    <Image Source="/rescource/chevron_128px_1232004_easyicon.net.ico" Width="120"/>
+                    <Image Source="/rescource/chevron_128px_1232004_easyicon.net.ico" Width="150"/>
                     <TextBlock Text="未开放" FontSize="20" HorizontalAlignment="Center" Foreground="White" />
                 </StackPanel>
             </Button>

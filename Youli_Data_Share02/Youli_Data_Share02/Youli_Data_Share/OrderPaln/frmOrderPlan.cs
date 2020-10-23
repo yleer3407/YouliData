@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,11 @@ namespace Youli_Data_Share.OrderPaln
 
         private void OrderPlan_Load(object sender, EventArgs e)
         {
+            if (orderProcess.txtuser == "严华新")
+            {
+                toolStripButton5.Visible = true;
+                toolStripLabel2.Visible = true;
+            }
             label1.Visible = true;
             //label1.Text = "数据疯狂计算中...";
             Control.CheckForIllegalCrossThreadCalls = false;
@@ -197,6 +203,7 @@ namespace Youli_Data_Share.OrderPaln
                                       ,[flo_quantity]
                                       ,[yishangxians]
                                       ,[flo_oliquan]
+                                      ,[flo_back]
                                       ,[Names]
                                       ,[Expr1]
                                 FROM GCB_LAST_JIHUA ";
@@ -232,7 +239,7 @@ namespace Youli_Data_Share.OrderPaln
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 dt.Rows[i]["flo_line"]= SQLHelper2.GetSingleResult("SELECT [flo_line] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//拉线
-                //dt.Rows[i]["flo_client"] = SQLHelper2.GetSingleResult("SELECT [flo_client] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//客户
+                dt.Rows[i]["flo_back"] = SQLHelper2.GetSingleResult("SELECT [flo_back] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//返回料
                 //dt.Rows[i]["flo_oliquan"] = SQLHelper2.GetSingleResult("SELECT [flo_oliquan] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//喷油
                 dt.Rows[i]["flo_online"] = SQLHelper2.GetSingleResult("SELECT [flo_online] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//上线时间
             }
@@ -246,6 +253,42 @@ namespace Youli_Data_Share.OrderPaln
             Thread th = new Thread(loading);
             th.IsBackground = true;
             th.Start();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Thread th = new Thread(saveOnline);
+            th.IsBackground = true;
+            th.Start();
+            label1.Visible = true;
+        }
+
+        private void saveOnline()
+        {
+            try
+            {
+                DataTable changeDt = dt.GetChanges();
+
+                foreach (DataRow dr in changeDt.Rows)
+                {
+                    string strSave = @"UPDATE [dbo].[flow]
+                        SET [flo_online] = '" + dr["flo_online"].ToString() + @"'
+                        WHERE flo_num = '" + dr["flo_num"].ToString() + "'";
+
+                    SQLHelper2.Update(strSave);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("保存失败！");
+            }
+            finally
+            {
+                MessageBox.Show("保存成功!");
+                reLoading();
+                dataGridView1.DataSource = dt;
+                label1.Visible = false;
+            }
         }
     }
 }

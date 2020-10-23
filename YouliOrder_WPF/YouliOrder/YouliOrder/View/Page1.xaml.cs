@@ -23,6 +23,7 @@ namespace YouliOrder.View
         public Page1()
         {
             InitializeComponent();
+
         }
     }
 }

@@ -1,0 +1,10 @@
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\bin\Debug\YouliDataCloud.exe.config
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\bin\Debug\YouliDataCloud.exe
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\bin\Debug\YouliDataCloud.pdb
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Debug\YouliDataCloud.csprojAssemblyReference.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Debug\YouliDataCloud.Form1.resources
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Debug\YouliDataCloud.Properties.Resources.resources
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Debug\YouliDataCloud.csproj.GenerateResource.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Debug\YouliDataCloud.csproj.CoreCompileInputs.cache
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Debug\YouliDataCloud.exe
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\YouliDataCloud\obj\Debug\YouliDataCloud.pdb

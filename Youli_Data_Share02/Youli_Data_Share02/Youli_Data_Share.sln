@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouliDataShare_WPF", "Youli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderPlanFlow", "OrderPlanFlow\OrderPlanFlow.csproj", "{DCBAA83C-5169-49E2-A573-E62A103DD951}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouliDataCloud", "YouliDataCloud\YouliDataCloud.csproj", "{07FAC116-E47A-40ED-9993-FB4D1BD80749}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,14 @@ Global
 		{DCBAA83C-5169-49E2-A573-E62A103DD951}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DCBAA83C-5169-49E2-A573-E62A103DD951}.Release|x86.ActiveCfg = Release|Any CPU
 		{DCBAA83C-5169-49E2-A573-E62A103DD951}.Release|x86.Build.0 = Release|Any CPU
+		{07FAC116-E47A-40ED-9993-FB4D1BD80749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07FAC116-E47A-40ED-9993-FB4D1BD80749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07FAC116-E47A-40ED-9993-FB4D1BD80749}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{07FAC116-E47A-40ED-9993-FB4D1BD80749}.Debug|x86.Build.0 = Debug|Any CPU
+		{07FAC116-E47A-40ED-9993-FB4D1BD80749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07FAC116-E47A-40ED-9993-FB4D1BD80749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07FAC116-E47A-40ED-9993-FB4D1BD80749}.Release|x86.ActiveCfg = Release|Any CPU
+		{07FAC116-E47A-40ED-9993-FB4D1BD80749}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -31,7 +31,8 @@ namespace YouliOrder.ViewModel
             Modules.Add(new Module() { Name = "订单汇总" });
             Modules.Add(new Module() { Name = "工厂接单" });
 
-            OpenCommand = new RelayCommand<string>(t => OpenPage(t));
+            Page = new Page1();
+            OpenCommand = new RelayCommand<string>(t => OpenPage(t)); //按键响应
         }
 
         private void OpenPage(string Name)
