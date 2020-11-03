@@ -26,7 +26,7 @@ namespace Youli_Data_Share
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             string juest = Dns.GetHostName();
-            if(juest=="CN-20200606JLSP")//邓姐电脑
+            if(juest=="HLN")//邓姐电脑
             {
                 specimenOpe frmSpecOpe = new specimenOpe();
                 DialogResult result = frmSpecOpe.ShowDialog();
@@ -55,7 +55,7 @@ namespace Youli_Data_Share
             scsb.DataSource = "NQSRSUXS2GWHMON";
             scsb.UserID = "sa";
             scsb.Password = "yelei193";
-            scsb.InitialCatalog = "Youli_date";
+            scsb.InitialCatalog = "YouliData";
 
             conn = new SqlConnection(scsb.ToString());
             if (conn.State == System.Data.ConnectionState.Closed)
@@ -80,7 +80,7 @@ namespace Youli_Data_Share
             scsb.DataSource = "192.168.1.104";
             scsb.UserID = "sa";
             scsb.Password = "yelei193";
-            scsb.InitialCatalog = "Youli_date";
+            scsb.InitialCatalog = "YouliData";
 
             conn = new SqlConnection(scsb.ToString());
             if (conn.State == System.Data.ConnectionState.Closed)
@@ -117,7 +117,7 @@ namespace Youli_Data_Share
                 scsb.DataSource = "192.168.1.104";
                 scsb.UserID = "sa";
                 scsb.Password = "yelei193";
-                scsb.InitialCatalog = "Youli_date";
+                scsb.InitialCatalog = "YouliData";
 
                 conn = new SqlConnection(scsb.ToString());
                 if (conn.State == System.Data.ConnectionState.Closed)
@@ -142,7 +142,7 @@ namespace Youli_Data_Share
                 scsb.DataSource = "192.168.1.104";
                 scsb.UserID = "sa";
                 scsb.Password = "yelei193";
-                scsb.InitialCatalog = "Youli_date";
+                scsb.InitialCatalog = "YouliData";
 
                 conn = new SqlConnection(scsb.ToString());
                 if (conn.State == System.Data.ConnectionState.Closed)
@@ -186,12 +186,12 @@ namespace Youli_Data_Share
                 scsb.DataSource = "192.168.1.104";
                 scsb.UserID = "sa";
                 scsb.Password = "yelei193";
-                scsb.InitialCatalog = "Youli_date";
+                scsb.InitialCatalog = "YouliData";
 
                 conn = new SqlConnection(scsb.ToString());
                 if (conn.State == System.Data.ConnectionState.Closed)
                     conn.Open();
-                string SqlTime = "SELECT * FROM [Youli_date].[dbo].[repertoryINOUT] WHERE 操作时间>='"+dateTimePicker1.Value.ToString()+"'and 操作时间<='"+dateTimePicker2.Value.ToString()+"'";
+                string SqlTime = "SELECT * FROM [YouliData].[dbo].[repertoryINOUT] WHERE 操作时间>='" + dateTimePicker1.Value.ToString()+"'and 操作时间<='"+dateTimePicker2.Value.ToString()+"'";
                 SqlDataAdapter da = new SqlDataAdapter(SqlTime, conn);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "repertoryINOUT");

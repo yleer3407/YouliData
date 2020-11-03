@@ -47,7 +47,12 @@ namespace Youli_Data_Share.OrderPaln
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.编辑数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +63,7 @@ namespace Youli_Data_Share.OrderPaln
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -65,11 +71,6 @@ namespace Youli_Data_Share.OrderPaln
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.编辑数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -152,6 +153,23 @@ namespace Youli_Data_Share.OrderPaln
             this.toolStripLabel1.Size = new System.Drawing.Size(180, 22);
             this.toolStripLabel1.Text = "→ 如需刷新订单数量请点击刷新";
             // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Image = global::Youli_Data_Share.Properties.Resources.提交成功;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton5.Text = "提交";
+            this.toolStripButton5.Visible = false;
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(540, 22);
+            this.toolStripLabel2.Text = "    批量修改注意：  1.修改完需要按回车键退出修改状态     2.通过查找切换页面数据前需要保存数据";
+            this.toolStripLabel2.Visible = false;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -171,6 +189,7 @@ namespace Youli_Data_Share.OrderPaln
             this.Column8,
             this.Column9,
             this.Column15,
+            this.Column18,
             this.Column14,
             this.Column10,
             this.Column13,
@@ -195,6 +214,30 @@ namespace Youli_Data_Share.OrderPaln
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.编辑数据ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 26);
+            // 
+            // 编辑数据ToolStripMenuItem
+            // 
+            this.编辑数据ToolStripMenuItem.Name = "编辑数据ToolStripMenuItem";
+            this.编辑数据ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.编辑数据ToolStripMenuItem.Text = "展开数据";
+            this.编辑数据ToolStripMenuItem.Click += new System.EventHandler(this.编辑数据ToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(499, 275);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(334, 46);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "请等待 加载数据中...";
             // 
             // Column1
             // 
@@ -288,6 +331,18 @@ namespace Youli_Data_Share.OrderPaln
             this.Column15.Name = "Column15";
             this.Column15.Width = 80;
             // 
+            // Column18
+            // 
+            this.Column18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column18.DataPropertyName = "flo_finish";
+            this.Column18.FalseValue = "N";
+            this.Column18.HeaderText = "订单完成";
+            this.Column18.Name = "Column18";
+            this.Column18.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column18.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column18.TrueValue = "Y";
+            this.Column18.Width = 50;
+            // 
             // Column14
             // 
             this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -348,47 +403,6 @@ namespace Youli_Data_Share.OrderPaln
             this.Column12.HeaderText = "计划缺料";
             this.Column12.Name = "Column12";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.编辑数据ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 26);
-            // 
-            // 编辑数据ToolStripMenuItem
-            // 
-            this.编辑数据ToolStripMenuItem.Name = "编辑数据ToolStripMenuItem";
-            this.编辑数据ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.编辑数据ToolStripMenuItem.Text = "展开数据";
-            this.编辑数据ToolStripMenuItem.Click += new System.EventHandler(this.编辑数据ToolStripMenuItem_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(499, 275);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(334, 46);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "请等待 加载数据中...";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.Image = global::Youli_Data_Share.Properties.Resources.提交成功;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton5.Text = "提交";
-            this.toolStripButton5.Visible = false;
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(540, 22);
-            this.toolStripLabel2.Text = "    批量修改注意：  1.修改完需要按回车键退出修改状态     2.通过查找切换页面数据前需要保存数据";
-            this.toolStripLabel2.Visible = false;
-            // 
             // frmOrderPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -425,6 +439,8 @@ namespace Youli_Data_Share.OrderPaln
         private System.Windows.Forms.Label label1;
         private ToolStripButton toolStripButton4;
         private ToolStripLabel toolStripLabel1;
+        private ToolStripButton toolStripButton5;
+        private ToolStripLabel toolStripLabel2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
@@ -435,6 +451,7 @@ namespace Youli_Data_Share.OrderPaln
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column15;
+        private DataGridViewCheckBoxColumn Column18;
         private DataGridViewTextBoxColumn Column14;
         private DataGridViewButtonColumn Column10;
         private DataGridViewButtonColumn Column13;
@@ -442,7 +459,5 @@ namespace Youli_Data_Share.OrderPaln
         private DataGridViewTextBoxColumn Column17;
         private DataGridViewTextBoxColumn Column11;
         private DataGridViewTextBoxColumn Column12;
-        private ToolStripButton toolStripButton5;
-        private ToolStripLabel toolStripLabel2;
     }
 }

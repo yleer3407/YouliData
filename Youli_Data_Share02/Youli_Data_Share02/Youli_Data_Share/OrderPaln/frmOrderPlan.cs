@@ -201,6 +201,7 @@ namespace Youli_Data_Share.OrderPaln
                                       ,[flo_range]
                                       ,[flo_plastic]
                                       ,[flo_quantity]
+                                      ,[flo_finish]
                                       ,[yishangxians]
                                       ,[flo_oliquan]
                                       ,[flo_back]
@@ -240,7 +241,7 @@ namespace Youli_Data_Share.OrderPaln
             {
                 dt.Rows[i]["flo_line"]= SQLHelper2.GetSingleResult("SELECT [flo_line] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//拉线
                 dt.Rows[i]["flo_back"] = SQLHelper2.GetSingleResult("SELECT [flo_back] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//返回料
-                //dt.Rows[i]["flo_oliquan"] = SQLHelper2.GetSingleResult("SELECT [flo_oliquan] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//喷油
+                dt.Rows[i]["flo_finish"] = SQLHelper2.GetSingleResult("SELECT [flo_finish] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//订单完成
                 dt.Rows[i]["flo_online"] = SQLHelper2.GetSingleResult("SELECT [flo_online] FROM flow WHERE flo_num ='" + dt.Rows[i]["flo_num"].ToString() + "'");//上线时间
             }
         }
@@ -272,9 +273,9 @@ namespace Youli_Data_Share.OrderPaln
                 foreach (DataRow dr in changeDt.Rows)
                 {
                     string strSave = @"UPDATE [dbo].[flow]
-                        SET [flo_online] = '" + dr["flo_online"].ToString() + @"'
+                                    SET [flo_online]='" + dr["flo_online"].ToString() + @"'
+                                    ,[flo_finish]='" + dr["flo_finish"].ToString() + @"'
                         WHERE flo_num = '" + dr["flo_num"].ToString() + "'";
-
                     SQLHelper2.Update(strSave);
                 }
             }

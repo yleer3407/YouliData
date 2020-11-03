@@ -1084,11 +1084,11 @@ namespace Youli_Data_Share
                 if (cell.FormattedValue.ToString() == "工艺文件")
                 {
                     //string currPath = Application.StartupPath;//获取当前文件夹路径
-                    string subPath = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/";
-                    string subFilePath1 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/" + "/包材文件夹/";
-                    string subFilePath2 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/" + "/喷油丝印文件夹/";
-                    string subFilePath3 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/" + "/PCB板文件夹/";
-                    string subFilePath4 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/" + "/产品材料图片文件夹/";
+                    string subPath = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/";
+                    string subFilePath1 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/" + "/包材文件夹/";
+                    string subFilePath2 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/" + "/喷油丝印文件夹/";
+                    string subFilePath3 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/" + "/PCB板文件夹/";
+                    string subFilePath4 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/" + "/产品材料图片文件夹/";
                     // MessageBox.Show(subPath);
                     try
                     {
@@ -1194,7 +1194,7 @@ namespace Youli_Data_Share
                 else if (cell.FormattedValue.ToString() == "生产问题夹")
                 {
                     //string currPath = Application.StartupPath;//获取当前文件夹路径
-                    string subPath1 = @"\\192.168.1.104\Youli_Server\ProblemFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells[11].Value.ToString() + "/";
+                    string subPath1 = @"\\192.168.1.104\Youli_Server\ProblemFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/";
                     // MessageBox.Show(subPath);
                     try
                     {

@@ -42,7 +42,7 @@ namespace Youli_Data_Share
                     scsb.DataSource = "192.168.1.104";
                     scsb.UserID = "sa";
                     scsb.Password = "yelei193";
-                    scsb.InitialCatalog = "Youli_date";
+                    scsb.InitialCatalog = "YouliData";
 
                     conn = new SqlConnection(scsb.ToString());
                     if (conn.State == System.Data.ConnectionState.Closed)
@@ -76,7 +76,7 @@ namespace Youli_Data_Share
                 scsb.DataSource = "192.168.1.104";
                 scsb.UserID = "sa";
                 scsb.Password = "yelei193";
-                scsb.InitialCatalog = "Youli_date";
+                scsb.InitialCatalog = "YouliData";
 
                 conn = new SqlConnection(scsb.ToString());
                 if (conn.State == System.Data.ConnectionState.Closed)
@@ -102,7 +102,7 @@ namespace Youli_Data_Share
             scsb.DataSource = "192.168.1.104";
             scsb.UserID = "sa";
             scsb.Password = "yelei193";
-            scsb.InitialCatalog = "Youli_date";
+            scsb.InitialCatalog = "YouliData";
 
             conn = new SqlConnection(scsb.ToString());
             if (conn.State == System.Data.ConnectionState.Closed)
@@ -141,7 +141,7 @@ namespace Youli_Data_Share
                 }
                 else //如果没有值  添加
                 {
-                    strSQL = @"INSERT INTO [Youli_date].[dbo].[repertory]
+                    strSQL = @"INSERT INTO [YouliData].[dbo].[repertory]
                          ([产品编号]
                             ,[产品名称]
                             ,[客户]
@@ -164,7 +164,7 @@ namespace Youli_Data_Share
                 #region 表2操作
                 if(textBox5.Text.ToString()=="")
                 {
-                    strSQL = @"INSERT INTO [Youli_date].[dbo].[repertoryINOUT]
+                    strSQL = @"INSERT INTO [YouliData].[dbo].[repertoryINOUT]
                          ([产品编号]
                             ,[产品名称]
                             ,[客户]
@@ -189,7 +189,7 @@ namespace Youli_Data_Share
                 }
                 else
                 {
-                    strSQL = @"INSERT INTO [Youli_date].[dbo].[repertoryINOUT]
+                    strSQL = @"INSERT INTO [YouliData].[dbo].[repertoryINOUT]
                          ([产品编号]
                             ,[产品名称]
                             ,[客户]
@@ -260,7 +260,7 @@ namespace Youli_Data_Share
                 #region 表2操作
                 if((int.Parse(textBox5.Text.ToString())) - numericUpDown1.Value >= 0)
                 {
-                    strSQL = @"INSERT INTO [Youli_date].[dbo].[repertoryINOUT]
+                    strSQL = @"INSERT INTO [YouliData].[dbo].[repertoryINOUT]
                          ([产品编号]
                             ,[产品名称]
                             ,[客户]
@@ -314,7 +314,7 @@ namespace Youli_Data_Share
                 conn.Close();
                 #endregion
                 #region 表2操作
-                strSQL = @"INSERT INTO [Youli_date].[dbo].[repertoryINOUT]
+                strSQL = @"INSERT INTO [YouliData].[dbo].[repertoryINOUT]
                          ([产品编号]
                             ,[产品名称]
                             ,[客户]
