@@ -1177,7 +1177,7 @@ namespace Youli_Data_Share
                     //notifyIcon1.ShowBalloonTip(1000, "提示：", "数据加载计算中... \r\n...... \r\n...... \r\n请耐心等待！", ToolTipIcon.Warning);
                     try
                     {
-                        int ind = dgvWorkFlow.CurrentRow.Index;
+                        int ind = dgvWorkFlow.CurrentRow.Index;  //当前行索引
                         string ordNum = dgvWorkFlow.Rows[ind].Cells["Column6"].Value.ToString();
                         pdsNum = dgvWorkFlow.Rows[ind].Cells["Column8"].Value.ToString();
                         orderIntNum = int.Parse(dgvWorkFlow.Rows[ind].Cells["Column28"].Value.ToString());

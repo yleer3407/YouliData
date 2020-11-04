@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.100data 2020.10.23&gt;&gt;update:
+    <value>版本1.0.0.101data 2020.11.03&gt;&gt;update:
+1.在上线物料计算分析里 添加AB材料明细显示
+---------------------------------------------------------
+版本1.0.0.100data 2020.11.03&gt;&gt;update:
 1.修复样品出库bug
 ---------------------------------------------------------
 版本1.0.0.99data 2020.10.23&gt;&gt;update:

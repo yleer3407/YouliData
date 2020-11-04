@@ -67,5 +67,11 @@ namespace Youli_Data_Share.OrderPaln
         {
 
         }
+
+        private void aB板详情ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOrderPlanAddHB frmHB = new frmOrderPlanAddHB(flo_num);
+            frmHB.ShowDialog();
+        }
     }
 }

@@ -29,7 +29,7 @@
     <UpdateUrl>\\192.168.1.104\Youli_Server\</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.71</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>143</ApplicationRevision>
+    <ApplicationRevision>144</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -82,6 +82,9 @@
   <PropertyGroup />
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="Guna.UI">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Guna.UI.DLL</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -191,6 +194,12 @@
     </Compile>
     <Compile Include="OrderPaln\frmOrderPlan.Designer.cs">
       <DependentUpon>frmOrderPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderPaln\frmOrderPlanAddHB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderPaln\frmOrderPlanAddHB.Designer.cs">
+      <DependentUpon>frmOrderPlanAddHB.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderPaln\frmOrderPlanMater.cs">
       <SubType>Form</SubType>
@@ -329,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderPaln\frmOrderPlan.resx">
       <DependentUpon>frmOrderPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderPaln\frmOrderPlanAddHB.resx">
+      <DependentUpon>frmOrderPlanAddHB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderPaln\frmOrderPlanMater.resx">
       <DependentUpon>frmOrderPlanMater.cs</DependentUpon>
