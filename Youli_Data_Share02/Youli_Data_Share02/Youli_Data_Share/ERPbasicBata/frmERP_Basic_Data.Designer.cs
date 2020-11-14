@@ -66,7 +66,8 @@
             "BOM表",
             "基础资料表",
             "库存表",
-            "后焊库存表"});
+            "后焊库存表",
+            "喷油库存表"});
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 25);
             this.toolStripComboBox1.TextChanged += new System.EventHandler(this.toolStripComboBox1_TextChanged);

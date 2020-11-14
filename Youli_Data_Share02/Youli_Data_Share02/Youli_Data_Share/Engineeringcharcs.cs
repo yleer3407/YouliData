@@ -21,6 +21,11 @@ namespace Youli_Data_Share
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 详细按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -43,19 +48,19 @@ namespace Youli_Data_Share
             Pro.DataSource = "192.168.1.104";
             Pro.UserID = "sa";
             Pro.Password = "yelei193";
-            Pro.InitialCatalog = "Youli_date";
+            Pro.InitialCatalog = "YouliData";
 
             conn = new SqlConnection(Pro.ToString());
             if (conn.State == System.Data.ConnectionState.Closed)
                 conn.Open();
-            string strSQL = "select * from problems02 WHERE 时间 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 状态 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 客户 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 产品名称 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题归类 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题描述 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 解决方案 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 问题发起人 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
+            string strSQL = "select * from problem WHERE 时间 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 状态 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 客户 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 产品名称 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题归类 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题描述 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 解决方案 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 提交端 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
             SqlDataAdapter da = new SqlDataAdapter(strSQL, conn);
             DataSet ds = new DataSet();
-            da.Fill(ds, "problems02");
+            da.Fill(ds, "problem");
 
             //dataGridView1.DataSource = ds;
             //dataGridView1.DataMember = "wlxq";
-            dt = ds.Tables["problems02"];
+            dt = ds.Tables["problem"];
             dataGridView1.DataSource = dt.DefaultView;
         }
 
@@ -69,19 +74,19 @@ namespace Youli_Data_Share
             Pro.DataSource = "192.168.1.104";
             Pro.UserID = "sa";
             Pro.Password = "yelei193";
-            Pro.InitialCatalog = "Youli_date";
+            Pro.InitialCatalog = "YouliData";
 
             conn = new SqlConnection(Pro.ToString());
             if (conn.State == System.Data.ConnectionState.Closed)
                 conn.Open();
-            string strSQL = "select * from problems02 WHERE 时间 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 状态 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 客户 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 产品名称 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题归类 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题描述 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 解决方案 LIKE '%" + toolStripTextBox1.Text.Trim() +"%' or 问题发起人 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
+            string strSQL = "select * from problem WHERE 时间 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 状态 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 客户 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 产品名称 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题归类 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题描述 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 解决方案 LIKE '%" + toolStripTextBox1.Text.Trim() +"%' or 提交端 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
             SqlDataAdapter da = new SqlDataAdapter(strSQL, conn);
             DataSet ds = new DataSet();
-            da.Fill(ds, "problems02");
+            da.Fill(ds, "problem");
 
             //dataGridView1.DataSource = ds;
             //dataGridView1.DataMember = "wlxq";
-            dt = ds.Tables["problems02"];
+            dt = ds.Tables["problem"];
             dataGridView1.DataSource = dt.DefaultView;
             #endregion
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
@@ -108,7 +113,7 @@ namespace Youli_Data_Share
                         string strSQL = string.Empty;
                         if (dr.RowState == System.Data.DataRowState.Added)//添加
                         {
-                            strSQL = @"INSERT INTO [dbo].[problems02]
+                            strSQL = @"INSERT INTO [dbo].[problem]
                                            ([时间]
                                            ,[状态]
                                            ,[客户]
@@ -116,7 +121,7 @@ namespace Youli_Data_Share
                                            ,[问题归类]
                                            ,[问题描述]
                                            ,[解决方案]
-                                           ,[问题发起人])
+                                           ,[提交端])
                                      VALUES
                                            ('" + "[" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "]" + @"'
                                            ,'" + dr["状态"].ToString() + @"'
@@ -129,19 +134,19 @@ namespace Youli_Data_Share
                         }
                         else if (dr.RowState == System.Data.DataRowState.Deleted)//删除
                         {
-                            strSQL = @"DELETE FROM [dbo].[problems02]
+                            strSQL = @"DELETE FROM [dbo].[problem]
                                      WHERE 时间 = '" + dr["时间", DataRowVersion.Original].ToString() + @"' 
                                        AND 产品名称 ='" + dr["产品名称", DataRowVersion.Original].ToString() + "'";
                         }
                         else if (dr.RowState == System.Data.DataRowState.Modified)//修改
                         {
-                            strSQL = @"UPDATE [dbo].[problems02]
+                            strSQL = @"UPDATE [dbo].[problem]
                                    SET [状态] = '" + dr["状态"].ToString() + @"'
                                    ,[客户] = '" + dr["客户"].ToString() + @"'
                                    ,[问题归类] = '" + dr["问题归类"].ToString() + @"'
                                    ,[问题描述] = '" + dr["问题描述"].ToString() + @"'
                                    ,[解决方案] = '" + dr["解决方案"].ToString() + @"'
-                                   ,[问题发起人] = '" + dr["问题发起人"].ToString() + @"'
+                                   ,[提交端] = '" + dr["提交端"].ToString() + @"'
                                WHERE 时间 = '" + dr["时间"].ToString() + @"' 
                                     AND 产品名称= '" + dr["产品名称"].ToString() + "'";
                         }
@@ -192,14 +197,14 @@ namespace Youli_Data_Share
             //conn = new SqlConnection(Pro.ToString());
            // if (conn.State == System.Data.ConnectionState.Closed)
             //    conn.Open();
-            string strSQL1 = "select * from problems02 WHERE 时间 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 状态 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 客户 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 产品名称 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题归类 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题描述 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 解决方案 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 问题发起人 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
+            string strSQL1 = "select * from problem WHERE 时间 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 状态 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 客户 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 产品名称 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题归类 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题描述 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 解决方案 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 提交端 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
             SqlDataAdapter da = new SqlDataAdapter(strSQL1, conn);
             DataSet ds = new DataSet();
-            da.Fill(ds, "problems02");
+            da.Fill(ds, "problem");
 
             dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "problems02";
-            dt = ds.Tables["problems02"];
+            dataGridView1.DataMember = "problem";
+            dt = ds.Tables["problem"];
             dataGridView1.DataSource = dt.DefaultView;
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
             #endregion
@@ -216,19 +221,19 @@ namespace Youli_Data_Share
             Pro.DataSource = "192.168.1.104";
             Pro.UserID = "sa";
             Pro.Password = "yelei193";
-            Pro.InitialCatalog = "Youli_date";
+            Pro.InitialCatalog = "YouliData";
 
             conn = new SqlConnection(Pro.ToString());
             if (conn.State == System.Data.ConnectionState.Closed)
                 conn.Open();
-            string strSQL = "select * from problems02 WHERE 时间 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 状态 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 客户 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 产品名称 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题归类 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题描述 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 解决方案 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 问题发起人 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
+            string strSQL = "select * from problem WHERE 时间 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 状态 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 客户 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 产品名称 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题归类 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 问题描述 LIKE '%" + toolStripTextBox1.Text.Trim() + "%'or 解决方案 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' or 提交端 LIKE '%" + toolStripTextBox1.Text.Trim() + "%' ";
             SqlDataAdapter da = new SqlDataAdapter(strSQL, conn);
             DataSet ds = new DataSet();
-            da.Fill(ds, "problems02");
+            da.Fill(ds, "problem");
 
             //dataGridView1.DataSource = ds;
             //dataGridView1.DataMember = "wlxq";
-            dt = ds.Tables["problems02"];
+            dt = ds.Tables["problem"];
             dataGridView1.DataSource = dt.DefaultView;
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
         }
@@ -249,7 +254,7 @@ namespace Youli_Data_Share
                         string strSQL = string.Empty;
                         if (dr.RowState == System.Data.DataRowState.Added)//添加
                         {
-                            strSQL = @"INSERT INTO [dbo].[problems02]
+                            strSQL = @"INSERT INTO [dbo].[problem]
                                            ([时间]
                                            ,[状态]
                                            ,[客户]
@@ -257,7 +262,7 @@ namespace Youli_Data_Share
                                            ,[问题归类]
                                            ,[问题描述]
                                            ,[解决方案]
-                                           ,[问题发起人])
+                                           ,[提交端])
                                      VALUES
                                            ('" + "[" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "]" + @"'
                                            ,'" + dr["状态"].ToString() + @"'
@@ -270,19 +275,19 @@ namespace Youli_Data_Share
                         }
                         else if (dr.RowState == System.Data.DataRowState.Deleted)//删除
                         {
-                            strSQL = @"DELETE FROM [dbo].[problems02]
+                            strSQL = @"DELETE FROM [dbo].[problem]
                                      WHERE 时间 = '" + dr["时间", DataRowVersion.Original].ToString() + @"' 
                                        AND 产品名称 ='" + dr["产品名称", DataRowVersion.Original].ToString() + "'";
                         }
                         else if (dr.RowState == System.Data.DataRowState.Modified)//修改
                         {
-                            strSQL = @"UPDATE [dbo].[problems02]
+                            strSQL = @"UPDATE [dbo].[problem]
                                    SET [状态] = '" + dr["状态"].ToString() + @"'
                                    ,[客户] = '" + dr["客户"].ToString() + @"'
                                    ,[问题归类] = '" + dr["问题归类"].ToString() + @"'
                                    ,[问题描述] = '" + dr["问题描述"].ToString() + @"'
                                    ,[解决方案] = '" + dr["解决方案"].ToString() + @"'
-                                   ,[问题发起人] = '" + dr["问题发起人"].ToString() + @"'
+                                   ,[提交端] = '" + dr["提交端"].ToString() + @"'
                                WHERE 时间 = '" + dr["时间"].ToString() + @"' 
                                     AND 产品名称= '" + dr["产品名称"].ToString() + "'";
                         }

@@ -201,7 +201,37 @@ namespace Youli_Data_Share.ERPbasicBata
                     toolSearchTxt.Text = "";
                     searchDgv4();
                     break;
+                case 4:
+                    dataGridView1.Visible = true;
+                    toolSearchTxt.Text = "";
+                    searchDgv5();
+                    break;
                 default: break;
+            }
+        }
+
+        /// <summary>
+        /// 喷油库存表
+        /// </summary>
+        private void searchDgv5()
+        {
+            try
+            {
+                string sql3 = @"SELECT  [pds_id] 材料编号
+                          ,[pds_name]   材料名称
+                          ,[pds_spec]   规格型号
+                          ,[pds_ename] 适用产品
+                           ,[stkqty]   数量
+                      FROM [dbo].[GCB_PY_STOCK]
+                        WHERE pds_id LIKE '%" + toolSearchTxt.Text.Trim() +
+                               "%'or pds_name LIKE '%" + toolSearchTxt.Text.Trim() +
+                               "%'or pds_spec LIKE '%" + toolSearchTxt.Text.Trim() + "%'";
+                dataGridView1.DataSource = SQLHelper2.GetDataSet(sql3).Tables[0];
+                label1.Visible = false;
+            }
+            catch
+            {
+                MessageBox.Show("数据库连接失败！");
             }
         }
 
@@ -405,6 +435,9 @@ namespace Youli_Data_Share.ERPbasicBata
                     break;
                 case 3:
                     searchDgv4();
+                    break;
+                case 4:
+                    searchDgv5();
                     break;
                 default: break;
             }

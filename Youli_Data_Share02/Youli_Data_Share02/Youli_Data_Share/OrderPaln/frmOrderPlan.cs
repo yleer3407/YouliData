@@ -124,8 +124,10 @@ namespace Youli_Data_Share.OrderPaln
             }
             if (cell.FormattedValue.ToString() == "报缺明细")
             {
-                frmOrderPlanMater frmOPM = new frmOrderPlanMater( dataGridView1.Rows[e.RowIndex].Cells["Column2"].Value.ToString());
+                frmOrderPlanMater frmOPM = new frmOrderPlanMater(dataGridView1.Rows[e.RowIndex].Cells["Column2"].Value.ToString());
                 frmOPM.Show();
+                //frmOrderPlanMasterGuna frmOPM = new frmOrderPlanMasterGuna(dataGridView1.Rows[e.RowIndex].Cells["Column2"].Value.ToString());
+                //frmOPM.Show();
             }
         }
         

@@ -29,7 +29,7 @@
     <UpdateUrl>\\192.168.1.104\Youli_Server\</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.71</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>144</ApplicationRevision>
+    <ApplicationRevision>145</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -201,6 +201,12 @@
     <Compile Include="OrderPaln\frmOrderPlanAddHB.Designer.cs">
       <DependentUpon>frmOrderPlanAddHB.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderPaln\frmOrderPlanMasterGuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderPaln\frmOrderPlanMasterGuna.Designer.cs">
+      <DependentUpon>frmOrderPlanMasterGuna.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderPaln\frmOrderPlanMater.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderPaln\frmOrderPlanAddHB.resx">
       <DependentUpon>frmOrderPlanAddHB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderPaln\frmOrderPlanMasterGuna.resx">
+      <DependentUpon>frmOrderPlanMasterGuna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderPaln\frmOrderPlanMater.resx">
       <DependentUpon>frmOrderPlanMater.cs</DependentUpon>

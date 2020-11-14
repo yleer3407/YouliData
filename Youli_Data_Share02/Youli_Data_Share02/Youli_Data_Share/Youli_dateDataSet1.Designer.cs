@@ -291,7 +291,7 @@ namespace Youli_Data_Share {
             
             private global::System.Data.DataColumn column解决方案;
             
-            private global::System.Data.DataColumn column问题发起人;
+            private global::System.Data.DataColumn column提交端;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -376,9 +376,9 @@ namespace Youli_Data_Share {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 问题发起人Column {
+            public global::System.Data.DataColumn 提交端Column {
                 get {
-                    return this.column问题发起人;
+                    return this.column提交端;
                 }
             }
             
@@ -419,7 +419,7 @@ namespace Youli_Data_Share {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public problems02Row Addproblems02Row(string 时间, string 状态, string 客户, string 产品名称, string 问题描述, string 解决方案, string 问题发起人) {
+            public problems02Row Addproblems02Row(string 时间, string 状态, string 客户, string 产品名称, string 问题描述, string 解决方案, string 提交端) {
                 problems02Row rowproblems02Row = ((problems02Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         时间,
@@ -428,7 +428,7 @@ namespace Youli_Data_Share {
                         产品名称,
                         问题描述,
                         解决方案,
-                        问题发起人};
+                        提交端};
                 rowproblems02Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowproblems02Row);
                 return rowproblems02Row;
@@ -457,7 +457,7 @@ namespace Youli_Data_Share {
                 this.column产品名称 = base.Columns["产品名称"];
                 this.column问题描述 = base.Columns["问题描述"];
                 this.column解决方案 = base.Columns["解决方案"];
-                this.column问题发起人 = base.Columns["问题发起人"];
+                this.column提交端 = base.Columns["提交端"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -475,15 +475,15 @@ namespace Youli_Data_Share {
                 base.Columns.Add(this.column问题描述);
                 this.column解决方案 = new global::System.Data.DataColumn("解决方案", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column解决方案);
-                this.column问题发起人 = new global::System.Data.DataColumn("问题发起人", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column问题发起人);
+                this.column提交端 = new global::System.Data.DataColumn("提交端", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column提交端);
                 this.column时间.MaxLength = 255;
                 this.column状态.MaxLength = 255;
                 this.column客户.MaxLength = 255;
                 this.column产品名称.MaxLength = 255;
                 this.column问题描述.MaxLength = 255;
                 this.column解决方案.MaxLength = 255;
-                this.column问题发起人.MaxLength = 255;
+                this.column提交端.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -722,17 +722,17 @@ namespace Youli_Data_Share {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 问题发起人 {
+            public string 提交端 {
                 get {
                     try {
-                        return ((string)(this[this.tableproblems02.问题发起人Column]));
+                        return ((string)(this[this.tableproblems02.提交端Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“problems02”中列“问题发起人”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“problems02”中列“提交端”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableproblems02.问题发起人Column] = value;
+                    this[this.tableproblems02.提交端Column] = value;
                 }
             }
             
@@ -810,14 +810,14 @@ namespace Youli_Data_Share {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is问题发起人Null() {
-                return this.IsNull(this.tableproblems02.问题发起人Column);
+            public bool Is提交端Null() {
+                return this.IsNull(this.tableproblems02.提交端Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set问题发起人Null() {
-                this[this.tableproblems02.问题发起人Column] = global::System.Convert.DBNull;
+            public void Set提交端Null() {
+                this[this.tableproblems02.提交端Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -986,12 +986,12 @@ namespace Youli_Data_Share.Youli_dateDataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("产品名称", "产品名称");
             tableMapping.ColumnMappings.Add("问题描述", "问题描述");
             tableMapping.ColumnMappings.Add("解决方案", "解决方案");
-            tableMapping.ColumnMappings.Add("问题发起人", "问题发起人");
+            tableMapping.ColumnMappings.Add("提交端", "提交端");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[problems02] ([时间], [状态], [客户], [产品名称], [问题描述], [解决方案], [问题发起人]" +
-                ") VALUES (@时间, @状态, @客户, @产品名称, @问题描述, @解决方案, @问题发起人)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[problems02] ([时间], [状态], [客户], [产品名称], [问题描述], [解决方案], [提交端]) " +
+                "VALUES (@时间, @状态, @客户, @产品名称, @问题描述, @解决方案, @提交端)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@时间", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "时间", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@状态", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "状态", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -999,7 +999,7 @@ namespace Youli_Data_Share.Youli_dateDataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@产品名称", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "产品名称", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@问题描述", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "问题描述", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@解决方案", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "解决方案", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@问题发起人", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "问题发起人", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@提交端", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "提交端", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1015,7 +1015,7 @@ namespace Youli_Data_Share.Youli_dateDataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT 时间, 状态, 客户, 产品名称, 问题描述, 解决方案, 问题发起人 FROM dbo.problems02";
+            this._commandCollection[0].CommandText = "SELECT 时间, 状态, 客户, 产品名称, 问题描述, 解决方案, 提交端 FROM dbo.problems02";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1076,7 +1076,7 @@ namespace Youli_Data_Share.Youli_dateDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string 时间, string 状态, string 客户, string 产品名称, string 问题描述, string 解决方案, string 问题发起人) {
+        public virtual int Insert(string 时间, string 状态, string 客户, string 产品名称, string 问题描述, string 解决方案, string 提交端) {
             if ((时间 == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1113,11 +1113,11 @@ namespace Youli_Data_Share.Youli_dateDataSet1TableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(解决方案));
             }
-            if ((问题发起人 == null)) {
+            if ((提交端 == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(问题发起人));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(提交端));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

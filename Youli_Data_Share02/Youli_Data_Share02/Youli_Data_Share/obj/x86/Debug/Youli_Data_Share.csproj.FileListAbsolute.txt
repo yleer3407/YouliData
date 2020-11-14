@@ -387,3 +387,4 @@ G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Yo
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.csprojAssemblyReference.cache
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\bin\Debug\Guna.UI.DLL
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.OrderPaln.frmOrderPlanAddHB.resources
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Debug\Youli_Data_Share.OrderPaln.frmOrderPlanMasterGuna.resources

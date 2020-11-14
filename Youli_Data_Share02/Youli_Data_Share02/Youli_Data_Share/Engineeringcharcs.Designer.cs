@@ -43,6 +43,12 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.youli_dateDataSet = new Youli_Data_Share.Youli_dateDataSet();
+            this.problemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.problemsTableAdapter = new Youli_Data_Share.Youli_dateDataSetTableAdapters.problemsTableAdapter();
+            this.youli_dateDataSet1 = new Youli_Data_Share.Youli_dateDataSet1();
+            this.problems02BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.problems02TableAdapter = new Youli_Data_Share.Youli_dateDataSet1TableAdapters.problems02TableAdapter();
             this.时间 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.状态 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.客户 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,12 +58,6 @@
             this.解决方案 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.提交端 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.详细 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.youli_dateDataSet = new Youli_Data_Share.Youli_dateDataSet();
-            this.problemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.problemsTableAdapter = new Youli_Data_Share.Youli_dateDataSetTableAdapters.problemsTableAdapter();
-            this.youli_dateDataSet1 = new Youli_Data_Share.Youli_dateDataSet1();
-            this.problems02BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.problems02TableAdapter = new Youli_Data_Share.Youli_dateDataSet1TableAdapters.problems02TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -120,6 +120,7 @@
             // 
             // toolStripTextBox1
             // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
             // 
@@ -168,6 +169,34 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
+            // 
+            // youli_dateDataSet
+            // 
+            this.youli_dateDataSet.DataSetName = "Youli_dateDataSet";
+            this.youli_dateDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // problemsBindingSource
+            // 
+            this.problemsBindingSource.DataMember = "problems";
+            this.problemsBindingSource.DataSource = this.youli_dateDataSet;
+            // 
+            // problemsTableAdapter
+            // 
+            this.problemsTableAdapter.ClearBeforeFill = true;
+            // 
+            // youli_dateDataSet1
+            // 
+            this.youli_dateDataSet1.DataSetName = "Youli_dateDataSet1";
+            this.youli_dateDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // problems02BindingSource
+            // 
+            this.problems02BindingSource.DataMember = "problems02";
+            this.problems02BindingSource.DataSource = this.youli_dateDataSet1;
+            // 
+            // problems02TableAdapter
+            // 
+            this.problems02TableAdapter.ClearBeforeFill = true;
             // 
             // 时间
             // 
@@ -242,7 +271,7 @@
             // 
             // 提交端
             // 
-            this.提交端.DataPropertyName = "问题发起人";
+            this.提交端.DataPropertyName = "提交端";
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -260,34 +289,6 @@
             this.详细.HeaderText = "详细";
             this.详细.Name = "详细";
             this.详细.Width = 50;
-            // 
-            // youli_dateDataSet
-            // 
-            this.youli_dateDataSet.DataSetName = "Youli_dateDataSet";
-            this.youli_dateDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // problemsBindingSource
-            // 
-            this.problemsBindingSource.DataMember = "problems";
-            this.problemsBindingSource.DataSource = this.youli_dateDataSet;
-            // 
-            // problemsTableAdapter
-            // 
-            this.problemsTableAdapter.ClearBeforeFill = true;
-            // 
-            // youli_dateDataSet1
-            // 
-            this.youli_dateDataSet1.DataSetName = "Youli_dateDataSet1";
-            this.youli_dateDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // problems02BindingSource
-            // 
-            this.problems02BindingSource.DataMember = "problems02";
-            this.problems02BindingSource.DataSource = this.youli_dateDataSet1;
-            // 
-            // problems02TableAdapter
-            // 
-            this.problems02TableAdapter.ClearBeforeFill = true;
             // 
             // Engineeringcharcs
             // 
