@@ -45,9 +45,9 @@ namespace Youli_Data_Share
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnectionStringBuilder Pro = new SqlConnectionStringBuilder();
-            Pro.DataSource = "192.168.1.104";
+            Pro.DataSource = "YL_SERVER";
             Pro.UserID = "sa";
-            Pro.Password = "yelei193";
+            Pro.Password = "Yelei193";
             Pro.InitialCatalog = "YouliData";
 
             conn = new SqlConnection(Pro.ToString());
@@ -71,9 +71,9 @@ namespace Youli_Data_Share
             dataGridView1.AutoGenerateColumns = false;
             #region 数据加载
             SqlConnectionStringBuilder Pro = new SqlConnectionStringBuilder();
-            Pro.DataSource = "192.168.1.104";
+            Pro.DataSource = "YL_SERVER";
             Pro.UserID = "sa";
-            Pro.Password = "yelei193";
+            Pro.Password = "Yelei193";
             Pro.InitialCatalog = "YouliData";
 
             conn = new SqlConnection(Pro.ToString());
@@ -156,9 +156,9 @@ namespace Youli_Data_Share
                     MessageBox.Show("提交提示：" +"用户"+ login_host +"\r\n您的修改已提交成功");
                     //#region  提交后进行未完成表单刷新
                     //SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-                    //scsb.DataSource = "192.168.1.104";
+                    //scsb.DataSource = "YL_SERVER";
                     //scsb.UserID = "sa";
-                    //scsb.Password = "yelei193";
+                    //scsb.Password = "Yelei193";
                     //scsb.InitialCatalog = "Youli_date";
 
                     //conn = new SqlConnection(scsb.ToString());
@@ -189,9 +189,9 @@ namespace Youli_Data_Share
 
             #region 刷新查找
             //SqlConnectionStringBuilder Pro = new SqlConnectionStringBuilder();
-            //Pro.DataSource = "192.168.1.104";
+            //Pro.DataSource = "YL_SERVER";
            // Pro.UserID = "sa";
-            //Pro.Password = "yelei193";
+            //Pro.Password = "Yelei193";
            // Pro.InitialCatalog = "Youli_date";
 
             //conn = new SqlConnection(Pro.ToString());
@@ -218,9 +218,9 @@ namespace Youli_Data_Share
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             SqlConnectionStringBuilder Pro = new SqlConnectionStringBuilder();
-            Pro.DataSource = "192.168.1.104";
+            Pro.DataSource = "YL_SERVER";
             Pro.UserID = "sa";
-            Pro.Password = "yelei193";
+            Pro.Password = "Yelei193";
             Pro.InitialCatalog = "YouliData";
 
             conn = new SqlConnection(Pro.ToString());
@@ -297,9 +297,9 @@ namespace Youli_Data_Share
                     MessageBox.Show("提交提示：" + "用户" + login_host + "\r\n您的修改已提交成功");
                     //#region  提交后进行未完成表单刷新
                     //SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-                    //scsb.DataSource = "192.168.1.104";
+                    //scsb.DataSource = "YL_SERVER";
                     //scsb.UserID = "sa";
-                    //scsb.Password = "yelei193";
+                    //scsb.Password = "Yelei193";
                     //scsb.InitialCatalog = "Youli_date";
 
                     //conn = new SqlConnection(scsb.ToString());

@@ -444,7 +444,7 @@
             this.linkLabel1.Size = new System.Drawing.Size(149, 12);
             this.linkLabel1.TabIndex = 11;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "软件版本号：YL-1.0.0.102";
+            this.linkLabel1.Text = "软件版本号：YL-1.0.0.104";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // toolTip2
@@ -499,6 +499,7 @@
             this.label5.Size = new System.Drawing.Size(56, 16);
             this.label5.TabIndex = 15;
             this.label5.Text = "label5";
+            this.label5.Visible = false;
             // 
             // Form1
             // 

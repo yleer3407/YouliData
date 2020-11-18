@@ -100,9 +100,9 @@ namespace Youli_Data_Share
         private void btnAddOrderNum_Click(object sender, EventArgs e)
         {
             //SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-            //scsb.DataSource = "192.168.1.104";
+            //scsb.DataSource = "YL_SERVER";
             //scsb.UserID = "sa";
-            //scsb.Password = "yelei193";
+            //scsb.Password = "Yelei193";
             //scsb.InitialCatalog = "YouliData";
             string txtAdd = dataGridView1.Rows[0].Cells["Column4"].Value.ToString();
             //conn_add = new SqlConnection(scsb.ToString());

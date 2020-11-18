@@ -416,11 +416,11 @@ namespace Youli_Data_Share
                 return;
             }
             //string currPath = Application.StartupPath;//获取当前文件夹路径
-            string subPath = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + txtflocoding.Text + "/";
-            string subFilePath1 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + txtflocoding.Text + "/" + "/包材文件夹/";
-            string subFilePath2 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + txtflocoding.Text + "/" + "/喷油丝印文件夹/";
-            string subFilePath3 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + txtflocoding.Text + "/" + "/PCB板文件夹/";
-            string subFilePath4 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + txtflocoding.Text + "/" + "/产品材料图片文件夹/";
+            string subPath = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + txtflocoding.Text + "/";
+            string subFilePath1 = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + txtflocoding.Text + "/" + "/包材文件夹/";
+            string subFilePath2 = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + txtflocoding.Text + "/" + "/喷油丝印文件夹/";
+            string subFilePath3 = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + txtflocoding.Text + "/" + "/PCB板文件夹/";
+            string subFilePath4 = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + txtflocoding.Text + "/" + "/产品材料图片文件夹/";
             // MessageBox.Show(subPath);
             try
             {
@@ -495,7 +495,7 @@ namespace Youli_Data_Share
         private void button3_Click(object sender, EventArgs e)
         {
             //string currPath = Application.StartupPath;//获取当前文件夹路径
-            string subPath1 = @"\\192.168.1.104\Youli_Server\ProblemFile\" + "/" + txtflocoding.Text + "/";
+            string subPath1 = @"\\YL_SERVER\Youli_Server\ProblemFile\" + "/" + txtflocoding.Text + "/";
             // MessageBox.Show(subPath);
             try
             {

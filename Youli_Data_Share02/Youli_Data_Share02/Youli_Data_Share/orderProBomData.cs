@@ -31,9 +31,9 @@ namespace Youli_Data_Share
             InitializeComponent();
             OrdNum = ordNum;
             scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "192.168.1.104";
+            scsb.DataSource = "YL_SERVER";
             scsb.UserID = "sa";
-            scsb.Password = "yelei193";
+            scsb.Password = "Yelei193";
             scsb.InitialCatalog = "YouliData";
             conn1 = new SqlConnection(scsb.ToString());
             //conn2 = new SqlConnection(scsb.ToString());

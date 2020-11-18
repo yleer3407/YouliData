@@ -52,9 +52,9 @@ namespace Youli_Data_Share
         public void SqlTable()
         {
             SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "NQSRSUXS2GWHMON";
+            scsb.DataSource = "YL_SERVER";
             scsb.UserID = "sa";
-            scsb.Password = "yelei193";
+            scsb.Password = "Yelei193";
             scsb.InitialCatalog = "YouliData";
 
             conn = new SqlConnection(scsb.ToString());
@@ -77,9 +77,9 @@ namespace Youli_Data_Share
         public void SqlTable2()
         {
             SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "192.168.1.104";
+            scsb.DataSource = "YL_SERVER";
             scsb.UserID = "sa";
-            scsb.Password = "yelei193";
+            scsb.Password = "Yelei193";
             scsb.InitialCatalog = "YouliData";
 
             conn = new SqlConnection(scsb.ToString());
@@ -114,9 +114,9 @@ namespace Youli_Data_Share
             if(TableChoose=="repertory")
             {
                 SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-                scsb.DataSource = "192.168.1.104";
+                scsb.DataSource = "YL_SERVER";
                 scsb.UserID = "sa";
-                scsb.Password = "yelei193";
+                scsb.Password = "Yelei193";
                 scsb.InitialCatalog = "YouliData";
 
                 conn = new SqlConnection(scsb.ToString());
@@ -139,9 +139,9 @@ namespace Youli_Data_Share
             else
             {
                 SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-                scsb.DataSource = "192.168.1.104";
+                scsb.DataSource = "YL_SERVER";
                 scsb.UserID = "sa";
-                scsb.Password = "yelei193";
+                scsb.Password = "Yelei193";
                 scsb.InitialCatalog = "YouliData";
 
                 conn = new SqlConnection(scsb.ToString());
@@ -183,9 +183,9 @@ namespace Youli_Data_Share
             if (TableChoose == "repertoryINOUT")
             {
                 SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-                scsb.DataSource = "192.168.1.104";
+                scsb.DataSource = "YL_SERVER";
                 scsb.UserID = "sa";
-                scsb.Password = "yelei193";
+                scsb.Password = "Yelei193";
                 scsb.InitialCatalog = "YouliData";
 
                 conn = new SqlConnection(scsb.ToString());

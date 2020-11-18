@@ -39,9 +39,9 @@ namespace Youli_Data_Share
                 if (e.KeyData == Keys.Return)
                 {
                     SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-                    scsb.DataSource = "192.168.1.104";
+                    scsb.DataSource = "YL_SERVER";
                     scsb.UserID = "sa";
-                    scsb.Password = "yelei193";
+                    scsb.Password = "Yelei193";
                     scsb.InitialCatalog = "YouliData";
 
                     conn = new SqlConnection(scsb.ToString());
@@ -73,9 +73,9 @@ namespace Youli_Data_Share
             if (e.KeyData == Keys.Return)
             {
                 SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-                scsb.DataSource = "192.168.1.104";
+                scsb.DataSource = "YL_SERVER";
                 scsb.UserID = "sa";
-                scsb.Password = "yelei193";
+                scsb.Password = "Yelei193";
                 scsb.InitialCatalog = "YouliData";
 
                 conn = new SqlConnection(scsb.ToString());
@@ -99,9 +99,9 @@ namespace Youli_Data_Share
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "192.168.1.104";
+            scsb.DataSource = "YL_SERVER";
             scsb.UserID = "sa";
-            scsb.Password = "yelei193";
+            scsb.Password = "Yelei193";
             scsb.InitialCatalog = "YouliData";
 
             conn = new SqlConnection(scsb.ToString());

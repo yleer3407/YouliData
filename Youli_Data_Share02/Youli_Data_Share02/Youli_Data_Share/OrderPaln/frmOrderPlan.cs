@@ -65,11 +65,11 @@ namespace Youli_Data_Share.OrderPaln
                 if (cell.FormattedValue.ToString() == "工艺文件")
                 {
                     //string currPath = Application.StartupPath;//获取当前文件夹路径
-                    string subPath = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells["Column4"].Value.ToString() + "/";
-                    string subFilePath1 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells["Column4"].Value.ToString() + "/" + "/包材文件夹/";
-                    string subFilePath2 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells["Column4"].Value.ToString() + "/" + "/喷油丝印文件夹/";
-                    string subFilePath3 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells["Column4"].Value.ToString() + "/" + "/PCB板文件夹/";
-                    string subFilePath4 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells["Column4"].Value.ToString() + "/" + "/产品材料图片文件夹/";
+                    string subPath = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells["Column4"].Value.ToString() + "/";
+                    string subFilePath1 = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells["Column4"].Value.ToString() + "/" + "/包材文件夹/";
+                    string subFilePath2 = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells["Column4"].Value.ToString() + "/" + "/喷油丝印文件夹/";
+                    string subFilePath3 = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells["Column4"].Value.ToString() + "/" + "/PCB板文件夹/";
+                    string subFilePath4 = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + dataGridView1.Rows[e.RowIndex].Cells["Column4"].Value.ToString() + "/" + "/产品材料图片文件夹/";
                     // MessageBox.Show(subPath);
                     try
                     {

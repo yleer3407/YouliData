@@ -27,9 +27,9 @@ namespace Youli_Data_Share
             //this.userAdminTableAdapter1.Fill(this.youli_dateDataSet4.userAdmin);
             // TODO: 这行代码将数据加载到表“youli_dateDataSet3.userAdmin”中。您可以根据需要移动或删除它。
             SqlConnectionStringBuilder scsb_role = new SqlConnectionStringBuilder();
-            scsb_role.DataSource = "192.168.1.104";
+            scsb_role.DataSource = "YL_SERVER";
             scsb_role.UserID = "sa";
-            scsb_role.Password = "yelei193";
+            scsb_role.Password = "Yelei193";
             scsb_role.InitialCatalog = "Youli_date";
 
             conn_role = new SqlConnection(scsb_role.ToString());

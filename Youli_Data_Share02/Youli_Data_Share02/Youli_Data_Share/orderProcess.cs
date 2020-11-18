@@ -40,9 +40,9 @@ namespace Youli_Data_Share
             InitializeComponent();
             #region 权限分配 连接userAdmin数据库
             SqlConnectionStringBuilder scsbLogin = new SqlConnectionStringBuilder();
-            scsbLogin.DataSource = "192.168.1.104";
+            scsbLogin.DataSource = "YL_SERVER";
             scsbLogin.UserID = "sa";
-            scsbLogin.Password = "yelei193";
+            scsbLogin.Password = "Yelei193";
             scsbLogin.InitialCatalog = "YouliData";
 
             SqlConnection connLogin = new SqlConnection(scsbLogin.ToString());
@@ -1084,11 +1084,11 @@ namespace Youli_Data_Share
                 if (cell.FormattedValue.ToString() == "工艺文件")
                 {
                     //string currPath = Application.StartupPath;//获取当前文件夹路径
-                    string subPath = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/";
-                    string subFilePath1 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/" + "/包材文件夹/";
-                    string subFilePath2 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/" + "/喷油丝印文件夹/";
-                    string subFilePath3 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/" + "/PCB板文件夹/";
-                    string subFilePath4 = @"\\192.168.1.104\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/" + "/产品材料图片文件夹/";
+                    string subPath = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/";
+                    string subFilePath1 = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/" + "/包材文件夹/";
+                    string subFilePath2 = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/" + "/喷油丝印文件夹/";
+                    string subFilePath3 = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/" + "/PCB板文件夹/";
+                    string subFilePath4 = @"\\YL_SERVER\Youli_Server\techFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/" + "/产品材料图片文件夹/";
                     // MessageBox.Show(subPath);
                     try
                     {
@@ -1149,8 +1149,8 @@ namespace Youli_Data_Share
                     {
                         //frmMateNum frmMateNum = new frmMateNum();
                         //frmMateNum.Show();
-                        // filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + "AC-0109-04"+ ".png";
-                        filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + dgvWorkFlow.Rows[e.RowIndex].Cells[9].Value.ToString() + ".png";
+                        // filePath = @"\\YL_SERVER\Youli_Server\BOMprisc\" + "AC-0109-04"+ ".png";
+                        filePath = @"\\YL_SERVER\Youli_Server\BOMprisc\" + dgvWorkFlow.Rows[e.RowIndex].Cells[9].Value.ToString() + ".png";
                         Process m_Process = null;
                         m_Process = new Process();
                         m_Process.StartInfo.FileName = @filePath;
@@ -1194,7 +1194,7 @@ namespace Youli_Data_Share
                 else if (cell.FormattedValue.ToString() == "生产问题夹")
                 {
                     //string currPath = Application.StartupPath;//获取当前文件夹路径
-                    string subPath1 = @"\\192.168.1.104\Youli_Server\ProblemFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/";
+                    string subPath1 = @"\\YL_SERVER\Youli_Server\ProblemFile\" + "/" + dgvWorkFlow.Rows[e.RowIndex].Cells["Column8"].Value.ToString() + "/";
                     // MessageBox.Show(subPath);
                     try
                     {
@@ -1236,9 +1236,9 @@ namespace Youli_Data_Share
         public void searchDate2()
         {
             SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "192.168.1.104";
+            scsb.DataSource = "YL_SERVER";
             scsb.UserID = "sa";
-            scsb.Password = "yelei193";
+            scsb.Password = "Yelei193";
             scsb.InitialCatalog = "YouliData";
 
             conn_flow = new SqlConnection(scsb.ToString());
@@ -3080,9 +3080,9 @@ namespace Youli_Data_Share
         public void searchDate()
         {
             SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "192.168.1.104";
+            scsb.DataSource = "YL_SERVER";
             scsb.UserID = "sa";
-            scsb.Password = "yelei193";
+            scsb.Password = "Yelei193";
             scsb.InitialCatalog = "YouliData";
 
             conn_flow = new SqlConnection(scsb.ToString());
@@ -3180,7 +3180,7 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void tsbbtn_material_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"\\192.168.1.104\Youli_Server\盘料");
+            System.Diagnostics.Process.Start(@"\\YL_SERVER\Youli_Server\盘料");
         }
 
         private void 已结单ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -4059,7 +4059,7 @@ namespace Youli_Data_Share
 
         private void toolStripButton3_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"\\192.168.1.104\Youli_Server\提案改善");
+            System.Diagnostics.Process.Start(@"\\YL_SERVER\Youli_Server\提案改善");
         }
     }
 }

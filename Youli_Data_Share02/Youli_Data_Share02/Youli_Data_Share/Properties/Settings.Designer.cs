@@ -26,7 +26,7 @@ namespace Youli_Data_Share.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NQSRSUXS2GWHMON;Initial Catalog=Youli_date;User ID=sa;Password=yelei1" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=YL_SERVER;Initial Catalog=Youli_date;User ID=sa;Password=yelei1" +
             "93")]
         public string Youli_dateConnectionString {
             get {

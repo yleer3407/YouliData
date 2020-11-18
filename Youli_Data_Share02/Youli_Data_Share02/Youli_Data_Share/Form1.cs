@@ -17,6 +17,7 @@ using System.Drawing.Drawing2D;
 using System.Data.SqlClient;
 using System.Timers;
 using Youli_Data_Share.ERPbasicBata;
+using AutoUpdaterDotNET;
 
 namespace Youli_Data_Share
 {
@@ -53,9 +54,11 @@ namespace Youli_Data_Share
                 MessageBox.Show("程序已打开，无法多个打开！");
                 this.Close();
             }
-            
+            AutoUpdater.Start("http://124.70.203.134:8080/YouliData/update.xml");
             #endregion
-            string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+            Version ver = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            linkLabel1.Text = "软件版本号：" + ver.ToString();
+            string filePath = @"\\YL_SERVER\Youli_Server\Youli_date_bin\sys.ini";
             #region 创建INI文件
             // File.Create(filePath);
             #endregion
@@ -68,7 +71,7 @@ namespace Youli_Data_Share
             }
             else
             {
-                label5.Visible = true;
+                label5.Visible = false;
                 //MessageBox.Show("当前为" + vss_from1 + "\r\n请重新打开软件更新至"+vss,"更新提醒：");
                // Application.ExitThread();
             }
@@ -153,7 +156,7 @@ namespace Youli_Data_Share
             {
                 if (PM == "yl123456")
                 {
-                    System.Diagnostics.Process.Start(@"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini");
+                    System.Diagnostics.Process.Start(@"\\YL_SERVER\Youli_Server\Youli_date_bin\sys.ini");
                     //Form2 form2 = new Form2();
                     //form2.ShowDialog();
                 }
@@ -180,7 +183,7 @@ namespace Youli_Data_Share
             //Form3 form3 = new Form3();
             //form3.ShowDialog();
 
-            ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder("优力共享软件使用说明201014.pdf"), new StringBuilder(""), new StringBuilder(@"\\192.168.1.104\Youli_Server\内部软件说明文档"), 1);
+            ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder("优力共享软件使用说明201014.pdf"), new StringBuilder(""), new StringBuilder(@"\\YL_SERVER\Youli_Server\内部软件说明文档"), 1);
         }
 
 
@@ -199,7 +202,7 @@ namespace Youli_Data_Share
             try
             {
                 notifyIcon1.ShowBalloonTip(1000, "提示", "正在Link...", ToolTipIcon.Info);
-                string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+                string filePath1 = @"\\YL_SERVER\Youli_Server\Youli_date_bin\sys.ini";
                 string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
                 string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
                 string win3 = INIHelper.Read("window", "3", "0", filePath1);//服务器窗口
@@ -276,7 +279,7 @@ namespace Youli_Data_Share
         {
             try
             {
-                string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+                string filePath1 = @"\\YL_SERVER\Youli_Server\Youli_date_bin\sys.ini";
                 string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
                 string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
                 string win3 = INIHelper.Read("window", "3", "0", filePath1);//服务器窗口
@@ -365,7 +368,7 @@ namespace Youli_Data_Share
         {
             try
             {
-                string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+                string filePath1 = @"\\YL_SERVER\Youli_Server\Youli_date_bin\sys.ini";
                 string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
                 string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
                 string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口
@@ -443,7 +446,7 @@ namespace Youli_Data_Share
         {
             try
             {
-                string filePath1 = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+                string filePath1 = @"\\YL_SERVER\Youli_Server\Youli_date_bin\sys.ini";
                 string win1 = INIHelper.Read("window", "1", "0", filePath1);//严经理窗口
                 string win2 = INIHelper.Read("window", "2", "0", filePath1);//王庆青窗口
                 string win3 = INIHelper.Read("window", "3", "0", filePath1);//叶磊窗口

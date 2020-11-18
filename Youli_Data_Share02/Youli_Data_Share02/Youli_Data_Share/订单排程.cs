@@ -43,8 +43,8 @@ namespace Youli_Data_Share
                     DataGridViewColumn column = dataGridView1.Columns[e.ColumnIndex];
                     if (column is DataGridViewButtonColumn)//判断是否为按键列
                     {
-                       // filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\" + "AC-0109-04"+ ".png";
-                        filePath = @"\\192.168.1.104\Youli_Server\BOMprisc\"+ dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()+".png";
+                       // filePath = @"\\YL_SERVER\Youli_Server\BOMprisc\" + "AC-0109-04"+ ".png";
+                        filePath = @"\\YL_SERVER\Youli_Server\BOMprisc\"+ dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()+".png";
                         Process m_Process = null;
                         m_Process = new Process();
                         m_Process.StartInfo.FileName = @filePath;
@@ -84,7 +84,7 @@ namespace Youli_Data_Share
             //dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DeepSkyBlue;//表格选定颜色
             #endregion
-            string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+            string filePath = @"\\YL_SERVER\Youli_Server\Youli_date_bin\sys.ini";
             #region 创建INI文件
            // File.Create(filePath);
             #endregion
@@ -661,9 +661,9 @@ namespace Youli_Data_Share
             #endregion
             #region 主动查询
             SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-            scsb.DataSource = "192.168.1.104";
+            scsb.DataSource = "YL_SERVER";
             scsb.UserID = "sa";
-            scsb.Password = "yelei193";
+            scsb.Password = "Yelei193";
             scsb.InitialCatalog = "Youli_date";
             //scsb.DataSource = "175.24.20.254,1433";
             //scsb.UserID = "sa";
@@ -753,9 +753,9 @@ namespace Youli_Data_Share
   private void toolStripButton1_Click(object sender, EventArgs e)
   {
       SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-      scsb.DataSource = "192.168.1.104";
+      scsb.DataSource = "YL_SERVER";
       scsb.UserID = "sa";
-      scsb.Password = "yelei193";
+      scsb.Password = "Yelei193";
       scsb.InitialCatalog = "Youli_date";
 
       conn = new SqlConnection(scsb.ToString());
@@ -780,9 +780,9 @@ namespace Youli_Data_Share
   private void toolStripButton3_Click(object sender, EventArgs e)
   {
       SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-      scsb.DataSource = "192.168.1.104";
+      scsb.DataSource = "YL_SERVER";
       scsb.UserID = "sa";
-      scsb.Password = "yelei193";
+      scsb.Password = "Yelei193";
       scsb.InitialCatalog = "Youli_date";
 
       conn = new SqlConnection(scsb.ToString());
@@ -806,9 +806,9 @@ namespace Youli_Data_Share
   private void toolStripButton2_Click(object sender, EventArgs e)
   {
       SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-      scsb.DataSource = "192.168.1.104";
+      scsb.DataSource = "YL_SERVER";
       scsb.UserID = "sa";
-      scsb.Password = "yelei193";
+      scsb.Password = "Yelei193";
       scsb.InitialCatalog = "Youli_date";
 
       conn = new SqlConnection(scsb.ToString());
@@ -827,7 +827,7 @@ namespace Youli_Data_Share
 
   private void toolStripLabel1_Click(object sender, EventArgs e)
   {
-      ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder("OrderProcess.html"), new StringBuilder(""), new StringBuilder(@"\\192.168.1.104\Youli_Server\内部软件说明文档"), 1);
+      ShellExecute(IntPtr.Zero, new StringBuilder("Open"), new StringBuilder("OrderProcess.html"), new StringBuilder(""), new StringBuilder(@"\\YL_SERVER\Youli_Server\内部软件说明文档"), 1);
   }
 
   private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -838,9 +838,9 @@ namespace Youli_Data_Share
   private void 未厂发ToolStripMenuItem_Click(object sender, EventArgs e)
   {
       SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-      scsb.DataSource = "192.168.1.104";
+      scsb.DataSource = "YL_SERVER";
       scsb.UserID = "sa";
-      scsb.Password = "yelei193";
+      scsb.Password = "Yelei193";
       scsb.InitialCatalog = "Youli_date";
 
       conn = new SqlConnection(scsb.ToString());
@@ -860,9 +860,9 @@ namespace Youli_Data_Share
   private void 已厂发ToolStripMenuItem_Click(object sender, EventArgs e)
   {
       SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-      scsb.DataSource = "192.168.1.104";
+      scsb.DataSource = "YL_SERVER";
       scsb.UserID = "sa";
-      scsb.Password = "yelei193";
+      scsb.Password = "Yelei193";
       scsb.InitialCatalog = "Youli_date";
 
       conn = new SqlConnection(scsb.ToString());
@@ -888,7 +888,7 @@ namespace Youli_Data_Share
 
       try
        {
-           string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+           string filePath = @"\\YL_SERVER\Youli_Server\Youli_date_bin\sys.ini";
            string user1 = INIHelper.Read("account", "1", "0", filePath);
            string user2 = INIHelper.Read("account", "2", "0", filePath);
            string user3 = INIHelper.Read("account", "3", "0", filePath);
@@ -1067,9 +1067,9 @@ namespace Youli_Data_Share
                 MessageBox.Show("已提交成功");
                 #region  提交后进行未完成表单刷新
                 //SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-                //scsb.DataSource = "192.168.1.104";
+                //scsb.DataSource = "YL_SERVER";
                 //scsb.UserID = "sa";
-                //scsb.Password = "yelei193";
+                //scsb.Password = "Yelei193";
                 //scsb.InitialCatalog = "Youli_date";
 
                 //conn = new SqlConnection(scsb.ToString());
@@ -1114,7 +1114,7 @@ namespace Youli_Data_Share
             
             try
             {
-                string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+                string filePath = @"\\YL_SERVER\Youli_Server\Youli_date_bin\sys.ini";
                 string user1 = INIHelper.Read("account", "1", "0", filePath);
                 string user2 = INIHelper.Read("account", "2", "0", filePath);
                 string user3 = INIHelper.Read("account", "3", "0", filePath);
@@ -1293,9 +1293,9 @@ namespace Youli_Data_Share
                 MessageBox.Show("已提交成功");
                 #region  提交后进行未完成表单刷新
                 //SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-                //scsb.DataSource = "192.168.1.104";
+                //scsb.DataSource = "YL_SERVER";
                 //scsb.UserID = "sa";
-                //scsb.Password = "yelei193";
+                //scsb.Password = "Yelei193";
                 //scsb.InitialCatalog = "Youli_date";
 
                 //conn = new SqlConnection(scsb.ToString());
@@ -1324,7 +1324,7 @@ namespace Youli_Data_Share
             {
 
 
-                string filePath = @"\\192.168.1.104\Youli_Server\Youli_date_bin\sys.ini";
+                string filePath = @"\\YL_SERVER\Youli_Server\Youli_date_bin\sys.ini";
                 string user1 = INIHelper.Read("account", "1", "0", filePath);
                 string user2 = INIHelper.Read("account", "2", "0", filePath);
                 string user3 = INIHelper.Read("account", "3", "0", filePath);
@@ -1503,9 +1503,9 @@ namespace Youli_Data_Share
                 MessageBox.Show("已提交成功");
                 #region  提交后进行未完成表单刷新
                 //SqlConnectionStringBuilder scsb = new SqlConnectionStringBuilder();
-                //scsb.DataSource = "192.168.1.104";
+                //scsb.DataSource = "YL_SERVER";
                 //scsb.UserID = "sa";
-                //scsb.Password = "yelei193";
+                //scsb.Password = "Yelei193";
                 //scsb.InitialCatalog = "Youli_date";
 
                 //conn = new SqlConnection(scsb.ToString());

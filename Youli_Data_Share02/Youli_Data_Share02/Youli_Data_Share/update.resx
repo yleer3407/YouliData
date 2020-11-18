@@ -118,7 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>版本1.0.0.102data 2020.11.13&gt;&gt;update:
+    <value>版本1.0.0.103 data 2020.11.13&gt;&gt;update:
+1.把服务器1.0.0.104改为Youli_server
+---------------------------------------------------------
+版本1.0.0.103 data 2020.11.13&gt;&gt;update:
+1.改为云服务器升级
+---------------------------------------------------------
+版本1.0.0.102 data 2020.11.13&gt;&gt;update:
 1.新增喷油库存表
 ---------------------------------------------------------
 版本1.0.0.101data 2020.11.03&gt;&gt;update:

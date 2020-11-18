@@ -30,12 +30,12 @@ namespace Youli_Data_Share
             InitializeComponent();
             #region 加载图片
             this.textBox1.Text = strText;
-            var PicPath1 = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + strText + "01.jpg";
-            var PicPath2 = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + strText + "02.jpg";
-            var PicPath3 = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + strText + "03.jpg";
-            var PicPath4 = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + strText + "04.jpg";
-            var PicPath5 = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + strText + "05.jpg";
-            var PicPath6 = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + strText + "06.jpg";
+            var PicPath1 = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + strText + "01.jpg";
+            var PicPath2 = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + strText + "02.jpg";
+            var PicPath3 = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + strText + "03.jpg";
+            var PicPath4 = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + strText + "04.jpg";
+            var PicPath5 = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + strText + "05.jpg";
+            var PicPath6 = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + strText + "06.jpg";
             try
             {
                 this.pictureBox1.Load(PicPath1);
@@ -86,7 +86,7 @@ namespace Youli_Data_Share
             try
             {
                 string Value = this.textBox1.Text;
-                string inipath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\data\Problems.ini";
+                string inipath = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\data\Problems.ini";
                 string content1 = INIHelper.Read(Value, "1", "0", inipath);
                 string content2 = INIHelper.Read(Value, "2", "0", inipath);
                 string content3 = INIHelper.Read(Value, "3", "0", inipath);
@@ -104,54 +104,54 @@ namespace Youli_Data_Share
                 string pic5 = INIHelper.Read(this.textBox1.Text, "pic5", "0", inipath);
                 string pic6 = INIHelper.Read(this.textBox1.Text, "pic6", "0", inipath);
 
-                if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp"))
+                if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp"))
                 {
-                    this.pictureBox1.Load(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
+                    this.pictureBox1.Load(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
                 }
                 else
                 {
                     this.pictureBox1.Image = null;
                 }
 
-                if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp"))
+                if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp"))
                 {
-                    this.pictureBox2.Load(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
+                    this.pictureBox2.Load(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
                 }
                 else
                 {
                     this.pictureBox2.Image = null;
                 }
 
-                if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp"))
+                if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp"))
                 {
-                    this.pictureBox3.Load(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
+                    this.pictureBox3.Load(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
                 }
                 else
                 {
                     this.pictureBox3.Image = null;
                 }
 
-                if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp"))
+                if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp"))
                 {
-                    this.pictureBox4.Load(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
+                    this.pictureBox4.Load(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
                 }
                 else
                 {
                     this.pictureBox4.Image = null;
                 }
 
-                if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp"))
+                if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp"))
                 {
-                    this.pictureBox5.Load(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
+                    this.pictureBox5.Load(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
                 }
                 else
                 {
                     this.pictureBox5.Image = null;
                 }
 
-                if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp"))
+                if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp"))
                 {
-                    this.pictureBox6.Load(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
+                    this.pictureBox6.Load(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
                 }
                 else
                 {
@@ -179,7 +179,7 @@ namespace Youli_Data_Share
             //String keyword02 = Interaction.InputBox("输入密码", "权限检查", "", -1, -1);
             {
                 #region 保存权限02
-                string inipath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\data\Problems.ini";
+                string inipath = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\data\Problems.ini";
                 string text2 = textBox2.Text.Replace("\r\n", " ");
                 string text3 = textBox3.Text.Replace("\r\n", " ");
                 string text4 = textBox4.Text.Replace("\r\n", " ");
@@ -201,24 +201,24 @@ namespace Youli_Data_Share
                     //    if (pictureBox1.Image != null)
                     //    {
                     //        pictureBox1.Dispose();
-                    //        if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp"))
+                    //        if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp"))
                     //        {
-                    //           // File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
-                    //            pictureBox1.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
-                    //            INIHelper.Write(this.textBox1.Text, "pic1", @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp", inipath);
+                    //           // File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
+                    //            pictureBox1.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
+                    //            INIHelper.Write(this.textBox1.Text, "pic1", @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp", inipath);
                     //        }
                     //        else
                     //        {
-                    //            pictureBox1.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
-                    //            INIHelper.Write(this.textBox1.Text, "pic1", @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp", inipath);
+                    //            pictureBox1.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
+                    //            INIHelper.Write(this.textBox1.Text, "pic1", @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp", inipath);
                     //        }
 
                     //    }
                     //    else
                     //    {
-                    //        if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp"))
+                    //        if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp"))
                     //        {
-                    //            File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
+                    //            File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
                     //            INIHelper.Write(this.textBox1.Text, "pic1", "null", inipath);
                     //        }
                     //        INIHelper.Write(this.textBox1.Text, "pic1", "null", inipath);
@@ -228,28 +228,28 @@ namespace Youli_Data_Share
                     //    if (pictureBox2.Image != null)
                     //    {
                     //        pictureBox2.Dispose();
-                    //        if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp"))
+                    //        if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp"))
                     //        {
                     //            //pictureBox2.Dispose();
-                    //            File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
-                    //            pictureBox2.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
-                    //            INIHelper.Write(this.textBox1.Text, "pic2", @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp", inipath);
+                    //            File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
+                    //            pictureBox2.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
+                    //            INIHelper.Write(this.textBox1.Text, "pic2", @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp", inipath);
                     //            //pictureBox2.Dispose();
                     //        }
                     //        else
                     //        {
                     //            //pictureBox2.Dispose();
-                    //            pictureBox2.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
-                    //            INIHelper.Write(this.textBox1.Text, "pic2", @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp", inipath);
+                    //            pictureBox2.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
+                    //            INIHelper.Write(this.textBox1.Text, "pic2", @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp", inipath);
                     //            //pictureBox2.Dispose();
                     //        }
 
                     //    }
                     //    else
                     //    {
-                    //        if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp"))
+                    //        if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp"))
                     //        {
-                    //            File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
+                    //            File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
                     //            INIHelper.Write(this.textBox1.Text, "pic2", "null", inipath);
                     //        }
                     //        //pictureBox2.Dispose();
@@ -260,28 +260,28 @@ namespace Youli_Data_Share
                     //    if (pictureBox3.Image != null)
                     //    {
                     //        pictureBox3.Dispose();
-                    //        if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp"))
+                    //        if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp"))
                     //        {
    
-                    //            File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
-                    //            pictureBox3.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
-                    //            INIHelper.Write(this.textBox1.Text, "pic3", @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp", inipath);
+                    //            File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
+                    //            pictureBox3.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
+                    //            INIHelper.Write(this.textBox1.Text, "pic3", @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp", inipath);
 
                     //        }
                     //        else
                     //        {
 
-                    //            pictureBox3.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
-                    //            INIHelper.Write(this.textBox1.Text, "pic3", @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp", inipath);
+                    //            pictureBox3.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
+                    //            INIHelper.Write(this.textBox1.Text, "pic3", @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp", inipath);
 
                     //        }
 
                     //    }
                     //    else
                     //    {
-                    //        if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp"))
+                    //        if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp"))
                     //        {
-                    //            File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
+                    //            File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
                     //            INIHelper.Write(this.textBox1.Text, "pic3", "null", inipath);
                     //        }
                     //        INIHelper.Write(this.textBox1.Text, "pic3", "null", inipath);
@@ -291,25 +291,25 @@ namespace Youli_Data_Share
                     //    if (pictureBox4.Image != null)
                     //    {
                     //        pictureBox4.Dispose();
-                    //        if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp"))
+                    //        if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp"))
                     //        {
-                    //            File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
-                    //            pictureBox4.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
-                    //            INIHelper.Write(this.textBox1.Text, "pic4", @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp", inipath);
+                    //            File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
+                    //            pictureBox4.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
+                    //            INIHelper.Write(this.textBox1.Text, "pic4", @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp", inipath);
                     //        }
                     //        else
                     //        {
-                    //            pictureBox4.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
-                    //            INIHelper.Write(this.textBox1.Text, "pic4", @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp", inipath);
+                    //            pictureBox4.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
+                    //            INIHelper.Write(this.textBox1.Text, "pic4", @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp", inipath);
   
                     //        }
 
                     //    }
                     //    else
                     //    {
-                    //        if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp"))
+                    //        if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp"))
                     //        {
-                    //            File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
+                    //            File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
                     //            INIHelper.Write(this.textBox1.Text, "pic4", "null", inipath);
                     //        }
                     //        INIHelper.Write(this.textBox1.Text, "pic4", "null", inipath);
@@ -319,24 +319,24 @@ namespace Youli_Data_Share
                     //    if (pictureBox5.Image != null)
                     //    {
                     //        pictureBox5.Dispose();
-                    //        if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp"))
+                    //        if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp"))
                     //        {
-                    //            File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
-                    //            pictureBox5.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
-                    //            INIHelper.Write(this.textBox1.Text, "pic5", @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp", inipath);
+                    //            File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
+                    //            pictureBox5.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
+                    //            INIHelper.Write(this.textBox1.Text, "pic5", @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp", inipath);
                     //        }
                     //        else
                     //        {
-                    //            pictureBox5.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
-                    //            INIHelper.Write(this.textBox1.Text, "pic5", @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp", inipath);
+                    //            pictureBox5.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
+                    //            INIHelper.Write(this.textBox1.Text, "pic5", @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp", inipath);
                     //        }
 
                     //    }
                     //    else
                     //    {
-                    //        if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp"))
+                    //        if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp"))
                     //        {
-                    //            File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
+                    //            File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
                     //            INIHelper.Write(this.textBox1.Text, "pic5", "null", inipath);
                     //        }
                     //        INIHelper.Write(this.textBox1.Text, "pic5", "null", inipath);
@@ -346,24 +346,24 @@ namespace Youli_Data_Share
                     //    if (pictureBox6.Image != null)
                     //    {
                     //        pictureBox6.Dispose();
-                    //        if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp"))
+                    //        if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp"))
                     //        {
-                    //            File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
-                    //            pictureBox6.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
-                    //            INIHelper.Write(this.textBox1.Text, "pic6", @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp", inipath);
+                    //            File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
+                    //            pictureBox6.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
+                    //            INIHelper.Write(this.textBox1.Text, "pic6", @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp", inipath);
                     //        }
                     //        else
                     //        {
-                    //            pictureBox6.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
-                    //            INIHelper.Write(this.textBox1.Text, "pic6", @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp", inipath);
+                    //            pictureBox6.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
+                    //            INIHelper.Write(this.textBox1.Text, "pic6", @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp", inipath);
                     //        }
 
                     //    }
                     //    else
                     //    {
-                    //        if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp"))
+                    //        if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp"))
                     //        {
-                    //            File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
+                    //            File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
                     //            INIHelper.Write(this.textBox1.Text, "pic6", "null", inipath);
                     //        }
                     //        INIHelper.Write(this.textBox1.Text, "pic6", "null", inipath);
@@ -401,39 +401,39 @@ namespace Youli_Data_Share
                                 if (this.pictureBox1.Image == null)
                                 {
                                     this.pictureBox1.Image = Image.FromFile(Imagedialog.FileName);
-                                    this.pictureBox1.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
-                                    //this.pictureBox1.Load(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
+                                    this.pictureBox1.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
+                                    //this.pictureBox1.Load(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
 
                                 }
                                 else if (this.pictureBox2.Image == null)
                                 {
                                     this.pictureBox2.Image = Image.FromFile(Imagedialog.FileName);
-                                    this.pictureBox2.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
-                                    //this.pictureBox2.Load(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
+                                    this.pictureBox2.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
+                                    //this.pictureBox2.Load(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
                                 }
                                 else if (this.pictureBox3.Image == null)
                                 {
                                     this.pictureBox3.Image = Image.FromFile(Imagedialog.FileName);
-                                    this.pictureBox3.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
-                                    //this.pictureBox3.Load(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bpm");
+                                    this.pictureBox3.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
+                                    //this.pictureBox3.Load(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bpm");
                                 }
                                 else if (this.pictureBox4.Image == null)
                                 {
                                     this.pictureBox4.Image = Image.FromFile(Imagedialog.FileName);
-                                    this.pictureBox4.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
-                                    //this.pictureBox4.Load(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
+                                    this.pictureBox4.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
+                                    //this.pictureBox4.Load(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
                                 }
                                 else if (this.pictureBox5.Image == null)
                                 {
                                     this.pictureBox5.Image = Image.FromFile(Imagedialog.FileName);
-                                    this.pictureBox5.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
-                                    // this.pictureBox5.Load(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".png");
+                                    this.pictureBox5.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
+                                    // this.pictureBox5.Load(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".png");
                                 }
                                 else
                                 {
                                     this.pictureBox6.Image = Image.FromFile(Imagedialog.FileName);
-                                    this.pictureBox6.Image.Save(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
-                                    // this.pictureBox6.Load(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".png");
+                                    this.pictureBox6.Image.Save(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
+                                    // this.pictureBox6.Load(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".png");
                                 }
                             }
                             #endregion
@@ -464,9 +464,9 @@ namespace Youli_Data_Share
                     // this.pictureBox6.Dispose();
                     this.pictureBox6.Image = null;
                     pictureBox6.Dispose();
-                    if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp"))
+                    if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp"))
                     {
-                        File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
+                        File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp");
                     }
 
                 }
@@ -475,9 +475,9 @@ namespace Youli_Data_Share
                     //this.pictureBox5.Dispose();
                     this.pictureBox5.Image = null;
                     pictureBox5.Dispose();
-                    if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp"))
+                    if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp"))
                     {
-                        File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
+                        File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp");
                     }
                 }
                 else if (this.pictureBox4.Image != null)
@@ -485,9 +485,9 @@ namespace Youli_Data_Share
                     // this.pictureBox4.Dispose();
                     this.pictureBox4.Image = null;
                     pictureBox4.Dispose();
-                    if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp"))
+                    if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp"))
                     {
-                        File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
+                        File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp");
                     }
                 }
                 else if (this.pictureBox3.Image != null)
@@ -495,9 +495,9 @@ namespace Youli_Data_Share
                     //this.pictureBox3.Dispose();
                     this.pictureBox3.Image = null;
                     pictureBox3.Dispose();
-                    if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp"))
+                    if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp"))
                     {
-                        File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
+                        File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp");
                     }
                 }
                 else if (this.pictureBox2.Image != null)
@@ -505,9 +505,9 @@ namespace Youli_Data_Share
                     //this.pictureBox2.Dispose();
                     this.pictureBox2.Image = null;
                     pictureBox2.Dispose();
-                    if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp"))
+                    if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp"))
                     {
-                        File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
+                        File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp");
                     }
                 }
                 else if (this.pictureBox1.Image != null)
@@ -515,9 +515,9 @@ namespace Youli_Data_Share
                     // this.pictureBox1.Dispose();
                     this.pictureBox1.Image = null;
                     pictureBox1.Dispose();
-                    if (File.Exists(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp"))
+                    if (File.Exists(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp"))
                     {
-                        File.Delete(@"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
+                        File.Delete(@"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp");
                     }
                 }
                 #endregion
@@ -545,7 +545,7 @@ namespace Youli_Data_Share
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
-            var filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp";
+            var filePath = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "01" + ".bmp";
             Process m_Process = null;
             m_Process = new Process();
             m_Process.StartInfo.FileName = @filePath;
@@ -563,7 +563,7 @@ namespace Youli_Data_Share
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
-            var filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp";
+            var filePath = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "02" + ".bmp";
             Process m_Process = null;
             m_Process = new Process();
             m_Process.StartInfo.FileName = @filePath;
@@ -581,7 +581,7 @@ namespace Youli_Data_Share
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
-            var filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp";
+            var filePath = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "03" + ".bmp";
             Process m_Process = null;
             m_Process = new Process();
             m_Process.StartInfo.FileName = @filePath;
@@ -599,7 +599,7 @@ namespace Youli_Data_Share
         private void pictureBox4_Click(object sender, EventArgs e)
         {
 
-            var filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp";
+            var filePath = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "04" + ".bmp";
             Process m_Process = null;
             m_Process = new Process();
             m_Process.StartInfo.FileName = @filePath;
@@ -617,7 +617,7 @@ namespace Youli_Data_Share
         private void pictureBox5_Click(object sender, EventArgs e)
         {
   
-            var filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp";
+            var filePath = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "05" + ".bmp";
             Process m_Process = null;
             m_Process = new Process();
             m_Process.StartInfo.FileName = @filePath;
@@ -635,7 +635,7 @@ namespace Youli_Data_Share
         private void pictureBox6_Click(object sender, EventArgs e)
         {
 
-            var filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp";
+            var filePath = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "06" + ".bmp";
             Process m_Process = null;
             m_Process = new Process();
             m_Process.StartInfo.FileName = @filePath;
@@ -663,7 +663,7 @@ namespace Youli_Data_Share
                 //string ReplaceVar = textBox1.Text.Replace("/", ":","[","]");
 
 
-                string filePath = @"\\192.168.1.104\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "\\";
+                string filePath = @"\\YL_SERVER\Youli_Server\工程问题资料汇总\Picture\" + textBox1.Text + "\\";
                 string subPath = filePath + "/pic/";
                 if (false == System.IO.Directory.Exists(subPath))
                 {
