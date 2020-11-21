@@ -113,7 +113,7 @@ namespace Youli_Data_Share
         private void orderProcess_Load(object sender, EventArgs e)
         {
             #region  筛选框初始化
-            toolStripComboBox1.SelectedIndex = 0;
+            toolStripComboBox1.SelectedIndex = 2;
             toolStripComboBox2.SelectedIndex = 0;
             toolStripComboBox3.SelectedIndex = 0;
             toolStripComboBox4.SelectedIndex = 1;
@@ -371,11 +371,8 @@ namespace Youli_Data_Share
 
 
             #endregion
-            #region 读取流程数据库内容
 
-            #endregion
-            #region 列冻结
-            #endregion
+
         }
 
 
@@ -1226,7 +1223,23 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void tsbtn_search_Click(object sender, EventArgs e)
         {
+            DataTable dtQC;
             searchDate2();//加载sql数据
+
+            //根据QC问题进行标红
+            string strQCnote = @"SELECT QCcoding FROM [YouliData].[dbo].[QCnotes] WHERE QCover='F'";
+             dtQC= SQLHelper2.GetDataSet(strQCnote).Tables[0];
+            for(int i =0; i < dt_flow.Rows.Count; i++)
+            {
+                for (int j = 0; j < dtQC.Rows.Count; j++)
+                {
+                    if (dt_flow.Rows[i]["flo_coding"].ToString() == dtQC.Rows[j]["QCcoding"].ToString())
+                    {
+                        this.dgvWorkFlow.Rows[i].Cells["Column8"].Style.BackColor = Color.Red;
+                        this.dgvWorkFlow.Rows[i].Cells["Column8"].Style.ForeColor = Color.White;
+                    }
+                }
+            }
             //dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
         }
 
@@ -4059,7 +4072,15 @@ namespace Youli_Data_Share
 
         private void toolStripButton3_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"\\YL_SERVER\Youli_Server\提案改善");
+            //System.Diagnostics.Process.Start(@"\\YL_SERVER\Youli_Server\提案改善");
+            ProblemsNotes.frmQCnotes frmQCnotes = new ProblemsNotes.frmQCnotes();
+            frmQCnotes.Show();
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            ProblemsNotes.frmPDnotes frmPDnotes = new ProblemsNotes.frmPDnotes();
+            frmPDnotes.Show();
         }
     }
 }

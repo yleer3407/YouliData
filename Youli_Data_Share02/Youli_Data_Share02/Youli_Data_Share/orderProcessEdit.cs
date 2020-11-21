@@ -1,9 +1,12 @@
 ﻿using Microsoft.VisualBasic;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -14,7 +17,8 @@ namespace Youli_Data_Share
 {
     public partial class orderProcessEdit : Form
     {
-        private string editValue;
+        private string editValue; //制令单号值
+        string floCoding="null";//产品编号值
         DataTable dt;
         bool txtfloaskChg = false;
         bool txtflorecordChg = false;
@@ -54,6 +58,109 @@ namespace Youli_Data_Share
             Thread th = new Thread(loading); //Test为多线程运行程序
             th.IsBackground = true;//设置后台运行
             th.Start();//开始运行 参数应该在这里设置
+
+          
+            // 读取问题数据表
+             LoadTableQCnotes();
+            LoadTablePDnotes();
+
+            //读取问题图片
+           LoadQCPic();
+            LoadPDPic();
+        }
+
+        /// <summary>
+        /// 生产问题图片
+        /// </summary>
+        private void LoadPDPic()
+        {
+            PictureBox[] pb;
+            ArrayList JpgList = new ArrayList();
+            // 检测路径是否存在
+            //MessageBox.Show(floCoding);
+            //通过查找当前页面的txtflocoding 找不到值
+            string imagePath = @"\\192.168.1.104\Youli_Server\ProblemFile\PDnote\" + floCoding + "\\";
+            if (Directory.Exists(imagePath))
+            {
+                DirectoryInfo dir = new DirectoryInfo(@"\\192.168.1.104\Youli_Server\ProblemFile\PDnote\" + floCoding);
+
+                foreach (var file in dir.GetFiles("*.jpg"))
+                {
+                    JpgList.Add(file.FullName);
+                }
+                pb = new PictureBox[JpgList.Count];
+                for (int i = 0; i < JpgList.Count; i++)
+                {
+                    pb[i] = new System.Windows.Forms.PictureBox();
+                    pb[i].BorderStyle = BorderStyle.FixedSingle;
+                    pb[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                    pb[i].Image = Image.FromFile(JpgList[i].ToString());
+                    pb[i].Size = new System.Drawing.Size(370, 280);
+                    flowLayoutPanel2.Controls.Add(pb[i]);
+                }
+            }
+        }
+
+        private void LoadQCPic()
+        {
+            PictureBox[] pb;
+            ArrayList JpgList = new ArrayList();
+            // 检测路径是否存在
+           //MessageBox.Show(floCoding);
+            //通过查找当前页面的txtflocoding 找不到值
+            string imagePath = @"\\192.168.1.104\Youli_Server\ProblemFile\QCnote\"+ floCoding + "\\";
+            if (Directory.Exists(imagePath))
+            {
+                DirectoryInfo dir = new DirectoryInfo(@"\\192.168.1.104\Youli_Server\ProblemFile\QCnote\"+ floCoding);
+
+                foreach (var file in dir.GetFiles("*.jpg"))
+                {
+                    JpgList.Add(file.FullName);
+                }
+                pb = new PictureBox[JpgList.Count];
+                for (int i = 0; i < JpgList.Count; i++)
+                {
+                    pb[i] = new System.Windows.Forms.PictureBox();
+                    pb[i].BorderStyle = BorderStyle.FixedSingle;
+                    pb[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                    pb[i].Image = Image.FromFile(JpgList[i].ToString());
+                    pb[i].Size = new System.Drawing.Size(370, 280);
+                    flowLayoutPanel1.Controls.Add(pb[i]);
+                }
+            }
+
+        }
+
+        private void LoadTablePDnotes()
+        {
+            string strnotes = @"SELECT * FROM [dbo].[PDnotes] WHERE PDcoding = (SELECT flo_coding FROM [YouliData].[dbo].[flow] WHERE flo_num = '" + editValue + "' )  AND PDover ='F'";
+            string strnotesCount = @"SELECT count(*) FROM [dbo].[PDnotes] WHERE PDcoding = (SELECT flo_coding FROM [YouliData].[dbo].[flow] WHERE flo_num = '" + editValue + "' )  AND PDover ='F'";
+            //MessageBox.Show(txtflocoding.Text);
+            //string strnotes = @"SELECT * FROM [dbo].[QCnotes] WHERE QCcoding = '"+this.txtflocoding.Text.Trim()+"'  AND QCover ='F'";
+            if(SQLHelper2.GetSingleResult(strnotesCount).ToString() != "0")
+            {
+                dgvPDnotes.AutoGenerateColumns = false;
+                dgvPDnotes.DataSource = SQLHelper2.GetDataSet(strnotes).Tables[0];
+            }
+        }
+
+        private void LoadTableQCnotes()
+        {
+
+             string strnotes = @"SELECT * FROM [dbo].[QCnotes] WHERE QCcoding = (SELECT flo_coding FROM [YouliData].[dbo].[flow] WHERE flo_num = '"+ editValue + "' )  AND QCover ='F'";
+            string strnotesCount = @"SELECT count(*) FROM [dbo].[QCnotes] WHERE QCcoding = (SELECT flo_coding FROM [YouliData].[dbo].[flow] WHERE flo_num = '" + editValue + "' )  AND QCover ='F'";
+            //MessageBox.Show(txtflocoding.Text);
+            //string strnotes = @"SELECT * FROM [dbo].[QCnotes] WHERE QCcoding = '"+this.txtflocoding.Text.Trim()+"'  AND QCover ='F'";
+            if (SQLHelper2.GetSingleResult(strnotesCount).ToString() != "0")
+            {
+                dgvQCnotes.AutoGenerateColumns = false;
+                dgvQCnotes.DataSource = SQLHelper2.GetDataSet(strnotes).Tables[0];
+                floCoding = dgvQCnotes.Rows[0].Cells[2].Value.ToString();
+            }
+
+
+
+            
         }
 
         private void loading()
@@ -562,6 +669,16 @@ namespace Youli_Data_Share
                     return;
                 }
             }
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
         #endregion
 

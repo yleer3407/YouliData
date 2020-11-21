@@ -165,3 +165,5 @@ G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Yo
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.csproj.CopyComplete
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.exe
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.pdb
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.ProblemsNotes.frmQCnotes.resources
+G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.ProblemsNotes.frmPDnotes.resources

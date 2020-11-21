@@ -171,8 +171,39 @@ namespace Youli_Data_Share.OrderPaln
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-
+            DataTable dtQC;
             search();
+            //string strQCnote = @"SELECT QCcoding FROM [YouliData].[dbo].[QCnotes]";
+            //dtQC = SQLHelper2.GetDataSet(strQCnote).Tables[0];
+
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    for (int j = 0; j < dtQC.Rows.Count; j++)
+            //    {
+            //        if(dt.Rows[i]["flo_coding"].ToString() == dtQC.Rows[j]["QCcoding"].ToString())
+            //        {
+            //            this.dataGridView1.Rows[i].Cells["Column4"].Style.BackColor = Color.Red;
+            //            this.dataGridView1.Rows[i].Cells["Column4"].Style.ForeColor = Color.White;
+            //        }
+            //    }
+            //}
+
+            #region
+            //根据QC问题进行标红
+            string strQCnote = @"SELECT QCcoding FROM [YouliData].[dbo].[QCnotes] ";
+            dtQC = SQLHelper2.GetDataSet(strQCnote).Tables[0];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                for (int j = 0; j < dtQC.Rows.Count; j++)
+                {
+                    if (dt.Rows[i]["flo_coding"].ToString() == dtQC.Rows[j]["QCcoding"].ToString())
+                    {
+                        this.dataGridView1.Rows[i].Cells["Column4"].Style.BackColor = Color.Red;
+                        this.dataGridView1.Rows[i].Cells["Column4"].Style.ForeColor = Color.White;
+                    }
+                }
+            }
+            #endregion
         }
 
         private void search()

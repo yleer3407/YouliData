@@ -12,7 +12,7 @@ namespace Youli_Data_Share
     public partial class addNum : Form
     {
 
-        SqlConnection conn_add;
+        //SqlConnection conn_add;
         public addNum()
         {
             InitializeComponent();
