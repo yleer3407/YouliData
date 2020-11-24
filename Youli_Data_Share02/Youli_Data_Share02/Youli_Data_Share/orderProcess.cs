@@ -1223,23 +1223,39 @@ namespace Youli_Data_Share
         /// <param name="e"></param>
         private void tsbtn_search_Click(object sender, EventArgs e)
         {
-            DataTable dtQC;
+            //DataTable dtQC;
+            //DataTable dtPD;
             searchDate2();//加载sql数据
 
-            //根据QC问题进行标红
-            string strQCnote = @"SELECT QCcoding FROM [YouliData].[dbo].[QCnotes] WHERE QCover='F'";
-             dtQC= SQLHelper2.GetDataSet(strQCnote).Tables[0];
-            for(int i =0; i < dt_flow.Rows.Count; i++)
-            {
-                for (int j = 0; j < dtQC.Rows.Count; j++)
-                {
-                    if (dt_flow.Rows[i]["flo_coding"].ToString() == dtQC.Rows[j]["QCcoding"].ToString())
-                    {
-                        this.dgvWorkFlow.Rows[i].Cells["Column8"].Style.BackColor = Color.Red;
-                        this.dgvWorkFlow.Rows[i].Cells["Column8"].Style.ForeColor = Color.White;
-                    }
-                }
-            }
+            ////根据QC问题进行标红
+            //string strQCnote = @"SELECT QCcoding FROM [YouliData].[dbo].[QCnotes] WHERE QCover='F'";
+            // dtQC= SQLHelper2.GetDataSet(strQCnote).Tables[0];
+            //for(int i =0; i < dt_flow.Rows.Count; i++)
+            //{
+            //    for (int j = 0; j < dtQC.Rows.Count; j++)
+            //    {
+            //        if (dt_flow.Rows[i]["flo_coding"].ToString() == dtQC.Rows[j]["QCcoding"].ToString())
+            //        {
+            //            this.dgvWorkFlow.Rows[i].Cells["Column8"].Style.BackColor = Color.Red;
+            //            this.dgvWorkFlow.Rows[i].Cells["Column8"].Style.ForeColor = Color.White;
+            //        }
+            //    }
+            //}
+            ////根据PD问题进行标红
+            //string strPDnote = @"SELECT PDcoding FROM [YouliData].[dbo].[PDnotes] WHERE PDover='F'";
+            //dtPD = SQLHelper2.GetDataSet(strPDnote).Tables[0];
+            //for (int i = 0; i < dt_flow.Rows.Count; i++)
+            //{
+            //    for (int j = 0; j < dtQC.Rows.Count; j++)
+            //    {
+            //        if (dt_flow.Rows[i]["flo_coding"].ToString() == dtPD.Rows[j]["PDcoding"].ToString())
+            //        {
+            //            this.dgvWorkFlow.Rows[i].Cells["Column8"].Style.BackColor = Color.Red;
+            //            this.dgvWorkFlow.Rows[i].Cells["Column8"].Style.ForeColor = Color.White;
+            //        }
+            //    }
+            //}
+
             //dgvWorkFlow.Sort(dgvWorkFlow.Columns[4], ListSortDirection.Descending);
         }
 
@@ -4081,6 +4097,80 @@ namespace Youli_Data_Share
         {
             ProblemsNotes.frmPDnotes frmPDnotes = new ProblemsNotes.frmPDnotes();
             frmPDnotes.Show();
+        }
+
+        /// <summary>
+        /// 颜色标注
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvWorkFlow_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DataTable dtQC;
+            DataTable dtPD;
+            DataGridView curDgv = (DataGridView)sender;
+
+            string strQCnote = @"SELECT QCcoding FROM [YouliData].[dbo].[QCnotes] WHERE QCover='F'";
+            dtQC = SQLHelper2.GetDataSet(strQCnote).Tables[0];
+            string strPDnote = @"SELECT PDcoding FROM [YouliData].[dbo].[PDnotes] WHERE PDover='F'";
+            dtPD = SQLHelper2.GetDataSet(strPDnote).Tables[0];
+
+
+            foreach (DataGridViewRow Row in curDgv.Rows)
+            {
+                if (Row != null)
+                {
+                    for (int i = 0; i < dtPD.Rows.Count; i++)
+                    {
+                        if (Row.Cells["Column8"].Value.ToString() == dtPD.Rows[i]["PDcoding"].ToString())
+                        {
+                            Row.Cells["Column8"].Style.BackColor = Color.Orange;
+                            Row.Cells["Column8"].Style.ForeColor = Color.White;
+                        }
+                    }
+                    for (int i = 0; i < dtQC.Rows.Count; i++)
+                    {
+                        if (Row.Cells["Column8"].Value.ToString() == dtQC.Rows[i]["QCcoding"].ToString())
+                        {
+                            Row.Cells["Column8"].Style.BackColor = Color.Red;
+                            Row.Cells["Column8"].Style.ForeColor = Color.White;
+                        }
+                    }
+
+
+                    //DataTable dtQC;
+                    //DataTable dtPD;
+                    //searchDate2();//加载sql数据
+
+                    ////根据QC问题进行标红
+
+                    //for (int i = 0; i < dt_flow.Rows.Count; i++)
+                    //{
+                    //    for (int j = 0; j < dtQC.Rows.Count; j++)
+                    //    {
+                    //        if (dt_flow.Rows[i]["flo_coding"].ToString() == dtQC.Rows[j]["QCcoding"].ToString())
+                    //        {
+                    //            this.dgvWorkFlow.Rows[i].Cells["Column8"].Style.BackColor = Color.Red;
+                    //            this.dgvWorkFlow.Rows[i].Cells["Column8"].Style.ForeColor = Color.White;
+                    //        }
+                    //    }
+                    //}
+                    ////根据PD问题进行标红
+                    //string strPDnote = @"SELECT PDcoding FROM [YouliData].[dbo].[PDnotes] WHERE PDover='F'";
+                    //dtPD = SQLHelper2.GetDataSet(strPDnote).Tables[0];
+                    //for (int i = 0; i < dt_flow.Rows.Count; i++)
+                    //{
+                    //    for (int j = 0; j < dtQC.Rows.Count; j++)
+                    //    {
+                    //        if (dt_flow.Rows[i]["flo_coding"].ToString() == dtPD.Rows[j]["PDcoding"].ToString())
+                    //        {
+                    //            this.dgvWorkFlow.Rows[i].Cells["Column8"].Style.BackColor = Color.Red;
+                    //            this.dgvWorkFlow.Rows[i].Cells["Column8"].Style.ForeColor = Color.White;
+                    //        }
+                    //    }
+                    //}
+                }
+            }
         }
     }
 }

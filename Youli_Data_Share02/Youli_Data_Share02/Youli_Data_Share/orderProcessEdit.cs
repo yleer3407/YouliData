@@ -18,7 +18,8 @@ namespace Youli_Data_Share
     public partial class orderProcessEdit : Form
     {
         private string editValue; //制令单号值
-        string floCoding="null";//产品编号值
+        string floQCCoding="null";//产品编号值
+        string floPDCoding = "null";//产品编号值
         DataTable dt;
         bool txtfloaskChg = false;
         bool txtflorecordChg = false;
@@ -65,7 +66,7 @@ namespace Youli_Data_Share
             LoadTablePDnotes();
 
             //读取问题图片
-           LoadQCPic();
+            LoadQCPic();
             LoadPDPic();
         }
 
@@ -76,58 +77,112 @@ namespace Youli_Data_Share
         {
             PictureBox[] pb;
             ArrayList JpgList = new ArrayList();
+            ArrayList pdnumList = new ArrayList();
+            DataTable dtTime;
             // 检测路径是否存在
             //MessageBox.Show(floCoding);
-            //通过查找当前页面的txtflocoding 找不到值
-            string imagePath = @"\\192.168.1.104\Youli_Server\ProblemFile\PDnote\" + floCoding + "\\";
-            if (Directory.Exists(imagePath))
+            string strPDnum = @"SELECT PDtime FROM [YouliData].[dbo].[PDnotes] WHERE PDcoding='" + floPDCoding + "' AND PDover ='F'";
+            dtTime = SQLHelper2.GetDataSet(strPDnum).Tables[0];
+            for (int i = 0; i < dtTime.Rows.Count; i++)
             {
-                DirectoryInfo dir = new DirectoryInfo(@"\\192.168.1.104\Youli_Server\ProblemFile\PDnote\" + floCoding);
+                pdnumList.Add(dtTime.Rows[i][0].ToString());
+            }
+            //MessageBox.Show(pdnumList[0].ToString());
+            for (int i = 0; i < pdnumList.Count; i++)
+            {
+                //通过查找当前页面的txtflocoding 找不到值
+                // string imagePath = @"C:\Users\Administrator\Desktop\优力资料云享版";
 
-                foreach (var file in dir.GetFiles("*.jpg"))
+                string imagePath = @"\\192.168.1.104\Youli_Server\ProblemFile\PDnote" + "\\" + pdnumList[i].ToString() + "\\" + " " + floPDCoding + "\\";
+                  //MessageBox.Show(imagePath);
+                //  OpenFileDialog openFileDialog = new OpenFileDialog();
+                //  openFileDialog.InitialDirectory = imagePath;
+                //if(openFileDialog.ShowDialog() == DialogResult.OK)
+                //  {
+
+                //  }
+                if (Directory.Exists(imagePath))
                 {
-                    JpgList.Add(file.FullName);
+                    DirectoryInfo dir = new DirectoryInfo(@"\\192.168.1.104\Youli_Server\ProblemFile\PDnote" + "\\" + pdnumList[i].ToString() + "\\" + " " + floPDCoding);
+
+                    foreach (var file in dir.GetFiles("*.jpg"))
+                    {
+                        //MessageBox.Show(file.FullName);
+                        JpgList.Add(file.FullName);
+                    }
                 }
-                pb = new PictureBox[JpgList.Count];
-                for (int i = 0; i < JpgList.Count; i++)
+                else
                 {
-                    pb[i] = new System.Windows.Forms.PictureBox();
-                    pb[i].BorderStyle = BorderStyle.FixedSingle;
-                    pb[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                    pb[i].Image = Image.FromFile(JpgList[i].ToString());
-                    pb[i].Size = new System.Drawing.Size(370, 280);
-                    flowLayoutPanel2.Controls.Add(pb[i]);
+                    MessageBox.Show("读取图片路径出错");
                 }
             }
+            pb = new PictureBox[JpgList.Count];
+            for (int j = 0; j < JpgList.Count; j++)
+            {
+                pb[j] = new System.Windows.Forms.PictureBox();
+                pb[j].BorderStyle = BorderStyle.FixedSingle;
+                pb[j].SizeMode = PictureBoxSizeMode.StretchImage;
+                pb[j].Image = Image.FromFile(JpgList[j].ToString());
+                pb[j].Size = new System.Drawing.Size(370, 280);
+                flowLayoutPanel2.Controls.Add(pb[j]);
+            }
+            // MessageBox.Show(JpgList.Count.ToString());
         }
 
         private void LoadQCPic()
         {
             PictureBox[] pb;
             ArrayList JpgList = new ArrayList();
+            ArrayList pdnumList = new ArrayList();
+            DataTable dtTime;
             // 检测路径是否存在
-           //MessageBox.Show(floCoding);
-            //通过查找当前页面的txtflocoding 找不到值
-            string imagePath = @"\\192.168.1.104\Youli_Server\ProblemFile\QCnote\"+ floCoding + "\\";
-            if (Directory.Exists(imagePath))
+            //MessageBox.Show(floCoding);
+            string strPDnum = @"SELECT QCtime FROM [YouliData].[dbo].[QCnotes] WHERE QCcoding='" + floQCCoding + "' AND QCover ='F'";
+            dtTime= SQLHelper2.GetDataSet(strPDnum).Tables[0];
+            for (int i = 0; i < dtTime.Rows.Count; i++)
             {
-                DirectoryInfo dir = new DirectoryInfo(@"\\192.168.1.104\Youli_Server\ProblemFile\QCnote\"+ floCoding);
+                pdnumList.Add(dtTime.Rows[i][0].ToString());
+            }
+            //MessageBox.Show(pdnumList[0].ToString());
+            for (int i = 0; i < pdnumList.Count; i++)
+            {
+                //通过查找当前页面的txtflocoding 找不到值
+                // string imagePath = @"C:\Users\Administrator\Desktop\优力资料云享版";
+              
+               string imagePath = @"\\192.168.1.104\Youli_Server\ProblemFile\QCnote" +"\\" + pdnumList[i].ToString() + "\\"+" "+ floQCCoding + "\\";
+              //  MessageBox.Show(imagePath);
+              //  OpenFileDialog openFileDialog = new OpenFileDialog();
+              //  openFileDialog.InitialDirectory = imagePath;
+              //if(openFileDialog.ShowDialog() == DialogResult.OK)
+              //  {
 
-                foreach (var file in dir.GetFiles("*.jpg"))
+              //  }
+                if (Directory.Exists(imagePath))
                 {
-                    JpgList.Add(file.FullName);
+                    DirectoryInfo dir = new DirectoryInfo(@"\\192.168.1.104\Youli_Server\ProblemFile\QCnote" + "\\" + pdnumList[i].ToString() + "\\" + " " + floQCCoding);
+
+                    foreach (var file in dir.GetFiles("*.jpg"))
+                    {
+                        //MessageBox.Show(file.FullName);
+                        JpgList.Add(file.FullName);
+                    }
                 }
-                pb = new PictureBox[JpgList.Count];
-                for (int i = 0; i < JpgList.Count; i++)
+                else
                 {
-                    pb[i] = new System.Windows.Forms.PictureBox();
-                    pb[i].BorderStyle = BorderStyle.FixedSingle;
-                    pb[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                    pb[i].Image = Image.FromFile(JpgList[i].ToString());
-                    pb[i].Size = new System.Drawing.Size(370, 280);
-                    flowLayoutPanel1.Controls.Add(pb[i]);
+                    MessageBox.Show("读取图片路径出错");
                 }
             }
+            pb = new PictureBox[JpgList.Count];
+            for (int j = 0; j < JpgList.Count; j++)
+            {
+                pb[j] = new System.Windows.Forms.PictureBox();
+                pb[j].BorderStyle = BorderStyle.FixedSingle;
+                pb[j].SizeMode = PictureBoxSizeMode.StretchImage;
+                pb[j].Image = Image.FromFile(JpgList[j].ToString());
+                pb[j].Size = new System.Drawing.Size(370, 280);
+                flowLayoutPanel1.Controls.Add(pb[j]);
+            }
+            // MessageBox.Show(JpgList.Count.ToString());
 
         }
 
@@ -141,7 +196,7 @@ namespace Youli_Data_Share
             {
                 dgvPDnotes.AutoGenerateColumns = false;
                 dgvPDnotes.DataSource = SQLHelper2.GetDataSet(strnotes).Tables[0];
-                floCoding = dgvPDnotes.Rows[0].Cells[2].Value.ToString();
+                floPDCoding = dgvPDnotes.Rows[0].Cells[2].Value.ToString();
             }
         }
 
@@ -156,7 +211,7 @@ namespace Youli_Data_Share
             {
                 dgvQCnotes.AutoGenerateColumns = false;
                 dgvQCnotes.DataSource = SQLHelper2.GetDataSet(strnotes).Tables[0];
-                floCoding = dgvQCnotes.Rows[0].Cells[2].Value.ToString();
+                floQCCoding = dgvQCnotes.Rows[0].Cells[2].Value.ToString();
             }
 
 

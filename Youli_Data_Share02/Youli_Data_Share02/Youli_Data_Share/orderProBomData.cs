@@ -20,7 +20,7 @@ namespace Youli_Data_Share
         string OrdNum;
         SqlConnection conn1;
         //SqlConnection conn2;
-
+        DataTable dt3;
         public orderProBomData()
         {
 
@@ -146,7 +146,7 @@ namespace Youli_Data_Share
                                                // conn1.Open();
                                                 DataSet ds3 = new DataSet();
                                                 da3.Fill(ds3, "BOM1");
-                                                DataTable dt3 = ds3.Tables["BOM1"];
+                                                 dt3 = ds3.Tables["BOM1"];
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.DataSource = dt3.DefaultView;
             #region 表2 颜色区分
@@ -186,29 +186,29 @@ namespace Youli_Data_Share
             //    }
             //}
 
-            for (int i = 0; i < dt3.Rows.Count; i++)
-            {
-                if (dt3.Rows[i]["bom_id"].ToString().Length <= 9)
-                {
-                    this.dataGridView2.Rows[i].Cells["Column2"].Style.BackColor = Color.YellowGreen;
-                }
-                if (dt3.Rows[i]["bdbig"].ToString() == "1")
-                {
-                    if (dt3.Rows[i]["adbig"].ToString() == "1")
-                    {
-                        this.dataGridView2.Rows[i].Cells["Column5"].Style.BackColor = Color.White;
-                    }
-                    if (dt3.Rows[i]["adbig"].ToString() == "0")
-                    {
-                        this.dataGridView2.Rows[i].Cells["Column5"].Style.BackColor = Color.LightSalmon;
-                    }
-                }
-                else
-                {
-                    this.dataGridView2.Rows[i].Cells["Column5"].Style.BackColor = Color.Red;
-                    this.dataGridView2.Rows[i].Cells["Column5"].Style.ForeColor = Color.White;
-                }
-            }
+            //for (int i = 0; i < dt3.Rows.Count; i++)
+            //{
+            //    if (dt3.Rows[i]["bom_id"].ToString().Length <= 9)
+            //    {
+            //        this.dataGridView2.Rows[i].Cells["Column2"].Style.BackColor = Color.YellowGreen;
+            //    }
+            //    if (dt3.Rows[i]["bdbig"].ToString() == "1")
+            //    {
+            //        if (dt3.Rows[i]["adbig"].ToString() == "1")
+            //        {
+            //            this.dataGridView2.Rows[i].Cells["Column5"].Style.BackColor = Color.White;
+            //        }
+            //        if (dt3.Rows[i]["adbig"].ToString() == "0")
+            //        {
+            //            this.dataGridView2.Rows[i].Cells["Column5"].Style.BackColor = Color.LightSalmon;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        this.dataGridView2.Rows[i].Cells["Column5"].Style.BackColor = Color.Red;
+            //        this.dataGridView2.Rows[i].Cells["Column5"].Style.ForeColor = Color.White;
+            //    }
+            //}
             #endregion
             conn1.Close();
         }
@@ -360,6 +360,44 @@ namespace Youli_Data_Share
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// 数据绑定
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DataGridView curDgv = (DataGridView)sender;
+            foreach (DataGridViewRow Row in curDgv.Rows)
+            {
+                if (Row != null)
+                {
+                    if (Row.Cells["Column1"].Value.ToString().Length <= 9)
+                    {
+                        Row.Cells["Column2"].Style.BackColor= Color.YellowGreen;
+                       // this.dataGridView2.Rows[i].Cells["Column2"].Style.BackColor = Color.YellowGreen;
+                    }
+                    if (Row.Cells["Column20"].Value.ToString() == "1")
+                    {
+                        if(Row.Cells["Column21"].Value.ToString() == "1")
+                        {
+                            Row.Cells["Column5"].Style.BackColor = Color.White;
+                        }
+                        if (Row.Cells["Column21"].Value.ToString() == "0")
+                        {
+                            Row.Cells["Column5"].Style.BackColor = Color.LightSalmon;
+                        }
+                    }
+                    else
+                    {
+                        Row.Cells["Column5"].Style.BackColor = Color.Red;
+                        Row.Cells["Column5"].Style.ForeColor = Color.White;
+                    }
+
+                }
+            }
         }
     }
 }

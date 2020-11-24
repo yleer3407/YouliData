@@ -39,6 +39,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -78,7 +79,6 @@
             this.Column11 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label12 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -186,6 +186,17 @@
             this.panel4.Size = new System.Drawing.Size(1182, 194);
             this.panel4.TabIndex = 2;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(769, 87);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(152, 12);
+            this.label12.TabIndex = 48;
+            this.label12.Text = "只支持jpg/jpeg格式图片";
+            // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(65, 147);
@@ -205,6 +216,7 @@
             // 
             // button4
             // 
+            this.button4.Enabled = false;
             this.button4.Image = global::Youli_Data_Share.Properties.Resources.add_folder_66_727030625832px_1232041_easyicon3;
             this.button4.Location = new System.Drawing.Point(771, 15);
             this.button4.Name = "button4";
@@ -217,6 +229,8 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.Enabled = false;
+            this.button3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button3.ForeColor = System.Drawing.Color.Red;
             this.button3.Location = new System.Drawing.Point(1097, 159);
             this.button3.Name = "button3";
@@ -229,6 +243,8 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button2.Enabled = false;
+            this.button2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button2.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.button2.Location = new System.Drawing.Point(935, 159);
             this.button2.Name = "button2";
@@ -241,6 +257,8 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Enabled = false;
+            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.button1.Location = new System.Drawing.Point(1016, 159);
             this.button1.Name = "button1";
@@ -564,6 +582,7 @@
             this.Column11.ReadOnly = true;
             this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column11.Visible = false;
             // 
             // Column9
             // 
@@ -584,17 +603,6 @@
             this.Column10.HeaderText = "最终改善方案描述";
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(769, 87);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(152, 12);
-            this.label12.TabIndex = 48;
-            this.label12.Text = "只支持jpg/jpeg格式图片";
             // 
             // frmQCnotes
             // 
@@ -656,6 +664,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -667,8 +678,5 @@
         private System.Windows.Forms.DataGridViewButtonColumn Column11;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
     }
 }

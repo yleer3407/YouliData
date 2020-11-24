@@ -22,6 +22,16 @@ namespace Youli_Data_Share.ProblemsNotes
         private void frmQCnotes_Load(object sender, EventArgs e)
         {
             LoadTable();
+            string loginPath = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "user.ini");
+            INIHelper.CheckPath(loginPath);
+            string loginName = INIHelper.Read("LoginName", "1", "001", loginPath);
+            if (loginName == "ylyxj")
+            {
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
+            }
         }
 
         private void LoadTable()
@@ -191,7 +201,7 @@ namespace Youli_Data_Share.ProblemsNotes
             try
             {
                 //DataGridViewCell cell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                string subPath1 = @"\\YL_SERVER\Youli_Server\ProblemFile\QCnote\" + "/" + textBox2.Text.Trim() + "/";
+                string subPath1 = @"\\YL_SERVER\Youli_Server\ProblemFile\QCnote\" + textBox7.Text.Trim() + "\\ "+ textBox2.Text.Trim() + "\\";
                 try
                 {
                     if (false == System.IO.Directory.Exists(subPath1))

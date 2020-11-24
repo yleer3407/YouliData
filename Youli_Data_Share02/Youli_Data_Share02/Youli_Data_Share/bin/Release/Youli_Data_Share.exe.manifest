@@ -4,7 +4,7 @@
   <description asmv2:iconFile="youliico.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Youli_Data_Share" version="1.0.0.5" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="Youli_Data_Share" version="1.0.0.6" language="neutral" processorArchitecture="x86" />
     <commandLine file="Youli_Data_Share.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -978,14 +978,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Youli_Data_Share.exe" size="5048280">
-      <assemblyIdentity name="Youli_Data_Share" version="1.0.0.5" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Youli_Data_Share.exe" size="5050840">
+      <assemblyIdentity name="Youli_Data_Share" version="1.0.0.6" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iiKqErikQugyD3UJ9TLFfYUwU0Y98RUmyGnf7Ares2o=</dsig:DigestValue>
+        <dsig:DigestValue>DJI2GPmtOAbXo/bQEaRGE+7KuofNfP3ufBwhVZbMeS8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
