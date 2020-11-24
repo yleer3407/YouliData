@@ -141,13 +141,14 @@ namespace Youli_Data_Share
             {
                 dgvPDnotes.AutoGenerateColumns = false;
                 dgvPDnotes.DataSource = SQLHelper2.GetDataSet(strnotes).Tables[0];
+                floCoding = dgvPDnotes.Rows[0].Cells[2].Value.ToString();
             }
         }
 
         private void LoadTableQCnotes()
         {
 
-             string strnotes = @"SELECT * FROM [dbo].[QCnotes] WHERE QCcoding = (SELECT flo_coding FROM [YouliData].[dbo].[flow] WHERE flo_num = '"+ editValue + "' )  AND QCover ='F'";
+            string strnotes = @"SELECT * FROM [dbo].[QCnotes] WHERE QCcoding = (SELECT flo_coding FROM [YouliData].[dbo].[flow] WHERE flo_num = '"+ editValue + "' )  AND QCover ='F'";
             string strnotesCount = @"SELECT count(*) FROM [dbo].[QCnotes] WHERE QCcoding = (SELECT flo_coding FROM [YouliData].[dbo].[flow] WHERE flo_num = '" + editValue + "' )  AND QCover ='F'";
             //MessageBox.Show(txtflocoding.Text);
             //string strnotes = @"SELECT * FROM [dbo].[QCnotes] WHERE QCcoding = '"+this.txtflocoding.Text.Trim()+"'  AND QCover ='F'";

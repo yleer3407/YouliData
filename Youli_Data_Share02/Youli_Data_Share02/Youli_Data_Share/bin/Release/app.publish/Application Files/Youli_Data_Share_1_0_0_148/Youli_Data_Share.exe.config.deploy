@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <configSections>
-  </configSections>
-  <connectionStrings>
-    <add name="Youli_dateEntities" connectionString="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=YL_SERVER;Initial Catalog=Youli_date;User ID=sa;Password=Yelei193;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient"/>
-    <add name="Youli_Data_Share.Properties.Settings.Youli_dateConnectionString" connectionString="Data Source=YL_SERVER;Initial Catalog=Youli_date;User ID=sa;Password=Yelei193" providerName="System.Data.SqlClient"/>
-  </connectionStrings>
-<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2"/></startup></configuration>
