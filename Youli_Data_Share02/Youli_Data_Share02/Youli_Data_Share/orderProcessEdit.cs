@@ -113,7 +113,7 @@ namespace Youli_Data_Share
                 }
                 else
                 {
-                    MessageBox.Show("读取图片路径出错");
+                   // MessageBox.Show("读取图片路径出错");
                 }
             }
             pb = new PictureBox[JpgList.Count];
@@ -169,7 +169,7 @@ namespace Youli_Data_Share
                 }
                 else
                 {
-                    MessageBox.Show("读取图片路径出错");
+                   // MessageBox.Show("读取图片路径出错");
                 }
             }
             pb = new PictureBox[JpgList.Count];

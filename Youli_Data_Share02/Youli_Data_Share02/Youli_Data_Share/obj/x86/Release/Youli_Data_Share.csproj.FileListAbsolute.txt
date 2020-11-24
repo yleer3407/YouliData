@@ -130,7 +130,6 @@ G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Yo
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\bin\Release\ru\Microsoft.ReportViewer.WebForms.resources.dll
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\bin\Release\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\bin\Release\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll
-G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.csprojAssemblyReference.cache
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.csproj.ResolveComReference.cache
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.addNum.resources
 G:\desket\VSProject\YouliData\YouliData\Youli_Data_Share02\Youli_Data_Share02\Youli_Data_Share\obj\x86\Release\Youli_Data_Share.Engineeringcharcs.resources
