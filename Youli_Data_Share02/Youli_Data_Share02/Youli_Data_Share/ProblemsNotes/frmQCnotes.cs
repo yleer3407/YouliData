@@ -562,7 +562,10 @@ namespace Youli_Data_Share.ProblemsNotes
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-
+            DataView dv = dt.DefaultView;
+            dv.RowFilter = string.Format("QCnum LIKE '%{0} %' or QCcoding LIKE '%{0}%' or QCname LIKE '%{0}%' or QClever LIKE '%{0}%' or QCclassify LIKE '%{0}%' or QCdescribe LIKE '%{0}%' ", toolStripTextBox1.Text.Trim());
+            DataTable dtSelect = dv.ToTable();
+            dataGridView1.DataSource = dtSelect;
         }
     }
 }

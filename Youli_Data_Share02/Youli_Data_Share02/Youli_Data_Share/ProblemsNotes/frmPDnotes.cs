@@ -558,7 +558,10 @@ namespace Youli_Data_Share.ProblemsNotes
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-
+            DataView dv = dt.DefaultView;
+            dv.RowFilter = string.Format("PDnum LIKE '%{0} %' or PDcoding LIKE '%{0}%' or PDname LIKE '%{0}%' or PDlever LIKE '%{0}%' or PDclassify LIKE '%{0}%' or PDdescribe LIKE '%{0}%' ", toolStripTextBox1.Text.Trim());
+            DataTable dtSelect = dv.ToTable();
+            dataGridView1.DataSource = dtSelect;
         }
     }
 }

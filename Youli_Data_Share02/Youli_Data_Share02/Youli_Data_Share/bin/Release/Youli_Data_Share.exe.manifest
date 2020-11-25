@@ -978,14 +978,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Youli_Data_Share.exe" size="3902424">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Youli_Data_Share.exe" size="3902936">
       <assemblyIdentity name="Youli_Data_Share" version="1.0.0.8" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xDz2ZmKMT/++5X9+CxrordxVW19HV6maUfqtQQ9izmQ=</dsig:DigestValue>
+        <dsig:DigestValue>/fHPp3LQv6a/ZVf3uDfvcISrRohUibp0kFLRjBr0wgA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
