@@ -34,6 +34,7 @@ namespace Youli_Data_Share.ProblemsNotes
                 toolStripButton2.Enabled = true;
                 toolStripButton4.Enabled = true;
                 button4.Enabled = true;
+                toolStripButton5.Enabled = true;
             }
             this.panel1.Size = new System.Drawing.Size(1182, 10);
         }
@@ -195,7 +196,7 @@ namespace Youli_Data_Share.ProblemsNotes
                                                ,[QCover]
                                                ,[QCresultDes])
                                          VALUES
-                                               ('" + DateTime.Now.ToString("yyyyMMddHHmmss") + @"'
+                                               ('" + textBox7.Text.Trim() + @"'
                                                ,'" + textBox1.Text.Trim() + @"'
                                                ,'" + textBox2.Text.Trim() + @"'
                                                ,'" + textBox3.Text.Trim() + @"'
@@ -504,10 +505,11 @@ namespace Youli_Data_Share.ProblemsNotes
         {
             try
             {
+                //DataGridViewCell cell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 DataGridViewCell cell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 if (cell.FormattedValue.ToString() == "Pic")
                 {
-                    string subPath1 = @"\\YL_SERVER\Youli_Server\ProblemFile\QCnote\" + "/" + dataGridView1.Rows[e.RowIndex].Cells["Column3"].Value.ToString() + "/";
+                    string subPath1 = @"\\YL_SERVER\Youli_Server\ProblemFile\QCnote\" + dataGridView1.Rows[e.RowIndex].Cells["Column1"].Value.ToString() + "\\ " + dataGridView1.Rows[e.RowIndex].Cells["Column3"].Value.ToString() + "\\";
                     try
                     {
                         if (false == System.IO.Directory.Exists(subPath1))
@@ -522,14 +524,43 @@ namespace Youli_Data_Share.ProblemsNotes
                     }
                     catch
                     {
-                        MessageBox.Show("创建/打开文件夹失败，请联系管理员");
+                        MessageBox.Show("请填写产品编号和制令单号");
                     }
                 }
+                 
             }
             catch
             {
 
             }
+            //try
+            //{
+            //    //DataGridViewCell cell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            //    //if (cell.FormattedValue.ToString() == "Pic")
+            //    //{
+            //    //    string subPath1 = @"\\YL_SERVER\Youli_Server\ProblemFile\QCnote\" + "/" + dataGridView1.Rows[e.RowIndex].Cells["Column3"].Value.ToString() + "/";
+            //    //    try
+            //    //    {
+            //    //        if (false == System.IO.Directory.Exists(subPath1))
+            //    //        {
+            //    //            System.IO.Directory.CreateDirectory(subPath1);
+            //    //            System.Diagnostics.Process.Start(subPath1);
+            //    //        }
+            //    //        else
+            //    //        {
+            //    //            System.Diagnostics.Process.Start(subPath1);
+            //    //        }
+            //    //    }
+            //    //    catch
+            //    //    {
+            //    //        MessageBox.Show("创建/打开文件夹失败，请联系管理员");
+            //    //    }
+            //    //}
+            //}
+            //catch
+            //{
+
+            //}
         }
 
         /// <summary>
@@ -563,9 +594,22 @@ namespace Youli_Data_Share.ProblemsNotes
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             DataView dv = dt.DefaultView;
-            dv.RowFilter = string.Format("QCnum LIKE '%{0} %' or QCcoding LIKE '%{0}%' or QCname LIKE '%{0}%' or QClever LIKE '%{0}%' or QCclassify LIKE '%{0}%' or QCdescribe LIKE '%{0}%' ", toolStripTextBox1.Text.Trim());
+            dv.RowFilter = string.Format(" QCcoding LIKE '%{0}%' or QCname LIKE '%{0}%' or QClever LIKE '%{0}%' or QCclassify LIKE '%{0}%' or QCnum LIKE '%{0}%' ", toolStripTextBox1.Text.Trim());
             DataTable dtSelect = dv.ToTable();
             dataGridView1.DataSource = dtSelect;
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            int ind = dataGridView1.CurrentRow.Index;
+            if (MessageBox.Show("请确认是否删除？", "删除提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                string strChange = @"DELETE FROM [dbo].[QCnotes]
+                                     WHERE QCtime = '" + dataGridView1[1, ind].Value.ToString() + "'";
+                SQLHelper2.Update(strChange);
+                MessageBox.Show("删除完成");
+                LoadTable();
+            }
         }
     }
 }
